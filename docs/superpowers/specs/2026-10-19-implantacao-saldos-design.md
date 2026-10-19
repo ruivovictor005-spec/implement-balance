@@ -61,7 +61,7 @@ Um site privado da Corp Service, com entrada pela conta Microsoft corporativa, o
 - Motor de conversão fiel à planilha (§6).
 - Base de sinônimos global, com criação direta, revisão de alterações, histórico e desfazer.
 - Registro de contas criadas, por implantação.
-- Tabelas de regra (Normalização, Natureza COSIF, Plano padrão) **editáveis pela tela e versionadas**.
+- Tabelas de regra editáveis pela tela: Normalização e Natureza COSIF **com histórico de alteração** (valor anterior e novo, autor e data); o Plano padrão, além disso, **com versão formal** publicável.
 - Implantação como unidade de trabalho, com cronômetro, conclusão e lista de concluídas exportável para Excel.
 - Geração e download do TXT do Domínio.
 - Monitoramento: acessos, ações, erros e disponibilidade.
@@ -110,6 +110,8 @@ Entram **apenas contas analíticas**. Se `tipo_cta` começa com `S` (sintética)
 6. `TRIM` final.
 
 **A ordem das linhas da tabela é parte da regra.** O campo `ordem` é explícito, visível e editável; nada reordena a tabela implicitamente.
+
+A planilha percorre 199 posições fixas em cada etapa, das quais hoje **78 estão preenchidas na etapa 1 e 104 na etapa 2**. Posição vazia é inócua (substitui nada por nada), então percorrer a tabela real na ordem produz exatamente o mesmo resultado.
 
 ### 6.3 Natureza e grupos permitidos
 
@@ -252,8 +254,8 @@ Idioma: português, com os nomes de campo da planilha. Público: desktop.
 
 Não é promessa, é teste automático que roda a cada mudança:
 
-- **Massa real**, extraída da planilha atual: o balancete (27 contas analíticas com saldo), os 1.387 sinônimos, o plano de 3.000 contas, as 199 regras de normalização e as 25 regras de natureza.
-- **Resultado esperado**, também da planilha: 27 contas mapeadas, R$ 22.003.884,50 em débito e em crédito, diferença zero, e o conteúdo do TXT.
+- **Massa real**, extraída da planilha atual (números conferidos célula por célula): o balancete com **113 linhas, das quais 27 analíticas** e 86 sintéticas ignoradas; os **1.387 sinônimos**; o plano padrão com **711 contas** (529 analíticas, 182 sintéticas); **182 regras de normalização** (78 na etapa 1, 104 na etapa 2); **25 regras de natureza**.
+- **Resultado esperado**, também da planilha: 27 contas analíticas mapeadas, **22 lançamentos** (cinco contas caem fora por saldo zero), R$ 22.003.884,50 em débito e em crédito, diferença zero, e um TXT de **24 linhas** — 1 registro `02`, 22 registros `03` com sequência de `0000002` a `0000023`, e 1 registro `99`.
 - **Asserções:** mesmo código resolvido por linha, mesmo texto de status por linha, mesmas linhas agregadas, e **TXT idêntico caractere por caractere**.
 - **Testes de unidade** por etapa: normalização (as 199 regras em cadeia), precedência da natureza (específico antes de genérico), cada um dos 12 status, o limite dos 25 caracteres, descarte de saldo zero, sinal → débito/crédito, e as larguras de cada campo do leiaute.
 
