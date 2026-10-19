@@ -1,0 +1,6937 @@
+[
+  {
+    "nomeOriginal": "CAIXA",
+    "chaveNormalizada": "CAIXA",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA GERAL",
+    "chaveNormalizada": "CAIXA GERAL",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA MATRIZ",
+    "chaveNormalizada": "CAIXA MATRIZ",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA EM MOEDA NACIONAL",
+    "chaveNormalizada": "CAIXA MOEDA NACIONAL",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "FUNDO FIXO",
+    "chaveNormalizada": "FUNDO FIXO",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "FUNDO FIXO DE CAIXA",
+    "chaveNormalizada": "FUNDO FIXO CAIXA",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA PEQUENO",
+    "chaveNormalizada": "CAIXA PEQUENO",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA FILIAL",
+    "chaveNormalizada": "CAIXA FILIAL",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA LOJA",
+    "chaveNormalizada": "CAIXA LOJA",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "NUMERARIO",
+    "chaveNormalizada": "NUMERARIO",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "NUMERARIO EM CAIXA",
+    "chaveNormalizada": "NUMERARIO CAIXA",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "DINHEIRO EM CAIXA",
+    "chaveNormalizada": "DINHEIRO CAIXA",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA CENTRAL",
+    "chaveNormalizada": "CAIXA CENTRAL",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA ESCRITORIO",
+    "chaveNormalizada": "CAIXA ESCRITORIO",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA SEDE",
+    "chaveNormalizada": "CAIXA SEDE",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA OPERACIONAL",
+    "chaveNormalizada": "CAIXA OPERACIONAL",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA MOVIMENTO",
+    "chaveNormalizada": "CAIXA MOVIMENTO",
+    "codigoReduzido": "1"
+  },
+  {
+    "nomeOriginal": "CAIXA MOEDA ESTRANGEIRA",
+    "chaveNormalizada": "CAIXA MOEDA ESTRANGEIRA",
+    "codigoReduzido": "2"
+  },
+  {
+    "nomeOriginal": "BANCO BRADESCO",
+    "chaveNormalizada": "BANCO BRADESCO",
+    "codigoReduzido": "10"
+  },
+  {
+    "nomeOriginal": "BRADESCO",
+    "chaveNormalizada": "BRADESCO",
+    "codigoReduzido": "10"
+  },
+  {
+    "nomeOriginal": "BRADESCO C/C",
+    "chaveNormalizada": "BRADESCO CC",
+    "codigoReduzido": "10"
+  },
+  {
+    "nomeOriginal": "BANCO BRADESCO C/C",
+    "chaveNormalizada": "BANCO BRADESCO CC",
+    "codigoReduzido": "10"
+  },
+  {
+    "nomeOriginal": "BRADESCO CONTA MOVIMENTO",
+    "chaveNormalizada": "BRADESCO CONTA MOVIMENTO",
+    "codigoReduzido": "10"
+  },
+  {
+    "nomeOriginal": "BANCO BRADESCO CONTA MOVIMENTO",
+    "chaveNormalizada": "BANCO BRADESCO CONTA MOVIMENTO",
+    "codigoReduzido": "10"
+  },
+  {
+    "nomeOriginal": "BRADESCO AGENCIA",
+    "chaveNormalizada": "BRADESCO AGENCIA",
+    "codigoReduzido": "10"
+  },
+  {
+    "nomeOriginal": "BANCO ITAU",
+    "chaveNormalizada": "BANCO ITAU",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "ITAU",
+    "chaveNormalizada": "ITAU",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "ITAU C/C",
+    "chaveNormalizada": "ITAU CC",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "BANCO ITAU C/C",
+    "chaveNormalizada": "BANCO ITAU CC",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "ITAU CONTA MOVIMENTO",
+    "chaveNormalizada": "ITAU CONTA MOVIMENTO",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "BANCO ITAU CONTA MOVIMENTO",
+    "chaveNormalizada": "BANCO ITAU CONTA MOVIMENTO",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "ITAU PERSONNALITE",
+    "chaveNormalizada": "ITAU PERSONNALITE",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "ITAU EMPRESAS",
+    "chaveNormalizada": "ITAU EMPRESAS",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "CEF",
+    "chaveNormalizada": "CEF",
+    "codigoReduzido": "12"
+  },
+  {
+    "nomeOriginal": "CAIXA ECONOMICA",
+    "chaveNormalizada": "CAIXA ECONOMICA",
+    "codigoReduzido": "12"
+  },
+  {
+    "nomeOriginal": "BANCO CAIXA ECONOMICA FEDERAL",
+    "chaveNormalizada": "BANCO CEF",
+    "codigoReduzido": "12"
+  },
+  {
+    "nomeOriginal": "CAIXA ECONOMICA FEDERAL C/C",
+    "chaveNormalizada": "CEF CC",
+    "codigoReduzido": "12"
+  },
+  {
+    "nomeOriginal": "BCO CAIXA",
+    "chaveNormalizada": "BANCO CAIXA",
+    "codigoReduzido": "12"
+  },
+  {
+    "nomeOriginal": "CAIXA ECON FEDERAL",
+    "chaveNormalizada": "CAIXA ECON FEDERAL",
+    "codigoReduzido": "12"
+  },
+  {
+    "nomeOriginal": "CEF CONTA MOVIMENTO",
+    "chaveNormalizada": "CEF CONTA MOVIMENTO",
+    "codigoReduzido": "12"
+  },
+  {
+    "nomeOriginal": "BB",
+    "chaveNormalizada": "BB",
+    "codigoReduzido": "13"
+  },
+  {
+    "nomeOriginal": "BANCO DO BRASIL S/A",
+    "chaveNormalizada": "BANCO BRASIL",
+    "codigoReduzido": "13"
+  },
+  {
+    "nomeOriginal": "BANCO DO BRASIL C/C",
+    "chaveNormalizada": "BANCO BRASIL CC",
+    "codigoReduzido": "13"
+  },
+  {
+    "nomeOriginal": "BB CONTA MOVIMENTO",
+    "chaveNormalizada": "BB CONTA MOVIMENTO",
+    "codigoReduzido": "13"
+  },
+  {
+    "nomeOriginal": "BANCO DO BRASIL CONTA MOVIMENTO",
+    "chaveNormalizada": "BANCO BRASIL CONTA MOVIMENTO",
+    "codigoReduzido": "13"
+  },
+  {
+    "nomeOriginal": "BANCO SAFRA",
+    "chaveNormalizada": "BANCO SAFRA",
+    "codigoReduzido": "14"
+  },
+  {
+    "nomeOriginal": "SAFRA CC",
+    "chaveNormalizada": "SAFRA CC",
+    "codigoReduzido": "14"
+  },
+  {
+    "nomeOriginal": "BANCO SAFRA CONTA CORRENTE",
+    "chaveNormalizada": "BANCO SAFRA CC",
+    "codigoReduzido": "14"
+  },
+  {
+    "nomeOriginal": "BANCO SAFRA CONTA MOVIMENTO",
+    "chaveNormalizada": "BANCO SAFRA CONTA MOVIMENTO",
+    "codigoReduzido": "14"
+  },
+  {
+    "nomeOriginal": "BANCO SANTANDER",
+    "chaveNormalizada": "BANCO SANTANDER",
+    "codigoReduzido": "15"
+  },
+  {
+    "nomeOriginal": "SANTANDER S/A",
+    "chaveNormalizada": "SANTANDER",
+    "codigoReduzido": "15"
+  },
+  {
+    "nomeOriginal": "BANCO SANTANDER (BRASIL) S/A",
+    "chaveNormalizada": "BANCO SANTANDER BRASIL",
+    "codigoReduzido": "15"
+  },
+  {
+    "nomeOriginal": "SANTANDER CC",
+    "chaveNormalizada": "SANTANDER CC",
+    "codigoReduzido": "15"
+  },
+  {
+    "nomeOriginal": "SANTANDER BRASIL",
+    "chaveNormalizada": "SANTANDER BRASIL",
+    "codigoReduzido": "15"
+  },
+  {
+    "nomeOriginal": "BANCO SANTANDER CONTA CORRENTE",
+    "chaveNormalizada": "BANCO SANTANDER CC",
+    "codigoReduzido": "15"
+  },
+  {
+    "nomeOriginal": "BANCO SANTANDER CONTA MOVIMENTO",
+    "chaveNormalizada": "BANCO SANTANDER CONTA MOVIMENTO",
+    "codigoReduzido": "15"
+  },
+  {
+    "nomeOriginal": "BTG",
+    "chaveNormalizada": "BTG",
+    "codigoReduzido": "16"
+  },
+  {
+    "nomeOriginal": "BANCO BTG",
+    "chaveNormalizada": "BANCO BTG",
+    "codigoReduzido": "16"
+  },
+  {
+    "nomeOriginal": "BANCO BTG PACTUAL",
+    "chaveNormalizada": "BANCO BTG PACTUAL",
+    "codigoReduzido": "16"
+  },
+  {
+    "nomeOriginal": "BTG PACTUAL CC",
+    "chaveNormalizada": "BTG PACTUAL CC",
+    "codigoReduzido": "16"
+  },
+  {
+    "nomeOriginal": "BTG CONTA CORRENTE",
+    "chaveNormalizada": "BTG CC",
+    "codigoReduzido": "16"
+  },
+  {
+    "nomeOriginal": "BANCO HSBC",
+    "chaveNormalizada": "BANCO HSBC",
+    "codigoReduzido": "17"
+  },
+  {
+    "nomeOriginal": "BANCO CITIBANK",
+    "chaveNormalizada": "BANCO CITIBANK",
+    "codigoReduzido": "18"
+  },
+  {
+    "nomeOriginal": "CITI",
+    "chaveNormalizada": "CITI",
+    "codigoReduzido": "18"
+  },
+  {
+    "nomeOriginal": "APLICACAO FINANCEIRA",
+    "chaveNormalizada": "APLICACAO FINANCEIRA",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLICACOES FINANCEIRAS",
+    "chaveNormalizada": "APLICACAO FINANCEIRAS",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLICACAO RENDA FIXA",
+    "chaveNormalizada": "APLICACAO RENDA FIXA",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "FUNDO RENDA FIXA",
+    "chaveNormalizada": "FUNDO RENDA FIXA",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLIC. ITAU AUT MAIS",
+    "chaveNormalizada": "APLICACAO ITAU AUT MAIS",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLICACAO AUTOMATICA",
+    "chaveNormalizada": "APLICACAO AUTOMATICA",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "INVEST FACIL",
+    "chaveNormalizada": "INVEST FACIL",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLICACAO FINANCEIRA DE LIQUIDEZ IMEDIATA",
+    "chaveNormalizada": "APLICACAO FINANCEIRA LIQUIDEZ IMEDIATA",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLICACOES AUTOMATICAS",
+    "chaveNormalizada": "APLICACAO AUTOMATICAS",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLIC AUTOMATICA ITAU",
+    "chaveNormalizada": "APLICACAO AUTOMATICA ITAU",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLICACAO AUTOMATICA BRADESCO",
+    "chaveNormalizada": "APLICACAO AUTOMATICA BRADESCO",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "INVEST EASY",
+    "chaveNormalizada": "INVEST EASY",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "INVESTIMENTOS FINANCEIROS",
+    "chaveNormalizada": "INVESTIMENTOS FINANCEIROS",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLICACOES FINANCEIRAS CURTO PRAZO",
+    "chaveNormalizada": "APLICACAO FINANCEIRAS CURTO PRAZO",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "BANCO ITAU - TRUST RF",
+    "chaveNormalizada": "BANCO ITAU TRUST RF",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "TRUST RF",
+    "chaveNormalizada": "TRUST RF",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "FUNDO RF",
+    "chaveNormalizada": "FUNDO RF",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "FUNDOS DE RENDA FIXA",
+    "chaveNormalizada": "FUNDOS RENDA FIXA",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "OPERACOES COMPROMISSADAS",
+    "chaveNormalizada": "OPERACOES COMPROMISSADAS",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "COMPROMISSADAS",
+    "chaveNormalizada": "COMPROMISSADAS",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "TESOURO DIRETO",
+    "chaveNormalizada": "TESOURO DIRETO",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "TITULOS PUBLICOS",
+    "chaveNormalizada": "TITULOS PUBLICOS",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLICACAO DE LIQUIDEZ IMEDIATA",
+    "chaveNormalizada": "APLICACAO LIQUIDEZ IMEDIATA",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "EQUIVALENTES DE CAIXA",
+    "chaveNormalizada": "EQUIVALENTES CAIXA",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "FUNDO DI",
+    "chaveNormalizada": "FUNDO DI",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "FUNDOS DI",
+    "chaveNormalizada": "FUNDOS DI",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "CDB",
+    "chaveNormalizada": "CDB",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "RDB",
+    "chaveNormalizada": "RDB",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "APLICACAO CDB",
+    "chaveNormalizada": "APLICACAO CDB",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "CDB BANCARIO",
+    "chaveNormalizada": "CDB BANCARIO",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "CDB DI",
+    "chaveNormalizada": "CDB DI",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "CDB BRADESCO",
+    "chaveNormalizada": "CDB BRADESCO",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "CDB ITAU",
+    "chaveNormalizada": "CDB ITAU",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "LCI",
+    "chaveNormalizada": "LCI",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "LCA",
+    "chaveNormalizada": "LCA",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "LETRA DE CREDITO IMOBILIARIO",
+    "chaveNormalizada": "LETRA CREDITO IMOBILIARIO",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "LETRA DE CREDITO DO AGRONEGOCIO",
+    "chaveNormalizada": "LETRA CREDITO AGRONEGOCIO",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "TITULOS DE RENDA FIXA",
+    "chaveNormalizada": "TITULOS RENDA FIXA",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "RDB BANCARIO",
+    "chaveNormalizada": "RDB BANCARIO",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "CERTIFICADO DE DEPOSITO BANCARIO",
+    "chaveNormalizada": "CERTIFICADO DEPOSITO BANCARIO",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "CLIENTES",
+    "chaveNormalizada": "CLIENTES",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CLIENTES NACIONAIS",
+    "chaveNormalizada": "CLIENTES NACIONAL",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "DUPLICATAS A RECEBER",
+    "chaveNormalizada": "DUPLICATAS RECEBER",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CLIENTES A RECEBER",
+    "chaveNormalizada": "CLIENTES RECEBER",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CONTAS A RECEBER",
+    "chaveNormalizada": "CONTA RECEBER",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CLIENTES DIVERSOS",
+    "chaveNormalizada": "CLIENTES DIVERSOS",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "DUPLICATAS A RECEBER NACIONAIS",
+    "chaveNormalizada": "DUPLICATAS RECEBER NACIONAL",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CLIENTES NO PAIS",
+    "chaveNormalizada": "CLIENTES PAIS",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CLIENTES MERCADO INTERNO",
+    "chaveNormalizada": "CLIENTES MERCADO INTERNO",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "TITULOS A RECEBER",
+    "chaveNormalizada": "TITULOS RECEBER",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CONTAS A RECEBER DE CLIENTES",
+    "chaveNormalizada": "CONTA RECEBER CLIENTES",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CLIENTES POR SERVICOS",
+    "chaveNormalizada": "CLIENTES POR SERVICOS",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CLIENTES SERVICOS PRESTADOS",
+    "chaveNormalizada": "CLIENTES SERVICOS PRESTADOS",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "NOTAS A RECEBER",
+    "chaveNormalizada": "NOTAS RECEBER",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "FATURAS A RECEBER",
+    "chaveNormalizada": "FATURAS RECEBER",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "DUPLICATAS",
+    "chaveNormalizada": "DUPLICATAS",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "RECEBIVEIS",
+    "chaveNormalizada": "RECEBIVEIS",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CLIENTES A FATURAR",
+    "chaveNormalizada": "CLIENTES FATURAR",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "(-) PERDAS ESTIMADAS EM CREDITOS DE LIQUIDACAO DUVIDOSA",
+    "chaveNormalizada": "MENOS PERDAS ESTIMADAS CREDITOS LIQUIDACAO DUVIDOSA",
+    "codigoReduzido": "38"
+  },
+  {
+    "nomeOriginal": "(-) PECLD",
+    "chaveNormalizada": "MENOS PECLD",
+    "codigoReduzido": "38"
+  },
+  {
+    "nomeOriginal": "PECLD",
+    "chaveNormalizada": "PECLD",
+    "codigoReduzido": "38"
+  },
+  {
+    "nomeOriginal": "PERDAS ESTIMADAS COM CLIENTES",
+    "chaveNormalizada": "PERDAS ESTIMADAS COM CLIENTES",
+    "codigoReduzido": "38"
+  },
+  {
+    "nomeOriginal": "PROVISAO PARA CREDITOS DE LIQUIDACAO DUVIDOSA",
+    "chaveNormalizada": "PROVISAO P CREDITOS LIQUIDACAO DUVIDOSA",
+    "codigoReduzido": "37"
+  },
+  {
+    "nomeOriginal": "PCLD",
+    "chaveNormalizada": "PCLD",
+    "codigoReduzido": "37"
+  },
+  {
+    "nomeOriginal": "PDD",
+    "chaveNormalizada": "PDD",
+    "codigoReduzido": "37"
+  },
+  {
+    "nomeOriginal": "(-) PDD",
+    "chaveNormalizada": "MENOS PDD",
+    "codigoReduzido": "37"
+  },
+  {
+    "nomeOriginal": "CLIENTES EXTERIOR",
+    "chaveNormalizada": "CLIENTES EXTERIOR",
+    "codigoReduzido": "41"
+  },
+  {
+    "nomeOriginal": "DUPLICATAS A RECEBER EXTERIOR",
+    "chaveNormalizada": "DUPLICATAS RECEBER EXTERIOR",
+    "codigoReduzido": "41"
+  },
+  {
+    "nomeOriginal": "CLIENTES MERCADO EXTERNO",
+    "chaveNormalizada": "CLIENTES MERCADO EXTERNO",
+    "codigoReduzido": "41"
+  },
+  {
+    "nomeOriginal": "ESTOQUE DE MERCADORIAS",
+    "chaveNormalizada": "ESTOQUE MERCADORIAS",
+    "codigoReduzido": "46"
+  },
+  {
+    "nomeOriginal": "MERCADORIAS",
+    "chaveNormalizada": "MERCADORIAS",
+    "codigoReduzido": "46"
+  },
+  {
+    "nomeOriginal": "ESTOQUE",
+    "chaveNormalizada": "ESTOQUE",
+    "codigoReduzido": "46"
+  },
+  {
+    "nomeOriginal": "MATERIA PRIMA",
+    "chaveNormalizada": "MATERIA PRIMA",
+    "codigoReduzido": "47"
+  },
+  {
+    "nomeOriginal": "ESTOQUE DE MATERIA PRIMA",
+    "chaveNormalizada": "ESTOQUE MATERIA PRIMA",
+    "codigoReduzido": "47"
+  },
+  {
+    "nomeOriginal": "EMBALAGENS",
+    "chaveNormalizada": "EMBALAGENS",
+    "codigoReduzido": "48"
+  },
+  {
+    "nomeOriginal": "ESTOQUE DE EMBALAGENS",
+    "chaveNormalizada": "ESTOQUE EMBALAGENS",
+    "codigoReduzido": "48"
+  },
+  {
+    "nomeOriginal": "ESTOQUE DE PRODUTOS ACABADOS",
+    "chaveNormalizada": "ESTOQUE PRODUTOS ACABADOS",
+    "codigoReduzido": "50"
+  },
+  {
+    "nomeOriginal": "ALMOXARIFADO",
+    "chaveNormalizada": "ALMOXARIFADO",
+    "codigoReduzido": "51"
+  },
+  {
+    "nomeOriginal": "MATERIAIS DE CONSUMO EM ESTOQUE",
+    "chaveNormalizada": "MATERIAIS CONSUMO ESTOQUE",
+    "codigoReduzido": "51"
+  },
+  {
+    "nomeOriginal": "ICMS A COMPENSAR",
+    "chaveNormalizada": "ICMS COMPENSAR",
+    "codigoReduzido": "60"
+  },
+  {
+    "nomeOriginal": "ICMS CREDITO",
+    "chaveNormalizada": "ICMS CREDITO",
+    "codigoReduzido": "60"
+  },
+  {
+    "nomeOriginal": "CREDITO DE ICMS",
+    "chaveNormalizada": "CREDITO ICMS",
+    "codigoReduzido": "60"
+  },
+  {
+    "nomeOriginal": "ICMS S/ COMPRAS",
+    "chaveNormalizada": "ICMS S COMPRAS",
+    "codigoReduzido": "60"
+  },
+  {
+    "nomeOriginal": "IPI A COMPENSAR",
+    "chaveNormalizada": "IPI COMPENSAR",
+    "codigoReduzido": "61"
+  },
+  {
+    "nomeOriginal": "IPI CREDITO",
+    "chaveNormalizada": "IPI CREDITO",
+    "codigoReduzido": "61"
+  },
+  {
+    "nomeOriginal": "CREDITO DE IPI",
+    "chaveNormalizada": "CREDITO IPI",
+    "codigoReduzido": "61"
+  },
+  {
+    "nomeOriginal": "IPI S/ COMPRAS",
+    "chaveNormalizada": "IPI S COMPRAS",
+    "codigoReduzido": "61"
+  },
+  {
+    "nomeOriginal": "IRRF DE RESGATES DE APLICACOES FINANCEIR",
+    "chaveNormalizada": "IRRF RESGATES APLICACAO FINANCEIR",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF DE RESGATES DE APLICACOES FINANCEIRAS",
+    "chaveNormalizada": "IRRF RESGATES APLICACAO FINANCEIRAS",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF S/ APLICACOES FINANCEIRAS",
+    "chaveNormalizada": "IRRF S APLICACAO FINANCEIRAS",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF S/ APLICACAO FINANCEIRA",
+    "chaveNormalizada": "IRRF S APLICACAO FINANCEIRA",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF APLICACAO FINANCEIRA A COMPENSAR",
+    "chaveNormalizada": "IRRF APLICACAO FINANCEIRA COMPENSAR",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF S/ APLICACOES",
+    "chaveNormalizada": "IRRF S APLICACAO",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF APLICACOES FINANCEIRAS",
+    "chaveNormalizada": "IRRF APLICACAO FINANCEIRAS",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IR RETIDO S/ APLICACAO FINANCEIRA",
+    "chaveNormalizada": "IR RETIDO S APLICACAO FINANCEIRA",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF S/ RENDIMENTOS",
+    "chaveNormalizada": "IRRF S RENDIMENTOS",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF S/ RENDIMENTOS DE APLICACOES",
+    "chaveNormalizada": "IRRF S RENDIMENTOS APLICACAO",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF RETIDO S/ APLICACOES",
+    "chaveNormalizada": "IRRF RETIDO S APLICACAO",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF RETIDO - SERV. PRESTADOS",
+    "chaveNormalizada": "IRRF RETIDO SERVICOS PRESTADOS",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "IRRF RETIDO S/ SERVICOS PRESTADOS",
+    "chaveNormalizada": "IRRF RETIDO S SERVICOS PRESTADOS",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "IRRF A COMPENSAR",
+    "chaveNormalizada": "IRRF COMPENSAR",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "IRRF RETIDO",
+    "chaveNormalizada": "IRRF RETIDO",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "IRRF RETIDO NA FONTE",
+    "chaveNormalizada": "IRRF RETIDO FONTE",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "IRRF S/ SERVICOS",
+    "chaveNormalizada": "IRRF S SERVICOS",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "IRRF SERVICOS PRESTADOS",
+    "chaveNormalizada": "IRRF SERVICOS PRESTADOS",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "IRRF RETIDO POR CLIENTES",
+    "chaveNormalizada": "IRRF RETIDO POR CLIENTES",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "IRRF RETIDO S/ FATURAMENTO",
+    "chaveNormalizada": "IRRF RETIDO S FATURAMENTO",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "IR RETIDO",
+    "chaveNormalizada": "IR RETIDO",
+    "codigoReduzido": "63"
+  },
+  {
+    "nomeOriginal": "PIS S/ INSUMOS A COMPENSAR",
+    "chaveNormalizada": "PIS S INSUMOS COMPENSAR",
+    "codigoReduzido": "65"
+  },
+  {
+    "nomeOriginal": "PIS A RECUPERAR",
+    "chaveNormalizada": "PIS COMPENSAR",
+    "codigoReduzido": "65"
+  },
+  {
+    "nomeOriginal": "CREDITO DE PIS",
+    "chaveNormalizada": "CREDITO PIS",
+    "codigoReduzido": "65"
+  },
+  {
+    "nomeOriginal": "PIS NAO CUMULATIVO A RECUPERAR",
+    "chaveNormalizada": "PIS NAO CUMULATIVO COMPENSAR",
+    "codigoReduzido": "65"
+  },
+  {
+    "nomeOriginal": "PIS A RECUPERAR NAO CUMULATIVO",
+    "chaveNormalizada": "PIS COMPENSAR NAO CUMULATIVO",
+    "codigoReduzido": "65"
+  },
+  {
+    "nomeOriginal": "CREDITO PIS NAO CUMULATIVO",
+    "chaveNormalizada": "CREDITO PIS NAO CUMULATIVO",
+    "codigoReduzido": "65"
+  },
+  {
+    "nomeOriginal": "PIS S/ COMPRAS",
+    "chaveNormalizada": "PIS S COMPRAS",
+    "codigoReduzido": "65"
+  },
+  {
+    "nomeOriginal": "PIS CREDITO",
+    "chaveNormalizada": "PIS CREDITO",
+    "codigoReduzido": "65"
+  },
+  {
+    "nomeOriginal": "PIS S/ INSUMOS",
+    "chaveNormalizada": "PIS S INSUMOS",
+    "codigoReduzido": "65"
+  },
+  {
+    "nomeOriginal": "COFINS S/ INSUMOS A COMPENSAR",
+    "chaveNormalizada": "COFINS S INSUMOS COMPENSAR",
+    "codigoReduzido": "66"
+  },
+  {
+    "nomeOriginal": "COFINS A RECUPERAR",
+    "chaveNormalizada": "COFINS COMPENSAR",
+    "codigoReduzido": "66"
+  },
+  {
+    "nomeOriginal": "CREDITO DE COFINS",
+    "chaveNormalizada": "CREDITO COFINS",
+    "codigoReduzido": "66"
+  },
+  {
+    "nomeOriginal": "COFINS A RECUPERAR NAO CUMULATIVA",
+    "chaveNormalizada": "COFINS COMPENSAR NAO CUMULATIVA",
+    "codigoReduzido": "66"
+  },
+  {
+    "nomeOriginal": "CREDITO COFINS NAO CUMULATIVA",
+    "chaveNormalizada": "CREDITO COFINS NAO CUMULATIVA",
+    "codigoReduzido": "66"
+  },
+  {
+    "nomeOriginal": "COFINS S/ COMPRAS",
+    "chaveNormalizada": "COFINS S COMPRAS",
+    "codigoReduzido": "66"
+  },
+  {
+    "nomeOriginal": "COFINS CREDITO",
+    "chaveNormalizada": "COFINS CREDITO",
+    "codigoReduzido": "66"
+  },
+  {
+    "nomeOriginal": "COFINS S/ INSUMOS",
+    "chaveNormalizada": "COFINS S INSUMOS",
+    "codigoReduzido": "66"
+  },
+  {
+    "nomeOriginal": "PIS RETIDO - SERV. PRESTADOS",
+    "chaveNormalizada": "PIS RETIDO SERVICOS PRESTADOS",
+    "codigoReduzido": "67"
+  },
+  {
+    "nomeOriginal": "PIS RETIDO",
+    "chaveNormalizada": "PIS RETIDO",
+    "codigoReduzido": "67"
+  },
+  {
+    "nomeOriginal": "PIS RETIDO A COMPENSAR",
+    "chaveNormalizada": "PIS RETIDO COMPENSAR",
+    "codigoReduzido": "67"
+  },
+  {
+    "nomeOriginal": "PIS RETIDO S/ SERVICOS PRESTADOS",
+    "chaveNormalizada": "PIS RETIDO S SERVICOS PRESTADOS",
+    "codigoReduzido": "67"
+  },
+  {
+    "nomeOriginal": "PIS RETIDO NA FONTE",
+    "chaveNormalizada": "PIS RETIDO FONTE",
+    "codigoReduzido": "67"
+  },
+  {
+    "nomeOriginal": "PIS RETIDO POR CLIENTES",
+    "chaveNormalizada": "PIS RETIDO POR CLIENTES",
+    "codigoReduzido": "67"
+  },
+  {
+    "nomeOriginal": "COFINS RETIDO - SERV. PRESTADOS",
+    "chaveNormalizada": "COFINS RETIDO SERVICOS PRESTADOS",
+    "codigoReduzido": "68"
+  },
+  {
+    "nomeOriginal": "COFINS RETIDO",
+    "chaveNormalizada": "COFINS RETIDO",
+    "codigoReduzido": "68"
+  },
+  {
+    "nomeOriginal": "COFINS RETIDO A COMPENSAR",
+    "chaveNormalizada": "COFINS RETIDO COMPENSAR",
+    "codigoReduzido": "68"
+  },
+  {
+    "nomeOriginal": "COFINS RETIDA NA FONTE",
+    "chaveNormalizada": "COFINS RETIDO FONTE",
+    "codigoReduzido": "68"
+  },
+  {
+    "nomeOriginal": "COFINS RETIDO POR CLIENTES",
+    "chaveNormalizada": "COFINS RETIDO POR CLIENTES",
+    "codigoReduzido": "68"
+  },
+  {
+    "nomeOriginal": "CSLL RETIDO - SERV. PRESTADOS",
+    "chaveNormalizada": "CSLL RETIDO SERVICOS PRESTADOS",
+    "codigoReduzido": "69"
+  },
+  {
+    "nomeOriginal": "CSLL RETIDO",
+    "chaveNormalizada": "CSLL RETIDO",
+    "codigoReduzido": "69"
+  },
+  {
+    "nomeOriginal": "CSLL RETIDA A COMPENSAR",
+    "chaveNormalizada": "CSLL RETIDO COMPENSAR",
+    "codigoReduzido": "69"
+  },
+  {
+    "nomeOriginal": "CSLL RETIDA NA FONTE",
+    "chaveNormalizada": "CSLL RETIDO FONTE",
+    "codigoReduzido": "69"
+  },
+  {
+    "nomeOriginal": "CSLL RETIDO POR CLIENTES",
+    "chaveNormalizada": "CSLL RETIDO POR CLIENTES",
+    "codigoReduzido": "69"
+  },
+  {
+    "nomeOriginal": "IRPJ A COMPENSAR",
+    "chaveNormalizada": "IRPJ COMPENSAR",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "IRPJ ESTIMATIVA",
+    "chaveNormalizada": "IRPJ ESTIMATIVA",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "IRPJ PAGO POR ESTIMATIVA",
+    "chaveNormalizada": "IRPJ PAGO POR ESTIMATIVA",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "ANTECIPACAO DE IRPJ",
+    "chaveNormalizada": "ANTECIPACAO IRPJ",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "ANTECIPACOES DE IRPJ",
+    "chaveNormalizada": "ANTECIPACOES IRPJ",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "IRPJ PAGO ANTECIPADO",
+    "chaveNormalizada": "IRPJ PAGO ANTECIPADO",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "IRPJ ANTECIPADO",
+    "chaveNormalizada": "IRPJ ANTECIPADO",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "ANTECIP IRPJ",
+    "chaveNormalizada": "ANTECIP IRPJ",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "IRPJ RECOLHIDO POR ESTIMATIVA",
+    "chaveNormalizada": "IRPJ RECOLHIDO POR ESTIMATIVA",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "ESTIMATIVA DE IRPJ",
+    "chaveNormalizada": "ESTIMATIVA IRPJ",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "IRPJ ESTIMATIVA MENSAL",
+    "chaveNormalizada": "IRPJ ESTIMATIVA MENSAL",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "CSLL A COMPENSAR",
+    "chaveNormalizada": "CSLL COMPENSAR",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "CSLL ESTIMATIVA",
+    "chaveNormalizada": "CSLL ESTIMATIVA",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "CSLL PAGA POR ESTIMATIVA",
+    "chaveNormalizada": "CSLL PAGA POR ESTIMATIVA",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "ANTECIPACOES DE CSLL",
+    "chaveNormalizada": "ANTECIPACOES CSLL",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "CSLL PAGA ANTECIPADA",
+    "chaveNormalizada": "CSLL PAGA ANTECIPADA",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "CSLL ANTECIPADA",
+    "chaveNormalizada": "CSLL ANTECIPADA",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "ANTECIP CSLL",
+    "chaveNormalizada": "ANTECIP CSLL",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "CSLL RECOLHIDA POR ESTIMATIVA",
+    "chaveNormalizada": "CSLL RECOLHIDA POR ESTIMATIVA",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "ESTIMATIVA DE CSLL",
+    "chaveNormalizada": "ESTIMATIVA CSLL",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "CSLL ESTIMATIVA MENSAL",
+    "chaveNormalizada": "CSLL ESTIMATIVA MENSAL",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "SALDO NEGATIVO IRPJ",
+    "chaveNormalizada": "SALDO NEGATIVO IRPJ",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "IRPJ A RESTITUIR",
+    "chaveNormalizada": "IRPJ RESTITUIR",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "IRPJ EXERCICIOS ANTERIORES",
+    "chaveNormalizada": "IRPJ EXERCICIOS ANTERIORES",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "ANTECIP D/IRPJ N/COMPENSADAS N/PROPRIO E",
+    "chaveNormalizada": "ANTECIP D IRPJ N COMPENSADAS N PROPRIO",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "ANTECIPACOES DE IRPJ NAO COMPENSADAS NO PROPRIO EXERCICIO",
+    "chaveNormalizada": "ANTECIPACOES IRPJ NAO COMPENSADAS PROPRIO EXERCICIO",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "SALDO NEGATIVO CSLL",
+    "chaveNormalizada": "SALDO NEGATIVO CSLL",
+    "codigoReduzido": "83"
+  },
+  {
+    "nomeOriginal": "CSLL A RESTITUIR",
+    "chaveNormalizada": "CSLL RESTITUIR",
+    "codigoReduzido": "83"
+  },
+  {
+    "nomeOriginal": "CSLL EXERCICIOS ANTERIORES",
+    "chaveNormalizada": "CSLL EXERCICIOS ANTERIORES",
+    "codigoReduzido": "83"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO A FORNECEDORES",
+    "chaveNormalizada": "ADIANTAMENTO FORNECEDORES",
+    "codigoReduzido": "85"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTOS A FORNECEDORES NACIONAIS",
+    "chaveNormalizada": "ADIANTAMENTO FORNECEDORES NACIONAL",
+    "codigoReduzido": "85"
+  },
+  {
+    "nomeOriginal": "FORNECEDORES ADIANTAMENTOS",
+    "chaveNormalizada": "FORNECEDORES ADIANTAMENTO",
+    "codigoReduzido": "85"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO A FORNECEDORES EXTERIOR",
+    "chaveNormalizada": "ADIANTAMENTO FORNECEDORES EXTERIOR",
+    "codigoReduzido": "86"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO A FUNCIONARIOS",
+    "chaveNormalizada": "ADIANTAMENTO FUNCIONARIOS",
+    "codigoReduzido": "87"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO DE SALARIOS",
+    "chaveNormalizada": "ADIANTAMENTO SALARIOS",
+    "codigoReduzido": "87"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO SALARIAL",
+    "chaveNormalizada": "ADIANTAMENTO SALARIAL",
+    "codigoReduzido": "87"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO QUINZENAL",
+    "chaveNormalizada": "ADIANTAMENTO QUINZENAL",
+    "codigoReduzido": "87"
+  },
+  {
+    "nomeOriginal": "VALES A FUNCIONARIOS",
+    "chaveNormalizada": "VALES FUNCIONARIOS",
+    "codigoReduzido": "87"
+  },
+  {
+    "nomeOriginal": "DESPESAS A REEMBOLSAR",
+    "chaveNormalizada": "DESPESAS REEMBOLSAR",
+    "codigoReduzido": "88"
+  },
+  {
+    "nomeOriginal": "REEMBOLSO DE DESPESAS",
+    "chaveNormalizada": "REEMBOLSO DESPESAS",
+    "codigoReduzido": "88"
+  },
+  {
+    "nomeOriginal": "DESPESAS REEMBOLSAVEIS",
+    "chaveNormalizada": "DESPESAS REEMBOLSAVEIS",
+    "codigoReduzido": "88"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO PARA DESPESAS",
+    "chaveNormalizada": "ADIANTAMENTO P DESPESAS",
+    "codigoReduzido": "88"
+  },
+  {
+    "nomeOriginal": "VALORES A REEMBOLSAR",
+    "chaveNormalizada": "VALORES REEMBOLSAR",
+    "codigoReduzido": "88"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO DE VIAGENS",
+    "chaveNormalizada": "ADIANTAMENTO VIAGENS",
+    "codigoReduzido": "89"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO PARA VIAGENS",
+    "chaveNormalizada": "ADIANTAMENTO P VIAGENS",
+    "codigoReduzido": "89"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO DE 13 SALARIO",
+    "chaveNormalizada": "ADIANTAMENTO 13",
+    "codigoReduzido": "90"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO DE FERIAS",
+    "chaveNormalizada": "ADIANTAMENTO FERIAS",
+    "codigoReduzido": "91"
+  },
+  {
+    "nomeOriginal": "SEGUROS A APROPRIAR",
+    "chaveNormalizada": "SEGUROS APROPRIAR",
+    "codigoReduzido": "94"
+  },
+  {
+    "nomeOriginal": "SEGUROS A VENCER",
+    "chaveNormalizada": "SEGUROS VENCER",
+    "codigoReduzido": "94"
+  },
+  {
+    "nomeOriginal": "DESPESAS ANTECIPADAS COM SEGUROS",
+    "chaveNormalizada": "DESPESAS ANTECIPADAS COM SEGUROS",
+    "codigoReduzido": "94"
+  },
+  {
+    "nomeOriginal": "SEGUROS PAGOS ANTECIPADAMENTE",
+    "chaveNormalizada": "SEGUROS PAGOS ANTECIPADAMENTE",
+    "codigoReduzido": "94"
+  },
+  {
+    "nomeOriginal": "PREMIOS DE SEGUROS A APROPRIAR",
+    "chaveNormalizada": "PREMIOS SEGUROS APROPRIAR",
+    "codigoReduzido": "94"
+  },
+  {
+    "nomeOriginal": "DESPESAS ANTECIPADAS",
+    "chaveNormalizada": "DESPESAS ANTECIPADAS",
+    "codigoReduzido": "95"
+  },
+  {
+    "nomeOriginal": "DESPESAS PAGAS ANTECIPADAMENTE",
+    "chaveNormalizada": "DESPESAS PAGAS ANTECIPADAMENTE",
+    "codigoReduzido": "95"
+  },
+  {
+    "nomeOriginal": "DESPESAS DO EXERCICIO SEGUINTE",
+    "chaveNormalizada": "DESPESAS EXERCICIO SEGUINTE",
+    "codigoReduzido": "95"
+  },
+  {
+    "nomeOriginal": "EMPRESTIMO A FUNCIONARIOS",
+    "chaveNormalizada": "EMPRESTIMOS FUNCIONARIOS",
+    "codigoReduzido": "99"
+  },
+  {
+    "nomeOriginal": "MUTUO A RECEBER SOCIOS",
+    "chaveNormalizada": "MUTUO RECEBER SOCIOS",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "VALORES A RECEBER DE SOCIOS",
+    "chaveNormalizada": "VALORES RECEBER SOCIOS",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "VALORES A RECEBER PARTES RELACIONADAS",
+    "chaveNormalizada": "VALORES RECEBER PARTES RELACIONADAS",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "VLRS A REC SOC LIGADAS",
+    "chaveNormalizada": "VALORES REC SOC LIGADAS",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "VALORES A RECEBER SOCIEDADES LIGADAS",
+    "chaveNormalizada": "VALORES RECEBER SOCIEDADES LIGADAS",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "MUTUO ATIVO",
+    "chaveNormalizada": "MUTUO ATIVO",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "MUTUO A RECEBER",
+    "chaveNormalizada": "MUTUO RECEBER",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "MUTUOS A RECEBER",
+    "chaveNormalizada": "MUTUOS RECEBER",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "CREDITOS COM PESSOAS LIGADAS",
+    "chaveNormalizada": "CREDITOS COM PESSOAS LIGADAS",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "DEPOSITOS JUDICIAIS E RECURSAIS",
+    "chaveNormalizada": "DEPOSITOS JUDICIAIS RECURSAIS",
+    "codigoReduzido": "104"
+  },
+  {
+    "nomeOriginal": "DEPOSITO JUDICIAL",
+    "chaveNormalizada": "DEPOSITO JUDICIAL",
+    "codigoReduzido": "104"
+  },
+  {
+    "nomeOriginal": "DEPOSITO RECURSAL",
+    "chaveNormalizada": "DEPOSITO RECURSAL",
+    "codigoReduzido": "104"
+  },
+  {
+    "nomeOriginal": "DEPOSITOS RECURSAIS",
+    "chaveNormalizada": "DEPOSITOS RECURSAIS",
+    "codigoReduzido": "104"
+  },
+  {
+    "nomeOriginal": "DEPOSITOS JUDICIAIS TRABALHISTAS",
+    "chaveNormalizada": "DEPOSITOS JUDICIAIS TRABALHISTAS",
+    "codigoReduzido": "104"
+  },
+  {
+    "nomeOriginal": "DEPOSITOS JUDICIAIS FISCAIS",
+    "chaveNormalizada": "DEPOSITOS JUDICIAIS FISCAIS",
+    "codigoReduzido": "104"
+  },
+  {
+    "nomeOriginal": "BLOQUEIO JUDICIAL",
+    "chaveNormalizada": "BLOQUEIO JUDICIAL",
+    "codigoReduzido": "104"
+  },
+  {
+    "nomeOriginal": "BLOQUEIOS JUDICIAIS",
+    "chaveNormalizada": "BLOQUEIOS JUDICIAIS",
+    "codigoReduzido": "104"
+  },
+  {
+    "nomeOriginal": "PARTICIPACOES SOCIETARIAS",
+    "chaveNormalizada": "PARTICIPACOES SOCIETARIAS",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "INVESTIMENTOS EM CONTROLADAS",
+    "chaveNormalizada": "INVESTIMENTOS CONTROLADAS",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "PARTICIPACAO EM CONTROLADAS",
+    "chaveNormalizada": "PARTICIPACAO CONTROLADAS",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "PARTICIPACAO EM COLIGADAS",
+    "chaveNormalizada": "PARTICIPACAO COLIGADAS",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "INVESTIMENTOS EM COLIGADAS",
+    "chaveNormalizada": "INVESTIMENTOS COLIGADAS",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "QUOTAS DE PARTICIPACAO",
+    "chaveNormalizada": "QUOTAS PARTICIPACAO",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "ACOES DE OUTRAS EMPRESAS",
+    "chaveNormalizada": "ACOES OUTRAS EMPRESAS",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "INVESTIMENTOS PERMANENTES",
+    "chaveNormalizada": "INVESTIMENTOS PERMANENTES",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "PARTICIPACOES EM OUTRAS SOCIEDADES",
+    "chaveNormalizada": "PARTICIPACOES OUTRAS SOCIEDADES",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "TERRENOS",
+    "chaveNormalizada": "TERRENOS",
+    "codigoReduzido": "115"
+  },
+  {
+    "nomeOriginal": "TERRENO",
+    "chaveNormalizada": "TERRENO",
+    "codigoReduzido": "115"
+  },
+  {
+    "nomeOriginal": "EDIFICIOS",
+    "chaveNormalizada": "EDIFICIOS",
+    "codigoReduzido": "116"
+  },
+  {
+    "nomeOriginal": "IMOVEIS",
+    "chaveNormalizada": "IMOVEIS",
+    "codigoReduzido": "116"
+  },
+  {
+    "nomeOriginal": "PREDIOS",
+    "chaveNormalizada": "PREDIOS",
+    "codigoReduzido": "116"
+  },
+  {
+    "nomeOriginal": "EDIFICACOES",
+    "chaveNormalizada": "EDIFICACOES",
+    "codigoReduzido": "116"
+  },
+  {
+    "nomeOriginal": "CONSTRUCOES",
+    "chaveNormalizada": "CONSTRUCOES",
+    "codigoReduzido": "117"
+  },
+  {
+    "nomeOriginal": "MOVEIS E UTENSILIOS",
+    "chaveNormalizada": "MOVEIS UTENSILIOS",
+    "codigoReduzido": "118"
+  },
+  {
+    "nomeOriginal": "MOBILIARIO",
+    "chaveNormalizada": "MOBILIARIO",
+    "codigoReduzido": "118"
+  },
+  {
+    "nomeOriginal": "MOVEIS",
+    "chaveNormalizada": "MOVEIS",
+    "codigoReduzido": "118"
+  },
+  {
+    "nomeOriginal": "MOVEIS E EQUIPAMENTOS",
+    "chaveNormalizada": "MOVEIS EQUIPAMENTOS",
+    "codigoReduzido": "118"
+  },
+  {
+    "nomeOriginal": "MOBILIARIO E UTENSILIOS",
+    "chaveNormalizada": "MOBILIARIO UTENSILIOS",
+    "codigoReduzido": "118"
+  },
+  {
+    "nomeOriginal": "MAQUINAS, EQUIPAMENTOS E FERRAMENTAS",
+    "chaveNormalizada": "MAQUINAS EQUIPAMENTOS FERRAMENTAS",
+    "codigoReduzido": "119"
+  },
+  {
+    "nomeOriginal": "MAQUINAS E EQUIPAMENTOS",
+    "chaveNormalizada": "MAQUINAS EQUIPAMENTOS",
+    "codigoReduzido": "119"
+  },
+  {
+    "nomeOriginal": "MAQUINAS, APARELHOS E EQUIPAMENTOS",
+    "chaveNormalizada": "MAQUINAS APARELHOS EQUIPAMENTOS",
+    "codigoReduzido": "119"
+  },
+  {
+    "nomeOriginal": "EQUIPAMENTOS",
+    "chaveNormalizada": "EQUIPAMENTOS",
+    "codigoReduzido": "119"
+  },
+  {
+    "nomeOriginal": "APARELHOS E EQUIPAMENTOS",
+    "chaveNormalizada": "APARELHOS EQUIPAMENTOS",
+    "codigoReduzido": "119"
+  },
+  {
+    "nomeOriginal": "FERRAMENTAS",
+    "chaveNormalizada": "FERRAMENTAS",
+    "codigoReduzido": "572"
+  },
+  {
+    "nomeOriginal": "VEICULOS",
+    "chaveNormalizada": "VEICULOS",
+    "codigoReduzido": "120"
+  },
+  {
+    "nomeOriginal": "AUTOMOVEIS",
+    "chaveNormalizada": "AUTOMOVEIS",
+    "codigoReduzido": "120"
+  },
+  {
+    "nomeOriginal": "CARROS",
+    "chaveNormalizada": "CARROS",
+    "codigoReduzido": "120"
+  },
+  {
+    "nomeOriginal": "MOTOCICLETAS",
+    "chaveNormalizada": "MOTOCICLETAS",
+    "codigoReduzido": "120"
+  },
+  {
+    "nomeOriginal": "CAMINHOES",
+    "chaveNormalizada": "CAMINHOES",
+    "codigoReduzido": "120"
+  },
+  {
+    "nomeOriginal": "INSTALACOES",
+    "chaveNormalizada": "INSTALACOES",
+    "codigoReduzido": "121"
+  },
+  {
+    "nomeOriginal": "BENFEITORIAS EM PROPRIEDADE DE TERCEIROS",
+    "chaveNormalizada": "BENFEITORIAS PROPRIEDADE TERCEIROS",
+    "codigoReduzido": "122"
+  },
+  {
+    "nomeOriginal": "BENFEITORIAS EM IMOVEIS DE TERCEIROS",
+    "chaveNormalizada": "BENFEITORIAS IMOVEIS TERCEIROS",
+    "codigoReduzido": "122"
+  },
+  {
+    "nomeOriginal": "BENFEITORIAS",
+    "chaveNormalizada": "BENFEITORIAS",
+    "codigoReduzido": "122"
+  },
+  {
+    "nomeOriginal": "BENFEITORIAS EM IMOVEIS LOCADOS",
+    "chaveNormalizada": "BENFEITORIAS IMOVEIS LOCADOS",
+    "codigoReduzido": "122"
+  },
+  {
+    "nomeOriginal": "IMOBILIZADO EM ANDAMENTO",
+    "chaveNormalizada": "IMOBILIZADO ANDAMENTO",
+    "codigoReduzido": "123"
+  },
+  {
+    "nomeOriginal": "OBRAS EM ANDAMENTO",
+    "chaveNormalizada": "OBRAS ANDAMENTO",
+    "codigoReduzido": "123"
+  },
+  {
+    "nomeOriginal": "CONSTRUCOES EM ANDAMENTO",
+    "chaveNormalizada": "CONSTRUCOES ANDAMENTO",
+    "codigoReduzido": "123"
+  },
+  {
+    "nomeOriginal": "COMPUTADORES E PERIFERICOS",
+    "chaveNormalizada": "COMPUTADORES PERIFERICOS",
+    "codigoReduzido": "125"
+  },
+  {
+    "nomeOriginal": "EQUIPAMENTOS DE PROCESSAMENTO DE DADOS",
+    "chaveNormalizada": "EQUIPAMENTOS PROCESSAMENTO DADOS",
+    "codigoReduzido": "125"
+  },
+  {
+    "nomeOriginal": "HARDWARE",
+    "chaveNormalizada": "HARDWARE",
+    "codigoReduzido": "125"
+  },
+  {
+    "nomeOriginal": "COMPUTADORES",
+    "chaveNormalizada": "COMPUTADORES",
+    "codigoReduzido": "125"
+  },
+  {
+    "nomeOriginal": "NOTEBOOKS",
+    "chaveNormalizada": "NOTEBOOKS",
+    "codigoReduzido": "125"
+  },
+  {
+    "nomeOriginal": "EQUIPAMENTOS DE INFORMATICA",
+    "chaveNormalizada": "EQUIPAMENTOS TI",
+    "codigoReduzido": "125"
+  },
+  {
+    "nomeOriginal": "TELEFONES",
+    "chaveNormalizada": "TELEFONIA",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "APARELHOS CELULARES",
+    "chaveNormalizada": "APARELHOS CELULARES",
+    "codigoReduzido": "126"
+  },
+  {
+    "nomeOriginal": "APARELHOS TELEFONICOS",
+    "chaveNormalizada": "APARELHOS TELEFONICOS",
+    "codigoReduzido": "126"
+  },
+  {
+    "nomeOriginal": "(-) EDIFICIOS",
+    "chaveNormalizada": "MENOS EDIFICIOS",
+    "codigoReduzido": "128"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO EDIFICIOS",
+    "chaveNormalizada": "MENOS DEPRECIACAO EDIFICIOS",
+    "codigoReduzido": "128"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO ACUMULADA EDIFICIOS",
+    "chaveNormalizada": "MENOS DEPRECIACAO ACUMULADA EDIFICIOS",
+    "codigoReduzido": "128"
+  },
+  {
+    "nomeOriginal": "DEPRECIACAO ACUMULADA EDIFICIOS",
+    "chaveNormalizada": "DEPRECIACAO ACUMULADA EDIFICIOS",
+    "codigoReduzido": "128"
+  },
+  {
+    "nomeOriginal": "(-) IMOVEIS",
+    "chaveNormalizada": "MENOS IMOVEIS",
+    "codigoReduzido": "128"
+  },
+  {
+    "nomeOriginal": "(-) MOVEIS E UTENSILIOS",
+    "chaveNormalizada": "MENOS MOVEIS UTENSILIOS",
+    "codigoReduzido": "130"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO MOVEIS E UTENSILIOS",
+    "chaveNormalizada": "MENOS DEPRECIACAO MOVEIS UTENSILIOS",
+    "codigoReduzido": "130"
+  },
+  {
+    "nomeOriginal": "(-) MOVEIS E EQUIPAMENTOS",
+    "chaveNormalizada": "MENOS MOVEIS EQUIPAMENTOS",
+    "codigoReduzido": "130"
+  },
+  {
+    "nomeOriginal": "(-) MOBILIARIO",
+    "chaveNormalizada": "MENOS MOBILIARIO",
+    "codigoReduzido": "130"
+  },
+  {
+    "nomeOriginal": "(-) MOVEIS",
+    "chaveNormalizada": "MENOS MOVEIS",
+    "codigoReduzido": "130"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO ACUMULADA MOVEIS E UTENSILIOS",
+    "chaveNormalizada": "MENOS DEPRECIACAO ACUMULADA MOVEIS UTENSILIOS",
+    "codigoReduzido": "130"
+  },
+  {
+    "nomeOriginal": "DEPRECIACAO ACUMULADA MOVEIS E UTENSILIOS",
+    "chaveNormalizada": "DEPRECIACAO ACUMULADA MOVEIS UTENSILIOS",
+    "codigoReduzido": "130"
+  },
+  {
+    "nomeOriginal": "(-) DEPREC. MOVEIS",
+    "chaveNormalizada": "MENOS DEPRECIACAO MOVEIS",
+    "codigoReduzido": "130"
+  },
+  {
+    "nomeOriginal": "(-) MAQUINAS, EQUIPAMENTOS E FERRAMENTAS",
+    "chaveNormalizada": "MENOS MAQUINAS EQUIPAMENTOS FERRAMENTAS",
+    "codigoReduzido": "131"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO MAQUINAS E EQUIPAMENTOS",
+    "chaveNormalizada": "MENOS DEPRECIACAO MAQUINAS EQUIPAMENTOS",
+    "codigoReduzido": "131"
+  },
+  {
+    "nomeOriginal": "(-) DEPREC. MÁQUINAS, APARELHOS E EQUIP",
+    "chaveNormalizada": "MENOS DEPRECIACAO MAQUINAS APARELHOS EQUIPAMENTOS",
+    "codigoReduzido": "131"
+  },
+  {
+    "nomeOriginal": "() DEPREC. MAQUINAS, APARELHOS E EQUIPAM",
+    "chaveNormalizada": "MENOS DEPRECIACAO MAQUINAS APARELHOS EQUIPAM",
+    "codigoReduzido": "131"
+  },
+  {
+    "nomeOriginal": "(-) MAQUINAS, APARELHOS E EQUIPAMENTOS",
+    "chaveNormalizada": "MENOS MAQUINAS APARELHOS EQUIPAMENTOS",
+    "codigoReduzido": "131"
+  },
+  {
+    "nomeOriginal": "(-) MAQUINAS E EQUIPAMENTOS",
+    "chaveNormalizada": "MENOS MAQUINAS EQUIPAMENTOS",
+    "codigoReduzido": "131"
+  },
+  {
+    "nomeOriginal": "DEPRECIACAO ACUMULADA MAQUINAS E EQUIPAMENTOS",
+    "chaveNormalizada": "DEPRECIACAO ACUMULADA MAQUINAS EQUIPAMENTOS",
+    "codigoReduzido": "131"
+  },
+  {
+    "nomeOriginal": "(-) EQUIPAMENTOS",
+    "chaveNormalizada": "MENOS EQUIPAMENTOS",
+    "codigoReduzido": "131"
+  },
+  {
+    "nomeOriginal": "(-) VEICULOS",
+    "chaveNormalizada": "MENOS VEICULOS",
+    "codigoReduzido": "132"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO VEICULOS",
+    "chaveNormalizada": "MENOS DEPRECIACAO VEICULOS",
+    "codigoReduzido": "132"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO ACUMULADA VEICULOS",
+    "chaveNormalizada": "MENOS DEPRECIACAO ACUMULADA VEICULOS",
+    "codigoReduzido": "132"
+  },
+  {
+    "nomeOriginal": "DEPRECIACAO ACUMULADA VEICULOS",
+    "chaveNormalizada": "DEPRECIACAO ACUMULADA VEICULOS",
+    "codigoReduzido": "132"
+  },
+  {
+    "nomeOriginal": "(-) INSTALACOES",
+    "chaveNormalizada": "MENOS INSTALACOES",
+    "codigoReduzido": "133"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO INSTALACOES",
+    "chaveNormalizada": "MENOS DEPRECIACAO INSTALACOES",
+    "codigoReduzido": "133"
+  },
+  {
+    "nomeOriginal": "DEPRECIACAO ACUMULADA INSTALACOES",
+    "chaveNormalizada": "DEPRECIACAO ACUMULADA INSTALACOES",
+    "codigoReduzido": "133"
+  },
+  {
+    "nomeOriginal": "(-) BENFEITORIAS EM IMOVEIS DE TERCEIROS",
+    "chaveNormalizada": "MENOS BENFEITORIAS IMOVEIS TERCEIROS",
+    "codigoReduzido": "134"
+  },
+  {
+    "nomeOriginal": "(-) BENFEITORIAS",
+    "chaveNormalizada": "MENOS BENFEITORIAS",
+    "codigoReduzido": "134"
+  },
+  {
+    "nomeOriginal": "(-) AMORTIZACAO BENFEITORIAS",
+    "chaveNormalizada": "MENOS AMORTIZACAO BENFEITORIAS",
+    "codigoReduzido": "134"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO EQUIPAMENTOS DE INFORMATICA",
+    "chaveNormalizada": "MENOS DEPRECIACAO EQUIPAMENTOS TI",
+    "codigoReduzido": "136"
+  },
+  {
+    "nomeOriginal": "(-) DEPREC. COMPUTADORES E PERIFERICOS",
+    "chaveNormalizada": "MENOS DEPRECIACAO COMPUTADORES PERIFERICOS",
+    "codigoReduzido": "136"
+  },
+  {
+    "nomeOriginal": "(-) COMPUTADORES E PERIFERICOS",
+    "chaveNormalizada": "MENOS COMPUTADORES PERIFERICOS",
+    "codigoReduzido": "136"
+  },
+  {
+    "nomeOriginal": "(-) COMPUTADORES E PERIFFERICOS",
+    "chaveNormalizada": "MENOS COMPUTADORES PERIFFERICOS",
+    "codigoReduzido": "136"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO COMPUTADORES",
+    "chaveNormalizada": "MENOS DEPRECIACAO COMPUTADORES",
+    "codigoReduzido": "136"
+  },
+  {
+    "nomeOriginal": "(-) EQUIPAMENTOS DE INFORMATICA",
+    "chaveNormalizada": "MENOS EQUIPAMENTOS TI",
+    "codigoReduzido": "136"
+  },
+  {
+    "nomeOriginal": "DEPRECIACAO ACUMULADA COMPUTADORES E PERIFERICOS",
+    "chaveNormalizada": "DEPRECIACAO ACUMULADA COMPUTADORES PERIFERICOS",
+    "codigoReduzido": "136"
+  },
+  {
+    "nomeOriginal": "SOFTWARES",
+    "chaveNormalizada": "SOFTWARES",
+    "codigoReduzido": "190"
+  },
+  {
+    "nomeOriginal": "PROGRAMAS DE COMPUTADOR",
+    "chaveNormalizada": "PROGRAMAS COMPUTADOR",
+    "codigoReduzido": "190"
+  },
+  {
+    "nomeOriginal": "LICENCAS DE SOFTWARE",
+    "chaveNormalizada": "LICENCAS SOFTWARE",
+    "codigoReduzido": "190"
+  },
+  {
+    "nomeOriginal": "SOFTWARES E LICENCAS",
+    "chaveNormalizada": "SOFTWARES LICENCAS",
+    "codigoReduzido": "190"
+  },
+  {
+    "nomeOriginal": "DIREITOS DE USO DE SOFTWARE",
+    "chaveNormalizada": "DIREITOS USO SOFTWARE",
+    "codigoReduzido": "190"
+  },
+  {
+    "nomeOriginal": "INTANGIVEL",
+    "chaveNormalizada": "INTANGIVEL",
+    "codigoReduzido": "190"
+  },
+  {
+    "nomeOriginal": "(-) AMORTIZACAO SOFTWARE",
+    "chaveNormalizada": "MENOS AMORTIZACAO SOFTWARE",
+    "codigoReduzido": "195"
+  },
+  {
+    "nomeOriginal": "(-) AMORTIZACAO ACUMULADA SOFTWARE",
+    "chaveNormalizada": "MENOS AMORTIZACAO ACUMULADA SOFTWARE",
+    "codigoReduzido": "195"
+  },
+  {
+    "nomeOriginal": "(-) SOFTWARES",
+    "chaveNormalizada": "MENOS SOFTWARES",
+    "codigoReduzido": "195"
+  },
+  {
+    "nomeOriginal": "(-) SOFTWARE",
+    "chaveNormalizada": "MENOS SOFTWARE",
+    "codigoReduzido": "195"
+  },
+  {
+    "nomeOriginal": "(-) AMORTIZACAO SOFTWARES",
+    "chaveNormalizada": "MENOS AMORTIZACAO SOFTWARES",
+    "codigoReduzido": "195"
+  },
+  {
+    "nomeOriginal": "(-) AMORTIZACAO INTANGIVEL",
+    "chaveNormalizada": "MENOS AMORTIZACAO INTANGIVEL",
+    "codigoReduzido": "195"
+  },
+  {
+    "nomeOriginal": "(-) AMORTIZACAO ACUMULADA",
+    "chaveNormalizada": "MENOS AMORTIZACAO ACUMULADA",
+    "codigoReduzido": "195"
+  },
+  {
+    "nomeOriginal": "FORNECEDORES",
+    "chaveNormalizada": "FORNECEDORES",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "FORNECEDORES A PAGAR",
+    "chaveNormalizada": "FORNECEDORES PAGAR",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "FORNECEDORES NACIONAIS",
+    "chaveNormalizada": "FORNECEDORES NACIONAL",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "FORNECEDORES DIVERSOS",
+    "chaveNormalizada": "FORNECEDORES DIVERSOS",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "FORNECEDORES NACIONAIS A PAGAR",
+    "chaveNormalizada": "FORNECEDORES NACIONAL PAGAR",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "FORNECEDORES DE SERVICOS A PAGAR",
+    "chaveNormalizada": "FORNECEDORES SERVICOS PAGAR",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "PRESTADORES DE SERVICOS A PAGAR",
+    "chaveNormalizada": "PRESTADORES SERVICOS PAGAR",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "PROCESSAMENTOS DE DADOS",
+    "chaveNormalizada": "PROCESSAMENTOS DADOS",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "PROCESSAMENTO DE DADOS",
+    "chaveNormalizada": "PROCESSAMENTO DADOS",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "CONTABILIDADE",
+    "chaveNormalizada": "CONTABILIDADE",
+    "codigoReduzido": "546"
+  },
+  {
+    "nomeOriginal": "CONSULTORIA E ASSESSORIA",
+    "chaveNormalizada": "CONSULTORIA ASSESSORIA",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "FORNECEDORES EXTERIOR",
+    "chaveNormalizada": "FORNECEDORES EXTERIOR",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "DUPLICATAS A PAGAR",
+    "chaveNormalizada": "DUPLICATAS PAGAR",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "TITULOS A PAGAR",
+    "chaveNormalizada": "TITULOS PAGAR",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "HONORARIOS ADVOCATICIOS",
+    "chaveNormalizada": "HONORARIOS ADVOCATICIOS",
+    "codigoReduzido": "545"
+  },
+  {
+    "nomeOriginal": "HONORARIOS A PAGAR",
+    "chaveNormalizada": "HONORARIOS PAGAR",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "CONTAS A PAGAR DIVERSAS",
+    "chaveNormalizada": "CONTA PAGAR DIVERSAS",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "OUTRAS CONTAS A PAGAR",
+    "chaveNormalizada": "OUTRAS CONTA PAGAR",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "CARTAO DE CREDITO",
+    "chaveNormalizada": "CARTAO CREDITO",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "CARTOES DE CREDITO A PAGAR",
+    "chaveNormalizada": "CARTOES CREDITO PAGAR",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "CARTAO DE CREDITO - ITAU",
+    "chaveNormalizada": "CARTAO CREDITO ITAU",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "CARTAO DE CREDITO - CLARA",
+    "chaveNormalizada": "CARTAO CREDITO CLARA",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "CARTAO CORPORATIVO",
+    "chaveNormalizada": "CARTAO CORPORATIVO",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "CARTOES CORPORATIVOS",
+    "chaveNormalizada": "CARTOES CORPORATIVOS",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "CONTAS A PAGAR",
+    "chaveNormalizada": "CONTA PAGAR",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "OUTRAS OBRIGACOES",
+    "chaveNormalizada": "OUTRAS OBRIGACOES",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "OBRIGACOES A PAGAR",
+    "chaveNormalizada": "OBRIGACOES PAGAR",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "DESPESAS A PAGAR",
+    "chaveNormalizada": "DESPESAS PAGAR",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "OUTRAS CONTAS A PAGAR CURTO PRAZO",
+    "chaveNormalizada": "OUTRAS CONTA PAGAR CURTO PRAZO",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "CHEQUE ESPECIAL",
+    "chaveNormalizada": "CHEQUE ESPECIAL",
+    "codigoReduzido": "211"
+  },
+  {
+    "nomeOriginal": "CONTA GARANTIDA",
+    "chaveNormalizada": "CONTA GARANTIDA",
+    "codigoReduzido": "211"
+  },
+  {
+    "nomeOriginal": "LIMITE DE CREDITO",
+    "chaveNormalizada": "LIMITE CREDITO",
+    "codigoReduzido": "211"
+  },
+  {
+    "nomeOriginal": "SALDO DEVEDOR BANCARIO",
+    "chaveNormalizada": "SALDO DEVEDOR BANCARIO",
+    "codigoReduzido": "211"
+  },
+  {
+    "nomeOriginal": "EMPRESTIMOS BANCARIOS",
+    "chaveNormalizada": "EMPRESTIMOS BANCARIOS",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "EMPRESTIMOS E FINANCIAMENTOS",
+    "chaveNormalizada": "EMPRESTIMOS FINANCIAMENTOS",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "FINANCIAMENTOS BANCARIOS",
+    "chaveNormalizada": "FINANCIAMENTOS BANCARIOS",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "EMPRESTIMOS BANCARIOS A PAGAR",
+    "chaveNormalizada": "EMPRESTIMOS BANCARIOS PAGAR",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "EMPRESTIMOS",
+    "chaveNormalizada": "EMPRESTIMOS",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "FINANCIAMENTOS",
+    "chaveNormalizada": "FINANCIAMENTOS",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "CAPITAL DE GIRO",
+    "chaveNormalizada": "CAPITAL GIRO",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "EMPRESTIMO CAPITAL DE GIRO",
+    "chaveNormalizada": "EMPRESTIMOS CAPITAL GIRO",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "EMPRESTIMO BANCARIO",
+    "chaveNormalizada": "EMPRESTIMOS BANCARIO",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "SAFRA",
+    "chaveNormalizada": "SAFRA",
+    "codigoReduzido": "212"
+  },
+  {
+    "nomeOriginal": "LEASING A PAGAR",
+    "chaveNormalizada": "LEASING PAGAR",
+    "codigoReduzido": "214"
+  },
+  {
+    "nomeOriginal": "ARRENDAMENTO MERCANTIL",
+    "chaveNormalizada": "ARRENDAMENTO MERCANTIL",
+    "codigoReduzido": "214"
+  },
+  {
+    "nomeOriginal": "CONTRATOS A PAGAR - IFRS 16",
+    "chaveNormalizada": "CONTRATOS PAGAR IFRS 16",
+    "codigoReduzido": "214"
+  },
+  {
+    "nomeOriginal": "PASSIVO DE ARRENDAMENTO",
+    "chaveNormalizada": "PASSIVO ARRENDAMENTO",
+    "codigoReduzido": "214"
+  },
+  {
+    "nomeOriginal": "ARRENDAMENTOS A PAGAR",
+    "chaveNormalizada": "ARRENDAMENTOS PAGAR",
+    "codigoReduzido": "214"
+  },
+  {
+    "nomeOriginal": "OBRIGACOES DE ARRENDAMENTO",
+    "chaveNormalizada": "OBRIGACOES ARRENDAMENTO",
+    "codigoReduzido": "214"
+  },
+  {
+    "nomeOriginal": "(-) JUROS APROPRIAR - IFRS 16",
+    "chaveNormalizada": "MENOS JUROS APROPRIAR IFRS 16",
+    "codigoReduzido": "214"
+  },
+  {
+    "nomeOriginal": "SALARIOS A PAGAR",
+    "chaveNormalizada": "SALARIOS PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "ORDENADOS E SALARIOS A PAGAR",
+    "chaveNormalizada": "ORDENADOS SALARIOS PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "SALARIOS E ORDENADOS A PAGAR",
+    "chaveNormalizada": "SALARIOS ORDENADOS PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "ORDENADOS A PAGAR",
+    "chaveNormalizada": "ORDENADOS PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "FOLHA DE PAGAMENTO A PAGAR",
+    "chaveNormalizada": "FOLHA PAGAMENTO PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "REMUNERACOES A PAGAR",
+    "chaveNormalizada": "REMUNERACOES PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "BONUS A PAGAR",
+    "chaveNormalizada": "BONUS PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "PLR A PAGAR",
+    "chaveNormalizada": "PLR PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "GRATIFICACOES A PAGAR",
+    "chaveNormalizada": "GRATIFICACOES PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "PRO-LABORE A PAGAR",
+    "chaveNormalizada": "PRO LABORE PAGAR",
+    "codigoReduzido": "220"
+  },
+  {
+    "nomeOriginal": "PROLABORE A PAGAR",
+    "chaveNormalizada": "PROLABORE PAGAR",
+    "codigoReduzido": "220"
+  },
+  {
+    "nomeOriginal": "PROVISAO PARA FERIAS",
+    "chaveNormalizada": "PROVISAO P FERIAS",
+    "codigoReduzido": "221"
+  },
+  {
+    "nomeOriginal": "FERIAS A PAGAR",
+    "chaveNormalizada": "FERIAS PAGAR",
+    "codigoReduzido": "221"
+  },
+  {
+    "nomeOriginal": "PROVISAO PARA 13 SALARIO",
+    "chaveNormalizada": "PROVISAO P 13",
+    "codigoReduzido": "222"
+  },
+  {
+    "nomeOriginal": "13 SALARIO A PAGAR",
+    "chaveNormalizada": "13 PAGAR",
+    "codigoReduzido": "222"
+  },
+  {
+    "nomeOriginal": "PROVISAO INSS SOBRE FERIAS",
+    "chaveNormalizada": "PROVISAO INSS S FERIAS",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "PROVISAO FGTS SOBRE FERIAS",
+    "chaveNormalizada": "PROVISAO FGTS S FERIAS",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "PROVISAO INSS SOBRE 13O",
+    "chaveNormalizada": "PROVISAO INSS S 13",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "PROVISAO FGTS SOBRE 13O",
+    "chaveNormalizada": "PROVISAO FGTS S 13",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "ENCARGOS SOBRE FERIAS",
+    "chaveNormalizada": "ENCARGOS S FERIAS",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "ENCARGOS SOBRE 13 SALARIO",
+    "chaveNormalizada": "ENCARGOS S 13",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "PROVISAO ENCARGOS FERIAS",
+    "chaveNormalizada": "PROVISAO ENCARGOS FERIAS",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "PROVISAO ENCARGOS 13",
+    "chaveNormalizada": "PROVISAO ENCARGOS 13",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "FGTS A RECOLHER",
+    "chaveNormalizada": "FGTS PAGAR",
+    "codigoReduzido": "226"
+  },
+  {
+    "nomeOriginal": "FGTS S/ FOLHA A RECOLHER",
+    "chaveNormalizada": "FGTS S FOLHA PAGAR",
+    "codigoReduzido": "226"
+  },
+  {
+    "nomeOriginal": "FGTS S/ FOLHA DE PAGAMENTO",
+    "chaveNormalizada": "FGTS S FOLHA PAGAMENTO",
+    "codigoReduzido": "226"
+  },
+  {
+    "nomeOriginal": "INSS A RECOLHER",
+    "chaveNormalizada": "INSS PAGAR",
+    "codigoReduzido": "227"
+  },
+  {
+    "nomeOriginal": "INSS SOBRE FOLHA A RECOLHER",
+    "chaveNormalizada": "INSS S FOLHA PAGAR",
+    "codigoReduzido": "227"
+  },
+  {
+    "nomeOriginal": "INSS RETIDO A RECOLHER",
+    "chaveNormalizada": "INSS RETIDO PAGAR",
+    "codigoReduzido": "227"
+  },
+  {
+    "nomeOriginal": "INSS RETIDO",
+    "chaveNormalizada": "INSS RETIDO",
+    "codigoReduzido": "227"
+  },
+  {
+    "nomeOriginal": "INSS RETIDO DE TERCEIROS",
+    "chaveNormalizada": "INSS RETIDO TERCEIROS",
+    "codigoReduzido": "227"
+  },
+  {
+    "nomeOriginal": "INSS PATRONAL A RECOLHER",
+    "chaveNormalizada": "INSS PATRONAL PAGAR",
+    "codigoReduzido": "227"
+  },
+  {
+    "nomeOriginal": "INSS S/ FOLHA DE PAGAMENTO",
+    "chaveNormalizada": "INSS S FOLHA PAGAMENTO",
+    "codigoReduzido": "227"
+  },
+  {
+    "nomeOriginal": "CONTRIBUICAO SINDICAL A RECOLHER",
+    "chaveNormalizada": "CONTRIBUICAO SINDICAL PAGAR",
+    "codigoReduzido": "228"
+  },
+  {
+    "nomeOriginal": "ICMS A PAGAR",
+    "chaveNormalizada": "ICMS PAGAR",
+    "codigoReduzido": "233"
+  },
+  {
+    "nomeOriginal": "ICMS",
+    "chaveNormalizada": "ICMS",
+    "codigoReduzido": "233"
+  },
+  {
+    "nomeOriginal": "PIS A PAGAR",
+    "chaveNormalizada": "PIS PAGAR",
+    "codigoReduzido": "235"
+  },
+  {
+    "nomeOriginal": "PIS S/ EXTERIOR",
+    "chaveNormalizada": "PIS S EXTERIOR",
+    "codigoReduzido": "235"
+  },
+  {
+    "nomeOriginal": "PIS S/ FATURAMENTO A RECOLHER",
+    "chaveNormalizada": "PIS S FATURAMENTO PAGAR",
+    "codigoReduzido": "235"
+  },
+  {
+    "nomeOriginal": "PIS A RECOLHER S/ FATURAMENTO",
+    "chaveNormalizada": "PIS PAGAR S FATURAMENTO",
+    "codigoReduzido": "235"
+  },
+  {
+    "nomeOriginal": "COFINS A PAGAR",
+    "chaveNormalizada": "COFINS PAGAR",
+    "codigoReduzido": "236"
+  },
+  {
+    "nomeOriginal": "COFINS S/ EXTERIOR",
+    "chaveNormalizada": "COFINS S EXTERIOR",
+    "codigoReduzido": "236"
+  },
+  {
+    "nomeOriginal": "COFINS S/ FATURAMENTO A RECOLHER",
+    "chaveNormalizada": "COFINS S FATURAMENTO PAGAR",
+    "codigoReduzido": "236"
+  },
+  {
+    "nomeOriginal": "COFINS A RECOLHER S/ FATURAMENTO",
+    "chaveNormalizada": "COFINS PAGAR S FATURAMENTO",
+    "codigoReduzido": "236"
+  },
+  {
+    "nomeOriginal": "ISSQN A PAGAR",
+    "chaveNormalizada": "ISS PAGAR",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "ISS S/ EXTERIOR",
+    "chaveNormalizada": "ISS S EXTERIOR",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "ISS RETIDO A RECOLHER",
+    "chaveNormalizada": "ISS RETIDO PAGAR",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "ISS RETIDO",
+    "chaveNormalizada": "ISS RETIDO",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "ISS RETIDO DE TERCEIROS",
+    "chaveNormalizada": "ISS RETIDO TERCEIROS",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "ISS PROPRIO A RECOLHER",
+    "chaveNormalizada": "ISS PROPRIO PAGAR",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "IRRF A PAGAR",
+    "chaveNormalizada": "IRRF PAGAR",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF A PAGAR 1708",
+    "chaveNormalizada": "IRRF PAGAR 1708",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF S/ EXTERIOR",
+    "chaveNormalizada": "IRRF S EXTERIOR",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF 1708 A RECOLHER",
+    "chaveNormalizada": "IRRF 1708 PAGAR",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF S/ SALARIOS A RECOLHER",
+    "chaveNormalizada": "IRRF S SALARIOS PAGAR",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF S/ FOLHA A RECOLHER",
+    "chaveNormalizada": "IRRF S FOLHA PAGAR",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF RETIDO A RECOLHER",
+    "chaveNormalizada": "IRRF RETIDO PAGAR",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF",
+    "chaveNormalizada": "IRRF",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF 0561",
+    "chaveNormalizada": "IRRF 0561",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF 1708",
+    "chaveNormalizada": "IRRF 1708",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF 0588",
+    "chaveNormalizada": "IRRF 0588",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF S/ SERVICOS DE TERCEIROS",
+    "chaveNormalizada": "IRRF S SERVICOS TERCEIROS",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF RETIDO DE TERCEIROS",
+    "chaveNormalizada": "IRRF RETIDO TERCEIROS",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IR RETIDO A RECOLHER",
+    "chaveNormalizada": "IR RETIDO PAGAR",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF S/ FOLHA",
+    "chaveNormalizada": "IRRF S FOLHA",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF A PAGAR 0561",
+    "chaveNormalizada": "IRRF PAGAR 0561",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRPJ A PAGAR",
+    "chaveNormalizada": "IRPJ PAGAR",
+    "codigoReduzido": "239"
+  },
+  {
+    "nomeOriginal": "IMPOSTO DE RENDA A PAGAR",
+    "chaveNormalizada": "IMPOSTOS RENDA PAGAR",
+    "codigoReduzido": "239"
+  },
+  {
+    "nomeOriginal": "IRPJ A RECOLHER TRIMESTRAL",
+    "chaveNormalizada": "IRPJ PAGAR TRIMESTRAL",
+    "codigoReduzido": "239"
+  },
+  {
+    "nomeOriginal": "CSLL A PAGAR",
+    "chaveNormalizada": "CSLL PAGAR",
+    "codigoReduzido": "240"
+  },
+  {
+    "nomeOriginal": "CSLL A RECOLHER TRIMESTRAL",
+    "chaveNormalizada": "CSLL PAGAR TRIMESTRAL",
+    "codigoReduzido": "240"
+  },
+  {
+    "nomeOriginal": "CRF A RECOLHER",
+    "chaveNormalizada": "CRF PAGAR",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "PIS-COFINS-CSLL COD 5952",
+    "chaveNormalizada": "PIS COFINS CSLL COD 5952",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "PIS/COFINS/CSLL A RECOLHER",
+    "chaveNormalizada": "PIS COFINS CSLL PAGAR",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "PIS COFINS CSLL RETIDOS",
+    "chaveNormalizada": "PIS COFINS CSLL RETIDO",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "CSRF A RECOLHER",
+    "chaveNormalizada": "CSRF PAGAR",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "PCC A RECOLHER",
+    "chaveNormalizada": "PCC PAGAR",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "CRF",
+    "chaveNormalizada": "CRF",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "CSRF",
+    "chaveNormalizada": "CSRF",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "PCC",
+    "chaveNormalizada": "PCC",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "PIS/COFINS/CSLL RETIDOS A RECOLHER",
+    "chaveNormalizada": "PIS COFINS CSLL RETIDO PAGAR",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "CONTRIBUICOES RETIDAS",
+    "chaveNormalizada": "CONTRIBUICAO RETIDO",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "RETENCOES A RECOLHER",
+    "chaveNormalizada": "RETENCOES PAGAR",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "CSRF 5952",
+    "chaveNormalizada": "CSRF 5952",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "PIS COFINS CSLL 5952",
+    "chaveNormalizada": "PIS COFINS CSLL 5952",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "SIMPLES NACIONAL A RECOLHER",
+    "chaveNormalizada": "SIMPLES NACIONAL PAGAR",
+    "codigoReduzido": "242"
+  },
+  {
+    "nomeOriginal": "DAS A PAGAR",
+    "chaveNormalizada": "PAGAR",
+    "codigoReduzido": "242"
+  },
+  {
+    "nomeOriginal": "SIMPLES",
+    "chaveNormalizada": "SIMPLES",
+    "codigoReduzido": "242"
+  },
+  {
+    "nomeOriginal": "PROVISAO PARA IMPOSTO DE RENDA",
+    "chaveNormalizada": "PROVISAO P IMPOSTOS RENDA",
+    "codigoReduzido": "9239"
+  },
+  {
+    "nomeOriginal": "PROVISAO P/ CONTRIBUICAO SOCIAL S/ LUCRO",
+    "chaveNormalizada": "PROVISAO P CSLL S LUCRO",
+    "codigoReduzido": "9240"
+  },
+  {
+    "nomeOriginal": "PARCELAMENTO",
+    "chaveNormalizada": "PARCELAMENTO",
+    "codigoReduzido": "230"
+  },
+  {
+    "nomeOriginal": "PARCELAMENTOS",
+    "chaveNormalizada": "PARCELAMENTOS",
+    "codigoReduzido": "230"
+  },
+  {
+    "nomeOriginal": "PARCELAMENTO SIMPLIFICADO",
+    "chaveNormalizada": "PARCELAMENTO SIMPLIFICADO",
+    "codigoReduzido": "230"
+  },
+  {
+    "nomeOriginal": "PARCELAMENTO RFB",
+    "chaveNormalizada": "PARCELAMENTO RFB",
+    "codigoReduzido": "230"
+  },
+  {
+    "nomeOriginal": "PARCELAMENTO PGFN",
+    "chaveNormalizada": "PARCELAMENTO PGFN",
+    "codigoReduzido": "230"
+  },
+  {
+    "nomeOriginal": "REFIS",
+    "chaveNormalizada": "REFIS",
+    "codigoReduzido": "230"
+  },
+  {
+    "nomeOriginal": "PERT",
+    "chaveNormalizada": "PERT",
+    "codigoReduzido": "230"
+  },
+  {
+    "nomeOriginal": "PARCELAMENTO INSS",
+    "chaveNormalizada": "PARCELAMENTO INSS",
+    "codigoReduzido": "230"
+  },
+  {
+    "nomeOriginal": "PARCELAMENTO FEDERAL",
+    "chaveNormalizada": "PARCELAMENTO FEDERAL",
+    "codigoReduzido": "230"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTOS DE CLIENTES",
+    "chaveNormalizada": "ADIANTAMENTO CLIENTES",
+    "codigoReduzido": "244"
+  },
+  {
+    "nomeOriginal": "CLIENTES ADIANTAMENTOS",
+    "chaveNormalizada": "CLIENTES ADIANTAMENTO",
+    "codigoReduzido": "244"
+  },
+  {
+    "nomeOriginal": "RECEBIMENTOS ANTECIPADOS",
+    "chaveNormalizada": "RECEBIMENTOS ANTECIPADOS",
+    "codigoReduzido": "244"
+  },
+  {
+    "nomeOriginal": "ANTECIPACAO DE CLIENTES",
+    "chaveNormalizada": "ANTECIPACAO CLIENTES",
+    "codigoReduzido": "244"
+  },
+  {
+    "nomeOriginal": "COMISSOES A PAGAR",
+    "chaveNormalizada": "COMISSOES PAGAR",
+    "codigoReduzido": "245"
+  },
+  {
+    "nomeOriginal": "ALUGUEL A PAGAR",
+    "chaveNormalizada": "ALUGUEL PAGAR",
+    "codigoReduzido": "246"
+  },
+  {
+    "nomeOriginal": "DIVIDENDOS A PAGAR",
+    "chaveNormalizada": "DIVIDENDOS PAGAR",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "LUCROS A DISTRIBUIR",
+    "chaveNormalizada": "LUCRO DISTRIBUIR",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "LUCROS A PAGAR",
+    "chaveNormalizada": "LUCRO PAGAR",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "DIVIDENDOS PROPOSTOS",
+    "chaveNormalizada": "DIVIDENDOS PROPOSTOS",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "LUCROS A PAGAR SOCIOS",
+    "chaveNormalizada": "LUCRO PAGAR SOCIOS",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "PROVISÃO TRABALHISTAS - PJ",
+    "chaveNormalizada": "PROVISAO TRABALHISTAS PJ",
+    "codigoReduzido": "249"
+  },
+  {
+    "nomeOriginal": "PROVISAO CONTINGENCIAS TRABALHISTAS",
+    "chaveNormalizada": "PROVISAO CONTINGENCIAS TRABALHISTAS",
+    "codigoReduzido": "249"
+  },
+  {
+    "nomeOriginal": "CONTINGENCIAS TRABALHISTAS",
+    "chaveNormalizada": "CONTINGENCIAS TRABALHISTAS",
+    "codigoReduzido": "249"
+  },
+  {
+    "nomeOriginal": "PROVISAO PARA PROCESSOS",
+    "chaveNormalizada": "PROVISAO P PROCESSOS",
+    "codigoReduzido": "249"
+  },
+  {
+    "nomeOriginal": "PROVISAO CONTINGENCIAS CIVEIS",
+    "chaveNormalizada": "PROVISAO CONTINGENCIAS CIVEIS",
+    "codigoReduzido": "249"
+  },
+  {
+    "nomeOriginal": "PROVISAO CONTINGENCIAS FISCAIS",
+    "chaveNormalizada": "PROVISAO CONTINGENCIAS FISCAIS",
+    "codigoReduzido": "249"
+  },
+  {
+    "nomeOriginal": "RECEITA DIFERIDA",
+    "chaveNormalizada": "RECEITA DIFERIDA",
+    "codigoReduzido": "250"
+  },
+  {
+    "nomeOriginal": "RECEITAS DIFERIDAS",
+    "chaveNormalizada": "RECEITA DIFERIDAS",
+    "codigoReduzido": "250"
+  },
+  {
+    "nomeOriginal": "RECEITA A APROPRIAR",
+    "chaveNormalizada": "RECEITA APROPRIAR",
+    "codigoReduzido": "250"
+  },
+  {
+    "nomeOriginal": "DIFERIMENTO DE RECEITA",
+    "chaveNormalizada": "DIFERIMENTO RECEITA",
+    "codigoReduzido": "250"
+  },
+  {
+    "nomeOriginal": "DIFEREIMENTO DE RECEITA - RECEITA SERVIÇ",
+    "chaveNormalizada": "DIFEREIMENTO RECEITA RECEITA SERVIC",
+    "codigoReduzido": "250"
+  },
+  {
+    "nomeOriginal": "RECEITA ANTECIPADA",
+    "chaveNormalizada": "RECEITA ANTECIPADA",
+    "codigoReduzido": "250"
+  },
+  {
+    "nomeOriginal": "FATURAMENTO ANTECIPADO",
+    "chaveNormalizada": "FATURAMENTO ANTECIPADO",
+    "codigoReduzido": "250"
+  },
+  {
+    "nomeOriginal": "MUTUO COM SOCIOS",
+    "chaveNormalizada": "MUTUO COM SOCIOS",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "CONTA CORRENTE SOCIOS",
+    "chaveNormalizada": "CC SOCIOS",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "SOCIOS C/C",
+    "chaveNormalizada": "SOCIOS CC",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "MUTUO SOCIOS",
+    "chaveNormalizada": "MUTUO SOCIOS",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "MUTUO",
+    "chaveNormalizada": "MUTUO",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "MUTUO A PAGAR",
+    "chaveNormalizada": "MUTUO PAGAR",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "MUTUOS A PAGAR",
+    "chaveNormalizada": "MUTUOS PAGAR",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "MUTUO PASSIVO",
+    "chaveNormalizada": "MUTUO PASSIVO",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "SOCIOS A PAGAR",
+    "chaveNormalizada": "SOCIOS PAGAR",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "MUTUO COM CONTROLADORA",
+    "chaveNormalizada": "MUTUO COM CONTROLADORA",
+    "codigoReduzido": "255"
+  },
+  {
+    "nomeOriginal": "CONTROLADORA A PAGAR",
+    "chaveNormalizada": "CONTROLADORA PAGAR",
+    "codigoReduzido": "255"
+  },
+  {
+    "nomeOriginal": "EMPRESTIMO CONTROLADORA",
+    "chaveNormalizada": "EMPRESTIMOS CONTROLADORA",
+    "codigoReduzido": "255"
+  },
+  {
+    "nomeOriginal": "SOCIEDADES LIGADAS A PAGAR",
+    "chaveNormalizada": "SOCIEDADES LIGADAS PAGAR",
+    "codigoReduzido": "256"
+  },
+  {
+    "nomeOriginal": "COLIGADAS A PAGAR",
+    "chaveNormalizada": "COLIGADAS PAGAR",
+    "codigoReduzido": "256"
+  },
+  {
+    "nomeOriginal": "CAPITAL SOCIAL - NACIONAL",
+    "chaveNormalizada": "CAPITAL SOCIAL NACIONAL",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "CAPITAL SOCIAL - INTERNACIONAL",
+    "chaveNormalizada": "CAPITAL SOCIAL INTERNACIONAL",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "CAPITAL SOCIAL",
+    "chaveNormalizada": "CAPITAL SOCIAL",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "CAPITAL SOCIAL INTEGRALIZADO",
+    "chaveNormalizada": "CAPITAL SOCIAL INTEGRALIZADO",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "CAPITAL SOCIAL SUBSCRITO",
+    "chaveNormalizada": "CAPITAL SOCIAL SUBSCRITO",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "COTAS - EXTERIOR",
+    "chaveNormalizada": "COTAS EXTERIOR",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "COTAS - NACIONAL",
+    "chaveNormalizada": "COTAS NACIONAL",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "COTAS DE CAPITAL",
+    "chaveNormalizada": "COTAS CAPITAL",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "QUOTAS DE CAPITAL",
+    "chaveNormalizada": "QUOTAS CAPITAL",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "CAPITAL",
+    "chaveNormalizada": "CAPITAL",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "CAPITAL REALIZADO",
+    "chaveNormalizada": "CAPITAL REALIZADO",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "CAPITAL SOCIAL REALIZADO",
+    "chaveNormalizada": "CAPITAL SOCIAL REALIZADO",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "QUOTAS",
+    "chaveNormalizada": "QUOTAS",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "COTAS",
+    "chaveNormalizada": "COTAS",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "CAPITAL A INTEGRALIZAR - INTERNACIONAL",
+    "chaveNormalizada": "CAPITAL INTEGRALIZAR INTERNACIONAL",
+    "codigoReduzido": "268"
+  },
+  {
+    "nomeOriginal": "CAPITAL A INTEGRALIZAR",
+    "chaveNormalizada": "CAPITAL INTEGRALIZAR",
+    "codigoReduzido": "268"
+  },
+  {
+    "nomeOriginal": "CAPITAL A REALIZAR",
+    "chaveNormalizada": "CAPITAL REALIZAR",
+    "codigoReduzido": "268"
+  },
+  {
+    "nomeOriginal": "(-) CAPITAL A INTEGRALIZAR",
+    "chaveNormalizada": "MENOS CAPITAL INTEGRALIZAR",
+    "codigoReduzido": "268"
+  },
+  {
+    "nomeOriginal": "CAPITAL SOCIAL A INTEGRALIZAR",
+    "chaveNormalizada": "CAPITAL SOCIAL INTEGRALIZAR",
+    "codigoReduzido": "268"
+  },
+  {
+    "nomeOriginal": "(-) CAPITAL A REALIZAR",
+    "chaveNormalizada": "MENOS CAPITAL REALIZAR",
+    "codigoReduzido": "268"
+  },
+  {
+    "nomeOriginal": "CAPITAL NAO INTEGRALIZADO",
+    "chaveNormalizada": "CAPITAL NAO INTEGRALIZADO",
+    "codigoReduzido": "268"
+  },
+  {
+    "nomeOriginal": "CAPITAL A INTEGRALIZAR NACIONAL",
+    "chaveNormalizada": "CAPITAL INTEGRALIZAR NACIONAL",
+    "codigoReduzido": "268"
+  },
+  {
+    "nomeOriginal": "AFAC",
+    "chaveNormalizada": "AFAC",
+    "codigoReduzido": "274"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO PARA FUTURO AUMENTO DE CAPITAL",
+    "chaveNormalizada": "ADIANTAMENTO P FUTURO AUMENTO CAPITAL",
+    "codigoReduzido": "274"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTO FUTURO AUMENTO CAPITAL",
+    "chaveNormalizada": "ADIANTAMENTO FUTURO AUMENTO CAPITAL",
+    "codigoReduzido": "274"
+  },
+  {
+    "nomeOriginal": "RESERVAS DE LUCROS",
+    "chaveNormalizada": "RESERVA LUCRO",
+    "codigoReduzido": "281"
+  },
+  {
+    "nomeOriginal": "RESERVA DE LUCROS A DESTINAR",
+    "chaveNormalizada": "RESERVA LUCRO DESTINAR",
+    "codigoReduzido": "281"
+  },
+  {
+    "nomeOriginal": "LUCROS A DESTINAR",
+    "chaveNormalizada": "LUCRO DESTINAR",
+    "codigoReduzido": "281"
+  },
+  {
+    "nomeOriginal": "RESULTADO DO EXERCICIO",
+    "chaveNormalizada": "RESULTADO EXERCICIO",
+    "codigoReduzido": "284"
+  },
+  {
+    "nomeOriginal": "LUCRO DO EXERCICIO",
+    "chaveNormalizada": "LUCRO EXERCICIO",
+    "codigoReduzido": "284"
+  },
+  {
+    "nomeOriginal": "LUCRO LIQUIDO DO EXERCICIO",
+    "chaveNormalizada": "LUCRO LIQUIDO EXERCICIO",
+    "codigoReduzido": "284"
+  },
+  {
+    "nomeOriginal": "RESULTADO DO PERIODO",
+    "chaveNormalizada": "RESULTADO PERIODO",
+    "codigoReduzido": "284"
+  },
+  {
+    "nomeOriginal": "APURACAO DO RESULTADO",
+    "chaveNormalizada": "APURACAO RESULTADO",
+    "codigoReduzido": "284"
+  },
+  {
+    "nomeOriginal": "LUCRO DO PERIODO",
+    "chaveNormalizada": "LUCRO PERIODO",
+    "codigoReduzido": "284"
+  },
+  {
+    "nomeOriginal": "(-) PREJUIZO DO EXERCICIO",
+    "chaveNormalizada": "MENOS PREJUIZO EXERCICIO",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "LUCROS OU PREJUIZOS ACUMULADOS",
+    "chaveNormalizada": "LUCRO OU PREJUIZO ACUMULADOS",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "PREJUIZOS ACUMULADOS",
+    "chaveNormalizada": "PREJUIZO ACUMULADOS",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "LUCROS/PREJUIZOS ACUMULADOS",
+    "chaveNormalizada": "LUCRO PREJUIZO ACUMULADOS",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "AJUSTES DE EXERCICIOS ANTERIORES",
+    "chaveNormalizada": "AJUSTES EXERCICIOS ANTERIORES",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "(-) AJUSTE EXERCICIOS ANTERIORES",
+    "chaveNormalizada": "MENOS AJUSTE EXERCICIOS ANTERIORES",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "(-) AJUSTE EXERCICIOAS ANTERIORES",
+    "chaveNormalizada": "MENOS AJUSTE EXERCICIOAS ANTERIORES",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "AJUSTE EXERCICIOS ANTERIORES",
+    "chaveNormalizada": "AJUSTE EXERCICIOS ANTERIORES",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "LUCROS ACUMULADOS",
+    "chaveNormalizada": "LUCRO ACUMULADOS",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "(-) PREJUIZOS ACUMULADOS",
+    "chaveNormalizada": "MENOS PREJUIZO ACUMULADOS",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "VENDA DE PRODUTOS",
+    "chaveNormalizada": "VENDA PRODUTOS",
+    "codigoReduzido": "300"
+  },
+  {
+    "nomeOriginal": "VENDAS DE PRODUTOS",
+    "chaveNormalizada": "VENDAS PRODUTOS",
+    "codigoReduzido": "300"
+  },
+  {
+    "nomeOriginal": "VENDA DE MERCADORIAS",
+    "chaveNormalizada": "VENDA MERCADORIAS",
+    "codigoReduzido": "302"
+  },
+  {
+    "nomeOriginal": "VENDAS DE MERCADORIAS",
+    "chaveNormalizada": "VENDAS MERCADORIAS",
+    "codigoReduzido": "302"
+  },
+  {
+    "nomeOriginal": "REVENDA DE MERCADORIAS",
+    "chaveNormalizada": "REVENDA MERCADORIAS",
+    "codigoReduzido": "302"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS",
+    "chaveNormalizada": "SERVICOS PRESTADOS",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS - 3%",
+    "chaveNormalizada": "SERVICOS PRESTADOS 3 PCT",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS - 2%",
+    "chaveNormalizada": "SERVICOS PRESTADOS 2 PCT",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS - 5%",
+    "chaveNormalizada": "SERVICOS PRESTADOS 5 PCT",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RECEITA DE SERVICOS",
+    "chaveNormalizada": "RECEITA SERVICOS",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RECEITA COM SERVICOS PRESTADOS",
+    "chaveNormalizada": "RECEITA COM SERVICOS PRESTADOS",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "PRESTACAO DE SERVICOS",
+    "chaveNormalizada": "PRESTACAO SERVICOS",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RECEITA BRUTA DE SERVICOS",
+    "chaveNormalizada": "RECEITA BRUTA SERVICOS",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RECEITA DE PRESTACAO DE SERVICOS",
+    "chaveNormalizada": "RECEITA PRESTACAO SERVICOS",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS NO PAIS",
+    "chaveNormalizada": "SERVICOS PRESTADOS PAIS",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "FATURAMENTO DE SERVICOS",
+    "chaveNormalizada": "FATURAMENTO SERVICOS",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RECEITA OPERACIONAL BRUTA",
+    "chaveNormalizada": "RECEITA OPERACIONAL BRUTA",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS EXTERIOR",
+    "chaveNormalizada": "SERVICOS PRESTADOS EXTERIOR",
+    "codigoReduzido": "310"
+  },
+  {
+    "nomeOriginal": "RECEITA DE SERVICOS - EXTERIOR",
+    "chaveNormalizada": "RECEITA SERVICOS EXTERIOR",
+    "codigoReduzido": "310"
+  },
+  {
+    "nomeOriginal": "EXPORTACAO DE SERVICOS",
+    "chaveNormalizada": "EXPORTACAO SERVICOS",
+    "codigoReduzido": "310"
+  },
+  {
+    "nomeOriginal": "ICMS S/ VENDAS",
+    "chaveNormalizada": "ICMS S VENDAS",
+    "codigoReduzido": "317"
+  },
+  {
+    "nomeOriginal": "(-) PIS S/ FATURAMENTO",
+    "chaveNormalizada": "MENOS PIS S FATURAMENTO",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "PIS SOBRE SERVICO",
+    "chaveNormalizada": "PIS S SERVICOS",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "PIS SOBRE VENDAS",
+    "chaveNormalizada": "PIS S VENDAS",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "PIS S/ RECEITA",
+    "chaveNormalizada": "PIS S RECEITA",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "PIS S/ FATURAMENTO",
+    "chaveNormalizada": "PIS S FATURAMENTO",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "PIS FATURAMENTO",
+    "chaveNormalizada": "PIS FATURAMENTO",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "PIS S/ RECEITA BRUTA",
+    "chaveNormalizada": "PIS S RECEITA BRUTA",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "(-) PIS",
+    "chaveNormalizada": "MENOS PIS",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "(-) COFINS S/ FATURAMENTO",
+    "chaveNormalizada": "MENOS COFINS S FATURAMENTO",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "COFINS SOBRE SERVICO",
+    "chaveNormalizada": "COFINS S SERVICOS",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "COFINS SOBRE VENDAS",
+    "chaveNormalizada": "COFINS S VENDAS",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "COFINS S/ RECEITA",
+    "chaveNormalizada": "COFINS S RECEITA",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "COFINS S/ FATURAMENTO",
+    "chaveNormalizada": "COFINS S FATURAMENTO",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "COFINS FATURAMENTO",
+    "chaveNormalizada": "COFINS FATURAMENTO",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "COFINS S/ RECEITA BRUTA",
+    "chaveNormalizada": "COFINS S RECEITA BRUTA",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "(-) COFINS",
+    "chaveNormalizada": "MENOS COFINS",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "(-) ISS",
+    "chaveNormalizada": "MENOS ISS",
+    "codigoReduzido": "321"
+  },
+  {
+    "nomeOriginal": "ISSQN SOBRE SERVICO",
+    "chaveNormalizada": "ISS S SERVICOS",
+    "codigoReduzido": "321"
+  },
+  {
+    "nomeOriginal": "ISSQN S/ FATURAMENTO",
+    "chaveNormalizada": "ISS S FATURAMENTO",
+    "codigoReduzido": "321"
+  },
+  {
+    "nomeOriginal": "ISS S/ RECEITA",
+    "chaveNormalizada": "ISS S RECEITA",
+    "codigoReduzido": "321"
+  },
+  {
+    "nomeOriginal": "ISS PROPRIO",
+    "chaveNormalizada": "ISS PROPRIO",
+    "codigoReduzido": "321"
+  },
+  {
+    "nomeOriginal": "SIMPLES NACIONAL S/ FATURAMENTO",
+    "chaveNormalizada": "SIMPLES NACIONAL S FATURAMENTO",
+    "codigoReduzido": "323"
+  },
+  {
+    "nomeOriginal": "RENDAS DE APLICAÇÕES EM FUNDOS DE INVEST",
+    "chaveNormalizada": "RENDAS APLICACAO FUNDOS INVEST",
+    "codigoReduzido": "329"
+  },
+  {
+    "nomeOriginal": "RENDAS DE APLICACOES EM FUNDOS DE INVESTIMENTO",
+    "chaveNormalizada": "RENDAS APLICACAO FUNDOS INVESTIMENTO",
+    "codigoReduzido": "329"
+  },
+  {
+    "nomeOriginal": "RENDIMENTOS DE FUNDOS",
+    "chaveNormalizada": "RENDIMENTOS FUNDOS",
+    "codigoReduzido": "329"
+  },
+  {
+    "nomeOriginal": "RENDIMENTO DE FUNDOS DE INVESTIMENTO",
+    "chaveNormalizada": "RENDIMENTO FUNDOS INVESTIMENTO",
+    "codigoReduzido": "329"
+  },
+  {
+    "nomeOriginal": "RENDIMENTOS DE FUNDOS DE INVESTIMENTO",
+    "chaveNormalizada": "RENDIMENTOS FUNDOS INVESTIMENTO",
+    "codigoReduzido": "329"
+  },
+  {
+    "nomeOriginal": "RENDIMENTO APLICACAO FINANCEIRA",
+    "chaveNormalizada": "RENDIMENTO APLICACAO FINANCEIRA",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RENDIMENTOS DE APLICACOES FINANCEIRAS",
+    "chaveNormalizada": "RENDIMENTOS APLICACAO FINANCEIRAS",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RENDIMENTOS SOBRE APLICACOES FINANCEIRAS",
+    "chaveNormalizada": "RENDIMENTOS S APLICACAO FINANCEIRAS",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RECEITA DE APLICACAO FINANCEIRA",
+    "chaveNormalizada": "RECEITA APLICACAO FINANCEIRA",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RENDAS DE APLICACOES FINANCEIRAS",
+    "chaveNormalizada": "RENDAS APLICACAO FINANCEIRAS",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RECEITAS FINANCEIRAS",
+    "chaveNormalizada": "RECEITA FINANCEIRAS",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RECEITA FINANCEIRA",
+    "chaveNormalizada": "RECEITA FINANCEIRA",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RENDIMENTOS FINANCEIROS",
+    "chaveNormalizada": "RENDIMENTOS FINANCEIROS",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RENDIMENTO CDB",
+    "chaveNormalizada": "RENDIMENTO CDB",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RENDIMENTOS DE CDB",
+    "chaveNormalizada": "RENDIMENTOS CDB",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "JUROS S/ APLICACOES",
+    "chaveNormalizada": "JUROS S APLICACAO",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "VARIACAO CAMBIAL ATIVA",
+    "chaveNormalizada": "VARIACAO CAMBIAL ATIVA",
+    "codigoReduzido": "336"
+  },
+  {
+    "nomeOriginal": "VARIACOES CAMBIAIS ATIVAS",
+    "chaveNormalizada": "VARIACOES CAMBIAIS ATIVAS",
+    "codigoReduzido": "336"
+  },
+  {
+    "nomeOriginal": "GANHO CAMBIAL",
+    "chaveNormalizada": "GANHO CAMBIAL",
+    "codigoReduzido": "336"
+  },
+  {
+    "nomeOriginal": "VARIACAO MONETARIA ATIVA",
+    "chaveNormalizada": "VARIACAO MONETARIA ATIVA",
+    "codigoReduzido": "338"
+  },
+  {
+    "nomeOriginal": "VARIACOES MONETARIAS ATIVAS",
+    "chaveNormalizada": "VARIACOES MONETARIAS ATIVAS",
+    "codigoReduzido": "338"
+  },
+  {
+    "nomeOriginal": "JUROS ATIVOS",
+    "chaveNormalizada": "JUROS ATIVOS",
+    "codigoReduzido": "341"
+  },
+  {
+    "nomeOriginal": "JUROS RECEBIDOS",
+    "chaveNormalizada": "JUROS RECEBIDOS",
+    "codigoReduzido": "341"
+  },
+  {
+    "nomeOriginal": "DESCONTOS FINANCEIROS OBTIDOS",
+    "chaveNormalizada": "DESCONTOS FINANCEIROS OBTIDOS",
+    "codigoReduzido": "342"
+  },
+  {
+    "nomeOriginal": "PIS SOBRE RECEITA FINANCEIRA",
+    "chaveNormalizada": "PIS S RECEITA FINANCEIRA",
+    "codigoReduzido": "347"
+  },
+  {
+    "nomeOriginal": "PIS S/ RECEITAS FINANCEIRAS",
+    "chaveNormalizada": "PIS S RECEITA FINANCEIRAS",
+    "codigoReduzido": "347"
+  },
+  {
+    "nomeOriginal": "COFINS SOBRE RECEITA FINANCEIRA",
+    "chaveNormalizada": "COFINS S RECEITA FINANCEIRA",
+    "codigoReduzido": "348"
+  },
+  {
+    "nomeOriginal": "COFINS S/ RECEITAS FINANCEIRAS",
+    "chaveNormalizada": "COFINS S RECEITA FINANCEIRAS",
+    "codigoReduzido": "348"
+  },
+  {
+    "nomeOriginal": "RECEITA NA ALIENACAO DE IMOBILIZADO",
+    "chaveNormalizada": "RECEITA ALIENACAO IMOBILIZADO",
+    "codigoReduzido": "376"
+  },
+  {
+    "nomeOriginal": "VENDA DE IMOBILIZADO",
+    "chaveNormalizada": "VENDA IMOBILIZADO",
+    "codigoReduzido": "376"
+  },
+  {
+    "nomeOriginal": "VALOR DE VENDA",
+    "chaveNormalizada": "VALORES VENDA",
+    "codigoReduzido": "376"
+  },
+  {
+    "nomeOriginal": "RECEITA VENDA ATIVO IMOBILIZADO",
+    "chaveNormalizada": "RECEITA VENDA ATIVO IMOBILIZADO",
+    "codigoReduzido": "376"
+  },
+  {
+    "nomeOriginal": "(-) VALOR DE CUSTO",
+    "chaveNormalizada": "MENOS VALORES CUSTO",
+    "codigoReduzido": "377"
+  },
+  {
+    "nomeOriginal": "CUSTO DO IMOBILIZADO VENDIDO",
+    "chaveNormalizada": "CUSTO IMOBILIZADO VENDIDO",
+    "codigoReduzido": "377"
+  },
+  {
+    "nomeOriginal": "BAIXA DE IMOBILIZADO",
+    "chaveNormalizada": "BAIXA IMOBILIZADO",
+    "codigoReduzido": "377"
+  },
+  {
+    "nomeOriginal": "VALOR RESIDUAL DE BENS BAIXADOS",
+    "chaveNormalizada": "VALORES RESIDUAL BENS BAIXADOS",
+    "codigoReduzido": "377"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS POR TERCEIROS",
+    "chaveNormalizada": "SERVICOS PRESTADOS POR TERCEIROS",
+    "codigoReduzido": "464"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE TERCEIROS",
+    "chaveNormalizada": "SERVICOS TERCEIROS",
+    "codigoReduzido": "464"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE TERCEIROS PJ",
+    "chaveNormalizada": "SERVICOS TERCEIROS PJ",
+    "codigoReduzido": "464"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS PJ",
+    "chaveNormalizada": "SERVICOS PRESTADOS PJ",
+    "codigoReduzido": "464"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS PJ - ENGENHARIA",
+    "chaveNormalizada": "SERVICOS PRESTADOS PJ ENGENHARIA",
+    "codigoReduzido": "464"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE TERCEIROS - COBRANCA",
+    "chaveNormalizada": "SERVICOS TERCEIROS COBRANCA",
+    "codigoReduzido": "464"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE TERCEIROS - EXTERIOR",
+    "chaveNormalizada": "SERVICOS TERCEIROS EXTERIOR",
+    "codigoReduzido": "464"
+  },
+  {
+    "nomeOriginal": "ASSISTENCIA TECNICA - EXTERIOR",
+    "chaveNormalizada": "ASSISTENCIA TECNICA EXTERIOR",
+    "codigoReduzido": "464"
+  },
+  {
+    "nomeOriginal": "DESPESAS DIVERSAS",
+    "chaveNormalizada": "DESPESAS DIVERSAS",
+    "codigoReduzido": "481"
+  },
+  {
+    "nomeOriginal": "OUTRAS DESPESAS",
+    "chaveNormalizada": "OUTRAS DESPESAS",
+    "codigoReduzido": "481"
+  },
+  {
+    "nomeOriginal": "OUTRAS DESPESAS OPERACIONAIS",
+    "chaveNormalizada": "OUTRAS DESPESAS OPERACIONAIS",
+    "codigoReduzido": "481"
+  },
+  {
+    "nomeOriginal": "DESPESAS GERAIS",
+    "chaveNormalizada": "DESPESAS GERAIS",
+    "codigoReduzido": "481"
+  },
+  {
+    "nomeOriginal": "RECUPERACAO DE DESPESAS",
+    "chaveNormalizada": "RECUPERACAO DESPESAS",
+    "codigoReduzido": "482"
+  },
+  {
+    "nomeOriginal": "RECUPERACAO DE ENCARGOS E DESPESAS",
+    "chaveNormalizada": "RECUPERACAO ENCARGOS DESPESAS",
+    "codigoReduzido": "482"
+  },
+  {
+    "nomeOriginal": "DESPESAS RECUPERADAS",
+    "chaveNormalizada": "DESPESAS RECUPERADAS",
+    "codigoReduzido": "482"
+  },
+  {
+    "nomeOriginal": "ORDENADOS",
+    "chaveNormalizada": "ORDENADOS",
+    "codigoReduzido": "485"
+  },
+  {
+    "nomeOriginal": "FOLHA DE PAGAMENTO",
+    "chaveNormalizada": "FOLHA PAGAMENTO",
+    "codigoReduzido": "485"
+  },
+  {
+    "nomeOriginal": "REMUNERACAO",
+    "chaveNormalizada": "REMUNERACAO",
+    "codigoReduzido": "485"
+  },
+  {
+    "nomeOriginal": "13 SALARIO",
+    "chaveNormalizada": "13",
+    "codigoReduzido": "486"
+  },
+  {
+    "nomeOriginal": "DESPESAS COM FERIAS",
+    "chaveNormalizada": "DESPESAS COM FERIAS",
+    "codigoReduzido": "487"
+  },
+  {
+    "nomeOriginal": "FERIAS E ABONO",
+    "chaveNormalizada": "FERIAS ABONO",
+    "codigoReduzido": "487"
+  },
+  {
+    "nomeOriginal": "INSS PATRONAL",
+    "chaveNormalizada": "INSS PATRONAL",
+    "codigoReduzido": "488"
+  },
+  {
+    "nomeOriginal": "INSS EMPRESA",
+    "chaveNormalizada": "INSS EMPRESA",
+    "codigoReduzido": "488"
+  },
+  {
+    "nomeOriginal": "CPP",
+    "chaveNormalizada": "CPP",
+    "codigoReduzido": "488"
+  },
+  {
+    "nomeOriginal": "ENCARGOS SOCIAIS",
+    "chaveNormalizada": "ENCARGOS SOCIAIS",
+    "codigoReduzido": "488"
+  },
+  {
+    "nomeOriginal": "FGTS S/ FOLHA",
+    "chaveNormalizada": "FGTS S FOLHA",
+    "codigoReduzido": "489"
+  },
+  {
+    "nomeOriginal": "FGTS MENSAL",
+    "chaveNormalizada": "FGTS MENSAL",
+    "codigoReduzido": "489"
+  },
+  {
+    "nomeOriginal": "FGTS RESCISORIO",
+    "chaveNormalizada": "FGTS RESCISORIO",
+    "codigoReduzido": "489"
+  },
+  {
+    "nomeOriginal": "MULTA FGTS",
+    "chaveNormalizada": "MULTAS FGTS",
+    "codigoReduzido": "489"
+  },
+  {
+    "nomeOriginal": "VALE TRANSPORTE",
+    "chaveNormalizada": "VALE TRANSPORTE",
+    "codigoReduzido": "490"
+  },
+  {
+    "nomeOriginal": "AUXILIO TRANSPORTE",
+    "chaveNormalizada": "AUXILIO TRANSPORTE",
+    "codigoReduzido": "490"
+  },
+  {
+    "nomeOriginal": "VT",
+    "chaveNormalizada": "VT",
+    "codigoReduzido": "490"
+  },
+  {
+    "nomeOriginal": "TRANSPORTE DE FUNCIONARIOS",
+    "chaveNormalizada": "TRANSPORTE FUNCIONARIOS",
+    "codigoReduzido": "490"
+  },
+  {
+    "nomeOriginal": "SAUDE",
+    "chaveNormalizada": "SAUDE",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "PLANO DE SAUDE",
+    "chaveNormalizada": "PLANO SAUDE",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "ASSISTENCIA MEDICA E HOSPITALAR",
+    "chaveNormalizada": "ASSISTENCIA MEDICA HOSPITALAR",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "CONVENIO MEDICO",
+    "chaveNormalizada": "CONVENIO MEDICO",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "ASSISTENCA MEDICA",
+    "chaveNormalizada": "ASSISTENCA MEDICA",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "ASSISTENCIA MEDICA",
+    "chaveNormalizada": "ASSISTENCIA MEDICA",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "PLANO DE SAUDE EMPRESARIAL",
+    "chaveNormalizada": "PLANO SAUDE EMPRESARIAL",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "SEGURO SAUDE",
+    "chaveNormalizada": "SEGUROS SAUDE",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "UNIMED",
+    "chaveNormalizada": "UNIMED",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "BRADESCO SAUDE",
+    "chaveNormalizada": "BRADESCO SAUDE",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "AMIL",
+    "chaveNormalizada": "AMIL",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "SULAMERICA SAUDE",
+    "chaveNormalizada": "SULAMERICA SAUDE",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "CONVENIO SAUDE",
+    "chaveNormalizada": "CONVENIO SAUDE",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "ALIMENTACAO",
+    "chaveNormalizada": "ALIMENTACAO",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "VALE ALIMENTACAO",
+    "chaveNormalizada": "VALE ALIMENTACAO",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "VALE REFEICAO E ALIMENTACAO",
+    "chaveNormalizada": "VALE REFEICOES ALIMENTACAO",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "AUXILIO ALIMENTACAO",
+    "chaveNormalizada": "AUXILIO ALIMENTACAO",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "VALE REFEICAO",
+    "chaveNormalizada": "VALE REFEICOES",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "VR",
+    "chaveNormalizada": "VR",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "VA",
+    "chaveNormalizada": "VA",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "TICKET REFEICAO",
+    "chaveNormalizada": "TICKET REFEICOES",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "SODEXO",
+    "chaveNormalizada": "SODEXO",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "ALELO",
+    "chaveNormalizada": "ALELO",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "FLASH BENEFICIOS",
+    "chaveNormalizada": "FLASH BENEFICIOS",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "CAJU BENEFICIOS",
+    "chaveNormalizada": "CAJU BENEFICIOS",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "AUXILIO REFEICAO",
+    "chaveNormalizada": "AUXILIO REFEICOES",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "BENEFICIO ALIMENTACAO",
+    "chaveNormalizada": "BENEFICIO ALIMENTACAO",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "PRO-LABORE DIRETORIA",
+    "chaveNormalizada": "PRO LABORE DIRETORIA",
+    "codigoReduzido": "493"
+  },
+  {
+    "nomeOriginal": "HONORARIOS DA DIRETORIA",
+    "chaveNormalizada": "HONORARIOS DIRETORIA",
+    "codigoReduzido": "493"
+  },
+  {
+    "nomeOriginal": "PROLABORE",
+    "chaveNormalizada": "PROLABORE",
+    "codigoReduzido": "493"
+  },
+  {
+    "nomeOriginal": "RETIRADA PRO LABORE",
+    "chaveNormalizada": "RETIRADA PRO LABORE",
+    "codigoReduzido": "493"
+  },
+  {
+    "nomeOriginal": "ODONTOLOGICO",
+    "chaveNormalizada": "ODONTOLOGICO",
+    "codigoReduzido": "496"
+  },
+  {
+    "nomeOriginal": "PLANO ODONTOLOGICO",
+    "chaveNormalizada": "PLANO ODONTOLOGICO",
+    "codigoReduzido": "496"
+  },
+  {
+    "nomeOriginal": "ASSISTENCIA ODONTOLOGICA",
+    "chaveNormalizada": "ASSISTENCIA ODONTOLOGICA",
+    "codigoReduzido": "496"
+  },
+  {
+    "nomeOriginal": "EXAMES LABORATORIAIS",
+    "chaveNormalizada": "EXAMES LABORATORIAIS",
+    "codigoReduzido": "497"
+  },
+  {
+    "nomeOriginal": "EXAMES MEDICOS",
+    "chaveNormalizada": "EXAMES MEDICOS",
+    "codigoReduzido": "497"
+  },
+  {
+    "nomeOriginal": "EXAMES ADMISSIONAIS",
+    "chaveNormalizada": "EXAMES ADMISSIONAIS",
+    "codigoReduzido": "497"
+  },
+  {
+    "nomeOriginal": "EXAMES PERIODICOS",
+    "chaveNormalizada": "EXAMES PERIODICOS",
+    "codigoReduzido": "497"
+  },
+  {
+    "nomeOriginal": "MEDICINA DO TRABALHO",
+    "chaveNormalizada": "MEDICINA TRABALHO",
+    "codigoReduzido": "497"
+  },
+  {
+    "nomeOriginal": "PCMSO",
+    "chaveNormalizada": "PCMSO",
+    "codigoReduzido": "497"
+  },
+  {
+    "nomeOriginal": "PARTICIPACAO NOS LUCROS E RESULTADOS",
+    "chaveNormalizada": "PARTICIPACAO NOS LUCRO RESULTADOS",
+    "codigoReduzido": "498"
+  },
+  {
+    "nomeOriginal": "PLR",
+    "chaveNormalizada": "PLR",
+    "codigoReduzido": "498"
+  },
+  {
+    "nomeOriginal": "RECRUTAMENTO E SELEÇÃO",
+    "chaveNormalizada": "RECRUTAMENTO SELECAO",
+    "codigoReduzido": "501"
+  },
+  {
+    "nomeOriginal": "RECRUTAMENTO",
+    "chaveNormalizada": "RECRUTAMENTO",
+    "codigoReduzido": "501"
+  },
+  {
+    "nomeOriginal": "SELECAO DE PESSOAL",
+    "chaveNormalizada": "SELECAO PESSOAL",
+    "codigoReduzido": "501"
+  },
+  {
+    "nomeOriginal": "HEADHUNTER",
+    "chaveNormalizada": "HEADHUNTER",
+    "codigoReduzido": "501"
+  },
+  {
+    "nomeOriginal": "EVENTOS",
+    "chaveNormalizada": "EVENTOS",
+    "codigoReduzido": "503"
+  },
+  {
+    "nomeOriginal": "EVENTOS E CONFRATERNIZACOES",
+    "chaveNormalizada": "EVENTOS CONFRATERNIZACOES",
+    "codigoReduzido": "503"
+  },
+  {
+    "nomeOriginal": "FESTAS E CONFRATERNIZACOES",
+    "chaveNormalizada": "FESTAS CONFRATERNIZACOES",
+    "codigoReduzido": "503"
+  },
+  {
+    "nomeOriginal": "SEGURO DE VIDA EM GRUPO",
+    "chaveNormalizada": "SEGUROS VIDA GRUPO",
+    "codigoReduzido": "504"
+  },
+  {
+    "nomeOriginal": "RESCISOES",
+    "chaveNormalizada": "RESCISOES",
+    "codigoReduzido": "505"
+  },
+  {
+    "nomeOriginal": "INDENIZACOES TRABALHISTAS",
+    "chaveNormalizada": "INDENIZACOES TRABALHISTAS",
+    "codigoReduzido": "505"
+  },
+  {
+    "nomeOriginal": "AVISO PREVIO",
+    "chaveNormalizada": "AVISO PREVIO",
+    "codigoReduzido": "505"
+  },
+  {
+    "nomeOriginal": "MULTA RESCISORIA",
+    "chaveNormalizada": "MULTAS RESCISORIA",
+    "codigoReduzido": "505"
+  },
+  {
+    "nomeOriginal": "BOLSA ESTAGIO",
+    "chaveNormalizada": "BOLSA ESTAGIO",
+    "codigoReduzido": "516"
+  },
+  {
+    "nomeOriginal": "ESTAGIARIOS",
+    "chaveNormalizada": "ESTAGIARIOS",
+    "codigoReduzido": "516"
+  },
+  {
+    "nomeOriginal": "BONUS",
+    "chaveNormalizada": "BONUS",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "BONUS DIRETORES",
+    "chaveNormalizada": "BONUS DIRETORES",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "BONUS DIRETORES (NDD)",
+    "chaveNormalizada": "BONUS DIRETORES NDD",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "GRATIFICACOES",
+    "chaveNormalizada": "GRATIFICACOES",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "PREMIOS",
+    "chaveNormalizada": "PREMIOS",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "PREMIACOES",
+    "chaveNormalizada": "PREMIACOES",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "BONIFICACAO A EMPREGADOS",
+    "chaveNormalizada": "BONIFICACAO FUNCIONARIOS",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "CURSOS E TREINAMENTOS",
+    "chaveNormalizada": "CURSOS TREINAMENTOS",
+    "codigoReduzido": "515"
+  },
+  {
+    "nomeOriginal": "TREINAMENTOS",
+    "chaveNormalizada": "TREINAMENTOS",
+    "codigoReduzido": "515"
+  },
+  {
+    "nomeOriginal": "TREINAMENTO E DESENVOLVIMENTO",
+    "chaveNormalizada": "TREINAMENTOS DESENVOLVIMENTO",
+    "codigoReduzido": "515"
+  },
+  {
+    "nomeOriginal": "COMISSOES SOBRE VENDAS",
+    "chaveNormalizada": "COMISSOES S VENDAS",
+    "codigoReduzido": "506"
+  },
+  {
+    "nomeOriginal": "COMISSOES DE VENDAS",
+    "chaveNormalizada": "COMISSOES VENDAS",
+    "codigoReduzido": "506"
+  },
+  {
+    "nomeOriginal": "PUBLICIDADE E PROPAGANDA",
+    "chaveNormalizada": "PUBLICIDADE PROPAGANDA",
+    "codigoReduzido": "507"
+  },
+  {
+    "nomeOriginal": "MARKETING",
+    "chaveNormalizada": "MARKETING",
+    "codigoReduzido": "507"
+  },
+  {
+    "nomeOriginal": "MARKETING DIGITAL",
+    "chaveNormalizada": "MARKETING DIGITAL",
+    "codigoReduzido": "507"
+  },
+  {
+    "nomeOriginal": "PATROCINIO",
+    "chaveNormalizada": "PATROCINIO",
+    "codigoReduzido": "507"
+  },
+  {
+    "nomeOriginal": "PATROCINIOS",
+    "chaveNormalizada": "PATROCINIOS",
+    "codigoReduzido": "507"
+  },
+  {
+    "nomeOriginal": "ANUNCIOS",
+    "chaveNormalizada": "ANUNCIOS",
+    "codigoReduzido": "507"
+  },
+  {
+    "nomeOriginal": "MIDIA",
+    "chaveNormalizada": "MIDIA",
+    "codigoReduzido": "507"
+  },
+  {
+    "nomeOriginal": "VIAGENS E ESTADIAS",
+    "chaveNormalizada": "VIAGENS ESTADIAS",
+    "codigoReduzido": "508"
+  },
+  {
+    "nomeOriginal": "VIAGENS",
+    "chaveNormalizada": "VIAGENS",
+    "codigoReduzido": "508"
+  },
+  {
+    "nomeOriginal": "DESPESAS DE VIAGENS",
+    "chaveNormalizada": "DESPESAS VIAGENS",
+    "codigoReduzido": "508"
+  },
+  {
+    "nomeOriginal": "VIAGENS E REPRESENTACOES",
+    "chaveNormalizada": "VIAGENS REPRESENTACOES",
+    "codigoReduzido": "508"
+  },
+  {
+    "nomeOriginal": "(N.D.D.) - BRINDES",
+    "chaveNormalizada": "N D D BRINDES",
+    "codigoReduzido": "513"
+  },
+  {
+    "nomeOriginal": "BRINDES",
+    "chaveNormalizada": "BRINDES",
+    "codigoReduzido": "513"
+  },
+  {
+    "nomeOriginal": "DOACOES",
+    "chaveNormalizada": "DOACOES",
+    "codigoReduzido": "513"
+  },
+  {
+    "nomeOriginal": "HOSPEDAGEM",
+    "chaveNormalizada": "HOSPEDAGEM",
+    "codigoReduzido": "517"
+  },
+  {
+    "nomeOriginal": "HOSPEDAGENS",
+    "chaveNormalizada": "HOSPEDAGENS",
+    "codigoReduzido": "517"
+  },
+  {
+    "nomeOriginal": "HOTEIS",
+    "chaveNormalizada": "HOTEIS",
+    "codigoReduzido": "517"
+  },
+  {
+    "nomeOriginal": "ESTADIAS",
+    "chaveNormalizada": "ESTADIAS",
+    "codigoReduzido": "517"
+  },
+  {
+    "nomeOriginal": "HOTEL",
+    "chaveNormalizada": "HOTEL",
+    "codigoReduzido": "517"
+  },
+  {
+    "nomeOriginal": "DIARIAS",
+    "chaveNormalizada": "DIARIAS",
+    "codigoReduzido": "517"
+  },
+  {
+    "nomeOriginal": "UBER / TAXI",
+    "chaveNormalizada": "UBER TAXI",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "UBER",
+    "chaveNormalizada": "UBER",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "TAXI",
+    "chaveNormalizada": "TAXI",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "PEDAGIOS E QUILOMETRAGEM",
+    "chaveNormalizada": "PEDAGIOS QUILOMETRAGEM",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "PEDAGIOS",
+    "chaveNormalizada": "PEDAGIOS",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "ESTACIONAMENTO",
+    "chaveNormalizada": "ESTACIONAMENTO",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "ESTACIONAMENTOS",
+    "chaveNormalizada": "ESTACIONAMENTOS",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "QUILOMETRAGEM",
+    "chaveNormalizada": "QUILOMETRAGEM",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "KM RODADO",
+    "chaveNormalizada": "KM RODADO",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "REEMBOLSO KM",
+    "chaveNormalizada": "REEMBOLSO KM",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "TRANSPORTE POR APLICATIVO",
+    "chaveNormalizada": "TRANSPORTE POR APLICATIVO",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "LOCOMOCAO",
+    "chaveNormalizada": "LOCOMOCAO",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "CONDUCAO",
+    "chaveNormalizada": "CONDUCAO",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "TAXIS",
+    "chaveNormalizada": "TAXIS",
+    "codigoReduzido": "518"
+  },
+  {
+    "nomeOriginal": "LANCHES E REFEICOES",
+    "chaveNormalizada": "LANCHES REFEICOES",
+    "codigoReduzido": "519"
+  },
+  {
+    "nomeOriginal": "REFEICOES",
+    "chaveNormalizada": "REFEICOES",
+    "codigoReduzido": "519"
+  },
+  {
+    "nomeOriginal": "LANCHES",
+    "chaveNormalizada": "LANCHES",
+    "codigoReduzido": "519"
+  },
+  {
+    "nomeOriginal": "REFEICOES E LANCHES",
+    "chaveNormalizada": "REFEICOES LANCHES",
+    "codigoReduzido": "519"
+  },
+  {
+    "nomeOriginal": "PASSAGENS AEREAS",
+    "chaveNormalizada": "PASSAGENS AEREAS",
+    "codigoReduzido": "520"
+  },
+  {
+    "nomeOriginal": "PASSAGENS",
+    "chaveNormalizada": "PASSAGENS",
+    "codigoReduzido": "520"
+  },
+  {
+    "nomeOriginal": "PASSAGEM AEREA",
+    "chaveNormalizada": "PASSAGENS AEREA",
+    "codigoReduzido": "520"
+  },
+  {
+    "nomeOriginal": "PASSAGENS AEREAS E RODOVIARIAS",
+    "chaveNormalizada": "PASSAGENS AEREAS RODOVIARIAS",
+    "codigoReduzido": "520"
+  },
+  {
+    "nomeOriginal": "MANUTENCAO E REPAROS",
+    "chaveNormalizada": "MANUTENCAO REPAROS",
+    "codigoReduzido": "523"
+  },
+  {
+    "nomeOriginal": "MANUTENCAO E CONSERVACAO",
+    "chaveNormalizada": "MANUTENCAO CONSERVACAO",
+    "codigoReduzido": "523"
+  },
+  {
+    "nomeOriginal": "MANUTENCAO",
+    "chaveNormalizada": "MANUTENCAO",
+    "codigoReduzido": "523"
+  },
+  {
+    "nomeOriginal": "MANUTENCAO PREDIAL",
+    "chaveNormalizada": "MANUTENCAO PREDIAL",
+    "codigoReduzido": "523"
+  },
+  {
+    "nomeOriginal": "CONSERTOS E REPAROS",
+    "chaveNormalizada": "CONSERTOS REPAROS",
+    "codigoReduzido": "523"
+  },
+  {
+    "nomeOriginal": "REPAROS",
+    "chaveNormalizada": "REPAROS",
+    "codigoReduzido": "523"
+  },
+  {
+    "nomeOriginal": "MANUTENCAO DE VEICULO",
+    "chaveNormalizada": "MANUTENCAO VEICULOS",
+    "codigoReduzido": "524"
+  },
+  {
+    "nomeOriginal": "IPVA",
+    "chaveNormalizada": "IPVA",
+    "codigoReduzido": "525"
+  },
+  {
+    "nomeOriginal": "LICENCIAMENTO DE VEICULOS",
+    "chaveNormalizada": "LICENCIAMENTO VEICULOS",
+    "codigoReduzido": "525"
+  },
+  {
+    "nomeOriginal": "DPVAT",
+    "chaveNormalizada": "DPVAT",
+    "codigoReduzido": "525"
+  },
+  {
+    "nomeOriginal": "DEPRECIACAO",
+    "chaveNormalizada": "DEPRECIACAO",
+    "codigoReduzido": "526"
+  },
+  {
+    "nomeOriginal": "DESPESAS COM DEPRECIACAO",
+    "chaveNormalizada": "DESPESAS COM DEPRECIACAO",
+    "codigoReduzido": "526"
+  },
+  {
+    "nomeOriginal": "DEPRECIACAO MOVEIS E UTENSILIOS",
+    "chaveNormalizada": "DEPRECIACAO MOVEIS UTENSILIOS",
+    "codigoReduzido": "526"
+  },
+  {
+    "nomeOriginal": "DEPRECIACAO COMPUTADORES",
+    "chaveNormalizada": "DEPRECIACAO COMPUTADORES",
+    "codigoReduzido": "526"
+  },
+  {
+    "nomeOriginal": "(-) DEPRECIACAO",
+    "chaveNormalizada": "MENOS DEPRECIACAO",
+    "codigoReduzido": "526"
+  },
+  {
+    "nomeOriginal": "AMORTIZACAO",
+    "chaveNormalizada": "AMORTIZACAO",
+    "codigoReduzido": "527"
+  },
+  {
+    "nomeOriginal": "(-) AMORT. CONTRATO IFRS -16",
+    "chaveNormalizada": "MENOS AMORTIZACAO CONTRATO IFRS 16",
+    "codigoReduzido": "527"
+  },
+  {
+    "nomeOriginal": "AMORTIZACAO DIREITO DE USO",
+    "chaveNormalizada": "AMORTIZACAO DIREITO USO",
+    "codigoReduzido": "527"
+  },
+  {
+    "nomeOriginal": "AMORTIZACAO IFRS 16",
+    "chaveNormalizada": "AMORTIZACAO IFRS 16",
+    "codigoReduzido": "527"
+  },
+  {
+    "nomeOriginal": "AMORTIZACAO BENFEITORIAS",
+    "chaveNormalizada": "AMORTIZACAO BENFEITORIAS",
+    "codigoReduzido": "527"
+  },
+  {
+    "nomeOriginal": "AMORTIZACAO SOFTWARE",
+    "chaveNormalizada": "AMORTIZACAO SOFTWARE",
+    "codigoReduzido": "527"
+  },
+  {
+    "nomeOriginal": "AMORTIZACAO BENFEITORIAS EM IMOVEIS DE TERCEIROS",
+    "chaveNormalizada": "AMORTIZACAO BENFEITORIAS IMOVEIS TERCEIROS",
+    "codigoReduzido": "527"
+  },
+  {
+    "nomeOriginal": "SEGUROS",
+    "chaveNormalizada": "SEGUROS",
+    "codigoReduzido": "528"
+  },
+  {
+    "nomeOriginal": "(-) DESPESAS DE SEGUROS",
+    "chaveNormalizada": "MENOS DESPESAS SEGUROS",
+    "codigoReduzido": "528"
+  },
+  {
+    "nomeOriginal": "DESPESAS COM SEGUROS",
+    "chaveNormalizada": "DESPESAS COM SEGUROS",
+    "codigoReduzido": "528"
+  },
+  {
+    "nomeOriginal": "SEGURO EMPRESARIAL",
+    "chaveNormalizada": "SEGUROS EMPRESARIAL",
+    "codigoReduzido": "528"
+  },
+  {
+    "nomeOriginal": "SEGURO PREDIAL",
+    "chaveNormalizada": "SEGUROS PREDIAL",
+    "codigoReduzido": "528"
+  },
+  {
+    "nomeOriginal": "SEGURO DE VEICULOS",
+    "chaveNormalizada": "SEGUROS VEICULOS",
+    "codigoReduzido": "528"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE LIMPEZA",
+    "chaveNormalizada": "SERVICOS LIMPEZA",
+    "codigoReduzido": "529"
+  },
+  {
+    "nomeOriginal": "LIMPEZA E CONSERVACAO",
+    "chaveNormalizada": "LIMPEZA CONSERVACAO",
+    "codigoReduzido": "529"
+  },
+  {
+    "nomeOriginal": "LIMPEZA, CONSERVAÇÃO E VIGILANCIA",
+    "chaveNormalizada": "LIMPEZA CONSERVACAO VIGILANCIA",
+    "codigoReduzido": "529"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE LIMPEZA E CONSERVACAO",
+    "chaveNormalizada": "SERVICOS LIMPEZA CONSERVACAO",
+    "codigoReduzido": "529"
+  },
+  {
+    "nomeOriginal": "CONSERVACAO E LIMPEZA",
+    "chaveNormalizada": "CONSERVACAO LIMPEZA",
+    "codigoReduzido": "529"
+  },
+  {
+    "nomeOriginal": "VIGILANCIA",
+    "chaveNormalizada": "VIGILANCIA",
+    "codigoReduzido": "530"
+  },
+  {
+    "nomeOriginal": "(-) DESPESAS DE SERVIÇOS DE VIGILÂNCIA E",
+    "chaveNormalizada": "MENOS DESPESAS SERVICOS VIGILANCIA",
+    "codigoReduzido": "530"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE VIGILANCIA",
+    "chaveNormalizada": "SERVICOS VIGILANCIA",
+    "codigoReduzido": "530"
+  },
+  {
+    "nomeOriginal": "MONITORAMENTO",
+    "chaveNormalizada": "MONITORAMENTO",
+    "codigoReduzido": "530"
+  },
+  {
+    "nomeOriginal": "SEGURANCA PATRIMONIAL",
+    "chaveNormalizada": "SEGURANCA PATRIMONIAL",
+    "codigoReduzido": "530"
+  },
+  {
+    "nomeOriginal": "TFE - TAXA DE FISCALIZACAO DE ESTABELECIMENTO",
+    "chaveNormalizada": "TFE TAXAS FISCALIZACAO ESTABELECIMENTO",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "TFE",
+    "chaveNormalizada": "TFE",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "TAXA DE FISCALIZACAO",
+    "chaveNormalizada": "TAXAS FISCALIZACAO",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "TLIF",
+    "chaveNormalizada": "TLIF",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "TAXA DE LICENCA E FUNCIONAMENTO",
+    "chaveNormalizada": "TAXAS LICENCA FUNCIONAMENTO",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "ALVARA",
+    "chaveNormalizada": "ALVARA",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "TAXAS MUNICIPAIS DIVERSAS",
+    "chaveNormalizada": "TAXAS MUNICIPAIS DIVERSAS",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "TAXAS MUNICIPAIS",
+    "chaveNormalizada": "TAXAS MUNICIPAIS",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "TAXA DE LICENCA",
+    "chaveNormalizada": "TAXAS LICENCA",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "TAXA DE LIXO",
+    "chaveNormalizada": "TAXAS LIXO",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "COMBUSTIVEL",
+    "chaveNormalizada": "COMBUSTIVEIS",
+    "codigoReduzido": "534"
+  },
+  {
+    "nomeOriginal": "ENERGIA ELETRICA",
+    "chaveNormalizada": "ENERGIA ELETRICA",
+    "codigoReduzido": "536"
+  },
+  {
+    "nomeOriginal": "TELEFONE E INTERNET",
+    "chaveNormalizada": "TELEFONIA INTERNET",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "TELEFONIA MOVEL",
+    "chaveNormalizada": "TELEFONIA MOVEIS",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "TELEFONIA FIXA",
+    "chaveNormalizada": "TELEFONIA FIXA",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "CELULAR",
+    "chaveNormalizada": "CELULAR",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "TELECOMUNICACOES",
+    "chaveNormalizada": "TELECOMUNICACOES",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "CELULARES",
+    "chaveNormalizada": "CELULARES",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "VIVO",
+    "chaveNormalizada": "VIVO",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "CLARO",
+    "chaveNormalizada": "CLARO",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "TIM",
+    "chaveNormalizada": "TIM",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "AGUA",
+    "chaveNormalizada": "AGUA",
+    "codigoReduzido": "538"
+  },
+  {
+    "nomeOriginal": "AGUA E ESGOTO",
+    "chaveNormalizada": "AGUA ESGOTO",
+    "codigoReduzido": "538"
+  },
+  {
+    "nomeOriginal": "CONDOMINIO",
+    "chaveNormalizada": "CONDOMINIO",
+    "codigoReduzido": "539"
+  },
+  {
+    "nomeOriginal": "CONDOMINIOS",
+    "chaveNormalizada": "CONDOMINIOS",
+    "codigoReduzido": "539"
+  },
+  {
+    "nomeOriginal": "MATERIAL DE ESCRITORIO",
+    "chaveNormalizada": "MATERIAL ESCRITORIO",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "MATERIAIS DE ESCRITORIO",
+    "chaveNormalizada": "MATERIAIS ESCRITORIO",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "MATERIAL DE LIMPEZA",
+    "chaveNormalizada": "MATERIAL LIMPEZA",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "MATERIAL DE CONSUMO",
+    "chaveNormalizada": "MATERIAL CONSUMO",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "MATERIAL DE USO E CONSUMO",
+    "chaveNormalizada": "MATERIAL USO CONSUMO",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "COPA E COZINHA",
+    "chaveNormalizada": "COPA COZINHA",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "MATERIAL DE COPA E COZINHA",
+    "chaveNormalizada": "MATERIAL COPA COZINHA",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "MATERIAIS DE COPA",
+    "chaveNormalizada": "MATERIAIS COPA",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "SUPRIMENTOS DE ESCRITORIO",
+    "chaveNormalizada": "SUPRIMENTOS ESCRITORIO",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "MATERIAIS DE LIMPEZA",
+    "chaveNormalizada": "MATERIAIS LIMPEZA",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "INTERNET",
+    "chaveNormalizada": "INTERNET",
+    "codigoReduzido": "541"
+  },
+  {
+    "nomeOriginal": "PROVEDOR DE INTERNET",
+    "chaveNormalizada": "PROVEDOR INTERNET",
+    "codigoReduzido": "541"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS PESSOA FISICA",
+    "chaveNormalizada": "SERVICOS PRESTADOS PESSOA FISICA",
+    "codigoReduzido": "544"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE PESSOA FISICA",
+    "chaveNormalizada": "SERVICOS PESSOA FISICA",
+    "codigoReduzido": "544"
+  },
+  {
+    "nomeOriginal": "AUTONOMOS",
+    "chaveNormalizada": "AUTONOMOS",
+    "codigoReduzido": "544"
+  },
+  {
+    "nomeOriginal": "SERVICOS JURIDICOS",
+    "chaveNormalizada": "SERVICOS JURIDICOS",
+    "codigoReduzido": "545"
+  },
+  {
+    "nomeOriginal": "ADVOCACIA",
+    "chaveNormalizada": "ADVOCACIA",
+    "codigoReduzido": "545"
+  },
+  {
+    "nomeOriginal": "ADVOGADOS",
+    "chaveNormalizada": "ADVOGADOS",
+    "codigoReduzido": "545"
+  },
+  {
+    "nomeOriginal": "HONORARIOS JURIDICOS",
+    "chaveNormalizada": "HONORARIOS JURIDICOS",
+    "codigoReduzido": "545"
+  },
+  {
+    "nomeOriginal": "CONSULTORIA JURIDICA",
+    "chaveNormalizada": "CONSULTORIA JURIDICA",
+    "codigoReduzido": "545"
+  },
+  {
+    "nomeOriginal": "SERVICOS CONTABEIS",
+    "chaveNormalizada": "SERVICOS CONTABEIS",
+    "codigoReduzido": "546"
+  },
+  {
+    "nomeOriginal": "HONORARIOS CONTABEIS",
+    "chaveNormalizada": "HONORARIOS CONTABEIS",
+    "codigoReduzido": "546"
+  },
+  {
+    "nomeOriginal": "ASSESSORIA CONTABIL E FISCAL",
+    "chaveNormalizada": "ASSESSORIA CONTABIL FISCAL",
+    "codigoReduzido": "546"
+  },
+  {
+    "nomeOriginal": "HONORARIOS DE CONTABILIDADE",
+    "chaveNormalizada": "HONORARIOS CONTABILIDADE",
+    "codigoReduzido": "546"
+  },
+  {
+    "nomeOriginal": "ESCRITORIO DE CONTABILIDADE",
+    "chaveNormalizada": "ESCRITORIO CONTABILIDADE",
+    "codigoReduzido": "546"
+  },
+  {
+    "nomeOriginal": "AUDITORIA E CONSULTORIA",
+    "chaveNormalizada": "AUDITORIA CONSULTORIA",
+    "codigoReduzido": "547"
+  },
+  {
+    "nomeOriginal": "AUDITORIA EXTERNA",
+    "chaveNormalizada": "AUDITORIA EXTERNA",
+    "codigoReduzido": "547"
+  },
+  {
+    "nomeOriginal": "ASSESSORIA EM INFORMATICA",
+    "chaveNormalizada": "ASSESSORIA TI",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "INFORMATICA E SOFTWARE",
+    "chaveNormalizada": "TI SOFTWARE",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE INFORMATICA",
+    "chaveNormalizada": "SERVICOS TI",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "SOFTWARE E LICENCAS",
+    "chaveNormalizada": "SOFTWARE LICENCAS",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "LICENCA DE SOFTWARE",
+    "chaveNormalizada": "LICENCA SOFTWARE",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "LICENCAS DE USO DE SOFTWARE",
+    "chaveNormalizada": "LICENCAS USO SOFTWARE",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE CONSULTORIA EM TECNOLOGIA",
+    "chaveNormalizada": "SERVICOS CONSULTORIA TECNOLOGIA",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "CONSULTORIA EM TI",
+    "chaveNormalizada": "CONSULTORIA TI",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "SUPORTE TECNICO DE INFORMATICA",
+    "chaveNormalizada": "SUPORTE TECNICO TI",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE TECNOLOGIA",
+    "chaveNormalizada": "SERVICOS TECNOLOGIA",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "TECNOLOGIA DA INFORMACAO",
+    "chaveNormalizada": "TI",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "LICENCAS DE USO",
+    "chaveNormalizada": "LICENCAS USO",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "LICENCA DE USO",
+    "chaveNormalizada": "LICENCA USO",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "SAAS",
+    "chaveNormalizada": "SAAS",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "CLOUD",
+    "chaveNormalizada": "CLOUD",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "COMPUTACAO EM NUVEM",
+    "chaveNormalizada": "COMPUTACAO NUVEM",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "HOSPEDAGEM DE SITE",
+    "chaveNormalizada": "HOSPEDAGEM SITE",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "AWS",
+    "chaveNormalizada": "AWS",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "GOOGLE WORKSPACE",
+    "chaveNormalizada": "GOOGLE WORKSPACE",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "MICROSOFT 365",
+    "chaveNormalizada": "MICROSOFT 365",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "FERRAMENTAS DE PROVEDOR DE BAAS",
+    "chaveNormalizada": "FERRAMENTAS PROVEDOR BAAS",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "MANUTENCAO DE SISTEMAS",
+    "chaveNormalizada": "MANUTENCAO SISTEMAS",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE CONSULTORIA E ASSESSORIA",
+    "chaveNormalizada": "SERVICOS CONSULTORIA ASSESSORIA",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "CONSULTORIA EMPRESARIAL",
+    "chaveNormalizada": "CONSULTORIA EMPRESARIAL",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "ASSESSORIA E CONSULTORIA",
+    "chaveNormalizada": "ASSESSORIA CONSULTORIA",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "SERVICOS DE CONSULTORIA",
+    "chaveNormalizada": "SERVICOS CONSULTORIA",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "CONSULTORIA",
+    "chaveNormalizada": "CONSULTORIA",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "ASSESSORIA",
+    "chaveNormalizada": "ASSESSORIA",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "ASSESSORIA EMPRESARIAL",
+    "chaveNormalizada": "ASSESSORIA EMPRESARIAL",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "CONSULTORIA ADMINISTRATIVA",
+    "chaveNormalizada": "CONSULTORIA ADMINISTRATIVA",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "ALUGUEL",
+    "chaveNormalizada": "ALUGUEL",
+    "codigoReduzido": "552"
+  },
+  {
+    "nomeOriginal": "ALUGUEL DE IMOVEIS",
+    "chaveNormalizada": "ALUGUEL IMOVEIS",
+    "codigoReduzido": "552"
+  },
+  {
+    "nomeOriginal": "ALUGUEIS E CONDOMINIOS",
+    "chaveNormalizada": "ALUGUEL CONDOMINIOS",
+    "codigoReduzido": "552"
+  },
+  {
+    "nomeOriginal": "LOCACAO DE EQUIPAMENTOS",
+    "chaveNormalizada": "ALUGUEL EQUIPAMENTOS",
+    "codigoReduzido": "553"
+  },
+  {
+    "nomeOriginal": "LOCACAO DE MAQUINAS E EQUIPAMENTOS",
+    "chaveNormalizada": "ALUGUEL MAQUINAS EQUIPAMENTOS",
+    "codigoReduzido": "553"
+  },
+  {
+    "nomeOriginal": "ALUGUEL DE VEICULOS",
+    "chaveNormalizada": "ALUGUEL VEICULOS",
+    "codigoReduzido": "554"
+  },
+  {
+    "nomeOriginal": "LOCACAO DE AUTOMOVEIS",
+    "chaveNormalizada": "ALUGUEL AUTOMOVEIS",
+    "codigoReduzido": "554"
+  },
+  {
+    "nomeOriginal": "ARRENDAMENTO",
+    "chaveNormalizada": "ARRENDAMENTO",
+    "codigoReduzido": "555"
+  },
+  {
+    "nomeOriginal": "PERDAS COM CLIENTES",
+    "chaveNormalizada": "PERDAS COM CLIENTES",
+    "codigoReduzido": "558"
+  },
+  {
+    "nomeOriginal": "PERDAS NO RECEBIMENTO DE CREDITOS",
+    "chaveNormalizada": "PERDAS RECEBIMENTO CREDITOS",
+    "codigoReduzido": "558"
+  },
+  {
+    "nomeOriginal": "PERDAS NF. SERVIÇOS",
+    "chaveNormalizada": "PERDAS NF SERVICOS",
+    "codigoReduzido": "558"
+  },
+  {
+    "nomeOriginal": "PERDAS COM RECEBIVEIS",
+    "chaveNormalizada": "PERDAS COM RECEBIVEIS",
+    "codigoReduzido": "558"
+  },
+  {
+    "nomeOriginal": "CREDITOS INCOBRAVEIS",
+    "chaveNormalizada": "CREDITOS INCOBRAVEIS",
+    "codigoReduzido": "558"
+  },
+  {
+    "nomeOriginal": "PERDAS NO RECEBIMENTO",
+    "chaveNormalizada": "PERDAS RECEBIMENTO",
+    "codigoReduzido": "558"
+  },
+  {
+    "nomeOriginal": "BAIXA DE CLIENTES INCOBRAVEIS",
+    "chaveNormalizada": "BAIXA CLIENTES INCOBRAVEIS",
+    "codigoReduzido": "558"
+  },
+  {
+    "nomeOriginal": "DESPESAS COM CONTINGENCIAS",
+    "chaveNormalizada": "DESPESAS COM CONTINGENCIAS",
+    "codigoReduzido": "559"
+  },
+  {
+    "nomeOriginal": "REVERSAO PROVISOES TRABALHISTAS",
+    "chaveNormalizada": "REVERSAO PROVISAO TRABALHISTAS",
+    "codigoReduzido": "561"
+  },
+  {
+    "nomeOriginal": "REVERSAO DE PROVISAO",
+    "chaveNormalizada": "REVERSAO PROVISAO",
+    "codigoReduzido": "561"
+  },
+  {
+    "nomeOriginal": "ASSINATURAS",
+    "chaveNormalizada": "ASSINATURAS",
+    "codigoReduzido": "564"
+  },
+  {
+    "nomeOriginal": "ASSINATURAS DE JORNAIS E REVISTAS",
+    "chaveNormalizada": "ASSINATURAS JORNAIS REVISTAS",
+    "codigoReduzido": "564"
+  },
+  {
+    "nomeOriginal": "ASSINATURAS E PERIODICOS",
+    "chaveNormalizada": "ASSINATURAS PERIODICOS",
+    "codigoReduzido": "564"
+  },
+  {
+    "nomeOriginal": "CORREIOS E MALOTES",
+    "chaveNormalizada": "CORREIOS MALOTES",
+    "codigoReduzido": "565"
+  },
+  {
+    "nomeOriginal": "CORREIOS",
+    "chaveNormalizada": "CORREIOS",
+    "codigoReduzido": "565"
+  },
+  {
+    "nomeOriginal": "SEDEX",
+    "chaveNormalizada": "SEDEX",
+    "codigoReduzido": "565"
+  },
+  {
+    "nomeOriginal": "MALOTES",
+    "chaveNormalizada": "MALOTES",
+    "codigoReduzido": "565"
+  },
+  {
+    "nomeOriginal": "MOTOBOY",
+    "chaveNormalizada": "MOTOBOY",
+    "codigoReduzido": "566"
+  },
+  {
+    "nomeOriginal": "MOTOFRETE",
+    "chaveNormalizada": "MOTOFRETE",
+    "codigoReduzido": "566"
+  },
+  {
+    "nomeOriginal": "ENTREGAS",
+    "chaveNormalizada": "ENTREGAS",
+    "codigoReduzido": "566"
+  },
+  {
+    "nomeOriginal": "TAXAS DIVERSAS",
+    "chaveNormalizada": "TAXAS DIVERSAS",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "EMOLUMENTOS JUDICIAIS E CARTORIAIS",
+    "chaveNormalizada": "EMOLUMENTOS JUDICIAIS CARTORIAIS",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "CARTORIOS",
+    "chaveNormalizada": "CARTORIOS",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "DESPESAS COM CARTORIO",
+    "chaveNormalizada": "DESPESAS COM CARTORIO",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "CUSTAS JUDICIAIS",
+    "chaveNormalizada": "CUSTAS JUDICIAIS",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "TAXAS E EMOLUMENTOS",
+    "chaveNormalizada": "TAXAS EMOLUMENTOS",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "CARTORIO",
+    "chaveNormalizada": "CARTORIO",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "TAXAS CARTORARIAS",
+    "chaveNormalizada": "TAXAS CARTORARIAS",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "RECONHECIMENTO DE FIRMA",
+    "chaveNormalizada": "RECONHECIMENTO FIRMA",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "AUTENTICACOES",
+    "chaveNormalizada": "AUTENTICACOES",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "JUNTA COMERCIAL",
+    "chaveNormalizada": "JUNTA COMERCIAL",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "FRETES",
+    "chaveNormalizada": "FRETES",
+    "codigoReduzido": "569"
+  },
+  {
+    "nomeOriginal": "FRETES E CARRETOS",
+    "chaveNormalizada": "FRETES CARRETOS",
+    "codigoReduzido": "569"
+  },
+  {
+    "nomeOriginal": "CARRETOS",
+    "chaveNormalizada": "CARRETOS",
+    "codigoReduzido": "569"
+  },
+  {
+    "nomeOriginal": "ANUIDADES",
+    "chaveNormalizada": "ANUIDADES",
+    "codigoReduzido": "570"
+  },
+  {
+    "nomeOriginal": "CONTRIBUICOES E ANUIDADES",
+    "chaveNormalizada": "CONTRIBUICAO ANUIDADES",
+    "codigoReduzido": "570"
+  },
+  {
+    "nomeOriginal": "ANUIDADE CRC",
+    "chaveNormalizada": "ANUIDADE CRC",
+    "codigoReduzido": "570"
+  },
+  {
+    "nomeOriginal": "ANUIDADES DE CLASSE",
+    "chaveNormalizada": "ANUIDADES CLASSE",
+    "codigoReduzido": "570"
+  },
+  {
+    "nomeOriginal": "ASSOCIACOES",
+    "chaveNormalizada": "ASSOCIACOES",
+    "codigoReduzido": "570"
+  },
+  {
+    "nomeOriginal": "MENSALIDADES ASSOCIATIVAS",
+    "chaveNormalizada": "MENSALIDADES ASSOCIATIVAS",
+    "codigoReduzido": "570"
+  },
+  {
+    "nomeOriginal": "PAPELARIA",
+    "chaveNormalizada": "PAPELARIA",
+    "codigoReduzido": "571"
+  },
+  {
+    "nomeOriginal": "IMPRESSOS",
+    "chaveNormalizada": "IMPRESSOS",
+    "codigoReduzido": "571"
+  },
+  {
+    "nomeOriginal": "GRAFICA",
+    "chaveNormalizada": "GRAFICA",
+    "codigoReduzido": "571"
+  },
+  {
+    "nomeOriginal": "SERVICOS GRAFICOS",
+    "chaveNormalizada": "SERVICOS GRAFICOS",
+    "codigoReduzido": "571"
+  },
+  {
+    "nomeOriginal": "BENS NAO IMOBILIZAVEIS DE PEQUENO VALOR",
+    "chaveNormalizada": "BENS NAO IMOBILIZAVEIS PEQUENO VALORES",
+    "codigoReduzido": "572"
+  },
+  {
+    "nomeOriginal": "BENS DE PEQUENO VALOR",
+    "chaveNormalizada": "BENS PEQUENO VALORES",
+    "codigoReduzido": "572"
+  },
+  {
+    "nomeOriginal": "MATERIAIS DE PEQUENO VALOR",
+    "chaveNormalizada": "MATERIAIS PEQUENO VALORES",
+    "codigoReduzido": "572"
+  },
+  {
+    "nomeOriginal": "JUROS S/ EMPRÉSTIMO",
+    "chaveNormalizada": "JUROS S EMPRESTIMOS",
+    "codigoReduzido": "576"
+  },
+  {
+    "nomeOriginal": "JUROS S/ EMPRESTIMOS BANCARIOS",
+    "chaveNormalizada": "JUROS S EMPRESTIMOS BANCARIOS",
+    "codigoReduzido": "576"
+  },
+  {
+    "nomeOriginal": "JUROS DE FINANCIAMENTO",
+    "chaveNormalizada": "JUROS FINANCIAMENTOS",
+    "codigoReduzido": "576"
+  },
+  {
+    "nomeOriginal": "JUROS S/ FINANCIAMENTOS",
+    "chaveNormalizada": "JUROS S FINANCIAMENTOS",
+    "codigoReduzido": "576"
+  },
+  {
+    "nomeOriginal": "(-) JUROS S/ MUTUO",
+    "chaveNormalizada": "MENOS JUROS S MUTUO",
+    "codigoReduzido": "583"
+  },
+  {
+    "nomeOriginal": "JUROS S/ MUTUO",
+    "chaveNormalizada": "JUROS S MUTUO",
+    "codigoReduzido": "583"
+  },
+  {
+    "nomeOriginal": "JUROS DE MUTUO",
+    "chaveNormalizada": "JUROS MUTUO",
+    "codigoReduzido": "583"
+  },
+  {
+    "nomeOriginal": "IOF",
+    "chaveNormalizada": "IOF",
+    "codigoReduzido": "584"
+  },
+  {
+    "nomeOriginal": "IOF S/ OPERACOES FINANCEIRAS",
+    "chaveNormalizada": "IOF S OPERACOES FINANCEIRAS",
+    "codigoReduzido": "584"
+  },
+  {
+    "nomeOriginal": "IOF S/ APLICACOES",
+    "chaveNormalizada": "IOF S APLICACAO",
+    "codigoReduzido": "584"
+  },
+  {
+    "nomeOriginal": "JUROS PASSIVOS",
+    "chaveNormalizada": "JUROS PASSIVOS",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS",
+    "chaveNormalizada": "JUROS",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS PAGOS",
+    "chaveNormalizada": "JUROS PAGOS",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS DE MORA",
+    "chaveNormalizada": "JUROS MORA",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS E MULTAS DE MORA",
+    "chaveNormalizada": "JUROS MULTAS MORA",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS E MULTAS",
+    "chaveNormalizada": "JUROS MULTAS",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS E MULTAS - IFRS 16",
+    "chaveNormalizada": "JUROS MULTAS IFRS 16",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS IFRS 16",
+    "chaveNormalizada": "JUROS IFRS 16",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS ARRENDAMENTO",
+    "chaveNormalizada": "JUROS ARRENDAMENTO",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "MULTA E JUROS CORREÇÃO MONETARIA",
+    "chaveNormalizada": "MULTAS JUROS CORRECAO MONETARIA",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS SOBRE IMPOSTOS",
+    "chaveNormalizada": "JUROS S IMPOSTOS",
+    "codigoReduzido": "597"
+  },
+  {
+    "nomeOriginal": "JUROS S/ TRIBUTOS",
+    "chaveNormalizada": "JUROS S TRIBUTOS",
+    "codigoReduzido": "597"
+  },
+  {
+    "nomeOriginal": "JUROS SELIC",
+    "chaveNormalizada": "JUROS SELIC",
+    "codigoReduzido": "597"
+  },
+  {
+    "nomeOriginal": "JUROS S/ PARCELAMENTO",
+    "chaveNormalizada": "JUROS S PARCELAMENTO",
+    "codigoReduzido": "597"
+  },
+  {
+    "nomeOriginal": "DESCONTOS FINANCEIROS CONCEDIDOS",
+    "chaveNormalizada": "DESCONTOS FINANCEIROS CONCEDIDOS",
+    "codigoReduzido": "598"
+  },
+  {
+    "nomeOriginal": "TARIFA E COMISSOES BANCARIAS",
+    "chaveNormalizada": "TARIFAS COMISSOES BANCARIAS",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "TARIFAS BANCARIAS",
+    "chaveNormalizada": "TARIFAS BANCARIAS",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "DESPESAS BANCARIAS",
+    "chaveNormalizada": "DESPESAS BANCARIAS",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "TARIFAS E TAXAS BANCARIAS",
+    "chaveNormalizada": "TARIFAS TAXAS BANCARIAS",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "SERVICOS BANCARIOS",
+    "chaveNormalizada": "SERVICOS BANCARIOS",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "TAXAS BANCARIAS",
+    "chaveNormalizada": "TAXAS BANCARIAS",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "TARIFAS",
+    "chaveNormalizada": "TARIFAS",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "TARIFA BANCARIA",
+    "chaveNormalizada": "TARIFAS BANCARIA",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "TARIFAS DE COBRANCA",
+    "chaveNormalizada": "TARIFAS COBRANCA",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "TARIFA PIX",
+    "chaveNormalizada": "TARIFAS PIX",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "TARIFA TED",
+    "chaveNormalizada": "TARIFAS TED",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "MANUTENCAO DE CONTA",
+    "chaveNormalizada": "MANUTENCAO CONTA",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "CESTA DE SERVICOS",
+    "chaveNormalizada": "CESTA SERVICOS",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "ATUALIZACAO MONETARIA",
+    "chaveNormalizada": "ATUALIZACAO MONETARIA",
+    "codigoReduzido": "608"
+  },
+  {
+    "nomeOriginal": "VARIACAO MONETARIA PASSIVA",
+    "chaveNormalizada": "VARIACAO MONETARIA PASSIVA",
+    "codigoReduzido": "608"
+  },
+  {
+    "nomeOriginal": "VARIACOES MONETARIAS PASSIVAS",
+    "chaveNormalizada": "VARIACOES MONETARIAS PASSIVAS",
+    "codigoReduzido": "608"
+  },
+  {
+    "nomeOriginal": "VARIACAO CAMBIAL PASSIVA",
+    "chaveNormalizada": "VARIACAO CAMBIAL PASSIVA",
+    "codigoReduzido": "609"
+  },
+  {
+    "nomeOriginal": "VARIACOES CAMBIAIS PASSIVAS",
+    "chaveNormalizada": "VARIACOES CAMBIAIS PASSIVAS",
+    "codigoReduzido": "609"
+  },
+  {
+    "nomeOriginal": "PERDA CAMBIAL",
+    "chaveNormalizada": "PERDA CAMBIAL",
+    "codigoReduzido": "609"
+  },
+  {
+    "nomeOriginal": "MULTA ATRASO DECLARACAO",
+    "chaveNormalizada": "MULTAS ATRASO DECLARACAO",
+    "codigoReduzido": "616"
+  },
+  {
+    "nomeOriginal": "MULTAS FISCAIS",
+    "chaveNormalizada": "MULTAS FISCAIS",
+    "codigoReduzido": "616"
+  },
+  {
+    "nomeOriginal": "MULTAS S/ TRIBUTOS",
+    "chaveNormalizada": "MULTAS S TRIBUTOS",
+    "codigoReduzido": "616"
+  },
+  {
+    "nomeOriginal": "MULTA POR ATRASO NA ENTREGA DE DECLARACAO",
+    "chaveNormalizada": "MULTAS POR ATRASO ENTREGA DECLARACAO",
+    "codigoReduzido": "616"
+  },
+  {
+    "nomeOriginal": "MULTAS",
+    "chaveNormalizada": "MULTAS",
+    "codigoReduzido": "616"
+  },
+  {
+    "nomeOriginal": "MULTA DE MORA",
+    "chaveNormalizada": "MULTAS MORA",
+    "codigoReduzido": "616"
+  },
+  {
+    "nomeOriginal": "MULTAS S/ IMPOSTOS",
+    "chaveNormalizada": "MULTAS S IMPOSTOS",
+    "codigoReduzido": "616"
+  },
+  {
+    "nomeOriginal": "MULTA POR ATRASO",
+    "chaveNormalizada": "MULTAS POR ATRASO",
+    "codigoReduzido": "616"
+  },
+  {
+    "nomeOriginal": "(-) PREJUÍZOS COM TÍTULOS DE RENDA VARIÁ",
+    "chaveNormalizada": "MENOS PREJUIZO COM TITULOS RENDA VARIA",
+    "codigoReduzido": "617"
+  },
+  {
+    "nomeOriginal": "PREJUIZOS COM TITULOS DE RENDA VARIAVEL",
+    "chaveNormalizada": "PREJUIZO COM TITULOS RENDA VARIAVEL",
+    "codigoReduzido": "617"
+  },
+  {
+    "nomeOriginal": "PERDAS COM APLICACOES",
+    "chaveNormalizada": "PERDAS COM APLICACAO",
+    "codigoReduzido": "617"
+  },
+  {
+    "nomeOriginal": "PERDAS EM FUNDOS",
+    "chaveNormalizada": "PERDAS FUNDOS",
+    "codigoReduzido": "617"
+  },
+  {
+    "nomeOriginal": "PROVISAO IRPJ",
+    "chaveNormalizada": "PROVISAO IRPJ",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "IRPJ S/ LUCRO",
+    "chaveNormalizada": "IRPJ S LUCRO",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "IMPOSTO DE RENDA S/ LUCRO",
+    "chaveNormalizada": "IMPOSTOS RENDA S LUCRO",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "IMPOSTO DE RENDA",
+    "chaveNormalizada": "IMPOSTOS RENDA",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "PROVISAO PARA IRPJ",
+    "chaveNormalizada": "PROVISAO P IRPJ",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "IRPJ CORRENTE",
+    "chaveNormalizada": "IRPJ CORRENTE",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "IRPJ LUCRO REAL",
+    "chaveNormalizada": "IRPJ LUCRO REAL",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "IRPJ LUCRO PRESUMIDO",
+    "chaveNormalizada": "IRPJ LUCRO PRESUMIDO",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "PROVISAO CSLL",
+    "chaveNormalizada": "PROVISAO CSLL",
+    "codigoReduzido": "622"
+  },
+  {
+    "nomeOriginal": "CSLL S/ LUCRO",
+    "chaveNormalizada": "CSLL S LUCRO",
+    "codigoReduzido": "622"
+  },
+  {
+    "nomeOriginal": "CSLL CORRENTE",
+    "chaveNormalizada": "CSLL CORRENTE",
+    "codigoReduzido": "622"
+  },
+  {
+    "nomeOriginal": "CONTRIBUICAO SOCIAL S/ LUCRO LIQUIDO",
+    "chaveNormalizada": "CSLL S LUCRO LIQUIDO",
+    "codigoReduzido": "622"
+  },
+  {
+    "nomeOriginal": "CSLL LUCRO REAL",
+    "chaveNormalizada": "CSLL LUCRO REAL",
+    "codigoReduzido": "622"
+  },
+  {
+    "nomeOriginal": "CSLL LUCRO PRESUMIDO",
+    "chaveNormalizada": "CSLL LUCRO PRESUMIDO",
+    "codigoReduzido": "622"
+  },
+  {
+    "nomeOriginal": "ISS A RECOLHER",
+    "chaveNormalizada": "ISS PAGAR",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "ITAÚ UNIBANCO S.A. - CDB - APLICACAO AUT",
+    "chaveNormalizada": "ITAU CDB APLICACAO AUT",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLICAÇÃO CDB - DI",
+    "chaveNormalizada": "APLICACAO CDB DI",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "ITAÚ UNIBANCO S.A. - CDB - APLICACAO AUTIMAIS",
+    "chaveNormalizada": "ITAU CDB APLICACAO AUTIMAIS",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "ITAÚ UNIBANCO S.A - AG.: 0641 / CONTA: 9",
+    "chaveNormalizada": "ITAU AG 0641 CONTA 9",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "(-) PRO-LABORE",
+    "chaveNormalizada": "MENOS PRO LABORE",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "(-) DIVIDENDOS PAGOS ANTECIPADAMENTE",
+    "chaveNormalizada": "MENOS DIVIDENDOS PAGOS ANTECIPADAMENTE",
+    "codigoReduzido": "285"
+  },
+  {
+    "nomeOriginal": "(-) DESPESAS DE ENERGIA",
+    "chaveNormalizada": "MENOS DESPESAS ENERGIA",
+    "codigoReduzido": "536"
+  },
+  {
+    "nomeOriginal": "(-) CONTRIBUICAO SOCIAL",
+    "chaveNormalizada": "MENOS CSLL",
+    "codigoReduzido": "622"
+  },
+  {
+    "nomeOriginal": "(-) IMPOSTO DE RENDA",
+    "chaveNormalizada": "MENOS IMPOSTOS RENDA",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "SERVICOS PRESTADOS A RECEBER",
+    "chaveNormalizada": "SERVICOS PRESTADOS RECEBER",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "BANCO ITAU AG 196 C/C 20061-2",
+    "chaveNormalizada": "BANCO ITAU AG 196 CC 20061 2",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "BANCO ITAÚ S/A - C/C:97285-5",
+    "chaveNormalizada": "BANCO ITAU CC 97285 5",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "ITAÚ UNIBANCO S.A - AG.: 0350/ CONTA: 99",
+    "chaveNormalizada": "ITAU AG 0350 CONTA 99",
+    "codigoReduzido": "11"
+  },
+  {
+    "nomeOriginal": "BANCO BTG PACTUAL S/A -C/I:70509",
+    "chaveNormalizada": "BANCO BTG PACTUAL C I 70509",
+    "codigoReduzido": "16"
+  },
+  {
+    "nomeOriginal": "BANK BTG PACTUAL",
+    "chaveNormalizada": "BANK BTG PACTUAL",
+    "codigoReduzido": "16"
+  },
+  {
+    "nomeOriginal": "CITI BANK - 0429901014",
+    "chaveNormalizada": "CITI BANK 0429901014",
+    "codigoReduzido": "18"
+  },
+  {
+    "nomeOriginal": "BNP PARIBAS MATCH DI FIRF",
+    "chaveNormalizada": "BNP PARIBAS MATCH DI FIRF",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "BTG PACTUAL CDB PLUS FIRF",
+    "chaveNormalizada": "BTG PACTUAL CDB PLUS FIRF",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "FIAGRO BTAG CI",
+    "chaveNormalizada": "FIAGRO BTAG CI",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "FUNDO DE INVESTIMENTO EM DIREITOS CREDIT",
+    "chaveNormalizada": "FUNDO INVESTIMENTO DIREITOS CREDIT",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "INSUMOS MILÊNIO TERRA MAGNA",
+    "chaveNormalizada": "INSUMOS MILENIO TERRA MAGNA",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "ITAU TOP DI IN",
+    "chaveNormalizada": "ITAU TOP DI IN",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "ITAU TOP RF REFERENCIADO DI FICFI",
+    "chaveNormalizada": "ITAU TOP RF REFERENCIADO DI FICFI",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "(-) RENDAS NÃO RESG.PRIVILEGE RF REF DI",
+    "chaveNormalizada": "MENOS RENDAS NAO RESG PRIVILEGE RF REF DI",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "PORTO SEGURO FI REF DI CREDITO PRIVADO",
+    "chaveNormalizada": "PORTO SEGUROS FI REF DI CREDITO PRIVADO",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "PRIVILEGE RF REF DI",
+    "chaveNormalizada": "PRIVILEGE RF REF DI",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "RENDAS NAO REALIZADAS",
+    "chaveNormalizada": "RENDAS NAO REALIZADAS",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "RIZA LOTUS FIRF DI",
+    "chaveNormalizada": "RIZA LOTUS FIRF DI",
+    "codigoReduzido": "30"
+  },
+  {
+    "nomeOriginal": "APLIC AUTO MAIS ITAU",
+    "chaveNormalizada": "APLICACAO AUTO MAIS ITAU",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "CDB BANK BTG PACTUAL",
+    "chaveNormalizada": "CDB BANK BTG PACTUAL",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "CERTIFICADO DE DEPOSITO BANCARIOS",
+    "chaveNormalizada": "CERTIFICADO DEPOSITO BANCARIOS",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "CERTIFICADOS DE DEPOSITOS BANCARIOS",
+    "chaveNormalizada": "CERTIFICADOS DEPOSITOS BANCARIOS",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "(-) RENDAS NAO RESG.CDB.ITAU - DI",
+    "chaveNormalizada": "MENOS RENDAS NAO RESG CDB ITAU DI",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "RENDAS NÃO REALIZADAS - CDB",
+    "chaveNormalizada": "RENDAS NAO REALIZADAS CDB",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "TERRA INVESTIMENTO",
+    "chaveNormalizada": "TERRA INVESTIMENTO",
+    "codigoReduzido": "31"
+  },
+  {
+    "nomeOriginal": "AGRODINAMICA INSUMOS FUNDO DE INVESTIMEN",
+    "chaveNormalizada": "AGRODINAMICA INSUMOS FUNDO INVESTIMEN",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "AGROGALAXY FORNECEDORES FUNDO DE INVESTI",
+    "chaveNormalizada": "AGROGALAXY FORNECEDORES FUNDO INVESTI",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "AGROGALAXY FORNECEDORES III FUNDO DE INV",
+    "chaveNormalizada": "AGROGALAXY FORNECEDORES III FUNDO INV",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "AGROJIVE I FUNDO DE INVESTIMENTO EM DIRE",
+    "chaveNormalizada": "AGROJIVE I FUNDO INVESTIMENTO DIRE",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "AGROLOGICA FUNDO DE INVESTIMENTO NAS CAD",
+    "chaveNormalizada": "AGROLOGICA FUNDO INVESTIMENTO NAS CAD",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CONCEITO INSUMOS FUNDO DE INVESTIMENTO N",
+    "chaveNormalizada": "CONCEITO INSUMOS FUNDO INVESTIMENTO N",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "CRIALT INSUMOS FUNDO DE INVESTIMENTO NAS",
+    "chaveNormalizada": "CRIALT INSUMOS FUNDO INVESTIMENTO NAS",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "DJF IV FUNDO DE INVESTIMENTO EM DIREITOS",
+    "chaveNormalizada": "DJF IV FUNDO INVESTIMENTO DIREITOS",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "FORTE AGRO INSUMOS FUNDO DE INVESTIMENTO",
+    "chaveNormalizada": "FORTE AGRO INSUMOS FUNDO INVESTIMENTO",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "HORTSOY INSUMOS FUNDO DE INVESTIMENTO NA",
+    "chaveNormalizada": "HORTSOY INSUMOS FUNDO INVESTIMENTO",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "INSUMOS MILENIO TERRAMAGNA FUNDO DE INVE",
+    "chaveNormalizada": "INSUMOS MILENIO TERRAMAGNA FUNDO INVE",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "QI SOCIEDADE DE CREDITO DIRETO S.A.",
+    "chaveNormalizada": "QI SOCIEDADE CREDITO DIRETO",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "TAXA DE ADMINISTRAÇÃO -FUNDOS",
+    "chaveNormalizada": "TAXAS ADMINISTRACAO FUNDOS",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "VALORIZA FUNDO DE INVESTIMENTO NAS CADEI",
+    "chaveNormalizada": "VALORIZA FUNDO INVESTIMENTO NAS CADEI",
+    "codigoReduzido": "35"
+  },
+  {
+    "nomeOriginal": "IRRF S/APLICACAÇÂO FINANCEIRA",
+    "chaveNormalizada": "IRRF S APLICACACAO FINANCEIRA",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IRRF S/ RESGATE APLICAÇÕES FINANCEIRAS",
+    "chaveNormalizada": "IRRF S RESGATE APLICACAO FINANCEIRAS",
+    "codigoReduzido": "62"
+  },
+  {
+    "nomeOriginal": "IR ANTECIPAÇÃO",
+    "chaveNormalizada": "IR ANTECIPACAO",
+    "codigoReduzido": "80"
+  },
+  {
+    "nomeOriginal": "CSLL ANTECIPAÇÃO",
+    "chaveNormalizada": "CSLL ANTECIPACAO",
+    "codigoReduzido": "81"
+  },
+  {
+    "nomeOriginal": "ECF IRPJ - 2026/2025",
+    "chaveNormalizada": "ECF IRPJ 2026 2025",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "ECF IRPJ 4º TRIMESTRE/2025",
+    "chaveNormalizada": "ECF IRPJ 4 TRIMESTRE 2025",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "IMPOSTO DE RENDA A RECUPERAR",
+    "chaveNormalizada": "IMPOSTOS RENDA COMPENSAR",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "IRPJ SALDO NEGATIVO - 2024",
+    "chaveNormalizada": "IRPJ SALDO NEGATIVO 2024",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "IRPJ SALDO NEGATIVO - 2025",
+    "chaveNormalizada": "IRPJ SALDO NEGATIVO 2025",
+    "codigoReduzido": "82"
+  },
+  {
+    "nomeOriginal": "ECF CSLL - 2026/2025",
+    "chaveNormalizada": "ECF CSLL 2026 2025",
+    "codigoReduzido": "83"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTOS P/CONTA IMOBILIZACOES",
+    "chaveNormalizada": "ADIANTAMENTO P CONTA IMOBILIZACOES",
+    "codigoReduzido": "85"
+  },
+  {
+    "nomeOriginal": "ADIANTAMENTOS P/ FORNECEDORES",
+    "chaveNormalizada": "ADIANTAMENTO P FORNECEDORES",
+    "codigoReduzido": "85"
+  },
+  {
+    "nomeOriginal": "BÔNUS DIRETORES (NDT)",
+    "chaveNormalizada": "BONUS DIRETORES NDT",
+    "codigoReduzido": "95"
+  },
+  {
+    "nomeOriginal": "C/C - DIVI CORRESPONDENTE BANCÁRIO",
+    "chaveNormalizada": "CC DIVI CORRESPONDENTE BANCARIO",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "C/C - DIVI SOCIEDADE DE CREDITO DIRETO S",
+    "chaveNormalizada": "CC DIVI SOCIEDADE CREDITO DIRETO S",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "C/C - IVI SAAS LTDA",
+    "chaveNormalizada": "CC IVI SAAS",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "DEEP ESG TERRAMAGNA TECNOLOGIA SPE LTDA",
+    "chaveNormalizada": "DEEP ESG TERRAMAGNA TECNOLOGIA SPE",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "NORD BANKERS",
+    "chaveNormalizada": "NORD BANKERS",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "TERRAMAGNA T. DE DADOS LTDA  - SCP",
+    "chaveNormalizada": "TERRAMAGNA T DADOS SCP",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "TM TRATAMENTO DE DADOS",
+    "chaveNormalizada": "TM TRATAMENTO DADOS",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "VLRS A REC SOC LIGADAS - BOKU NET IP",
+    "chaveNormalizada": "VALORES REC SOC LIGADAS BOKU NET IP",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "VLRS A REC SOC LIGADAS - TERRAMAGNA  LLC",
+    "chaveNormalizada": "VALORES REC SOC LIGADAS TERRAMAGNA LLC",
+    "codigoReduzido": "100"
+  },
+  {
+    "nomeOriginal": "CUSTO",
+    "chaveNormalizada": "CUSTO",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "DIVI SCD",
+    "chaveNormalizada": "DIVI SCD",
+    "codigoReduzido": "108"
+  },
+  {
+    "nomeOriginal": "AUT AFUNC BCB VLR EQUIP PAT. BOKU NET IP",
+    "chaveNormalizada": "AUT AFUNC BCB VALORES EQUIPAMENTOS PAT BOKU NET IP",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "Boku Network Brasil Servicos",
+    "chaveNormalizada": "BOKU NETWORK BRASIL SERVICOS",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "EQP. ANOS ANTERIORES",
+    "chaveNormalizada": "EQP ANOS ANTERIORES",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "EQUIVALENCIA PATRIMONIAL - NORD BANKERS",
+    "chaveNormalizada": "EQUIVALENCIA PATRIMONIAL NORD BANKERS",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "EQUIVALENCIA PATRIMONIAL - NORD CORRESPO",
+    "chaveNormalizada": "EQUIVALENCIA PATRIMONIAL NORD CORRESPO",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "EQUIVALENCIA PATRIMONIAL - NORD GESTORA",
+    "chaveNormalizada": "EQUIVALENCIA PATRIMONIAL NORD GESTORA",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "EQUIVALENCIA PATRIMONIAL - NORD LIBERTA",
+    "chaveNormalizada": "EQUIVALENCIA PATRIMONIAL NORD LIBERTA",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "EQUIVALENCIA PATRIMONIAL - NORD WEALTH",
+    "chaveNormalizada": "EQUIVALENCIA PATRIMONIAL NORD WEALTH",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "EQUIVALENCIA PATRIMONIAL - PR CONSULTORI",
+    "chaveNormalizada": "EQUIVALENCIA PATRIMONIAL PR CONSULTORI",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "(-) DIVIDENDOS",
+    "chaveNormalizada": "MENOS DIVIDENDOS",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "( - ) DIVIDENDOS ANOS ANTERIORES",
+    "chaveNormalizada": "MENOS DIVIDENDOS ANOS ANTERIORES",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "(-) DIVIDENDOS - NORD BANKERS",
+    "chaveNormalizada": "MENOS DIVIDENDOS NORD BANKERS",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "(-) DIVIDENDOS - NORD CORRESPONDENTE",
+    "chaveNormalizada": "MENOS DIVIDENDOS NORD CORRESPONDENTE",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "(-) DIVIDENDOS - NORD GESTORA",
+    "chaveNormalizada": "MENOS DIVIDENDOS NORD GESTORA",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "(-) DIVIDENDOS - NORD LIBERTA",
+    "chaveNormalizada": "MENOS DIVIDENDOS NORD LIBERTA",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "(-) DIVIDENDOS - NORD WEALTH",
+    "chaveNormalizada": "MENOS DIVIDENDOS NORD WEALTH",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "(-) DIVIDENDOS - PR CONSULTORIA",
+    "chaveNormalizada": "MENOS DIVIDENDOS PR CONSULTORIA",
+    "codigoReduzido": "109"
+  },
+  {
+    "nomeOriginal": "EQUIPAMENTOS DE COMUNICAÇÃO",
+    "chaveNormalizada": "EQUIPAMENTOS COMUNICACAO",
+    "codigoReduzido": "126"
+  },
+  {
+    "nomeOriginal": "(-) EQUIPAMENTOS DE COMUNICAÇÃO",
+    "chaveNormalizada": "MENOS EQUIPAMENTOS COMUNICACAO",
+    "codigoReduzido": "131"
+  },
+  {
+    "nomeOriginal": "(-) COMPUTADORES, NOTEBOOKS E EQUIPAMENT",
+    "chaveNormalizada": "MENOS COMPUTADORES NOTEBOOKS EQUIPAMENT",
+    "codigoReduzido": "136"
+  },
+  {
+    "nomeOriginal": "(-) PROCESSAMENTO DE DADOS",
+    "chaveNormalizada": "MENOS PROCESSAMENTO DADOS",
+    "codigoReduzido": "136"
+  },
+  {
+    "nomeOriginal": "CONSULTORIA EM DEPARTAMENTO PESSOAL",
+    "chaveNormalizada": "CONSULTORIA DEPARTAMENTO PESSOAL",
+    "codigoReduzido": "201"
+  },
+  {
+    "nomeOriginal": "AQUISIÇÃO EM PARTIC. SOCIETÁRIA",
+    "chaveNormalizada": "AQUISICAO PARTIC SOCIETARIA",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "CARTÃO DE CRÉDITO A PAGAR",
+    "chaveNormalizada": "CARTAO CREDITO PAGAR",
+    "codigoReduzido": "202"
+  },
+  {
+    "nomeOriginal": "BÔNUS (NDT)",
+    "chaveNormalizada": "BONUS NDT",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "HONORARIOS E SALARIOS A PAGAR",
+    "chaveNormalizada": "HONORARIOS SALARIOS PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "RESCISOES A PAGAR",
+    "chaveNormalizada": "RESCISOES PAGAR",
+    "codigoReduzido": "219"
+  },
+  {
+    "nomeOriginal": "FERIAS",
+    "chaveNormalizada": "FERIAS",
+    "codigoReduzido": "221"
+  },
+  {
+    "nomeOriginal": "PROVISÃO FÉRIAS",
+    "chaveNormalizada": "PROVISAO FERIAS",
+    "codigoReduzido": "221"
+  },
+  {
+    "nomeOriginal": "PROVISAO 13o",
+    "chaveNormalizada": "PROVISAO 13",
+    "codigoReduzido": "222"
+  },
+  {
+    "nomeOriginal": "FGTS S/ 13° SALARIO",
+    "chaveNormalizada": "FGTS S 13",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "FGTS S/ FERIAS",
+    "chaveNormalizada": "FGTS S FERIAS",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "INSS S/ 13° SALARIO",
+    "chaveNormalizada": "INSS S 13",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "INSS S/ FERIAS",
+    "chaveNormalizada": "INSS S FERIAS",
+    "codigoReduzido": "223"
+  },
+  {
+    "nomeOriginal": "F.G.T.S.",
+    "chaveNormalizada": "F G T S",
+    "codigoReduzido": "226"
+  },
+  {
+    "nomeOriginal": "FGTS",
+    "chaveNormalizada": "FGTS",
+    "codigoReduzido": "226"
+  },
+  {
+    "nomeOriginal": "FGTS SOBRE SALARIOS",
+    "chaveNormalizada": "FGTS S SALARIOS",
+    "codigoReduzido": "226"
+  },
+  {
+    "nomeOriginal": "INSS",
+    "chaveNormalizada": "INSS",
+    "codigoReduzido": "227"
+  },
+  {
+    "nomeOriginal": "INSS SOBRE SALARIOS",
+    "chaveNormalizada": "INSS S SALARIOS",
+    "codigoReduzido": "227"
+  },
+  {
+    "nomeOriginal": "PIS",
+    "chaveNormalizada": "PIS",
+    "codigoReduzido": "235"
+  },
+  {
+    "nomeOriginal": "PIS A RECOLHER (IMPORTAÇÃO DE SERVIÇOS)",
+    "chaveNormalizada": "PIS PAGAR IMPORTACAO SERVICOS",
+    "codigoReduzido": "235"
+  },
+  {
+    "nomeOriginal": "PIS A RECOLHER (RECEITAS)",
+    "chaveNormalizada": "PIS PAGAR RECEITA",
+    "codigoReduzido": "235"
+  },
+  {
+    "nomeOriginal": "COFINS",
+    "chaveNormalizada": "COFINS",
+    "codigoReduzido": "236"
+  },
+  {
+    "nomeOriginal": "COFINS A RECOLHER (IMPORTAÇÃO DE SERVIÇO",
+    "chaveNormalizada": "COFINS PAGAR IMPORTACAO SERVICOS",
+    "codigoReduzido": "236"
+  },
+  {
+    "nomeOriginal": "COFINS A RECOLHER (RECEITAS)",
+    "chaveNormalizada": "COFINS PAGAR RECEITA",
+    "codigoReduzido": "236"
+  },
+  {
+    "nomeOriginal": "ISS A RECOLHER (RECEITAS)",
+    "chaveNormalizada": "ISS PAGAR RECEITA",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "ISS - SP",
+    "chaveNormalizada": "ISS SP",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "ISS - SP (IMPORTAÇÃO DE SERVIÇOS)",
+    "chaveNormalizada": "ISS SP IMPORTACAO SERVICOS",
+    "codigoReduzido": "237"
+  },
+  {
+    "nomeOriginal": "IMPOSTO DE RENDA FONTE 0561",
+    "chaveNormalizada": "IMPOSTOS RENDA FONTE 0561",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IMPOSTO DE RENDA FONTE -CÓD.1708",
+    "chaveNormalizada": "IMPOSTOS RENDA FONTE COD 1708",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF - CÓD. 0422, 0473",
+    "chaveNormalizada": "IRRF COD 0422 0473",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF - CÓD. 1708, 8045",
+    "chaveNormalizada": "IRRF COD 1708 8045",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF A RECOLHER (CÓD. 0561)",
+    "chaveNormalizada": "IRRF PAGAR COD 0561",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "IRRF S/ DIVIDENDOS",
+    "chaveNormalizada": "IRRF S DIVIDENDOS",
+    "codigoReduzido": "238"
+  },
+  {
+    "nomeOriginal": "CSLL",
+    "chaveNormalizada": "CSLL",
+    "codigoReduzido": "240"
+  },
+  {
+    "nomeOriginal": "CSL/COFINS/PIS RETIDOS -CÓD.5952",
+    "chaveNormalizada": "CSL COFINS PIS RETIDO COD 5952",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "CSRF - CÓD. 5952",
+    "chaveNormalizada": "CSRF COD 5952",
+    "codigoReduzido": "241"
+  },
+  {
+    "nomeOriginal": "ADOLFO AMARAL",
+    "chaveNormalizada": "ADOLFO AMARAL",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "AMANDA FERNANDES",
+    "chaveNormalizada": "AMANDA FERNANDES",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "ANGELO THOMAZELLI WOLFF",
+    "chaveNormalizada": "ANGELO THOMAZELLI WOLFF",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "APER WEALTH",
+    "chaveNormalizada": "APER WEALTH",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "ARCANUM WEALTH",
+    "chaveNormalizada": "ARCANUM WEALTH",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "ARVE GESTAO PATRIMONIAL LTDA",
+    "chaveNormalizada": "ARVE GESTAO PATRIMONIAL",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "BASEL CONSULTORIA LTDA",
+    "chaveNormalizada": "BASEL CONSULTORIA",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "BJLM PARTICIPACOES LTDA",
+    "chaveNormalizada": "BJLM PARTICIPACOES",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "C2R (MARINA DINADELI)",
+    "chaveNormalizada": "C2R MARINA DINADELI",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "CAIO ZYLBERSZTAJN",
+    "chaveNormalizada": "CAIO ZYLBERSZTAJN",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "CARLA MOEKO",
+    "chaveNormalizada": "CARLA MOEKO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "CERNE CAPITAL",
+    "chaveNormalizada": "CERNE CAPITAL",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "CHRISTOPHER GALVÃO",
+    "chaveNormalizada": "CHRISTOPHER GALVAO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "COESO CAPITAL",
+    "chaveNormalizada": "COESO CAPITAL",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "DB ADIVISORS",
+    "chaveNormalizada": "DB ADIVISORS",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "DISTRIBUIÇÃO DE LUCROS",
+    "chaveNormalizada": "DISTRIBUICAO LUCRO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "DUNA FINANCIAL CONSULTORIA LTDA",
+    "chaveNormalizada": "DUNA FINANCIAL CONSULTORIA",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "EDUARDO HENRIQUE HISSAMURA",
+    "chaveNormalizada": "EDUARDO HENRIQUE HISSAMURA",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "ELISANGELA SANTOS",
+    "chaveNormalizada": "ELISANGELA SANTOS",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "FABIANO VAZ",
+    "chaveNormalizada": "FABIANO VAZ",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "FELIPE RODRIGUES MARTINS",
+    "chaveNormalizada": "FELIPE RODRIGUES MARTINS",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "FERNANDO SANDER",
+    "chaveNormalizada": "FERNANDO SANDER",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "FL CAPITAL",
+    "chaveNormalizada": "FL CAPITAL",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "FRANCESCO BLUMETTI",
+    "chaveNormalizada": "FRANCESCO BLUMETTI",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "FREDERICO SCHMITZ",
+    "chaveNormalizada": "FREDERICO SCHMITZ",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "GARD CONSULTORIA FINANCEIRA LTD",
+    "chaveNormalizada": "GARD CONSULTORIA FINANCEIRA LTD",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "GIOVANI RUSSO",
+    "chaveNormalizada": "GIOVANI RUSSO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "GIOVANNI DEL NEGRO",
+    "chaveNormalizada": "GIOVANNI DEL NEGRO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "GRADA INVESTIMENTOS",
+    "chaveNormalizada": "GRADA INVESTIMENTOS",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "GUILHERME ABREU",
+    "chaveNormalizada": "GUILHERME ABREU",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "GUSTAVO ADOLFO",
+    "chaveNormalizada": "GUSTAVO ADOLFO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "GUSTAVO GOMES",
+    "chaveNormalizada": "GUSTAVO GOMES",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "HENRIQUE CHAN",
+    "chaveNormalizada": "HENRIQUE CHAN",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "HENRIQUE VASCONCELLOS",
+    "chaveNormalizada": "HENRIQUE VASCONCELLOS",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "IAN FRANCO",
+    "chaveNormalizada": "IAN FRANCO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "IGOR KRUG",
+    "chaveNormalizada": "IGOR KRUG",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "INVESTSIX",
+    "chaveNormalizada": "INVESTSIX",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "ISADORA SANCHES",
+    "chaveNormalizada": "ISADORA SANCHES",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "JAQUELINE BURITY",
+    "chaveNormalizada": "JAQUELINE BURITY",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "JAT WEALTH",
+    "chaveNormalizada": "JAT WEALTH",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "LUIZ PEDRO",
+    "chaveNormalizada": "LUIZ PEDRO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "MARCOS ELAND",
+    "chaveNormalizada": "MARCOS ELAND",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "MARIANA LIMA",
+    "chaveNormalizada": "MARIANA LIMA",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "MARÍLIA FONTES",
+    "chaveNormalizada": "MARILIA FONTES",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "MEGEVE MULTI FAMILLY OFFICE LTDA",
+    "chaveNormalizada": "MEGEVE MULTI FAMILLY OFFICE",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "MONTE BIANCO",
+    "chaveNormalizada": "MONTE BIANCO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "NOBRE WEALTH",
+    "chaveNormalizada": "NOBRE WEALTH",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "NORD PARTICIPACOES",
+    "chaveNormalizada": "NORD PARTICIPACOES",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "NOVARE",
+    "chaveNormalizada": "NOVARE",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "OTMAR SCHENEIDER",
+    "chaveNormalizada": "OTMAR SCHENEIDER",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "PANTHEON CONSULTORIA E PARTICIPAÇÕES LTD",
+    "chaveNormalizada": "PANTHEON CONSULTORIA PARTICIPACOES LTD",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "QUANTUM",
+    "chaveNormalizada": "QUANTUM",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "RAFAEL RAGAZI",
+    "chaveNormalizada": "RAFAEL RAGAZI",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "RENATO BREIA",
+    "chaveNormalizada": "RENATO BREIA",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "RENATO MARTINEZ",
+    "chaveNormalizada": "RENATO MARTINEZ",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "RICARDO AUGUSTO",
+    "chaveNormalizada": "RICARDO AUGUSTO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "ROBERTA NEVES",
+    "chaveNormalizada": "ROBERTA NEVES",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "RONALDO LEE",
+    "chaveNormalizada": "RONALDO LEE",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "VALORO INVEST CONSULTORIA LTDA",
+    "chaveNormalizada": "VALORO INVEST CONSULTORIA",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "VICTOR BUENO",
+    "chaveNormalizada": "VICTOR BUENO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "VICTOR WEILER",
+    "chaveNormalizada": "VICTOR WEILER",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "VICTORIA BIBANCO",
+    "chaveNormalizada": "VICTORIA BIBANCO",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "VIRTUS",
+    "chaveNormalizada": "VIRTUS",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "VITAL CONSULTORIA",
+    "chaveNormalizada": "VITAL CONSULTORIA",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "WILLIANS GAJARDO DE LIMA",
+    "chaveNormalizada": "WILLIANS GAJARDO LIMA",
+    "codigoReduzido": "248"
+  },
+  {
+    "nomeOriginal": "PROVISÃO TRABALHISTAS",
+    "chaveNormalizada": "PROVISAO TRABALHISTAS",
+    "codigoReduzido": "249"
+  },
+  {
+    "nomeOriginal": "MUTUO - BERNARDO MOSCARDINI FABIANI",
+    "chaveNormalizada": "MUTUO BERNARDO MOSCARDINI FABIANI",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "MUTUO - RODRIGO VICTOR DE MELO MARQUES",
+    "chaveNormalizada": "MUTUO RODRIGO VICTOR MELO MARQUES",
+    "codigoReduzido": "254"
+  },
+  {
+    "nomeOriginal": "ABSOLUTE GESTÃO DE INVESTIMENTO",
+    "chaveNormalizada": "ABSOLUTE GESTAO INVESTIMENTO",
+    "codigoReduzido": "256"
+  },
+  {
+    "nomeOriginal": "ABSOLUTE GESTÃO DE INVESTIMENTOS",
+    "chaveNormalizada": "ABSOLUTE GESTAO INVESTIMENTOS",
+    "codigoReduzido": "256"
+  },
+  {
+    "nomeOriginal": "NORD CORRESPONDENTE",
+    "chaveNormalizada": "NORD CORRESPONDENTE",
+    "codigoReduzido": "256"
+  },
+  {
+    "nomeOriginal": "NORD WEALTH",
+    "chaveNormalizada": "NORD WEALTH",
+    "codigoReduzido": "256"
+  },
+  {
+    "nomeOriginal": "PR CONSULTORIA",
+    "chaveNormalizada": "PR CONSULTORIA",
+    "codigoReduzido": "256"
+  },
+  {
+    "nomeOriginal": "TERRAMAGNA  LLC - EXTERIOR",
+    "chaveNormalizada": "TERRAMAGNA LLC EXTERIOR",
+    "codigoReduzido": "256"
+  },
+  {
+    "nomeOriginal": "DE DOMICILIADOS NO EXTERIOR",
+    "chaveNormalizada": "DOMICILIADOS EXTERIOR",
+    "codigoReduzido": "267"
+  },
+  {
+    "nomeOriginal": "INCORP.DHAMA PART.-AGIO NA INTEGR.CAPITA",
+    "chaveNormalizada": "INCORP DHAMA PART AGIO INTEGR CAPITA",
+    "codigoReduzido": "272"
+  },
+  {
+    "nomeOriginal": "DIVI HOLDING LLC",
+    "chaveNormalizada": "DIVI HOLDING LLC",
+    "codigoReduzido": "274"
+  },
+  {
+    "nomeOriginal": "RESERVAS PARA CONTINGENCIAS",
+    "chaveNormalizada": "RESERVA P CONTINGENCIAS",
+    "codigoReduzido": "281"
+  },
+  {
+    "nomeOriginal": "(-) DISTRIB. ANTECIPADA  DE LUCROS",
+    "chaveNormalizada": "MENOS DISTRIB ANTECIPADA LUCRO",
+    "codigoReduzido": "285"
+  },
+  {
+    "nomeOriginal": "LUCRO OU PREJUIZO ACUMUL.EXERC.ENCERRADO",
+    "chaveNormalizada": "LUCRO OU PREJUIZO ACUMUL EXERC ENCERRADO",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "LUCRO OU PREJUIZO ENCERRADOS",
+    "chaveNormalizada": "LUCRO OU PREJUIZO ENCERRADOS",
+    "codigoReduzido": "299"
+  },
+  {
+    "nomeOriginal": "ADM.DE FUNDOS - NACIONAL/ SP",
+    "chaveNormalizada": "ADM FUNDOS NACIONAL SP",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RENDA DE CONSULTORIA TECNICA",
+    "chaveNormalizada": "RENDA CONSULTORIA TECNICA",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RENDAS DE SERVICOS PRESTADOS",
+    "chaveNormalizada": "RENDAS SERVICOS PRESTADOS",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RENDAS DE SERVICOS PRESTADOS 2,9%",
+    "chaveNormalizada": "RENDAS SERVICOS PRESTADOS 2 9 PCT",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RENDAS DE SERVICOS PRESTADOS 2%",
+    "chaveNormalizada": "RENDAS SERVICOS PRESTADOS 2 PCT",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RENDAS DE SERVICOS PRESTADOS 5%",
+    "chaveNormalizada": "RENDAS SERVICOS PRESTADOS 5 PCT",
+    "codigoReduzido": "303"
+  },
+  {
+    "nomeOriginal": "RENDA DE CONSULTORIA TECNICA N/EXTERIOR",
+    "chaveNormalizada": "RENDA CONSULTORIA TECNICA N EXTERIOR",
+    "codigoReduzido": "310"
+  },
+  {
+    "nomeOriginal": "DESPESAS DE CONTRIBUICAO AO PIS/PASEP",
+    "chaveNormalizada": "DESPESAS CONTRIBUICAO AO PIS PASEP",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "(-) PIS S/ RECEITAS DE SERVIÇOS PRESTADO",
+    "chaveNormalizada": "MENOS PIS S RECEITA SERVICOS PRESTADO",
+    "codigoReduzido": "319"
+  },
+  {
+    "nomeOriginal": "DESPESAS DE CONTRIBUICAO AO COFINS",
+    "chaveNormalizada": "DESPESAS CONTRIBUICAO AO COFINS",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "(-) COFINS S/ RECEITAS DE SERVIÇOS PREST",
+    "chaveNormalizada": "MENOS COFINS S RECEITA SERVICOS PREST",
+    "codigoReduzido": "320"
+  },
+  {
+    "nomeOriginal": "DESP.IMP.S/SERV.Q.NATUREZA - ISS/SP",
+    "chaveNormalizada": "DESPESAS IMP S SERVICOS Q NATUREZA ISS SP",
+    "codigoReduzido": "321"
+  },
+  {
+    "nomeOriginal": "(-) ISS S/ RECEITAS DE SERVIÇOS PRESTADO",
+    "chaveNormalizada": "MENOS ISS S RECEITA SERVICOS PRESTADO",
+    "codigoReduzido": "321"
+  },
+  {
+    "nomeOriginal": "(-) ISS S/ RECEITAS DE SERV. PRESTADOS 2",
+    "chaveNormalizada": "MENOS ISS S RECEITA SERVICOS PRESTADOS 2",
+    "codigoReduzido": "321"
+  },
+  {
+    "nomeOriginal": "(-) ISS S/ RECEITAS DE SERV. PRESTADOS 5",
+    "chaveNormalizada": "MENOS ISS S RECEITA SERVICOS PRESTADOS 5",
+    "codigoReduzido": "321"
+  },
+  {
+    "nomeOriginal": "FUNDOS DE INVESTIMENTOS",
+    "chaveNormalizada": "FUNDOS INVESTIMENTOS",
+    "codigoReduzido": "329"
+  },
+  {
+    "nomeOriginal": "(-) RENDAS NÃO RESGATADAS FUNDOS",
+    "chaveNormalizada": "MENOS RENDAS NAO RESGATADAS FUNDOS",
+    "codigoReduzido": "329"
+  },
+  {
+    "nomeOriginal": "RENDAS NAO REALIZADAS - FDOS DE INVESTIM",
+    "chaveNormalizada": "RENDAS NAO REALIZADAS FDOS INVESTIM",
+    "codigoReduzido": "329"
+  },
+  {
+    "nomeOriginal": "RENDAS RESGATADAS FUNDOS",
+    "chaveNormalizada": "RENDAS RESGATADAS FUNDOS",
+    "codigoReduzido": "329"
+  },
+  {
+    "nomeOriginal": "(-) RENDAS NÃO REALIZADAS - CDB",
+    "chaveNormalizada": "MENOS RENDAS NAO REALIZADAS CDB",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RENDAS APLICAÇÃO AUTOMATICA",
+    "chaveNormalizada": "RENDAS APLICACAO AUTOMATICA",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "RENDAS DE TITULOS DE RENDA FIXA",
+    "chaveNormalizada": "RENDAS TITULOS RENDA FIXA",
+    "codigoReduzido": "330"
+  },
+  {
+    "nomeOriginal": "VAR.MONET.ATIVA",
+    "chaveNormalizada": "VAR MONET ATIVA",
+    "codigoReduzido": "338"
+  },
+  {
+    "nomeOriginal": "DESCONTOS OBITIDOS",
+    "chaveNormalizada": "DESCONTOS OBITIDOS",
+    "codigoReduzido": "342"
+  },
+  {
+    "nomeOriginal": "ABSOLUTE HOLDING S.A",
+    "chaveNormalizada": "ABSOLUTE HOLDING",
+    "codigoReduzido": "351"
+  },
+  {
+    "nomeOriginal": "EQUIVALÊNCIA - DIVI SCD",
+    "chaveNormalizada": "EQUIVALENCIA DIVI SCD",
+    "codigoReduzido": "351"
+  },
+  {
+    "nomeOriginal": "RENDAS DE AJUSTES EM INVESTIMENTOS EM CO",
+    "chaveNormalizada": "RENDAS AJUSTES INVESTIMENTOS CO",
+    "codigoReduzido": "351"
+  },
+  {
+    "nomeOriginal": "SERVIÇOS TECNICOS",
+    "chaveNormalizada": "SERVICOS TECNICOS",
+    "codigoReduzido": "464"
+  },
+  {
+    "nomeOriginal": "BONUS (N/D)",
+    "chaveNormalizada": "BONUS N D",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "GRATIFICAÇÃO",
+    "chaveNormalizada": "GRATIFICACAO",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "(-) PREMIO",
+    "chaveNormalizada": "MENOS PREMIO",
+    "codigoReduzido": "484"
+  },
+  {
+    "nomeOriginal": "(-) 13º SALÁRIO",
+    "chaveNormalizada": "MENOS 13",
+    "codigoReduzido": "486"
+  },
+  {
+    "nomeOriginal": "PROVISAO DE ENCARGOS SOBRE 13o SALARIO",
+    "chaveNormalizada": "PROVISAO ENCARGOS S 13",
+    "codigoReduzido": "486"
+  },
+  {
+    "nomeOriginal": "(-) FÉRIAS",
+    "chaveNormalizada": "MENOS FERIAS",
+    "codigoReduzido": "487"
+  },
+  {
+    "nomeOriginal": "PROVISAO DE ENCARGOS SOBRE FÉRIAS",
+    "chaveNormalizada": "PROVISAO ENCARGOS S FERIAS",
+    "codigoReduzido": "487"
+  },
+  {
+    "nomeOriginal": "INSS S/ FERIAS E 13º SALARIO",
+    "chaveNormalizada": "INSS S FERIAS 13",
+    "codigoReduzido": "488"
+  },
+  {
+    "nomeOriginal": "(-) INSS - CLT",
+    "chaveNormalizada": "MENOS INSS CLT",
+    "codigoReduzido": "488"
+  },
+  {
+    "nomeOriginal": "(-) INSS - PRÓ-LABORE",
+    "chaveNormalizada": "MENOS INSS PRO LABORE",
+    "codigoReduzido": "488"
+  },
+  {
+    "nomeOriginal": "FGTS S/ FERIAS E 13º SALARIO",
+    "chaveNormalizada": "FGTS S FERIAS 13",
+    "codigoReduzido": "489"
+  },
+  {
+    "nomeOriginal": "FUNDO DE GARANTIA POR TEMPO DE SERVICO",
+    "chaveNormalizada": "FUNDO GARANTIA POR TEMPO SERVICOS",
+    "codigoReduzido": "489"
+  },
+  {
+    "nomeOriginal": "(-) FGTS",
+    "chaveNormalizada": "MENOS FGTS",
+    "codigoReduzido": "489"
+  },
+  {
+    "nomeOriginal": "(-) ASSISTENCIA MÉDICA",
+    "chaveNormalizada": "MENOS ASSISTENCIA MEDICA",
+    "codigoReduzido": "491"
+  },
+  {
+    "nomeOriginal": "(-) PAT (REFEIÇÃO/ ALIMENTAÇÃO)",
+    "chaveNormalizada": "MENOS PAT REFEICOES ALIMENTACAO",
+    "codigoReduzido": "492"
+  },
+  {
+    "nomeOriginal": "DIRETORIA E CONSELHO DE ADMINISTRACAO",
+    "chaveNormalizada": "DIRETORIA CONSELHO ADMINISTRACAO",
+    "codigoReduzido": "493"
+  },
+  {
+    "nomeOriginal": "MEDICINA OCUPACIONAL",
+    "chaveNormalizada": "MEDICINA OCUPACIONAL",
+    "codigoReduzido": "497"
+  },
+  {
+    "nomeOriginal": "(-) CONFRATERNIZAÇÃO",
+    "chaveNormalizada": "MENOS CONFRATERNIZACAO",
+    "codigoReduzido": "503"
+  },
+  {
+    "nomeOriginal": "(-) SEGURO DE VIDA",
+    "chaveNormalizada": "MENOS SEGUROS VIDA",
+    "codigoReduzido": "504"
+  },
+  {
+    "nomeOriginal": "(-) MARKETING EXTERNO",
+    "chaveNormalizada": "MENOS MARKETING EXTERNO",
+    "codigoReduzido": "507"
+  },
+  {
+    "nomeOriginal": "BRINDES E PRESENTES",
+    "chaveNormalizada": "BRINDES PRESENTES",
+    "codigoReduzido": "513"
+  },
+  {
+    "nomeOriginal": "(-) EVENTOS CORPORATIVOS",
+    "chaveNormalizada": "MENOS EVENTOS CORPORATIVOS",
+    "codigoReduzido": "514"
+  },
+  {
+    "nomeOriginal": "(-) BOLSA AUXÍLIO",
+    "chaveNormalizada": "MENOS BOLSA AUXILIO",
+    "codigoReduzido": "516"
+  },
+  {
+    "nomeOriginal": "REPRESENTACOES - REFEIÇÕES",
+    "chaveNormalizada": "REPRESENTACOES REFEICOES",
+    "codigoReduzido": "519"
+  },
+  {
+    "nomeOriginal": "(-) MANUTENÇÕES EM GERAL",
+    "chaveNormalizada": "MENOS MANUTENCOES GERAL",
+    "codigoReduzido": "523"
+  },
+  {
+    "nomeOriginal": "(-) EQUIPAMENTOS DE SEGURANÇA",
+    "chaveNormalizada": "MENOS EQUIPAMENTOS SEGURANCA",
+    "codigoReduzido": "526"
+  },
+  {
+    "nomeOriginal": "(-) IPTU",
+    "chaveNormalizada": "MENOS IPTU",
+    "codigoReduzido": "531"
+  },
+  {
+    "nomeOriginal": "(-) CONDOMÍNIO",
+    "chaveNormalizada": "MENOS CONDOMINIO",
+    "codigoReduzido": "532"
+  },
+  {
+    "nomeOriginal": "TFE -TAXA DE FISCALIZ.DE ESTABELECIMENTO",
+    "chaveNormalizada": "TFE TAXAS FISCALIZ ESTABELECIMENTO",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "TFE -TAXA DE FISCALIZ.ESTABELECIMENTOS",
+    "chaveNormalizada": "TFE TAXAS FISCALIZ ESTABELECIMENTOS",
+    "codigoReduzido": "533"
+  },
+  {
+    "nomeOriginal": "DESPESAS DE AGUA, ENERGIA E GAS",
+    "chaveNormalizada": "DESPESAS AGUA ENERGIA GAS",
+    "codigoReduzido": "536"
+  },
+  {
+    "nomeOriginal": "(-) TELECOMUNICAÇÕES",
+    "chaveNormalizada": "MENOS TELECOMUNICACOES",
+    "codigoReduzido": "537"
+  },
+  {
+    "nomeOriginal": "DESPESAS CONDOMINOIPTU",
+    "chaveNormalizada": "DESPESAS CONDOMINOIPTU",
+    "codigoReduzido": "539"
+  },
+  {
+    "nomeOriginal": "(-) MATERIAIS DE ESCRITÓRIO E LIMPEZA",
+    "chaveNormalizada": "MENOS MATERIAIS ESCRITORIO LIMPEZA",
+    "codigoReduzido": "540"
+  },
+  {
+    "nomeOriginal": "(-) INTERNET",
+    "chaveNormalizada": "MENOS INTERNET",
+    "codigoReduzido": "541"
+  },
+  {
+    "nomeOriginal": "(-) Despesas com Serviços Contabeis",
+    "chaveNormalizada": "MENOS DESPESAS COM SERVICOS CONTABEIS",
+    "codigoReduzido": "546"
+  },
+  {
+    "nomeOriginal": "CERTIFICACAO DIGITAL",
+    "chaveNormalizada": "CERTIFICACAO DIGITAL",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "EXECUCAO DE SERVICOS",
+    "chaveNormalizada": "EXECUCAO SERVICOS",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "LICENCA DE USO - SOFTWARE",
+    "chaveNormalizada": "LICENCA USO SOFTWARE",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "(-) DESPESAS DE PROCESSAMENTO DE DADOS",
+    "chaveNormalizada": "MENOS DESPESAS PROCESSAMENTO DADOS",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "(-) LICENCIAMENTO DE SOFTWARE",
+    "chaveNormalizada": "MENOS LICENCIAMENTO SOFTWARE",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "(-) SISTEMAS E MANUTENÇÃO",
+    "chaveNormalizada": "MENOS SISTEMAS MANUTENCAO",
+    "codigoReduzido": "548"
+  },
+  {
+    "nomeOriginal": "ASSESSORIA TECNICA",
+    "chaveNormalizada": "ASSESSORIA TECNICA",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "PLANEJAMENTO FINANCEIRO E ADMINISTRATIVO",
+    "chaveNormalizada": "PLANEJAMENTO FINANCEIRO ADMINISTRATIVO",
+    "codigoReduzido": "550"
+  },
+  {
+    "nomeOriginal": "(-) CONSULTORIA EM DEPARTAMENTO PESSOAL",
+    "chaveNormalizada": "MENOS CONSULTORIA DEPARTAMENTO PESSOAL",
+    "codigoReduzido": "551"
+  },
+  {
+    "nomeOriginal": "DESPESAS DE ALUGUEIS",
+    "chaveNormalizada": "DESPESAS ALUGUEL",
+    "codigoReduzido": "552"
+  },
+  {
+    "nomeOriginal": "COTAÇÕES / NOTICIAS",
+    "chaveNormalizada": "COTACOES NOTICIAS",
+    "codigoReduzido": "564"
+  },
+  {
+    "nomeOriginal": "EMOLUMENTOS JUDICIAIS E DE CARTORIO",
+    "chaveNormalizada": "EMOLUMENTOS JUDICIAIS CARTORIO",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "(-) TAXAS DIVERSAS",
+    "chaveNormalizada": "MENOS TAXAS DIVERSAS",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "TAXA DE FISCALIZACAO CVM",
+    "chaveNormalizada": "TAXAS FISCALIZACAO CVM",
+    "codigoReduzido": "568"
+  },
+  {
+    "nomeOriginal": "FRETES / FRETAMENTOS",
+    "chaveNormalizada": "FRETES FRETAMENTOS",
+    "codigoReduzido": "569"
+  },
+  {
+    "nomeOriginal": "ASSOCIACAO DE CLASSE",
+    "chaveNormalizada": "ASSOCIACAO CLASSE",
+    "codigoReduzido": "570"
+  },
+  {
+    "nomeOriginal": "ASSOCIAÇÕES DE CLASSE",
+    "chaveNormalizada": "ASSOCIACOES CLASSE",
+    "codigoReduzido": "570"
+  },
+  {
+    "nomeOriginal": "I.O.F.",
+    "chaveNormalizada": "I F",
+    "codigoReduzido": "584"
+  },
+  {
+    "nomeOriginal": "JUROS AQUISICAO COTAS EM TESOURARIA",
+    "chaveNormalizada": "JUROS AQUISICAO COTAS TESOURARIA",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "JUROS, MULTAS E CORRECAO MONETARIA",
+    "chaveNormalizada": "JUROS MULTAS CORRECAO MONETARIA",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "MULTAS E JUROS",
+    "chaveNormalizada": "MULTAS JUROS",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "MULTA E JUROS S/ ATRASO",
+    "chaveNormalizada": "MULTAS JUROS S ATRASO",
+    "codigoReduzido": "596"
+  },
+  {
+    "nomeOriginal": "MULTAS/JUROS S/IMPOSTOS E CONTRIBUICOES",
+    "chaveNormalizada": "MULTAS JUROS S IMPOSTOS CONTRIBUICAO",
+    "codigoReduzido": "597"
+  },
+  {
+    "nomeOriginal": "TAXA  CETIP / CUSTODIA",
+    "chaveNormalizada": "TAXAS CETIP CUSTODIA",
+    "codigoReduzido": "599"
+  },
+  {
+    "nomeOriginal": "IRPJ - VALORES CORRENTES",
+    "chaveNormalizada": "IRPJ VALORES CORRENTES",
+    "codigoReduzido": "621"
+  },
+  {
+    "nomeOriginal": "CSLL - VALORES CORRENTES",
+    "chaveNormalizada": "CSLL VALORES CORRENTES",
+    "codigoReduzido": "622"
+  },
+  {
+    "nomeOriginal": "IMPOSTO DE RENDA DIFERIDO",
+    "chaveNormalizada": "IMPOSTOS RENDA DIFERIDO",
+    "codigoReduzido": "627"
+  },
+  {
+    "nomeOriginal": "PROV. P/I.R.P.J. - VALORES DIFERIDOS",
+    "chaveNormalizada": "PROVISAO P I R P J VALORES DIFERIDOS",
+    "codigoReduzido": "627"
+  },
+  {
+    "nomeOriginal": "CONTRIBUICAO SOCIAL DIFERIDO",
+    "chaveNormalizada": "CSLL DIFERIDO",
+    "codigoReduzido": "628"
+  },
+  {
+    "nomeOriginal": "PROV. P/C.S.L.L. - VALORES DIFERIDOS",
+    "chaveNormalizada": "PROVISAO P C S L L VALORES DIFERIDOS",
+    "codigoReduzido": "628"
+  },
+  {
+    "nomeOriginal": "(-) IMPOSTO DE RENDA - ANTECIPAÇÃO",
+    "chaveNormalizada": "MENOS IMPOSTOS RENDA ANTECIPACAO",
+    "codigoReduzido": "9239"
+  },
+  {
+    "nomeOriginal": "PROVISAO I.R.P.J.",
+    "chaveNormalizada": "PROVISAO I R P J",
+    "codigoReduzido": "9239"
+  },
+  {
+    "nomeOriginal": "PROVISAO DE IMPOSTO DE RENDA",
+    "chaveNormalizada": "PROVISAO IMPOSTOS RENDA",
+    "codigoReduzido": "9239"
+  },
+  {
+    "nomeOriginal": "(-) CONTRIBUIÇÃO SOCIAL - ANTECIPAÇÃO",
+    "chaveNormalizada": "MENOS CSLL ANTECIPACAO",
+    "codigoReduzido": "9240"
+  },
+  {
+    "nomeOriginal": "(-) SALÁRIOS",
+    "chaveNormalizada": "MENOS SALARIOS",
+    "codigoReduzido": "485"
+  }
+]

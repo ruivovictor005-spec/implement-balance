@@ -1,0 +1,23 @@
+{
+  "name": "implantacao-saldos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Implantação de Saldos: converte o balancete de origem no arquivo de importação posicional do Domínio.",
+  "engines": {
+    "node": ">=22.11"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "fixtures": "tsx scripts/extrair-fixtures.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vite": "6.4.4",
+    "vitest": "4.1.12",
+    "xlsx": "0.18.5"
+  }
+}

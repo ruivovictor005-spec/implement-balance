@@ -1,0 +1,257 @@
+[
+  {
+    "ordem": 1,
+    "prefixo": "5.9.9.99",
+    "grupoCosif": "Linha totalizadora P.L.A.",
+    "natureza": "TOTALIZADOR P.L.A.",
+    "gruposDominio": [],
+    "naoMigrar": true
+  },
+  {
+    "ordem": 2,
+    "prefixo": "1.1",
+    "grupoCosif": "Disponibilidades",
+    "natureza": "ATIVO CIRCULANTE",
+    "gruposDominio": [
+      "11"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 3,
+    "prefixo": "1",
+    "grupoCosif": "Circulante e Realizável a Longo Prazo",
+    "natureza": "ATIVO",
+    "gruposDominio": [
+      "11",
+      "12"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 4,
+    "prefixo": "2",
+    "grupoCosif": "Permanente",
+    "natureza": "ATIVO NÃO CIRCULANTE",
+    "gruposDominio": [
+      "13"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 5,
+    "prefixo": "3",
+    "grupoCosif": "Compensação (ativo)",
+    "natureza": "COMPENSAÇÃO",
+    "gruposDominio": [],
+    "naoMigrar": true
+  },
+  {
+    "ordem": 6,
+    "prefixo": "4",
+    "grupoCosif": "Circulante e Exigível a Longo Prazo",
+    "natureza": "PASSIVO",
+    "gruposDominio": [
+      "21",
+      "22"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 7,
+    "prefixo": "5",
+    "grupoCosif": "Resultados de Exercícios Futuros",
+    "natureza": "PASSIVO - REF",
+    "gruposDominio": [
+      "23"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 8,
+    "prefixo": "6",
+    "grupoCosif": "Patrimônio Líquido",
+    "natureza": "PATRIMÔNIO LÍQUIDO",
+    "gruposDominio": [
+      "24"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 9,
+    "prefixo": "7.1.5",
+    "grupoCosif": "Rendas com TVM e aplicações",
+    "natureza": "RECEITA FINANCEIRA",
+    "gruposDominio": [
+      "33"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 10,
+    "prefixo": "7.1.7",
+    "grupoCosif": "Rendas de prestação de serviços",
+    "natureza": "RECEITA DE SERVIÇOS",
+    "gruposDominio": [
+      "31"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 11,
+    "prefixo": "7.1.8",
+    "grupoCosif": "Rendas de participações",
+    "natureza": "RECEITA DE INVESTIMENTOS",
+    "gruposDominio": [
+      "34"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 12,
+    "prefixo": "7",
+    "grupoCosif": "Contas de Resultado Credoras",
+    "natureza": "RECEITA",
+    "gruposDominio": [
+      "3"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 13,
+    "prefixo": "8.1.9.25",
+    "grupoCosif": "ISS sobre receita de serviços",
+    "natureza": "DEDUÇÃO DA RECEITA",
+    "gruposDominio": [
+      "32"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 14,
+    "prefixo": "8.1.9.30",
+    "grupoCosif": "COFINS",
+    "natureza": "DEDUÇÃO DA RECEITA",
+    "gruposDominio": [
+      "32",
+      "33"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 15,
+    "prefixo": "8.1.9.33",
+    "grupoCosif": "PIS/PASEP",
+    "natureza": "DEDUÇÃO DA RECEITA",
+    "gruposDominio": [
+      "32",
+      "33"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 16,
+    "prefixo": "8.1.9.99",
+    "grupoCosif": "Outras despesas operacionais",
+    "natureza": "DESPESA",
+    "gruposDominio": [
+      "42",
+      "45",
+      "41"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 17,
+    "prefixo": "8.1.9",
+    "grupoCosif": "Outras despesas operacionais",
+    "natureza": "DESPESA",
+    "gruposDominio": [
+      "42",
+      "45"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 18,
+    "prefixo": "8.1.7.57",
+    "grupoCosif": "Serviços de terceiros",
+    "natureza": "DESPESA",
+    "gruposDominio": [
+      "42",
+      "41"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 19,
+    "prefixo": "8.1.7.63",
+    "grupoCosif": "Serviços técnicos especializados",
+    "natureza": "DESPESA",
+    "gruposDominio": [
+      "42",
+      "41"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 20,
+    "prefixo": "8.1.7.99",
+    "grupoCosif": "Outras despesas administrativas",
+    "natureza": "DESPESA",
+    "gruposDominio": [
+      "42",
+      "41"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 21,
+    "prefixo": "8.1.7",
+    "grupoCosif": "Despesas administrativas",
+    "natureza": "DESPESA ADMINISTRATIVA",
+    "gruposDominio": [
+      "42"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 22,
+    "prefixo": "8.1.8",
+    "grupoCosif": "Depreciação e amortização",
+    "natureza": "DESPESA ADMINISTRATIVA",
+    "gruposDominio": [
+      "42"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 23,
+    "prefixo": "8.9",
+    "grupoCosif": "IR e CSLL",
+    "natureza": "TRIBUTOS S/ LUCRO",
+    "gruposDominio": [
+      "46"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 24,
+    "prefixo": "8",
+    "grupoCosif": "Contas de Resultado Devedoras",
+    "natureza": "DESPESA / CUSTO",
+    "gruposDominio": [
+      "4",
+      "32"
+    ],
+    "naoMigrar": false
+  },
+  {
+    "ordem": 25,
+    "prefixo": "9",
+    "grupoCosif": "Compensação (passivo)",
+    "natureza": "COMPENSAÇÃO",
+    "gruposDominio": [],
+    "naoMigrar": true
+  }
+]

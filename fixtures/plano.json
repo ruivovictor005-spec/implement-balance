@@ -1,0 +1,4979 @@
+[
+  {
+    "codigoReduzido": "1000",
+    "classificacao": "1",
+    "descricao": "ATIVO",
+    "tipo": "S",
+    "descricaoNormalizada": "ATIVO"
+  },
+  {
+    "codigoReduzido": "1100",
+    "classificacao": "11",
+    "descricao": "Ativo Circulante",
+    "tipo": "S",
+    "descricaoNormalizada": "ATIVO CIRCULANTE"
+  },
+  {
+    "codigoReduzido": "1110",
+    "classificacao": "111",
+    "descricao": "Disponível",
+    "tipo": "S",
+    "descricaoNormalizada": "DISPONIVEL"
+  },
+  {
+    "codigoReduzido": "1111",
+    "classificacao": "11101",
+    "descricao": "Caixa Geral",
+    "tipo": "S",
+    "descricaoNormalizada": "CAIXA GERAL"
+  },
+  {
+    "codigoReduzido": "1",
+    "classificacao": "11101001",
+    "descricao": "Caixa - Fundo Fixo",
+    "tipo": "A",
+    "descricaoNormalizada": "CAIXA FUNDO FIXO"
+  },
+  {
+    "codigoReduzido": "2",
+    "classificacao": "11101002",
+    "descricao": "Caixa - Moeda Estrangeira",
+    "tipo": "A",
+    "descricaoNormalizada": "CAIXA MOEDA ESTRANGEIRA"
+  },
+  {
+    "codigoReduzido": "1112",
+    "classificacao": "11102",
+    "descricao": "Bancos Conta Movimento",
+    "tipo": "S",
+    "descricaoNormalizada": "BANCO CONTA MOVIMENTO"
+  },
+  {
+    "codigoReduzido": "10",
+    "classificacao": "11102001",
+    "descricao": "Bradesco",
+    "tipo": "A",
+    "descricaoNormalizada": "BRADESCO"
+  },
+  {
+    "codigoReduzido": "11",
+    "classificacao": "11102002",
+    "descricao": "Itaú Unibanco",
+    "tipo": "A",
+    "descricaoNormalizada": "ITAU"
+  },
+  {
+    "codigoReduzido": "12",
+    "classificacao": "11102003",
+    "descricao": "Caixa Econômica Federal",
+    "tipo": "A",
+    "descricaoNormalizada": "CEF"
+  },
+  {
+    "codigoReduzido": "13",
+    "classificacao": "11102004",
+    "descricao": "Banco do Brasil",
+    "tipo": "A",
+    "descricaoNormalizada": "BANCO BRASIL"
+  },
+  {
+    "codigoReduzido": "14",
+    "classificacao": "11102005",
+    "descricao": "Safra",
+    "tipo": "A",
+    "descricaoNormalizada": "SAFRA"
+  },
+  {
+    "codigoReduzido": "15",
+    "classificacao": "11102006",
+    "descricao": "Santander",
+    "tipo": "A",
+    "descricaoNormalizada": "SANTANDER"
+  },
+  {
+    "codigoReduzido": "16",
+    "classificacao": "11102007",
+    "descricao": "BTG Pactual",
+    "tipo": "A",
+    "descricaoNormalizada": "BTG PACTUAL"
+  },
+  {
+    "codigoReduzido": "17",
+    "classificacao": "11102008",
+    "descricao": "HSBC",
+    "tipo": "A",
+    "descricaoNormalizada": "HSBC"
+  },
+  {
+    "codigoReduzido": "18",
+    "classificacao": "11102009",
+    "descricao": "Citibank",
+    "tipo": "A",
+    "descricaoNormalizada": "CITIBANK"
+  },
+  {
+    "codigoReduzido": "19",
+    "classificacao": "11102010",
+    "descricao": "BNDES",
+    "tipo": "A",
+    "descricaoNormalizada": "BNDES"
+  },
+  {
+    "codigoReduzido": "1113",
+    "classificacao": "11103",
+    "descricao": "Aplicações Financeiras Liquidez Imediata",
+    "tipo": "S",
+    "descricaoNormalizada": "APLICACAO FINANCEIRAS LIQUIDEZ IMEDIATA"
+  },
+  {
+    "codigoReduzido": "30",
+    "classificacao": "11103001",
+    "descricao": "Fundo de Renda Fixa",
+    "tipo": "A",
+    "descricaoNormalizada": "FUNDO RENDA FIXA"
+  },
+  {
+    "codigoReduzido": "31",
+    "classificacao": "11103002",
+    "descricao": "CDB/RDB",
+    "tipo": "A",
+    "descricaoNormalizada": "CDB RDB"
+  },
+  {
+    "codigoReduzido": "1130",
+    "classificacao": "113",
+    "descricao": "Contas a Receber",
+    "tipo": "S",
+    "descricaoNormalizada": "CONTA RECEBER"
+  },
+  {
+    "codigoReduzido": "1131",
+    "classificacao": "11301",
+    "descricao": "Contas a Receber Local",
+    "tipo": "S",
+    "descricaoNormalizada": "CONTA RECEBER LOCAL"
+  },
+  {
+    "codigoReduzido": "35",
+    "classificacao": "11301001",
+    "descricao": "Notas Fiscais em Aberto",
+    "tipo": "A",
+    "descricaoNormalizada": "NOTAS FISCAIS ABERTO"
+  },
+  {
+    "codigoReduzido": "36",
+    "classificacao": "11301002",
+    "descricao": "Títulos Descontados",
+    "tipo": "A",
+    "descricaoNormalizada": "TITULOS DESCONTADOS"
+  },
+  {
+    "codigoReduzido": "38",
+    "classificacao": "11301098",
+    "descricao": "Perdas Estimadas Créditos Liq. Duvidosa",
+    "tipo": "A",
+    "descricaoNormalizada": "PERDAS ESTIMADAS CREDITOS LIQ DUVIDOSA"
+  },
+  {
+    "codigoReduzido": "39",
+    "classificacao": "11301099",
+    "descricao": "Juros a Apropriar Ajuste a Vr. Presente",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS APROPRIAR AJUSTE VR PRESENTE"
+  },
+  {
+    "codigoReduzido": "37",
+    "classificacao": "11301099",
+    "descricao": "Provisão para Devedores Duvidosos",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO P DEVEDORES DUVIDOSOS"
+  },
+  {
+    "codigoReduzido": "1132",
+    "classificacao": "11302",
+    "descricao": "Contas a Receber Exportação",
+    "tipo": "S",
+    "descricaoNormalizada": "CONTA RECEBER EXPORTACAO"
+  },
+  {
+    "codigoReduzido": "41",
+    "classificacao": "11302001",
+    "descricao": "Exportações a Receber",
+    "tipo": "A",
+    "descricaoNormalizada": "EXPORTACOES RECEBER"
+  },
+  {
+    "codigoReduzido": "42",
+    "classificacao": "11302099",
+    "descricao": "Perdas Estimadas Créditos Liq. Duvidosa",
+    "tipo": "A",
+    "descricaoNormalizada": "PERDAS ESTIMADAS CREDITOS LIQ DUVIDOSA"
+  },
+  {
+    "codigoReduzido": "1140",
+    "classificacao": "114",
+    "descricao": "Estoques",
+    "tipo": "S",
+    "descricaoNormalizada": "ESTOQUES"
+  },
+  {
+    "codigoReduzido": "1141",
+    "classificacao": "11401",
+    "descricao": "Mercadorias e Insumos",
+    "tipo": "S",
+    "descricaoNormalizada": "MERCADORIAS INSUMOS"
+  },
+  {
+    "codigoReduzido": "46",
+    "classificacao": "11401001",
+    "descricao": "Mercadorias para Revenda",
+    "tipo": "A",
+    "descricaoNormalizada": "MERCADORIAS P REVENDA"
+  },
+  {
+    "codigoReduzido": "47",
+    "classificacao": "11401002",
+    "descricao": "Matérias-Primas",
+    "tipo": "A",
+    "descricaoNormalizada": "MATERIAS PRIMAS"
+  },
+  {
+    "codigoReduzido": "48",
+    "classificacao": "11401003",
+    "descricao": "Material de Embalagem",
+    "tipo": "A",
+    "descricaoNormalizada": "MATERIAL EMBALAGEM"
+  },
+  {
+    "codigoReduzido": "49",
+    "classificacao": "11401004",
+    "descricao": "Produtos em Elaboração",
+    "tipo": "A",
+    "descricaoNormalizada": "PRODUTOS ELABORACAO"
+  },
+  {
+    "codigoReduzido": "50",
+    "classificacao": "11401005",
+    "descricao": "Produtos Acabados",
+    "tipo": "A",
+    "descricaoNormalizada": "PRODUTOS ACABADOS"
+  },
+  {
+    "codigoReduzido": "51",
+    "classificacao": "11401006",
+    "descricao": "Material de Consumo Industrial",
+    "tipo": "A",
+    "descricaoNormalizada": "MATERIAL CONSUMO INDUSTRIAL"
+  },
+  {
+    "codigoReduzido": "52",
+    "classificacao": "11401007",
+    "descricao": "Mercadorias em Poder de Terceiros",
+    "tipo": "A",
+    "descricaoNormalizada": "MERCADORIAS PODER TERCEIROS"
+  },
+  {
+    "codigoReduzido": "53",
+    "classificacao": "11401008",
+    "descricao": "Mercadorias de Terceiros em Nosso Poder",
+    "tipo": "A",
+    "descricaoNormalizada": "MERCADORIAS TERCEIROS NOSSO PODER"
+  },
+  {
+    "codigoReduzido": "54",
+    "classificacao": "11401009",
+    "descricao": "Importações em Trânsito",
+    "tipo": "A",
+    "descricaoNormalizada": "IMPORTACOES TRANSITO"
+  },
+  {
+    "codigoReduzido": "55",
+    "classificacao": "11401010",
+    "descricao": "(-) Ajuste a Valor Presente",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS AJUSTE VALORES PRESENTE"
+  },
+  {
+    "codigoReduzido": "56",
+    "classificacao": "11401011",
+    "descricao": "(-) Ajuste a Valor Provável Realização",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS AJUSTE VALORES PROVAVEL REALIZACAO"
+  },
+  {
+    "codigoReduzido": "1147",
+    "classificacao": "11407",
+    "descricao": "Importações em Andamento",
+    "tipo": "S",
+    "descricaoNormalizada": "IMPORTACOES ANDAMENTO"
+  },
+  {
+    "codigoReduzido": "57",
+    "classificacao": "11407001",
+    "descricao": "Importações em Andamento",
+    "tipo": "A",
+    "descricaoNormalizada": "IMPORTACOES ANDAMENTO"
+  },
+  {
+    "codigoReduzido": "1148",
+    "classificacao": "11408",
+    "descricao": "Estoque em Poder de Terceiros",
+    "tipo": "S",
+    "descricaoNormalizada": "ESTOQUE PODER TERCEIROS"
+  },
+  {
+    "codigoReduzido": "58",
+    "classificacao": "11408001",
+    "descricao": "Estoque em Poder de Terceiros",
+    "tipo": "A",
+    "descricaoNormalizada": "ESTOQUE PODER TERCEIROS"
+  },
+  {
+    "codigoReduzido": "1149",
+    "classificacao": "11409",
+    "descricao": "Imóveis Destinados à Venda",
+    "tipo": "S",
+    "descricaoNormalizada": "IMOVEIS DESTINADOS VENDA"
+  },
+  {
+    "codigoReduzido": "59",
+    "classificacao": "11409001",
+    "descricao": "Imóveis Destinados à Venda",
+    "tipo": "A",
+    "descricaoNormalizada": "IMOVEIS DESTINADOS VENDA"
+  },
+  {
+    "codigoReduzido": "1150",
+    "classificacao": "115",
+    "descricao": "Tributos a Recuperar",
+    "tipo": "S",
+    "descricaoNormalizada": "TRIBUTOS COMPENSAR"
+  },
+  {
+    "codigoReduzido": "1151",
+    "classificacao": "11501",
+    "descricao": "Créditos Tributários",
+    "tipo": "S",
+    "descricaoNormalizada": "CREDITOS TRIBUTARIOS"
+  },
+  {
+    "codigoReduzido": "60",
+    "classificacao": "11501001",
+    "descricao": "ICMS a Recuperar",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS COMPENSAR"
+  },
+  {
+    "codigoReduzido": "61",
+    "classificacao": "11501002",
+    "descricao": "IPI a Recuperar",
+    "tipo": "A",
+    "descricaoNormalizada": "IPI COMPENSAR"
+  },
+  {
+    "codigoReduzido": "62",
+    "classificacao": "11501003",
+    "descricao": "IRRF sobre Aplicacão Financeira",
+    "tipo": "A",
+    "descricaoNormalizada": "IRRF S APLICACAO FINANCEIRA"
+  },
+  {
+    "codigoReduzido": "63",
+    "classificacao": "11501004",
+    "descricao": "IRRF sobre Servicos Prestados",
+    "tipo": "A",
+    "descricaoNormalizada": "IRRF S SERVICOS PRESTADOS"
+  },
+  {
+    "codigoReduzido": "64",
+    "classificacao": "11501005",
+    "descricao": "ICMS sobre Ativo Imobilizado",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS S ATIVO IMOBILIZADO"
+  },
+  {
+    "codigoReduzido": "65",
+    "classificacao": "11501006",
+    "descricao": "PIS não Cumulativo",
+    "tipo": "A",
+    "descricaoNormalizada": "PIS NAO CUMULATIVO"
+  },
+  {
+    "codigoReduzido": "66",
+    "classificacao": "11501007",
+    "descricao": "COFINS não Cumulativa",
+    "tipo": "A",
+    "descricaoNormalizada": "COFINS NAO CUMULATIVA"
+  },
+  {
+    "codigoReduzido": "67",
+    "classificacao": "11501008",
+    "descricao": "PIS - Retenções",
+    "tipo": "A",
+    "descricaoNormalizada": "PIS RETENCOES"
+  },
+  {
+    "codigoReduzido": "68",
+    "classificacao": "11501009",
+    "descricao": "COFINS - Retenções",
+    "tipo": "A",
+    "descricaoNormalizada": "COFINS RETENCOES"
+  },
+  {
+    "codigoReduzido": "69",
+    "classificacao": "11501010",
+    "descricao": "CSLL - Retenções",
+    "tipo": "A",
+    "descricaoNormalizada": "CSLL RETENCOES"
+  },
+  {
+    "codigoReduzido": "9060",
+    "classificacao": "11501800",
+    "descricao": "IBS a recuperar",
+    "tipo": "A",
+    "descricaoNormalizada": "IBS COMPENSAR"
+  },
+  {
+    "codigoReduzido": "9061",
+    "classificacao": "11501801",
+    "descricao": "CBS a recuperar",
+    "tipo": "A",
+    "descricaoNormalizada": "CBS COMPENSAR"
+  },
+  {
+    "codigoReduzido": "1152",
+    "classificacao": "11502",
+    "descricao": "Suspensos",
+    "tipo": "S",
+    "descricaoNormalizada": "SUSPENSOS"
+  },
+  {
+    "codigoReduzido": "73",
+    "classificacao": "11502001",
+    "descricao": "PIS - Retenções Suspensas",
+    "tipo": "A",
+    "descricaoNormalizada": "PIS RETENCOES SUSPENSAS"
+  },
+  {
+    "codigoReduzido": "74",
+    "classificacao": "11502002",
+    "descricao": "COFINS - Retenções Suspensas",
+    "tipo": "A",
+    "descricaoNormalizada": "COFINS RETENCOES SUSPENSAS"
+  },
+  {
+    "codigoReduzido": "75",
+    "classificacao": "11502003",
+    "descricao": "CSLL - Retenções Suspensas",
+    "tipo": "A",
+    "descricaoNormalizada": "CSLL RETENCOES SUSPENSAS"
+  },
+  {
+    "codigoReduzido": "76",
+    "classificacao": "11502004",
+    "descricao": "IRRF sobre Servicos Prestados Suspensos",
+    "tipo": "A",
+    "descricaoNormalizada": "IRRF S SERVICOS PRESTADOS SUSPENSOS"
+  },
+  {
+    "codigoReduzido": "1153",
+    "classificacao": "11503",
+    "descricao": "Antecipações",
+    "tipo": "S",
+    "descricaoNormalizada": "ANTECIPACOES"
+  },
+  {
+    "codigoReduzido": "80",
+    "classificacao": "11503001",
+    "descricao": "IRPJ Antecipações",
+    "tipo": "A",
+    "descricaoNormalizada": "IRPJ ANTECIPACOES"
+  },
+  {
+    "codigoReduzido": "81",
+    "classificacao": "11503002",
+    "descricao": "CSLL Antecipações",
+    "tipo": "A",
+    "descricaoNormalizada": "CSLL ANTECIPACOES"
+  },
+  {
+    "codigoReduzido": "1154",
+    "classificacao": "11504",
+    "descricao": "Créditos de Anos Anteriores",
+    "tipo": "S",
+    "descricaoNormalizada": "CREDITOS ANOS ANTERIORES"
+  },
+  {
+    "codigoReduzido": "82",
+    "classificacao": "11504001",
+    "descricao": "Imposto de Renda Exercícios Anteriores",
+    "tipo": "A",
+    "descricaoNormalizada": "IMPOSTOS RENDA EXERCICIOS ANTERIORES"
+  },
+  {
+    "codigoReduzido": "83",
+    "classificacao": "11504002",
+    "descricao": "Contribuição Social Exerc. Anteriores",
+    "tipo": "A",
+    "descricaoNormalizada": "CSLL EXERC ANTERIORES"
+  },
+  {
+    "codigoReduzido": "1160",
+    "classificacao": "116",
+    "descricao": "Demais Contas a Receber",
+    "tipo": "S",
+    "descricaoNormalizada": "DEMAIS CONTA RECEBER"
+  },
+  {
+    "codigoReduzido": "1161",
+    "classificacao": "11601",
+    "descricao": "Adiantamentos",
+    "tipo": "S",
+    "descricaoNormalizada": "ADIANTAMENTO"
+  },
+  {
+    "codigoReduzido": "85",
+    "classificacao": "11601001",
+    "descricao": "Adtos. a Fornecedores Nacionais",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO FORNECEDORES NACIONAL"
+  },
+  {
+    "codigoReduzido": "86",
+    "classificacao": "11601002",
+    "descricao": "Adtos. a Fornecedores Estrangeiros",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO FORNECEDORES EXTERIOR"
+  },
+  {
+    "codigoReduzido": "87",
+    "classificacao": "11601003",
+    "descricao": "Adtos. a Funcionários",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO FUNCIONARIOS"
+  },
+  {
+    "codigoReduzido": "88",
+    "classificacao": "11601004",
+    "descricao": "Adtos. de Despesas",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO DESPESAS"
+  },
+  {
+    "codigoReduzido": "89",
+    "classificacao": "11601005",
+    "descricao": "Adtos. para Despesas de Viagem",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO P DESPESAS VIAGENS"
+  },
+  {
+    "codigoReduzido": "90",
+    "classificacao": "11601006",
+    "descricao": "Adtos. 13º Salário",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO 13"
+  },
+  {
+    "codigoReduzido": "91",
+    "classificacao": "11601007",
+    "descricao": "Adtos. de Férias",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO FERIAS"
+  },
+  {
+    "codigoReduzido": "92",
+    "classificacao": "11601008",
+    "descricao": "Adiantamento de Despesas P/ Clientes",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO DESPESAS P CLIENTES"
+  },
+  {
+    "codigoReduzido": "93",
+    "classificacao": "11601009",
+    "descricao": "Co-Participação em Convênios",
+    "tipo": "A",
+    "descricaoNormalizada": "CO PARTICIPACAO CONVENIOS"
+  },
+  {
+    "codigoReduzido": "1162",
+    "classificacao": "11602",
+    "descricao": "Despesas Pagas Antecipadamente",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS PAGAS ANTECIPADAMENTE"
+  },
+  {
+    "codigoReduzido": "94",
+    "classificacao": "11602001",
+    "descricao": "Prêmios de Seguros a Apropriar",
+    "tipo": "A",
+    "descricaoNormalizada": "PREMIOS SEGUROS APROPRIAR"
+  },
+  {
+    "codigoReduzido": "95",
+    "classificacao": "11602002",
+    "descricao": "Assinaturas e Anuidades",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSINATURAS ANUIDADES"
+  },
+  {
+    "codigoReduzido": "96",
+    "classificacao": "11602003",
+    "descricao": "IPTU",
+    "tipo": "A",
+    "descricaoNormalizada": "IPTU"
+  },
+  {
+    "codigoReduzido": "98",
+    "classificacao": "11602004",
+    "descricao": "Licenças de Uso e outros Direitos",
+    "tipo": "A",
+    "descricaoNormalizada": "LICENCAS USO OUTROS DIREITOS"
+  },
+  {
+    "codigoReduzido": "1163",
+    "classificacao": "11603",
+    "descricao": "Lucros, Dividendos e JSCP a receber",
+    "tipo": "S",
+    "descricaoNormalizada": "LUCRO DIVIDENDOS JSCP RECEBER"
+  },
+  {
+    "codigoReduzido": "78",
+    "classificacao": "11603001",
+    "descricao": "Lucros e Dividendos Declarados",
+    "tipo": "A",
+    "descricaoNormalizada": "LUCRO DIVIDENDOS DECLARADOS"
+  },
+  {
+    "codigoReduzido": "79",
+    "classificacao": "11603002",
+    "descricao": "Juros sobre Capital Próprio Declarado",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS S CAPITAL PROPRIO DECLARADO"
+  },
+  {
+    "codigoReduzido": "1200",
+    "classificacao": "12",
+    "descricao": "Ativo Não Circulante",
+    "tipo": "S",
+    "descricaoNormalizada": "ATIVO NAO CIRCULANTE"
+  },
+  {
+    "codigoReduzido": "1210",
+    "classificacao": "121",
+    "descricao": "Créditos e Valores",
+    "tipo": "S",
+    "descricaoNormalizada": "CREDITOS VALORES"
+  },
+  {
+    "codigoReduzido": "1211",
+    "classificacao": "12101",
+    "descricao": "Empréstimos",
+    "tipo": "S",
+    "descricaoNormalizada": "EMPRESTIMOS"
+  },
+  {
+    "codigoReduzido": "99",
+    "classificacao": "12101001",
+    "descricao": "Empréstimos Funcionários",
+    "tipo": "A",
+    "descricaoNormalizada": "EMPRESTIMOS FUNCIONARIOS"
+  },
+  {
+    "codigoReduzido": "100",
+    "classificacao": "12101002",
+    "descricao": "Emprést.Sócios,Admin.,Pessoas Ligadas",
+    "tipo": "A",
+    "descricaoNormalizada": "EMPRESTIMOS SOCIOS ADMIN PESSOAS LIGADAS"
+  },
+  {
+    "codigoReduzido": "101",
+    "classificacao": "12101003",
+    "descricao": "Empréstimos a Pessoas Físicas",
+    "tipo": "A",
+    "descricaoNormalizada": "EMPRESTIMOS PESSOAS FISICAS"
+  },
+  {
+    "codigoReduzido": "1212",
+    "classificacao": "12102",
+    "descricao": "Depósitos Judiciais",
+    "tipo": "S",
+    "descricaoNormalizada": "DEPOSITOS JUDICIAIS"
+  },
+  {
+    "codigoReduzido": "104",
+    "classificacao": "12102001",
+    "descricao": "Depósitos Judiciais",
+    "tipo": "A",
+    "descricaoNormalizada": "DEPOSITOS JUDICIAIS"
+  },
+  {
+    "codigoReduzido": "1219",
+    "classificacao": "12109",
+    "descricao": "Créditos Fiscais s/ Prej. e Dif. Temp.",
+    "tipo": "S",
+    "descricaoNormalizada": "CREDITOS FISCAIS S PREJ DIF TEMP"
+  },
+  {
+    "codigoReduzido": "105",
+    "classificacao": "12109001",
+    "descricao": "IRPJ Diferido s/ Prejuízos e Dif. Temp.",
+    "tipo": "A",
+    "descricaoNormalizada": "IRPJ DIFERIDO S PREJUIZO DIF TEMP"
+  },
+  {
+    "codigoReduzido": "106",
+    "classificacao": "12109002",
+    "descricao": "CSLL Diferida s/ Base Neg. e Dif. Temp.",
+    "tipo": "A",
+    "descricaoNormalizada": "CSLL DIFERIDA S BASE NEG DIF TEMP"
+  },
+  {
+    "codigoReduzido": "1290",
+    "classificacao": "129",
+    "descricao": "Ativos Tributários Diferidos",
+    "tipo": "S",
+    "descricaoNormalizada": "ATIVOS TRIBUTARIOS DIFERIDOS"
+  },
+  {
+    "codigoReduzido": "1300",
+    "classificacao": "13",
+    "descricao": "Ativo Não Circulante",
+    "tipo": "S",
+    "descricaoNormalizada": "ATIVO NAO CIRCULANTE"
+  },
+  {
+    "codigoReduzido": "1310",
+    "classificacao": "131",
+    "descricao": "Investimentos",
+    "tipo": "S",
+    "descricaoNormalizada": "INVESTIMENTOS"
+  },
+  {
+    "codigoReduzido": "1311",
+    "classificacao": "13101",
+    "descricao": "Participações Societárias",
+    "tipo": "S",
+    "descricaoNormalizada": "PARTICIPACOES SOCIETARIAS"
+  },
+  {
+    "codigoReduzido": "108",
+    "classificacao": "13101001",
+    "descricao": "Investimento Original",
+    "tipo": "A",
+    "descricaoNormalizada": "INVESTIMENTO ORIGINAL"
+  },
+  {
+    "codigoReduzido": "109",
+    "classificacao": "13101002",
+    "descricao": "Equivalência Patrimonial",
+    "tipo": "A",
+    "descricaoNormalizada": "EQUIVALENCIA PATRIMONIAL"
+  },
+  {
+    "codigoReduzido": "110",
+    "classificacao": "13101003",
+    "descricao": "Ágio",
+    "tipo": "A",
+    "descricaoNormalizada": "AGIO"
+  },
+  {
+    "codigoReduzido": "111",
+    "classificacao": "13101004",
+    "descricao": "(-) Perdas por Redução ao Vr Recuperável",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS PERDAS POR REDUCAO AO VR RECUPERAVEL"
+  },
+  {
+    "codigoReduzido": "114",
+    "classificacao": "131012002",
+    "descricao": "(-) Deprec. Prédios e Constr. p/ Locação",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS DEPRECIACAO PREDIOS CONSTR P ALUGUEL"
+  },
+  {
+    "codigoReduzido": "1312",
+    "classificacao": "13102",
+    "descricao": "Propriedades para Investimento",
+    "tipo": "S",
+    "descricaoNormalizada": "PROPRIEDADES P INVESTIMENTO"
+  },
+  {
+    "codigoReduzido": "112",
+    "classificacao": "13102001",
+    "descricao": "Terrenos Destinados à Locação",
+    "tipo": "A",
+    "descricaoNormalizada": "TERRENOS DESTINADOS ALUGUEL"
+  },
+  {
+    "codigoReduzido": "113",
+    "classificacao": "13102002",
+    "descricao": "Prédios e Constr. Destinados à Locação",
+    "tipo": "A",
+    "descricaoNormalizada": "PREDIOS CONSTR DESTINADOS ALUGUEL"
+  },
+  {
+    "codigoReduzido": "1320",
+    "classificacao": "132",
+    "descricao": "Imobilizado",
+    "tipo": "S",
+    "descricaoNormalizada": "IMOBILIZADO"
+  },
+  {
+    "codigoReduzido": "1321",
+    "classificacao": "13201",
+    "descricao": "Bens em Operação",
+    "tipo": "S",
+    "descricaoNormalizada": "BENS OPERACAO"
+  },
+  {
+    "codigoReduzido": "115",
+    "classificacao": "13201001",
+    "descricao": "Terrenos",
+    "tipo": "A",
+    "descricaoNormalizada": "TERRENOS"
+  },
+  {
+    "codigoReduzido": "116",
+    "classificacao": "13201002",
+    "descricao": "Edifícios",
+    "tipo": "A",
+    "descricaoNormalizada": "EDIFICIOS"
+  },
+  {
+    "codigoReduzido": "117",
+    "classificacao": "13201003",
+    "descricao": "Construções",
+    "tipo": "A",
+    "descricaoNormalizada": "CONSTRUCOES"
+  },
+  {
+    "codigoReduzido": "118",
+    "classificacao": "13201004",
+    "descricao": "Móveis e Utensílios",
+    "tipo": "A",
+    "descricaoNormalizada": "MOVEIS UTENSILIOS"
+  },
+  {
+    "codigoReduzido": "119",
+    "classificacao": "13201005",
+    "descricao": "Máquinas, Equipamentos e Ferramentas",
+    "tipo": "A",
+    "descricaoNormalizada": "MAQUINAS EQUIPAMENTOS FERRAMENTAS"
+  },
+  {
+    "codigoReduzido": "120",
+    "classificacao": "13201006",
+    "descricao": "Veículos",
+    "tipo": "A",
+    "descricaoNormalizada": "VEICULOS"
+  },
+  {
+    "codigoReduzido": "121",
+    "classificacao": "13201007",
+    "descricao": "Instalações",
+    "tipo": "A",
+    "descricaoNormalizada": "INSTALACOES"
+  },
+  {
+    "codigoReduzido": "122",
+    "classificacao": "13201008",
+    "descricao": "Benfeitorias em Propriedade de Terceiros",
+    "tipo": "A",
+    "descricaoNormalizada": "BENFEITORIAS PROPRIEDADE TERCEIROS"
+  },
+  {
+    "codigoReduzido": "123",
+    "classificacao": "13201009",
+    "descricao": "Imobilizado em Andamento",
+    "tipo": "A",
+    "descricaoNormalizada": "IMOBILIZADO ANDAMENTO"
+  },
+  {
+    "codigoReduzido": "124",
+    "classificacao": "13201010",
+    "descricao": "Marcas e Patentes",
+    "tipo": "A",
+    "descricaoNormalizada": "MARCAS PATENTES"
+  },
+  {
+    "codigoReduzido": "125",
+    "classificacao": "13201011",
+    "descricao": "Equipamentos de Informática",
+    "tipo": "A",
+    "descricaoNormalizada": "EQUIPAMENTOS TI"
+  },
+  {
+    "codigoReduzido": "126",
+    "classificacao": "13201012",
+    "descricao": "Equipamentos Telefônicos",
+    "tipo": "A",
+    "descricaoNormalizada": "EQUIPAMENTOS TELEFONICOS"
+  },
+  {
+    "codigoReduzido": "1322",
+    "classificacao": "13202",
+    "descricao": "(-) Depreciação Acumulada",
+    "tipo": "S",
+    "descricaoNormalizada": "MENOS DEPRECIACAO ACUMULADA"
+  },
+  {
+    "codigoReduzido": "128",
+    "classificacao": "13202001",
+    "descricao": "(-) Edifícios",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS EDIFICIOS"
+  },
+  {
+    "codigoReduzido": "129",
+    "classificacao": "13202002",
+    "descricao": "(-) Construções",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS CONSTRUCOES"
+  },
+  {
+    "codigoReduzido": "130",
+    "classificacao": "13202003",
+    "descricao": "(-) Móveis e Utensílios",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS MOVEIS UTENSILIOS"
+  },
+  {
+    "codigoReduzido": "131",
+    "classificacao": "13202004",
+    "descricao": "(-) Máquinas, Equipamentos e Ferramentas",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS MAQUINAS EQUIPAMENTOS FERRAMENTAS"
+  },
+  {
+    "codigoReduzido": "132",
+    "classificacao": "13202005",
+    "descricao": "(-) Veículos",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS VEICULOS"
+  },
+  {
+    "codigoReduzido": "133",
+    "classificacao": "13202006",
+    "descricao": "(-) Instalações",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS INSTALACOES"
+  },
+  {
+    "codigoReduzido": "134",
+    "classificacao": "13202007",
+    "descricao": "(-) Benfeitorias Propriedade Terceiros",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS BENFEITORIAS PROPRIEDADE TERCEIROS"
+  },
+  {
+    "codigoReduzido": "135",
+    "classificacao": "13202008",
+    "descricao": "Imobilizado em Andamento",
+    "tipo": "A",
+    "descricaoNormalizada": "IMOBILIZADO ANDAMENTO"
+  },
+  {
+    "codigoReduzido": "136",
+    "classificacao": "13202009",
+    "descricao": "(-) Equipamentos de Informática",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS EQUIPAMENTOS TI"
+  },
+  {
+    "codigoReduzido": "1323",
+    "classificacao": "13203",
+    "descricao": "Avaliação Patrimonial - Adoção Inicial",
+    "tipo": "S",
+    "descricaoNormalizada": "AVALIACAO PATRIMONIAL ADOCAO INICIAL"
+  },
+  {
+    "codigoReduzido": "139",
+    "classificacao": "13203001",
+    "descricao": "Terrenos",
+    "tipo": "A",
+    "descricaoNormalizada": "TERRENOS"
+  },
+  {
+    "codigoReduzido": "140",
+    "classificacao": "13203002",
+    "descricao": "Edifícios",
+    "tipo": "A",
+    "descricaoNormalizada": "EDIFICIOS"
+  },
+  {
+    "codigoReduzido": "141",
+    "classificacao": "13203003",
+    "descricao": "Construções",
+    "tipo": "A",
+    "descricaoNormalizada": "CONSTRUCOES"
+  },
+  {
+    "codigoReduzido": "142",
+    "classificacao": "13203004",
+    "descricao": "Móveis e Utensílios",
+    "tipo": "A",
+    "descricaoNormalizada": "MOVEIS UTENSILIOS"
+  },
+  {
+    "codigoReduzido": "143",
+    "classificacao": "13203005",
+    "descricao": "Máquinas, Equipamentos e Ferramentas",
+    "tipo": "A",
+    "descricaoNormalizada": "MAQUINAS EQUIPAMENTOS FERRAMENTAS"
+  },
+  {
+    "codigoReduzido": "144",
+    "classificacao": "13203006",
+    "descricao": "Veículos",
+    "tipo": "A",
+    "descricaoNormalizada": "VEICULOS"
+  },
+  {
+    "codigoReduzido": "145",
+    "classificacao": "13203007",
+    "descricao": "Instalações",
+    "tipo": "A",
+    "descricaoNormalizada": "INSTALACOES"
+  },
+  {
+    "codigoReduzido": "146",
+    "classificacao": "13203008",
+    "descricao": "Benfeitorias em Propriedade de Terceiros",
+    "tipo": "A",
+    "descricaoNormalizada": "BENFEITORIAS PROPRIEDADE TERCEIROS"
+  },
+  {
+    "codigoReduzido": "1324",
+    "classificacao": "13204",
+    "descricao": "(-) Perdas por Redução ao Vr Recuperável",
+    "tipo": "S",
+    "descricaoNormalizada": "MENOS PERDAS POR REDUCAO AO VR RECUPERAVEL"
+  },
+  {
+    "codigoReduzido": "150",
+    "classificacao": "13204001",
+    "descricao": "(-) Edifícios",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS EDIFICIOS"
+  },
+  {
+    "codigoReduzido": "151",
+    "classificacao": "13204002",
+    "descricao": "(-) Construções",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS CONSTRUCOES"
+  },
+  {
+    "codigoReduzido": "152",
+    "classificacao": "13204003",
+    "descricao": "(-) Móveis e Utensílios",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS MOVEIS UTENSILIOS"
+  },
+  {
+    "codigoReduzido": "153",
+    "classificacao": "13204004",
+    "descricao": "(-) Máquinas, Equipamentos e Ferramentas",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS MAQUINAS EQUIPAMENTOS FERRAMENTAS"
+  },
+  {
+    "codigoReduzido": "154",
+    "classificacao": "13204005",
+    "descricao": "(-) Veículos",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS VEICULOS"
+  },
+  {
+    "codigoReduzido": "155",
+    "classificacao": "13204006",
+    "descricao": "(-) Instalações",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS INSTALACOES"
+  },
+  {
+    "codigoReduzido": "156",
+    "classificacao": "13204007",
+    "descricao": "(-) Benfeitorias Propriedade Terceiros",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS BENFEITORIAS PROPRIEDADE TERCEIROS"
+  },
+  {
+    "codigoReduzido": "1330",
+    "classificacao": "133",
+    "descricao": "Diferido",
+    "tipo": "S",
+    "descricaoNormalizada": "DIFERIDO"
+  },
+  {
+    "codigoReduzido": "1331",
+    "classificacao": "13301",
+    "descricao": "Gastos de Implantação e Pré-Operacionais",
+    "tipo": "S",
+    "descricaoNormalizada": "GASTOS IMPLANTACAO PRE OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "160",
+    "classificacao": "13301001",
+    "descricao": "Despesas Pré-Operacionais",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS PRE OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "161",
+    "classificacao": "13301002",
+    "descricao": "Despesas com Estudos e Projetos",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS COM ESTUDOS PROJETOS"
+  },
+  {
+    "codigoReduzido": "162",
+    "classificacao": "13301003",
+    "descricao": "Despesas Financeiras",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "163",
+    "classificacao": "13301004",
+    "descricao": "Receitas Financeiras",
+    "tipo": "A",
+    "descricaoNormalizada": "RECEITA FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "164",
+    "classificacao": "13301005",
+    "descricao": "Despesas Indedutíveis",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS INDEDUTIVEIS"
+  },
+  {
+    "codigoReduzido": "165",
+    "classificacao": "13301006",
+    "descricao": "Despesas Tributárias",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS TRIBUTARIAS"
+  },
+  {
+    "codigoReduzido": "1332",
+    "classificacao": "13302",
+    "descricao": "Gastos com Implantação de Sistemas",
+    "tipo": "S",
+    "descricaoNormalizada": "GASTOS COM IMPLANTACAO SISTEMAS"
+  },
+  {
+    "codigoReduzido": "169",
+    "classificacao": "13302001",
+    "descricao": "Serviços Profissionais",
+    "tipo": "A",
+    "descricaoNormalizada": "SERVICOS PROFISSIONAIS"
+  },
+  {
+    "codigoReduzido": "1333",
+    "classificacao": "13303",
+    "descricao": "Pesquisa e Desenvolvimento de Produtos",
+    "tipo": "S",
+    "descricaoNormalizada": "PESQUISA DESENVOLVIMENTO PRODUTOS"
+  },
+  {
+    "codigoReduzido": "173",
+    "classificacao": "13303001",
+    "descricao": "Salários e Encargos",
+    "tipo": "A",
+    "descricaoNormalizada": "SALARIOS ENCARGOS"
+  },
+  {
+    "codigoReduzido": "174",
+    "classificacao": "13303002",
+    "descricao": "Depreciação",
+    "tipo": "A",
+    "descricaoNormalizada": "DEPRECIACAO"
+  },
+  {
+    "codigoReduzido": "175",
+    "classificacao": "13303003",
+    "descricao": "Gastos Gerais",
+    "tipo": "A",
+    "descricaoNormalizada": "GASTOS GERAIS"
+  },
+  {
+    "codigoReduzido": "176",
+    "classificacao": "13303004",
+    "descricao": "Outros Custos",
+    "tipo": "A",
+    "descricaoNormalizada": "OUTROS CUSTOS"
+  },
+  {
+    "codigoReduzido": "1334",
+    "classificacao": "13304",
+    "descricao": "Amortização Acumulada",
+    "tipo": "S",
+    "descricaoNormalizada": "AMORTIZACAO ACUMULADA"
+  },
+  {
+    "codigoReduzido": "180",
+    "classificacao": "13304001",
+    "descricao": "Despesas Operacionais",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "181",
+    "classificacao": "13304002",
+    "descricao": "Despesas com Estudos e Projetos",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS COM ESTUDOS PROJETOS"
+  },
+  {
+    "codigoReduzido": "182",
+    "classificacao": "13304003",
+    "descricao": "Despesas Financeiras",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "183",
+    "classificacao": "13304004",
+    "descricao": "Receitas Financeiras",
+    "tipo": "A",
+    "descricaoNormalizada": "RECEITA FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "184",
+    "classificacao": "13304005",
+    "descricao": "Despesas Indedutíveis",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS INDEDUTIVEIS"
+  },
+  {
+    "codigoReduzido": "185",
+    "classificacao": "13304006",
+    "descricao": "Despesas Tributárias",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS TRIBUTARIAS"
+  },
+  {
+    "codigoReduzido": "186",
+    "classificacao": "13304007",
+    "descricao": "Serviços Profissionais",
+    "tipo": "A",
+    "descricaoNormalizada": "SERVICOS PROFISSIONAIS"
+  },
+  {
+    "codigoReduzido": "187",
+    "classificacao": "13304008",
+    "descricao": "Pesquisa e Desenvolvimento de Produtos",
+    "tipo": "A",
+    "descricaoNormalizada": "PESQUISA DESENVOLVIMENTO PRODUTOS"
+  },
+  {
+    "codigoReduzido": "1336",
+    "classificacao": "134",
+    "descricao": "Intangível",
+    "tipo": "S",
+    "descricaoNormalizada": "INTANGIVEL"
+  },
+  {
+    "codigoReduzido": "1337",
+    "classificacao": "13401",
+    "descricao": "Intangível",
+    "tipo": "S",
+    "descricaoNormalizada": "INTANGIVEL"
+  },
+  {
+    "codigoReduzido": "190",
+    "classificacao": "13401001",
+    "descricao": "Software",
+    "tipo": "A",
+    "descricaoNormalizada": "SOFTWARE"
+  },
+  {
+    "codigoReduzido": "191",
+    "classificacao": "13401002",
+    "descricao": "Marcas",
+    "tipo": "A",
+    "descricaoNormalizada": "MARCAS"
+  },
+  {
+    "codigoReduzido": "1338",
+    "classificacao": "13402",
+    "descricao": "(-) Amortização Intangível",
+    "tipo": "S",
+    "descricaoNormalizada": "MENOS AMORTIZACAO INTANGIVEL"
+  },
+  {
+    "codigoReduzido": "195",
+    "classificacao": "13402001",
+    "descricao": "(-) Software",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS SOFTWARE"
+  },
+  {
+    "codigoReduzido": "2000",
+    "classificacao": "2",
+    "descricao": "PASSIVO",
+    "tipo": "S",
+    "descricaoNormalizada": "PASSIVO"
+  },
+  {
+    "codigoReduzido": "2100",
+    "classificacao": "21",
+    "descricao": "Passivo Circulante",
+    "tipo": "S",
+    "descricaoNormalizada": "PASSIVO CIRCULANTE"
+  },
+  {
+    "codigoReduzido": "2110",
+    "classificacao": "211",
+    "descricao": "Fornecedores",
+    "tipo": "S",
+    "descricaoNormalizada": "FORNECEDORES"
+  },
+  {
+    "codigoReduzido": "2111",
+    "classificacao": "21101",
+    "descricao": "Fornecedores Nacionais",
+    "tipo": "S",
+    "descricaoNormalizada": "FORNECEDORES NACIONAL"
+  },
+  {
+    "codigoReduzido": "200",
+    "classificacao": "21101001",
+    "descricao": "Fornecedores de Materiais",
+    "tipo": "A",
+    "descricaoNormalizada": "FORNECEDORES MATERIAIS"
+  },
+  {
+    "codigoReduzido": "201",
+    "classificacao": "21101002",
+    "descricao": "Fornecedores de Serviços",
+    "tipo": "A",
+    "descricaoNormalizada": "FORNECEDORES SERVICOS"
+  },
+  {
+    "codigoReduzido": "202",
+    "classificacao": "21101003",
+    "descricao": "Contas a Pagar",
+    "tipo": "A",
+    "descricaoNormalizada": "CONTA PAGAR"
+  },
+  {
+    "codigoReduzido": "203",
+    "classificacao": "21101004",
+    "descricao": "(-) Ajuste a Valor Presente",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS AJUSTE VALORES PRESENTE"
+  },
+  {
+    "codigoReduzido": "2112",
+    "classificacao": "21102",
+    "descricao": "Fornecedores Estrangeiros",
+    "tipo": "S",
+    "descricaoNormalizada": "FORNECEDORES EXTERIOR"
+  },
+  {
+    "codigoReduzido": "206",
+    "classificacao": "21102001",
+    "descricao": "Fornecedores de Mercadorias e Insumos",
+    "tipo": "A",
+    "descricaoNormalizada": "FORNECEDORES MERCADORIAS INSUMOS"
+  },
+  {
+    "codigoReduzido": "207",
+    "classificacao": "21102002",
+    "descricao": "Fornecedores de Serviços",
+    "tipo": "A",
+    "descricaoNormalizada": "FORNECEDORES SERVICOS"
+  },
+  {
+    "codigoReduzido": "2120",
+    "classificacao": "212",
+    "descricao": "Empréstimos e Financiamentos",
+    "tipo": "S",
+    "descricaoNormalizada": "EMPRESTIMOS FINANCIAMENTOS"
+  },
+  {
+    "codigoReduzido": "2121",
+    "classificacao": "21201",
+    "descricao": "Empréstimos e Financiamentos Locais",
+    "tipo": "S",
+    "descricaoNormalizada": "EMPRESTIMOS FINANCIAMENTOS LOCAIS"
+  },
+  {
+    "codigoReduzido": "211",
+    "classificacao": "21201001",
+    "descricao": "Linhas de Créditos Bancárias",
+    "tipo": "A",
+    "descricaoNormalizada": "LINHAS CREDITOS BANCARIAS"
+  },
+  {
+    "codigoReduzido": "212",
+    "classificacao": "21201002",
+    "descricao": "Empréstimos Bancários",
+    "tipo": "A",
+    "descricaoNormalizada": "EMPRESTIMOS BANCARIOS"
+  },
+  {
+    "codigoReduzido": "213",
+    "classificacao": "21201003",
+    "descricao": "Desconto de Duplicatas e outros Títulos",
+    "tipo": "A",
+    "descricaoNormalizada": "DESCONTO DUPLICATAS OUTROS TITULOS"
+  },
+  {
+    "codigoReduzido": "214",
+    "classificacao": "21201004",
+    "descricao": "Arrendamento Mercantil a Pagar",
+    "tipo": "A",
+    "descricaoNormalizada": "ARRENDAMENTO MERCANTIL PAGAR"
+  },
+  {
+    "codigoReduzido": "215",
+    "classificacao": "21201005",
+    "descricao": "Linhas de Créditos Públicas",
+    "tipo": "A",
+    "descricaoNormalizada": "LINHAS CREDITOS PUBLICAS"
+  },
+  {
+    "codigoReduzido": "2122",
+    "classificacao": "21202",
+    "descricao": "Empréstimos em Moeda Estrangeira",
+    "tipo": "S",
+    "descricaoNormalizada": "EMPRESTIMOS MOEDA ESTRANGEIRA"
+  },
+  {
+    "codigoReduzido": "217",
+    "classificacao": "21202001",
+    "descricao": "Linhas de Crédito Externas",
+    "tipo": "A",
+    "descricaoNormalizada": "LINHAS CREDITO EXTERNAS"
+  },
+  {
+    "codigoReduzido": "2130",
+    "classificacao": "213",
+    "descricao": "Salários, Provisões e Encargos Sociais",
+    "tipo": "S",
+    "descricaoNormalizada": "SALARIOS PROVISAO ENCARGOS SOCIAIS"
+  },
+  {
+    "codigoReduzido": "2131",
+    "classificacao": "21301",
+    "descricao": "Salários e Provisões",
+    "tipo": "S",
+    "descricaoNormalizada": "SALARIOS PROVISAO"
+  },
+  {
+    "codigoReduzido": "219",
+    "classificacao": "21301001",
+    "descricao": "Salários",
+    "tipo": "A",
+    "descricaoNormalizada": "SALARIOS"
+  },
+  {
+    "codigoReduzido": "220",
+    "classificacao": "21301002",
+    "descricao": "Pró-Labore",
+    "tipo": "A",
+    "descricaoNormalizada": "PRO LABORE"
+  },
+  {
+    "codigoReduzido": "221",
+    "classificacao": "21301003",
+    "descricao": "Provisão de Férias",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO FERIAS"
+  },
+  {
+    "codigoReduzido": "222",
+    "classificacao": "21301004",
+    "descricao": "Provisão de 13º Salário",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO 13"
+  },
+  {
+    "codigoReduzido": "223",
+    "classificacao": "21301005",
+    "descricao": "Encargos s/ Férias e 13º Salário",
+    "tipo": "A",
+    "descricaoNormalizada": "ENCARGOS S FERIAS 13"
+  },
+  {
+    "codigoReduzido": "2132",
+    "classificacao": "21302",
+    "descricao": "Encargos Sociais",
+    "tipo": "S",
+    "descricaoNormalizada": "ENCARGOS SOCIAIS"
+  },
+  {
+    "codigoReduzido": "226",
+    "classificacao": "21302001",
+    "descricao": "FGTS a Pagar",
+    "tipo": "A",
+    "descricaoNormalizada": "FGTS PAGAR"
+  },
+  {
+    "codigoReduzido": "227",
+    "classificacao": "21302002",
+    "descricao": "INSS a Pagar",
+    "tipo": "A",
+    "descricaoNormalizada": "INSS PAGAR"
+  },
+  {
+    "codigoReduzido": "228",
+    "classificacao": "21302003",
+    "descricao": "Contrib.Sind.e Assist.a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "CONTRIBUICAO SIND ASSIST PAGAR"
+  },
+  {
+    "codigoReduzido": "229",
+    "classificacao": "21302004",
+    "descricao": "Contrib.Confederativa",
+    "tipo": "A",
+    "descricaoNormalizada": "CONTRIBUICAO CONFEDERATIVA"
+  },
+  {
+    "codigoReduzido": "2140",
+    "classificacao": "214",
+    "descricao": "Obrigações Fiscais",
+    "tipo": "S",
+    "descricaoNormalizada": "OBRIGACOES FISCAIS"
+  },
+  {
+    "codigoReduzido": "2141",
+    "classificacao": "21401",
+    "descricao": "Impostos e Contribuições a Recolher",
+    "tipo": "S",
+    "descricaoNormalizada": "IMPOSTOS CONTRIBUICAO PAGAR"
+  },
+  {
+    "codigoReduzido": "233",
+    "classificacao": "21401001",
+    "descricao": "ICMS a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS PAGAR"
+  },
+  {
+    "codigoReduzido": "234",
+    "classificacao": "21401002",
+    "descricao": "IPI a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "IPI PAGAR"
+  },
+  {
+    "codigoReduzido": "235",
+    "classificacao": "21401003",
+    "descricao": "PIS a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "PIS PAGAR"
+  },
+  {
+    "codigoReduzido": "236",
+    "classificacao": "21401004",
+    "descricao": "COFINS a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "COFINS PAGAR"
+  },
+  {
+    "codigoReduzido": "237",
+    "classificacao": "21401005",
+    "descricao": "ISS a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "ISS PAGAR"
+  },
+  {
+    "codigoReduzido": "238",
+    "classificacao": "21401006",
+    "descricao": "IRRF a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "IRRF PAGAR"
+  },
+  {
+    "codigoReduzido": "239",
+    "classificacao": "21401007",
+    "descricao": "IRPJ a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "IRPJ PAGAR"
+  },
+  {
+    "codigoReduzido": "240",
+    "classificacao": "21401008",
+    "descricao": "CSLL a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "CSLL PAGAR"
+  },
+  {
+    "codigoReduzido": "241",
+    "classificacao": "21401009",
+    "descricao": "Contribuições Retidas a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "CONTRIBUICAO RETIDO PAGAR"
+  },
+  {
+    "codigoReduzido": "243",
+    "classificacao": "21401010",
+    "descricao": "Provisões Impostos por Competência",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO IMPOSTOS POR COMPETENCIA"
+  },
+  {
+    "codigoReduzido": "242",
+    "classificacao": "21401011",
+    "descricao": "Simples a Recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "SIMPLES PAGAR"
+  },
+  {
+    "codigoReduzido": "9141",
+    "classificacao": "21401701",
+    "descricao": "ICMS ST - AC",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST AC"
+  },
+  {
+    "codigoReduzido": "9142",
+    "classificacao": "21401702",
+    "descricao": "ICMS ST - AL",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST AL"
+  },
+  {
+    "codigoReduzido": "9143",
+    "classificacao": "21401703",
+    "descricao": "ICMS ST - AP",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST AP"
+  },
+  {
+    "codigoReduzido": "9144",
+    "classificacao": "21401704",
+    "descricao": "ICMS ST - AM",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST AM"
+  },
+  {
+    "codigoReduzido": "9145",
+    "classificacao": "21401705",
+    "descricao": "ICMS ST - BA",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST BA"
+  },
+  {
+    "codigoReduzido": "9146",
+    "classificacao": "21401706",
+    "descricao": "ICMS ST - CE",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST CE"
+  },
+  {
+    "codigoReduzido": "9147",
+    "classificacao": "21401707",
+    "descricao": "ICMS ST - DF",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST DF"
+  },
+  {
+    "codigoReduzido": "9148",
+    "classificacao": "21401708",
+    "descricao": "ICMS ST - ES",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST ES"
+  },
+  {
+    "codigoReduzido": "9149",
+    "classificacao": "21401709",
+    "descricao": "ICMS ST - GO",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST GO"
+  },
+  {
+    "codigoReduzido": "9150",
+    "classificacao": "21401710",
+    "descricao": "ICMS ST - MA",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST MA"
+  },
+  {
+    "codigoReduzido": "9151",
+    "classificacao": "21401711",
+    "descricao": "ICMS ST - MT",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST MT"
+  },
+  {
+    "codigoReduzido": "9152",
+    "classificacao": "21401712",
+    "descricao": "ICMS ST - MS",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST MS"
+  },
+  {
+    "codigoReduzido": "9153",
+    "classificacao": "21401713",
+    "descricao": "ICMS ST - MG",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST MG"
+  },
+  {
+    "codigoReduzido": "9154",
+    "classificacao": "21401714",
+    "descricao": "ICMS ST - PA",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST PA"
+  },
+  {
+    "codigoReduzido": "9155",
+    "classificacao": "21401715",
+    "descricao": "ICMS ST - PB",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST PB"
+  },
+  {
+    "codigoReduzido": "9156",
+    "classificacao": "21401716",
+    "descricao": "ICMS ST - PR",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST PR"
+  },
+  {
+    "codigoReduzido": "9157",
+    "classificacao": "21401717",
+    "descricao": "ICMS ST - PE",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST PE"
+  },
+  {
+    "codigoReduzido": "9158",
+    "classificacao": "21401718",
+    "descricao": "ICMS ST - PI",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST PI"
+  },
+  {
+    "codigoReduzido": "9159",
+    "classificacao": "21401719",
+    "descricao": "ICMS ST - RJ",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST RJ"
+  },
+  {
+    "codigoReduzido": "9160",
+    "classificacao": "21401720",
+    "descricao": "ICMS ST - RN",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST RN"
+  },
+  {
+    "codigoReduzido": "9161",
+    "classificacao": "21401721",
+    "descricao": "ICMS ST - RS",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST RS"
+  },
+  {
+    "codigoReduzido": "9162",
+    "classificacao": "21401722",
+    "descricao": "ICMS ST - RO",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST RO"
+  },
+  {
+    "codigoReduzido": "9163",
+    "classificacao": "21401723",
+    "descricao": "ICMS ST - RR",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST RR"
+  },
+  {
+    "codigoReduzido": "9164",
+    "classificacao": "21401724",
+    "descricao": "ICMS ST - SC",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST SC"
+  },
+  {
+    "codigoReduzido": "9165",
+    "classificacao": "21401725",
+    "descricao": "ICMS ST - SP",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST SP"
+  },
+  {
+    "codigoReduzido": "9166",
+    "classificacao": "21401726",
+    "descricao": "ICMS ST - SE",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST SE"
+  },
+  {
+    "codigoReduzido": "9167",
+    "classificacao": "21401727",
+    "descricao": "ICMS ST - TO",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST TO"
+  },
+  {
+    "codigoReduzido": "9235",
+    "classificacao": "21401800",
+    "descricao": "IBS a recoher",
+    "tipo": "A",
+    "descricaoNormalizada": "IBS RECOHER"
+  },
+  {
+    "codigoReduzido": "9236",
+    "classificacao": "21401801",
+    "descricao": "CBS a recolher",
+    "tipo": "A",
+    "descricaoNormalizada": "CBS PAGAR"
+  },
+  {
+    "codigoReduzido": "9241",
+    "classificacao": "21401802",
+    "descricao": "ICMS DIFAL - AC",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL AC"
+  },
+  {
+    "codigoReduzido": "9242",
+    "classificacao": "21401803",
+    "descricao": "ICMS DIFAL - AL",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL AL"
+  },
+  {
+    "codigoReduzido": "9243",
+    "classificacao": "21401804",
+    "descricao": "ICMS DIFAL - AP",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL AP"
+  },
+  {
+    "codigoReduzido": "9244",
+    "classificacao": "21401805",
+    "descricao": "ICMS DIFAL - AM",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL AM"
+  },
+  {
+    "codigoReduzido": "9245",
+    "classificacao": "21401806",
+    "descricao": "ICMS DIFAL - BA",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL BA"
+  },
+  {
+    "codigoReduzido": "9246",
+    "classificacao": "21401807",
+    "descricao": "ICMS DIFAL - CE",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL CE"
+  },
+  {
+    "codigoReduzido": "9247",
+    "classificacao": "21401808",
+    "descricao": "ICMS DIFAL - DF",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL DF"
+  },
+  {
+    "codigoReduzido": "9248",
+    "classificacao": "21401809",
+    "descricao": "ICMS DIFAL - ES",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL ES"
+  },
+  {
+    "codigoReduzido": "9249",
+    "classificacao": "21401810",
+    "descricao": "ICMS DIFAL - GO",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL GO"
+  },
+  {
+    "codigoReduzido": "9250",
+    "classificacao": "21401811",
+    "descricao": "ICMS DIFAL - MA",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL MA"
+  },
+  {
+    "codigoReduzido": "9251",
+    "classificacao": "21401812",
+    "descricao": "ICMS DIFAL - MT",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL MT"
+  },
+  {
+    "codigoReduzido": "9252",
+    "classificacao": "21401813",
+    "descricao": "ICMS DIFAL - MS",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL MS"
+  },
+  {
+    "codigoReduzido": "9253",
+    "classificacao": "21401814",
+    "descricao": "ICMS DIFAL - MG",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL MG"
+  },
+  {
+    "codigoReduzido": "9254",
+    "classificacao": "21401815",
+    "descricao": "ICMS DIFAL - PA",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL PA"
+  },
+  {
+    "codigoReduzido": "9255",
+    "classificacao": "21401816",
+    "descricao": "ICMS DIFAL - PB",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL PB"
+  },
+  {
+    "codigoReduzido": "9256",
+    "classificacao": "21401817",
+    "descricao": "ICMS DIFAL - PR",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL PR"
+  },
+  {
+    "codigoReduzido": "9257",
+    "classificacao": "21401818",
+    "descricao": "ICMS DIFAL - PE",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL PE"
+  },
+  {
+    "codigoReduzido": "9258",
+    "classificacao": "21401819",
+    "descricao": "ICMS DIFAL - PI",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL PI"
+  },
+  {
+    "codigoReduzido": "9259",
+    "classificacao": "21401820",
+    "descricao": "ICMS DIFAL - RJ",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL RJ"
+  },
+  {
+    "codigoReduzido": "9260",
+    "classificacao": "21401821",
+    "descricao": "ICMS DIFAL - RN",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL RN"
+  },
+  {
+    "codigoReduzido": "9261",
+    "classificacao": "21401822",
+    "descricao": "ICMS DIFAL - RS",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL RS"
+  },
+  {
+    "codigoReduzido": "9262",
+    "classificacao": "21401823",
+    "descricao": "ICMS DIFAL - RO",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL RO"
+  },
+  {
+    "codigoReduzido": "9263",
+    "classificacao": "21401824",
+    "descricao": "ICMS DIFAL - RR",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL RR"
+  },
+  {
+    "codigoReduzido": "9264",
+    "classificacao": "21401825",
+    "descricao": "ICMS DIFAL - SC",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL SC"
+  },
+  {
+    "codigoReduzido": "9265",
+    "classificacao": "21401826",
+    "descricao": "ICMS DIFAL - SP",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL SP"
+  },
+  {
+    "codigoReduzido": "9266",
+    "classificacao": "21401827",
+    "descricao": "ICMS DIFAL - SE",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL SE"
+  },
+  {
+    "codigoReduzido": "9267",
+    "classificacao": "21401828",
+    "descricao": "ICMS DIFAL - TO",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS DIFAL TO"
+  },
+  {
+    "codigoReduzido": "9239",
+    "classificacao": "21401850",
+    "descricao": "Provisão de IRPJ",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO IRPJ"
+  },
+  {
+    "codigoReduzido": "9240",
+    "classificacao": "21401851",
+    "descricao": "Provisão de CSLL",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO CSLL"
+  },
+  {
+    "codigoReduzido": "2142",
+    "classificacao": "21402",
+    "descricao": "Parcelamentos Tributários",
+    "tipo": "S",
+    "descricaoNormalizada": "PARCELAMENTOS TRIBUTARIOS"
+  },
+  {
+    "codigoReduzido": "230",
+    "classificacao": "21402001",
+    "descricao": "Parcelamentos Federais",
+    "tipo": "A",
+    "descricaoNormalizada": "PARCELAMENTOS FEDERAIS"
+  },
+  {
+    "codigoReduzido": "231",
+    "classificacao": "21402002",
+    "descricao": "Parcelamentos Estaduais",
+    "tipo": "A",
+    "descricaoNormalizada": "PARCELAMENTOS ESTADUAIS"
+  },
+  {
+    "codigoReduzido": "2150",
+    "classificacao": "215",
+    "descricao": "Demais Contas a Pagar",
+    "tipo": "S",
+    "descricaoNormalizada": "DEMAIS CONTA PAGAR"
+  },
+  {
+    "codigoReduzido": "2151",
+    "classificacao": "21501",
+    "descricao": "Outras Contas",
+    "tipo": "S",
+    "descricaoNormalizada": "OUTRAS CONTA"
+  },
+  {
+    "codigoReduzido": "244",
+    "classificacao": "21501001",
+    "descricao": "Adiantamento de Clientes",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO CLIENTES"
+  },
+  {
+    "codigoReduzido": "245",
+    "classificacao": "21501002",
+    "descricao": "Comissões a Pagar",
+    "tipo": "A",
+    "descricaoNormalizada": "COMISSOES PAGAR"
+  },
+  {
+    "codigoReduzido": "246",
+    "classificacao": "21501003",
+    "descricao": "Aluguéis a Pagar",
+    "tipo": "A",
+    "descricaoNormalizada": "ALUGUEL PAGAR"
+  },
+  {
+    "codigoReduzido": "247",
+    "classificacao": "21501004",
+    "descricao": "Empréstimo consignado a pagar",
+    "tipo": "A",
+    "descricaoNormalizada": "EMPRESTIMOS CONSIGNADO PAGAR"
+  },
+  {
+    "codigoReduzido": "248",
+    "classificacao": "21501005",
+    "descricao": "Lucros e Dividendos Declarados",
+    "tipo": "A",
+    "descricaoNormalizada": "LUCRO DIVIDENDOS DECLARADOS"
+  },
+  {
+    "codigoReduzido": "2152",
+    "classificacao": "21502",
+    "descricao": "Provisões",
+    "tipo": "S",
+    "descricaoNormalizada": "PROVISAO"
+  },
+  {
+    "codigoReduzido": "249",
+    "classificacao": "21502001",
+    "descricao": "Provisões para Contingência",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO P CONTINGENCIA"
+  },
+  {
+    "codigoReduzido": "2160",
+    "classificacao": "216",
+    "descricao": "Receitas Diferidas",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA DIFERIDAS"
+  },
+  {
+    "codigoReduzido": "2161",
+    "classificacao": "21601",
+    "descricao": "Receitas Diferidas Líquidas",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA DIFERIDAS LIQUIDAS"
+  },
+  {
+    "codigoReduzido": "250",
+    "classificacao": "21601001",
+    "descricao": "Serviços a Realizar",
+    "tipo": "A",
+    "descricaoNormalizada": "SERVICOS REALIZAR"
+  },
+  {
+    "codigoReduzido": "2200",
+    "classificacao": "22",
+    "descricao": "Passivo Não Circulante",
+    "tipo": "S",
+    "descricaoNormalizada": "PASSIVO NAO CIRCULANTE"
+  },
+  {
+    "codigoReduzido": "2210",
+    "classificacao": "221",
+    "descricao": "Empréstimos e Financiamentos",
+    "tipo": "S",
+    "descricaoNormalizada": "EMPRESTIMOS FINANCIAMENTOS"
+  },
+  {
+    "codigoReduzido": "2211",
+    "classificacao": "22101",
+    "descricao": "Empréstimos e Financiamentos Locais",
+    "tipo": "S",
+    "descricaoNormalizada": "EMPRESTIMOS FINANCIAMENTOS LOCAIS"
+  },
+  {
+    "codigoReduzido": "252",
+    "classificacao": "22101001",
+    "descricao": "Linhas de Crédito Bancárias",
+    "tipo": "A",
+    "descricaoNormalizada": "LINHAS CREDITO BANCARIAS"
+  },
+  {
+    "codigoReduzido": "2212",
+    "classificacao": "22102",
+    "descricao": "Empréstimos, Financiamentos Estrangeiros",
+    "tipo": "S",
+    "descricaoNormalizada": "EMPRESTIMOS FINANCIAMENTOS EXTERIOR"
+  },
+  {
+    "codigoReduzido": "251",
+    "classificacao": "22102001",
+    "descricao": "Empréstimos Bancários",
+    "tipo": "A",
+    "descricaoNormalizada": "EMPRESTIMOS BANCARIOS"
+  },
+  {
+    "codigoReduzido": "253",
+    "classificacao": "22102001",
+    "descricao": "Empréstimos Bancários",
+    "tipo": "A",
+    "descricaoNormalizada": "EMPRESTIMOS BANCARIOS"
+  },
+  {
+    "codigoReduzido": "2213",
+    "classificacao": "22103",
+    "descricao": "Empréstimos com Pessoas Ligadas no País",
+    "tipo": "S",
+    "descricaoNormalizada": "EMPRESTIMOS COM PESSOAS LIGADAS PAIS"
+  },
+  {
+    "codigoReduzido": "254",
+    "classificacao": "22103001",
+    "descricao": "Sócios Pessoas Físicas",
+    "tipo": "A",
+    "descricaoNormalizada": "SOCIOS PESSOAS FISICAS"
+  },
+  {
+    "codigoReduzido": "255",
+    "classificacao": "22103002",
+    "descricao": "Controladora",
+    "tipo": "A",
+    "descricaoNormalizada": "CONTROLADORA"
+  },
+  {
+    "codigoReduzido": "256",
+    "classificacao": "22103003",
+    "descricao": "Coligadas",
+    "tipo": "A",
+    "descricaoNormalizada": "COLIGADAS"
+  },
+  {
+    "codigoReduzido": "2220",
+    "classificacao": "222",
+    "descricao": "Fornecedores",
+    "tipo": "S",
+    "descricaoNormalizada": "FORNECEDORES"
+  },
+  {
+    "codigoReduzido": "2221",
+    "classificacao": "22201",
+    "descricao": "Fornecedores Nacionais",
+    "tipo": "S",
+    "descricaoNormalizada": "FORNECEDORES NACIONAL"
+  },
+  {
+    "codigoReduzido": "257",
+    "classificacao": "22201001",
+    "descricao": "Parcelas a Longo Prazo",
+    "tipo": "A",
+    "descricaoNormalizada": "PARCELAS LONGO PRAZO"
+  },
+  {
+    "codigoReduzido": "2222",
+    "classificacao": "22202",
+    "descricao": "Fornecedores Estrangeiros",
+    "tipo": "S",
+    "descricaoNormalizada": "FORNECEDORES EXTERIOR"
+  },
+  {
+    "codigoReduzido": "258",
+    "classificacao": "22202001",
+    "descricao": "Parcelas a Longo Prazo",
+    "tipo": "A",
+    "descricaoNormalizada": "PARCELAS LONGO PRAZO"
+  },
+  {
+    "codigoReduzido": "2230",
+    "classificacao": "223",
+    "descricao": "Obrigações Tributárias",
+    "tipo": "S",
+    "descricaoNormalizada": "OBRIGACOES TRIBUTARIAS"
+  },
+  {
+    "codigoReduzido": "2231",
+    "classificacao": "22301",
+    "descricao": "Parcelamentos Tributários",
+    "tipo": "S",
+    "descricaoNormalizada": "PARCELAMENTOS TRIBUTARIOS"
+  },
+  {
+    "codigoReduzido": "261",
+    "classificacao": "22301001",
+    "descricao": "Parcelamentos Federais",
+    "tipo": "A",
+    "descricaoNormalizada": "PARCELAMENTOS FEDERAIS"
+  },
+  {
+    "codigoReduzido": "262",
+    "classificacao": "22301002",
+    "descricao": "Parcelamentos Estaduais",
+    "tipo": "A",
+    "descricaoNormalizada": "PARCELAMENTOS ESTADUAIS"
+  },
+  {
+    "codigoReduzido": "2232",
+    "classificacao": "22302",
+    "descricao": "Refis",
+    "tipo": "S",
+    "descricaoNormalizada": "REFIS"
+  },
+  {
+    "codigoReduzido": "2250",
+    "classificacao": "225",
+    "descricao": "Receitas Diferidas",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA DIFERIDAS"
+  },
+  {
+    "codigoReduzido": "2251",
+    "classificacao": "22501",
+    "descricao": "Receitas Diferidas Líquidas",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA DIFERIDAS LIQUIDAS"
+  },
+  {
+    "codigoReduzido": "264",
+    "classificacao": "22501001",
+    "descricao": "Serviços a Realizar",
+    "tipo": "A",
+    "descricaoNormalizada": "SERVICOS REALIZAR"
+  },
+  {
+    "codigoReduzido": "265",
+    "classificacao": "22501002",
+    "descricao": "(-) Tritutos sobre Serviços a Realizar",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS TRITUTOS S SERVICOS REALIZAR"
+  },
+  {
+    "codigoReduzido": "2300",
+    "classificacao": "23",
+    "descricao": "Resultado de Exercícios Futuros",
+    "tipo": "S",
+    "descricaoNormalizada": "RESULTADO EXERCICIOS FUTUROS"
+  },
+  {
+    "codigoReduzido": "2310",
+    "classificacao": "231",
+    "descricao": "Receitas de Exercícios Futuros",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA EXERCICIOS FUTUROS"
+  },
+  {
+    "codigoReduzido": "263",
+    "classificacao": "23101003",
+    "descricao": "Linhas de Créditos Públicas",
+    "tipo": "A",
+    "descricaoNormalizada": "LINHAS CREDITOS PUBLICAS"
+  },
+  {
+    "codigoReduzido": "2320",
+    "classificacao": "232",
+    "descricao": "Custos e Despesas de Exercícios Futuros",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTOS DESPESAS EXERCICIOS FUTUROS"
+  },
+  {
+    "codigoReduzido": "2400",
+    "classificacao": "24",
+    "descricao": "Patrimônio Líquido",
+    "tipo": "S",
+    "descricaoNormalizada": "PATRIMONIO LIQUIDO"
+  },
+  {
+    "codigoReduzido": "2410",
+    "classificacao": "241",
+    "descricao": "Capital Social",
+    "tipo": "S",
+    "descricaoNormalizada": "CAPITAL SOCIAL"
+  },
+  {
+    "codigoReduzido": "2411",
+    "classificacao": "24101",
+    "descricao": "Capital",
+    "tipo": "S",
+    "descricaoNormalizada": "CAPITAL"
+  },
+  {
+    "codigoReduzido": "267",
+    "classificacao": "24101001",
+    "descricao": "Capital Social",
+    "tipo": "A",
+    "descricaoNormalizada": "CAPITAL SOCIAL"
+  },
+  {
+    "codigoReduzido": "268",
+    "classificacao": "24101002",
+    "descricao": "(-) Capital a Integralizar",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS CAPITAL INTEGRALIZAR"
+  },
+  {
+    "codigoReduzido": "2420",
+    "classificacao": "242",
+    "descricao": "Reservas de Capital",
+    "tipo": "S",
+    "descricaoNormalizada": "RESERVA CAPITAL"
+  },
+  {
+    "codigoReduzido": "2421",
+    "classificacao": "24201",
+    "descricao": "Reservas de Capital",
+    "tipo": "S",
+    "descricaoNormalizada": "RESERVA CAPITAL"
+  },
+  {
+    "codigoReduzido": "272",
+    "classificacao": "24201001",
+    "descricao": "Ágio na Emissão De Ações / Quotas",
+    "tipo": "A",
+    "descricaoNormalizada": "AGIO EMISSAO ACOES QUOTAS"
+  },
+  {
+    "codigoReduzido": "273",
+    "classificacao": "24201002",
+    "descricao": "Incentivos Fiscais",
+    "tipo": "A",
+    "descricaoNormalizada": "INCENTIVOS FISCAIS"
+  },
+  {
+    "codigoReduzido": "274",
+    "classificacao": "24201003",
+    "descricao": "Adto para Futuro Aumento de Capital",
+    "tipo": "A",
+    "descricaoNormalizada": "ADIANTAMENTO P FUTURO AUMENTO CAPITAL"
+  },
+  {
+    "codigoReduzido": "2430",
+    "classificacao": "243",
+    "descricao": "Ajustes de Avaliação Patrimonial",
+    "tipo": "S",
+    "descricaoNormalizada": "AJUSTES AVALIACAO PATRIMONIAL"
+  },
+  {
+    "codigoReduzido": "2431",
+    "classificacao": "24301",
+    "descricao": "Ajustes de Avaliação Patrimonial",
+    "tipo": "S",
+    "descricaoNormalizada": "AJUSTES AVALIACAO PATRIMONIAL"
+  },
+  {
+    "codigoReduzido": "276",
+    "classificacao": "24301001",
+    "descricao": "Ajustes de Avaliação Patrimonial",
+    "tipo": "A",
+    "descricaoNormalizada": "AJUSTES AVALIACAO PATRIMONIAL"
+  },
+  {
+    "codigoReduzido": "2440",
+    "classificacao": "244",
+    "descricao": "Reservas de Lucros",
+    "tipo": "S",
+    "descricaoNormalizada": "RESERVA LUCRO"
+  },
+  {
+    "codigoReduzido": "2441",
+    "classificacao": "24401",
+    "descricao": "Reservas",
+    "tipo": "S",
+    "descricaoNormalizada": "RESERVA"
+  },
+  {
+    "codigoReduzido": "277",
+    "classificacao": "24401001",
+    "descricao": "Reserva Legal",
+    "tipo": "A",
+    "descricaoNormalizada": "RESERVA LEGAL"
+  },
+  {
+    "codigoReduzido": "278",
+    "classificacao": "24401002",
+    "descricao": "Reservas Estatutárias",
+    "tipo": "A",
+    "descricaoNormalizada": "RESERVA ESTATUTARIAS"
+  },
+  {
+    "codigoReduzido": "279",
+    "classificacao": "24401003",
+    "descricao": "Reservas De Lucros A Realizar",
+    "tipo": "A",
+    "descricaoNormalizada": "RESERVA LUCRO REALIZAR"
+  },
+  {
+    "codigoReduzido": "280",
+    "classificacao": "24401004",
+    "descricao": "Reserva De Dividendo Obrigatório",
+    "tipo": "A",
+    "descricaoNormalizada": "RESERVA DIVIDENDO OBRIGATORIO"
+  },
+  {
+    "codigoReduzido": "281",
+    "classificacao": "24401010",
+    "descricao": "Reserva de Lucros",
+    "tipo": "A",
+    "descricaoNormalizada": "RESERVA LUCRO"
+  },
+  {
+    "codigoReduzido": "2450",
+    "classificacao": "245",
+    "descricao": "Lucros ou Prejuízos Acumulados",
+    "tipo": "S",
+    "descricaoNormalizada": "LUCRO OU PREJUIZO ACUMULADOS"
+  },
+  {
+    "codigoReduzido": "2451",
+    "classificacao": "24501",
+    "descricao": "Lucros ou Prejuízos Acumulados",
+    "tipo": "S",
+    "descricaoNormalizada": "LUCRO OU PREJUIZO ACUMULADOS"
+  },
+  {
+    "codigoReduzido": "284",
+    "classificacao": "24501001",
+    "descricao": "Apuração do Resultado do Exercício",
+    "tipo": "A",
+    "descricaoNormalizada": "APURACAO RESULTADO EXERCICIO"
+  },
+  {
+    "codigoReduzido": "285",
+    "classificacao": "24501002",
+    "descricao": "Antecipação de Lucros",
+    "tipo": "A",
+    "descricaoNormalizada": "ANTECIPACAO LUCRO"
+  },
+  {
+    "codigoReduzido": "299",
+    "classificacao": "24501099",
+    "descricao": "(-) Prejuízos Acumulados",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS PREJUIZO ACUMULADOS"
+  },
+  {
+    "codigoReduzido": "3000",
+    "classificacao": "3",
+    "descricao": "RECEITAS",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA"
+  },
+  {
+    "codigoReduzido": "3100",
+    "classificacao": "31",
+    "descricao": "Receita Bruta",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA BRUTA"
+  },
+  {
+    "codigoReduzido": "3110",
+    "classificacao": "311",
+    "descricao": "Receita Bruta - Mercado Interno",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA BRUTA MERCADO INTERNO"
+  },
+  {
+    "codigoReduzido": "3111",
+    "classificacao": "31101",
+    "descricao": "Vendas de Produtos Próprios",
+    "tipo": "S",
+    "descricaoNormalizada": "VENDAS PRODUTOS PROPRIOS"
+  },
+  {
+    "codigoReduzido": "300",
+    "classificacao": "31101001",
+    "descricao": "Vendas de Produtos de Fabricação Própria",
+    "tipo": "A",
+    "descricaoNormalizada": "VENDAS PRODUTOS FABRICACAO PROPRIA"
+  },
+  {
+    "codigoReduzido": "3112",
+    "classificacao": "31102",
+    "descricao": "Revenda de Mercadorias",
+    "tipo": "S",
+    "descricaoNormalizada": "REVENDA MERCADORIAS"
+  },
+  {
+    "codigoReduzido": "302",
+    "classificacao": "31102001",
+    "descricao": "Revenda de Mercadorias Adquiridas de 3ºs",
+    "tipo": "A",
+    "descricaoNormalizada": "REVENDA MERCADORIAS ADQUIRIDAS 3S"
+  },
+  {
+    "codigoReduzido": "3113",
+    "classificacao": "31103",
+    "descricao": "Receita de Serviços",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA SERVICOS"
+  },
+  {
+    "codigoReduzido": "303",
+    "classificacao": "31103001",
+    "descricao": "Prestação de Serviços Recorrentes",
+    "tipo": "A",
+    "descricaoNormalizada": "PRESTACAO SERVICOS RECORRENTES"
+  },
+  {
+    "codigoReduzido": "304",
+    "classificacao": "31103002",
+    "descricao": "Prestação de Serviços Societários",
+    "tipo": "A",
+    "descricaoNormalizada": "PRESTACAO SERVICOS SOCIETARIOS"
+  },
+  {
+    "codigoReduzido": "305",
+    "classificacao": "31103003",
+    "descricao": "Prestação de Serviços Especiais",
+    "tipo": "A",
+    "descricaoNormalizada": "PRESTACAO SERVICOS ESPECIAIS"
+  },
+  {
+    "codigoReduzido": "3120",
+    "classificacao": "312",
+    "descricao": "Receita Bruta - Exportação",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA BRUTA EXPORTACAO"
+  },
+  {
+    "codigoReduzido": "3121",
+    "classificacao": "31201",
+    "descricao": "Exportação de Produtos Próprios",
+    "tipo": "S",
+    "descricaoNormalizada": "EXPORTACAO PRODUTOS PROPRIOS"
+  },
+  {
+    "codigoReduzido": "306",
+    "classificacao": "31201001",
+    "descricao": "Export.de Produtos de Fabricação Própria",
+    "tipo": "A",
+    "descricaoNormalizada": "EXPORT PRODUTOS FABRICACAO PROPRIA"
+  },
+  {
+    "codigoReduzido": "3122",
+    "classificacao": "31202",
+    "descricao": "Exportação de Mercadorias",
+    "tipo": "S",
+    "descricaoNormalizada": "EXPORTACAO MERCADORIAS"
+  },
+  {
+    "codigoReduzido": "308",
+    "classificacao": "31202001",
+    "descricao": "Export. de Mercadorias Adquiridas de 3ºs",
+    "tipo": "A",
+    "descricaoNormalizada": "EXPORT MERCADORIAS ADQUIRIDAS 3S"
+  },
+  {
+    "codigoReduzido": "3123",
+    "classificacao": "31203",
+    "descricao": "Exportação de Serviços",
+    "tipo": "S",
+    "descricaoNormalizada": "EXPORTACAO SERVICOS"
+  },
+  {
+    "codigoReduzido": "310",
+    "classificacao": "31203001",
+    "descricao": "Prestação de Serviços ao Exterior",
+    "tipo": "A",
+    "descricaoNormalizada": "PRESTACAO SERVICOS AO EXTERIOR"
+  },
+  {
+    "codigoReduzido": "3200",
+    "classificacao": "32",
+    "descricao": "Deduções da Receita Bruta",
+    "tipo": "S",
+    "descricaoNormalizada": "DEDUCOES RECEITA BRUTA"
+  },
+  {
+    "codigoReduzido": "3210",
+    "classificacao": "321",
+    "descricao": "Deduções da Receita - Mercado Interno",
+    "tipo": "S",
+    "descricaoNormalizada": "DEDUCOES RECEITA MERCADO INTERNO"
+  },
+  {
+    "codigoReduzido": "3211",
+    "classificacao": "32101",
+    "descricao": "Cancelamentos e Devoluções Merc. Interno",
+    "tipo": "S",
+    "descricaoNormalizada": "CANCELAMENTOS DEVOLUCOES MERC INTERNO"
+  },
+  {
+    "codigoReduzido": "312",
+    "classificacao": "32101001",
+    "descricao": "Cancelamentos de Vendas Locais",
+    "tipo": "A",
+    "descricaoNormalizada": "CANCELAMENTOS VENDAS LOCAIS"
+  },
+  {
+    "codigoReduzido": "313",
+    "classificacao": "32101002",
+    "descricao": "Devoluções de Vendas Locais",
+    "tipo": "A",
+    "descricaoNormalizada": "DEVOLUCOES VENDAS LOCAIS"
+  },
+  {
+    "codigoReduzido": "3212",
+    "classificacao": "32102",
+    "descricao": "Abatimentos Incondicionais",
+    "tipo": "S",
+    "descricaoNormalizada": "ABATIMENTOS INCONDICIONAIS"
+  },
+  {
+    "codigoReduzido": "315",
+    "classificacao": "32102001",
+    "descricao": "Descontos Incondicionais Concedidos",
+    "tipo": "A",
+    "descricaoNormalizada": "DESCONTOS INCONDICIONAIS CONCEDIDOS"
+  },
+  {
+    "codigoReduzido": "3213",
+    "classificacao": "32103",
+    "descricao": "Tributos e Contribuições Vendas Locais",
+    "tipo": "S",
+    "descricaoNormalizada": "TRIBUTOS CONTRIBUICAO VENDAS LOCAIS"
+  },
+  {
+    "codigoReduzido": "317",
+    "classificacao": "32103001",
+    "descricao": "ICMS sobre Vendas",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS S VENDAS"
+  },
+  {
+    "codigoReduzido": "318",
+    "classificacao": "32103002",
+    "descricao": "IPI sobre Vendas",
+    "tipo": "A",
+    "descricaoNormalizada": "IPI S VENDAS"
+  },
+  {
+    "codigoReduzido": "319",
+    "classificacao": "32103003",
+    "descricao": "PIS sobre Faturamento",
+    "tipo": "A",
+    "descricaoNormalizada": "PIS S FATURAMENTO"
+  },
+  {
+    "codigoReduzido": "320",
+    "classificacao": "32103004",
+    "descricao": "COFINS sobre Faturamento",
+    "tipo": "A",
+    "descricaoNormalizada": "COFINS S FATURAMENTO"
+  },
+  {
+    "codigoReduzido": "321",
+    "classificacao": "32103005",
+    "descricao": "ISS sobre Serviços",
+    "tipo": "A",
+    "descricaoNormalizada": "ISS S SERVICOS"
+  },
+  {
+    "codigoReduzido": "322",
+    "classificacao": "32103006",
+    "descricao": "Provisões Impostos por Competência",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO IMPOSTOS POR COMPETENCIA"
+  },
+  {
+    "codigoReduzido": "323",
+    "classificacao": "32103007",
+    "descricao": "Simples Nacional",
+    "tipo": "A",
+    "descricaoNormalizada": "SIMPLES NACIONAL"
+  },
+  {
+    "codigoReduzido": "324",
+    "classificacao": "32103008",
+    "descricao": "Ajuste a Valor Presente",
+    "tipo": "A",
+    "descricaoNormalizada": "AJUSTE VALORES PRESENTE"
+  },
+  {
+    "codigoReduzido": "9319",
+    "classificacao": "32103800",
+    "descricao": "IBS sobre faturamento",
+    "tipo": "A",
+    "descricaoNormalizada": "IBS S FATURAMENTO"
+  },
+  {
+    "codigoReduzido": "9320",
+    "classificacao": "32103801",
+    "descricao": "CBS sobre faturamento",
+    "tipo": "A",
+    "descricaoNormalizada": "CBS S FATURAMENTO"
+  },
+  {
+    "codigoReduzido": "9168",
+    "classificacao": "32103803",
+    "descricao": "ICMS ST",
+    "tipo": "A",
+    "descricaoNormalizada": "ICMS ST"
+  },
+  {
+    "codigoReduzido": "3220",
+    "classificacao": "322",
+    "descricao": "Deduções da Receita - Exportação",
+    "tipo": "S",
+    "descricaoNormalizada": "DEDUCOES RECEITA EXPORTACAO"
+  },
+  {
+    "codigoReduzido": "3221",
+    "classificacao": "32201",
+    "descricao": "Cancelamentos e Devoluções Exportação",
+    "tipo": "S",
+    "descricaoNormalizada": "CANCELAMENTOS DEVOLUCOES EXPORTACAO"
+  },
+  {
+    "codigoReduzido": "325",
+    "classificacao": "32201001",
+    "descricao": "Cancelamentos e Devoluções Exportação",
+    "tipo": "A",
+    "descricaoNormalizada": "CANCELAMENTOS DEVOLUCOES EXPORTACAO"
+  },
+  {
+    "codigoReduzido": "3222",
+    "classificacao": "32202",
+    "descricao": "Abatimentos Incondicionais",
+    "tipo": "S",
+    "descricaoNormalizada": "ABATIMENTOS INCONDICIONAIS"
+  },
+  {
+    "codigoReduzido": "327",
+    "classificacao": "32202001",
+    "descricao": "Descontos Incondicionais Concedidos",
+    "tipo": "A",
+    "descricaoNormalizada": "DESCONTOS INCONDICIONAIS CONCEDIDOS"
+  },
+  {
+    "codigoReduzido": "3300",
+    "classificacao": "33",
+    "descricao": "Receitas Financeiras",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "3310",
+    "classificacao": "331",
+    "descricao": "Receitas Financ. com Retenção na Fonte",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA FINANCIAMENTOS COM RETENCAO FONTE"
+  },
+  {
+    "codigoReduzido": "3311",
+    "classificacao": "33101",
+    "descricao": "Receitas de Aplicações Financeiras",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA APLICACAO FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "329",
+    "classificacao": "33101001",
+    "descricao": "Rendimento Bruto de Fundos",
+    "tipo": "A",
+    "descricaoNormalizada": "RENDIMENTO BRUTO FUNDOS"
+  },
+  {
+    "codigoReduzido": "330",
+    "classificacao": "33101002",
+    "descricao": "Rendim. CDB e outros Títulos Bancários",
+    "tipo": "A",
+    "descricaoNormalizada": "RENDIM CDB OUTROS TITULOS BANCARIOS"
+  },
+  {
+    "codigoReduzido": "3312",
+    "classificacao": "33102",
+    "descricao": "Receitas Títulos, Créditos não Bancários",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA TITULOS CREDITOS NAO BANCARIOS"
+  },
+  {
+    "codigoReduzido": "332",
+    "classificacao": "33102001",
+    "descricao": "Receitas Empréstimos Partes Relacionadas",
+    "tipo": "A",
+    "descricaoNormalizada": "RECEITA EMPRESTIMOS PARTES RELACIONADAS"
+  },
+  {
+    "codigoReduzido": "333",
+    "classificacao": "33102002",
+    "descricao": "Remuneração sobre Capital Próprio",
+    "tipo": "A",
+    "descricaoNormalizada": "REMUNERACAO S CAPITAL PROPRIO"
+  },
+  {
+    "codigoReduzido": "3320",
+    "classificacao": "332",
+    "descricao": "Outras Rec.Finan.não Sujeitas à Retenção",
+    "tipo": "S",
+    "descricaoNormalizada": "OUTRAS REC FINAN NAO SUJEITAS RETENCAO"
+  },
+  {
+    "codigoReduzido": "3321",
+    "classificacao": "33201",
+    "descricao": "Variações Monetárias Ativas",
+    "tipo": "S",
+    "descricaoNormalizada": "VARIACOES MONETARIAS ATIVAS"
+  },
+  {
+    "codigoReduzido": "335",
+    "classificacao": "33201001",
+    "descricao": "Var. de Contratos Ativos com 3ºs",
+    "tipo": "A",
+    "descricaoNormalizada": "VAR CONTRATOS ATIVOS COM 3S"
+  },
+  {
+    "codigoReduzido": "336",
+    "classificacao": "33201002",
+    "descricao": "Variações Cambiais Ativas",
+    "tipo": "A",
+    "descricaoNormalizada": "VARIACOES CAMBIAIS ATIVAS"
+  },
+  {
+    "codigoReduzido": "337",
+    "classificacao": "33201003",
+    "descricao": "Outras Variações Cambiais Credoras",
+    "tipo": "A",
+    "descricaoNormalizada": "OUTRAS VARIACOES CAMBIAIS CREDORAS"
+  },
+  {
+    "codigoReduzido": "338",
+    "classificacao": "33201004",
+    "descricao": "Outras Variações Ativas não Especific.",
+    "tipo": "A",
+    "descricaoNormalizada": "OUTRAS VARIACOES ATIVAS NAO ESPECIFIC"
+  },
+  {
+    "codigoReduzido": "3322",
+    "classificacao": "33202",
+    "descricao": "Outras Receitas",
+    "tipo": "S",
+    "descricaoNormalizada": "OUTRAS RECEITA"
+  },
+  {
+    "codigoReduzido": "340",
+    "classificacao": "33202001",
+    "descricao": "Juros sobre Empréstimos Ativos",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS S EMPRESTIMOS ATIVOS"
+  },
+  {
+    "codigoReduzido": "341",
+    "classificacao": "33202002",
+    "descricao": "Juros de Títulos a Receber",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS TITULOS RECEBER"
+  },
+  {
+    "codigoReduzido": "342",
+    "classificacao": "33202003",
+    "descricao": "Descontos Obtidos",
+    "tipo": "A",
+    "descricaoNormalizada": "DESCONTOS OBTIDOS"
+  },
+  {
+    "codigoReduzido": "343",
+    "classificacao": "33202004",
+    "descricao": "Recuperação de Créditos Baixados",
+    "tipo": "A",
+    "descricaoNormalizada": "RECUPERACAO CREDITOS BAIXADOS"
+  },
+  {
+    "codigoReduzido": "344",
+    "classificacao": "33202005",
+    "descricao": "Ganho Por Compra Vantajosa em Investim.",
+    "tipo": "A",
+    "descricaoNormalizada": "GANHO POR COMPRA VANTAJOSA INVESTIM"
+  },
+  {
+    "codigoReduzido": "345",
+    "classificacao": "33202006",
+    "descricao": "Ajuste a Valor Presente",
+    "tipo": "A",
+    "descricaoNormalizada": "AJUSTE VALORES PRESENTE"
+  },
+  {
+    "codigoReduzido": "346",
+    "classificacao": "33202007",
+    "descricao": "Juros de Créditos Tributários",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS CREDITOS TRIBUTARIOS"
+  },
+  {
+    "codigoReduzido": "3340",
+    "classificacao": "334",
+    "descricao": "Deduções das Receitas Financeiras",
+    "tipo": "S",
+    "descricaoNormalizada": "DEDUCOES RECEITA FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "3341",
+    "classificacao": "33401",
+    "descricao": "Tributos e Contrib.Receitas Financeiras",
+    "tipo": "S",
+    "descricaoNormalizada": "TRIBUTOS CONTRIBUICAO RECEITA FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "347",
+    "classificacao": "33401001",
+    "descricao": "PIS sobre Receitas Financeiras",
+    "tipo": "A",
+    "descricaoNormalizada": "PIS S RECEITA FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "348",
+    "classificacao": "33401002",
+    "descricao": "COFINS sobre Receitas Financeiras",
+    "tipo": "A",
+    "descricaoNormalizada": "COFINS S RECEITA FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "349",
+    "classificacao": "33401003",
+    "descricao": "IOF/IOC sobre Receitas Financeiras",
+    "tipo": "A",
+    "descricaoNormalizada": "IOF IOC S RECEITA FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "3400",
+    "classificacao": "34",
+    "descricao": "Outras Receitas Operacionais",
+    "tipo": "S",
+    "descricaoNormalizada": "OUTRAS RECEITA OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "3410",
+    "classificacao": "341",
+    "descricao": "Receitas de Investimentos",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA INVESTIMENTOS"
+  },
+  {
+    "codigoReduzido": "3411",
+    "classificacao": "34101",
+    "descricao": "Receitas Investimentos com Equivalência",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA INVESTIMENTOS COM EQUIVALENCIA"
+  },
+  {
+    "codigoReduzido": "351",
+    "classificacao": "34101001",
+    "descricao": "Equivalência Patrimonial",
+    "tipo": "A",
+    "descricaoNormalizada": "EQUIVALENCIA PATRIMONIAL"
+  },
+  {
+    "codigoReduzido": "3412",
+    "classificacao": "34102",
+    "descricao": "Receitas Investim. Avaliados ao Custo",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA INVESTIM AVALIADOS AO CUSTO"
+  },
+  {
+    "codigoReduzido": "353",
+    "classificacao": "34102001",
+    "descricao": "Dividendos de Ações Avaliadas ao Custo",
+    "tipo": "A",
+    "descricaoNormalizada": "DIVIDENDOS ACOES AVALIADAS AO CUSTO"
+  },
+  {
+    "codigoReduzido": "354",
+    "classificacao": "34102002",
+    "descricao": "Lucros Distrib.Investim.Avaliados Custo",
+    "tipo": "A",
+    "descricaoNormalizada": "LUCRO DISTRIB INVESTIM AVALIADOS CUSTO"
+  },
+  {
+    "codigoReduzido": "3420",
+    "classificacao": "342",
+    "descricao": "Aluguéis e Arrendamentos",
+    "tipo": "S",
+    "descricaoNormalizada": "ALUGUEL ARRENDAMENTOS"
+  },
+  {
+    "codigoReduzido": "3421",
+    "classificacao": "34201",
+    "descricao": "Aluguéis de Bens Próprios",
+    "tipo": "S",
+    "descricaoNormalizada": "ALUGUEL BENS PROPRIOS"
+  },
+  {
+    "codigoReduzido": "356",
+    "classificacao": "34201001",
+    "descricao": "Aluguéis de Imóveis Próprios",
+    "tipo": "A",
+    "descricaoNormalizada": "ALUGUEL IMOVEIS PROPRIOS"
+  },
+  {
+    "codigoReduzido": "357",
+    "classificacao": "34201002",
+    "descricao": "Aluguéis de Máquinas e Equipamentos",
+    "tipo": "A",
+    "descricaoNormalizada": "ALUGUEL MAQUINAS EQUIPAMENTOS"
+  },
+  {
+    "codigoReduzido": "3422",
+    "classificacao": "34202",
+    "descricao": "Arrendamento Mercantil",
+    "tipo": "S",
+    "descricaoNormalizada": "ARRENDAMENTO MERCANTIL"
+  },
+  {
+    "codigoReduzido": "359",
+    "classificacao": "34202001",
+    "descricao": "Arrendamento de Bens Próprios",
+    "tipo": "A",
+    "descricaoNormalizada": "ARRENDAMENTO BENS PROPRIOS"
+  },
+  {
+    "codigoReduzido": "3430",
+    "classificacao": "343",
+    "descricao": "Venda de Bens",
+    "tipo": "S",
+    "descricaoNormalizada": "VENDA BENS"
+  },
+  {
+    "codigoReduzido": "3431",
+    "classificacao": "34301",
+    "descricao": "Venda de Bens Próprios",
+    "tipo": "S",
+    "descricaoNormalizada": "VENDA BENS PROPRIOS"
+  },
+  {
+    "codigoReduzido": "361",
+    "classificacao": "34301001",
+    "descricao": "Venda de Imóveis Atividade Imobiliária",
+    "tipo": "A",
+    "descricaoNormalizada": "VENDA IMOVEIS ATIVIDADE IMOBILIARIA"
+  },
+  {
+    "codigoReduzido": "362",
+    "classificacao": "34301002",
+    "descricao": "Venda de Bens Móveis Atividade Locação",
+    "tipo": "A",
+    "descricaoNormalizada": "VENDA BENS MOVEIS ATIVIDADE ALUGUEL"
+  },
+  {
+    "codigoReduzido": "3432",
+    "classificacao": "34302",
+    "descricao": "Revenda de Bens de 3ºs",
+    "tipo": "S",
+    "descricaoNormalizada": "REVENDA BENS 3S"
+  },
+  {
+    "codigoReduzido": "364",
+    "classificacao": "34302001",
+    "descricao": "Revenda de Imóveis Atividade Imobiliária",
+    "tipo": "A",
+    "descricaoNormalizada": "REVENDA IMOVEIS ATIVIDADE IMOBILIARIA"
+  },
+  {
+    "codigoReduzido": "3440",
+    "classificacao": "344",
+    "descricao": "Receitas de Vendas Acessórias",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA VENDAS ACESSORIAS"
+  },
+  {
+    "codigoReduzido": "3441",
+    "classificacao": "34401",
+    "descricao": "Vendas Estoques e Materiais Sucateados",
+    "tipo": "S",
+    "descricaoNormalizada": "VENDAS ESTOQUES MATERIAIS SUCATEADOS"
+  },
+  {
+    "codigoReduzido": "366",
+    "classificacao": "34401001",
+    "descricao": "Estoques Sucateados",
+    "tipo": "A",
+    "descricaoNormalizada": "ESTOQUES SUCATEADOS"
+  },
+  {
+    "codigoReduzido": "367",
+    "classificacao": "34401002",
+    "descricao": "Outros Materiais Sucateados",
+    "tipo": "A",
+    "descricaoNormalizada": "OUTROS MATERIAIS SUCATEADOS"
+  },
+  {
+    "codigoReduzido": "3460",
+    "classificacao": "346",
+    "descricao": "Trib. e Contrib.sobre Outras Rec.Operac.",
+    "tipo": "S",
+    "descricaoNormalizada": "TRIB CONTRIBUICAO S OUTRAS REC OPERAC"
+  },
+  {
+    "codigoReduzido": "3461",
+    "classificacao": "34601",
+    "descricao": "Deduções de Outras Rec.Operac.",
+    "tipo": "S",
+    "descricaoNormalizada": "DEDUCOES OUTRAS REC OPERAC"
+  },
+  {
+    "codigoReduzido": "369",
+    "classificacao": "34601001",
+    "descricao": "PIS sobre Outras Rec.Operac.",
+    "tipo": "A",
+    "descricaoNormalizada": "PIS S OUTRAS REC OPERAC"
+  },
+  {
+    "codigoReduzido": "370",
+    "classificacao": "34601002",
+    "descricao": "COFINS sobre Outras Rec.Operac.",
+    "tipo": "A",
+    "descricaoNormalizada": "COFINS S OUTRAS REC OPERAC"
+  },
+  {
+    "codigoReduzido": "371",
+    "classificacao": "34601003",
+    "descricao": "IOF/IOC sobre Outras Rec.Operac.",
+    "tipo": "A",
+    "descricaoNormalizada": "IOF IOC S OUTRAS REC OPERAC"
+  },
+  {
+    "codigoReduzido": "3500",
+    "classificacao": "35",
+    "descricao": "Receitas Extraordinárias",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA EXTRAORDINARIAS"
+  },
+  {
+    "codigoReduzido": "3510",
+    "classificacao": "351",
+    "descricao": "Result. Alienação Bens Ativo Permanente",
+    "tipo": "S",
+    "descricaoNormalizada": "RESULT ALIENACAO BENS ATIVO PERMANENTE"
+  },
+  {
+    "codigoReduzido": "3511",
+    "classificacao": "35101",
+    "descricao": "Result. Alienação Investim.Permanentes",
+    "tipo": "S",
+    "descricaoNormalizada": "RESULT ALIENACAO INVESTIM PERMANENTES"
+  },
+  {
+    "codigoReduzido": "373",
+    "classificacao": "35101001",
+    "descricao": "Receita Alienação Investim.Permanentes",
+    "tipo": "A",
+    "descricaoNormalizada": "RECEITA ALIENACAO INVESTIM PERMANENTES"
+  },
+  {
+    "codigoReduzido": "374",
+    "classificacao": "35101002",
+    "descricao": "Custo de Investim. Permanentes Alienados",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTO INVESTIM PERMANENTES ALIENADOS"
+  },
+  {
+    "codigoReduzido": "3512",
+    "classificacao": "35102",
+    "descricao": "Resultado na Alienação de Imobilizado",
+    "tipo": "S",
+    "descricaoNormalizada": "RESULTADO ALIENACAO IMOBILIZADO"
+  },
+  {
+    "codigoReduzido": "376",
+    "classificacao": "35102001",
+    "descricao": "Receita na Alienação de Imobilizado",
+    "tipo": "A",
+    "descricaoNormalizada": "RECEITA ALIENACAO IMOBILIZADO"
+  },
+  {
+    "codigoReduzido": "377",
+    "classificacao": "35102002",
+    "descricao": "Custo Líquido do Imobilizado Vendido",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTO LIQUIDO IMOBILIZADO VENDIDO"
+  },
+  {
+    "codigoReduzido": "378",
+    "classificacao": "35102003",
+    "descricao": "Incidências Tributárias",
+    "tipo": "A",
+    "descricaoNormalizada": "INCIDENCIAS TRIBUTARIAS"
+  },
+  {
+    "codigoReduzido": "3520",
+    "classificacao": "352",
+    "descricao": "Outras Receitas Não Operacionais",
+    "tipo": "S",
+    "descricaoNormalizada": "OUTRAS RECEITA NAO OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "3521",
+    "classificacao": "35201",
+    "descricao": "Receitas Eventuais",
+    "tipo": "S",
+    "descricaoNormalizada": "RECEITA EVENTUAIS"
+  },
+  {
+    "codigoReduzido": "380",
+    "classificacao": "35201001",
+    "descricao": "Indenizações Sinistros por Seguradoras",
+    "tipo": "A",
+    "descricaoNormalizada": "INDENIZACOES SINISTROS POR SEGURADORAS"
+  },
+  {
+    "codigoReduzido": "381",
+    "classificacao": "35201002",
+    "descricao": "Valor Líquido Contábil Ativo Sinistrado",
+    "tipo": "A",
+    "descricaoNormalizada": "VALORES LIQUIDO CONTABIL ATIVO SINISTRADO"
+  },
+  {
+    "codigoReduzido": "382",
+    "classificacao": "35201003",
+    "descricao": "Multas Contratuais",
+    "tipo": "A",
+    "descricaoNormalizada": "MULTAS CONTRATUAIS"
+  },
+  {
+    "codigoReduzido": "3530",
+    "classificacao": "353",
+    "descricao": "Deduções das Receitas não Operacionais",
+    "tipo": "S",
+    "descricaoNormalizada": "DEDUCOES RECEITA NAO OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "3531",
+    "classificacao": "35301",
+    "descricao": "Trib.e Contrib.Receitas não Operacionais",
+    "tipo": "S",
+    "descricaoNormalizada": "TRIB CONTRIBUICAO RECEITA NAO OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "384",
+    "classificacao": "35301001",
+    "descricao": "PIS sobre Receitas não Operacionais",
+    "tipo": "A",
+    "descricaoNormalizada": "PIS S RECEITA NAO OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "385",
+    "classificacao": "35301002",
+    "descricao": "COFINS sobre Receitas não Operacionais",
+    "tipo": "A",
+    "descricaoNormalizada": "COFINS S RECEITA NAO OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "386",
+    "classificacao": "35301003",
+    "descricao": "ITBI",
+    "tipo": "A",
+    "descricaoNormalizada": "ITBI"
+  },
+  {
+    "codigoReduzido": "387",
+    "classificacao": "35301004",
+    "descricao": "CPMF",
+    "tipo": "A",
+    "descricaoNormalizada": "CPMF"
+  },
+  {
+    "codigoReduzido": "4000",
+    "classificacao": "4",
+    "descricao": "CUSTOS E DESPESAS",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTOS DESPESAS"
+  },
+  {
+    "codigoReduzido": "4100",
+    "classificacao": "41",
+    "descricao": "Custos de Vendas e Serviços Prestados",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTOS VENDAS SERVICOS PRESTADOS"
+  },
+  {
+    "codigoReduzido": "4110",
+    "classificacao": "411",
+    "descricao": "Custo das Mercadorias Revendidas",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTO MERCADORIAS REVENDIDAS"
+  },
+  {
+    "codigoReduzido": "4111",
+    "classificacao": "41101",
+    "descricao": "Custo das Mercadorias Vendas Locais",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTO MERCADORIAS VENDAS LOCAIS"
+  },
+  {
+    "codigoReduzido": "400",
+    "classificacao": "41101001",
+    "descricao": "Custo das Mercadorias Vendas Locais",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTO MERCADORIAS VENDAS LOCAIS"
+  },
+  {
+    "codigoReduzido": "4112",
+    "classificacao": "41102",
+    "descricao": "Custo das Mercadorias Exportadas",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTO MERCADORIAS EXPORTADAS"
+  },
+  {
+    "codigoReduzido": "403",
+    "classificacao": "41102001",
+    "descricao": "Custo das Mercadorias Exportadas",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTO MERCADORIAS EXPORTADAS"
+  },
+  {
+    "codigoReduzido": "4120",
+    "classificacao": "412",
+    "descricao": "Custo dos Produtos Vendidos",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTO PRODUTOS VENDIDOS"
+  },
+  {
+    "codigoReduzido": "4121",
+    "classificacao": "41201",
+    "descricao": "Custo dos Produtos Vendas Locais",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTO PRODUTOS VENDAS LOCAIS"
+  },
+  {
+    "codigoReduzido": "406",
+    "classificacao": "41201001",
+    "descricao": "Custo dos Produtos Vendas Locais",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTO PRODUTOS VENDAS LOCAIS"
+  },
+  {
+    "codigoReduzido": "4122",
+    "classificacao": "41202",
+    "descricao": "Custo dos Produtos Exportados",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTO PRODUTOS EXPORTADOS"
+  },
+  {
+    "codigoReduzido": "409",
+    "classificacao": "41202002",
+    "descricao": "Custo dos Produtos Exportados",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTO PRODUTOS EXPORTADOS"
+  },
+  {
+    "codigoReduzido": "4130",
+    "classificacao": "413",
+    "descricao": "Custos de Produção",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTOS PRODUCAO"
+  },
+  {
+    "codigoReduzido": "4131",
+    "classificacao": "41301",
+    "descricao": "Custos com Matéria-Prima Direta   ",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTOS COM MATERIA PRIMA DIRETA"
+  },
+  {
+    "codigoReduzido": "412",
+    "classificacao": "41301001",
+    "descricao": "Custos com Matéria-Prima Direta   ",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTOS COM MATERIA PRIMA DIRETA"
+  },
+  {
+    "codigoReduzido": "4132",
+    "classificacao": "41302",
+    "descricao": "Custos com Materiais Auxiliares   ",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTOS COM MATERIAIS AUXILIARES"
+  },
+  {
+    "codigoReduzido": "415",
+    "classificacao": "41302001",
+    "descricao": "Custos com Materiais Auxiliares   ",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTOS COM MATERIAIS AUXILIARES"
+  },
+  {
+    "codigoReduzido": "4133",
+    "classificacao": "41303",
+    "descricao": "Custos com Mão-De-Obra    ",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTOS COM MAO OBRA"
+  },
+  {
+    "codigoReduzido": "418",
+    "classificacao": "41303001",
+    "descricao": "Salários",
+    "tipo": "A",
+    "descricaoNormalizada": "SALARIOS"
+  },
+  {
+    "codigoReduzido": "419",
+    "classificacao": "41303002",
+    "descricao": "Férias",
+    "tipo": "A",
+    "descricaoNormalizada": "FERIAS"
+  },
+  {
+    "codigoReduzido": "420",
+    "classificacao": "41303003",
+    "descricao": "13º Salários",
+    "tipo": "A",
+    "descricaoNormalizada": "13"
+  },
+  {
+    "codigoReduzido": "421",
+    "classificacao": "41303004",
+    "descricao": "Previdência Social   ",
+    "tipo": "A",
+    "descricaoNormalizada": "INSS"
+  },
+  {
+    "codigoReduzido": "422",
+    "classificacao": "41303005",
+    "descricao": "FGTS",
+    "tipo": "A",
+    "descricaoNormalizada": "FGTS"
+  },
+  {
+    "codigoReduzido": "423",
+    "classificacao": "41303006",
+    "descricao": "Aviso Prévio e Indenizações   ",
+    "tipo": "A",
+    "descricaoNormalizada": "AVISO PREVIO INDENIZACOES"
+  },
+  {
+    "codigoReduzido": "424",
+    "classificacao": "41303007",
+    "descricao": "Prêmios de Seguros   ",
+    "tipo": "A",
+    "descricaoNormalizada": "PREMIOS SEGUROS"
+  },
+  {
+    "codigoReduzido": "425",
+    "classificacao": "41303008",
+    "descricao": "Assistência Médica   ",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSISTENCIA MEDICA"
+  },
+  {
+    "codigoReduzido": "426",
+    "classificacao": "41303009",
+    "descricao": "Vale-Refeição   ",
+    "tipo": "A",
+    "descricaoNormalizada": "VALE REFEICOES"
+  },
+  {
+    "codigoReduzido": "427",
+    "classificacao": "41303011",
+    "descricao": "Vale-Transporte   ",
+    "tipo": "A",
+    "descricaoNormalizada": "VALE TRANSPORTE"
+  },
+  {
+    "codigoReduzido": "428",
+    "classificacao": "41303013",
+    "descricao": "Provisões Trabalhistas   ",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO TRABALHISTAS"
+  },
+  {
+    "codigoReduzido": "429",
+    "classificacao": "41303014",
+    "descricao": "Horas Extras",
+    "tipo": "A",
+    "descricaoNormalizada": "HORAS EXTRAS"
+  },
+  {
+    "codigoReduzido": "430",
+    "classificacao": "41303015",
+    "descricao": "Gratificações, Bônus e Prêmios",
+    "tipo": "A",
+    "descricaoNormalizada": "GRATIFICACOES BONUS PREMIOS"
+  },
+  {
+    "codigoReduzido": "4134",
+    "classificacao": "41304",
+    "descricao": "Outros Custos",
+    "tipo": "S",
+    "descricaoNormalizada": "OUTROS CUSTOS"
+  },
+  {
+    "codigoReduzido": "431",
+    "classificacao": "41304001",
+    "descricao": "Serviços de Terceiros   ",
+    "tipo": "A",
+    "descricaoNormalizada": "SERVICOS TERCEIROS"
+  },
+  {
+    "codigoReduzido": "432",
+    "classificacao": "41304002",
+    "descricao": "Previdência Social   ",
+    "tipo": "A",
+    "descricaoNormalizada": "INSS"
+  },
+  {
+    "codigoReduzido": "433",
+    "classificacao": "41304003",
+    "descricao": "Aluguéis e Condomínios   ",
+    "tipo": "A",
+    "descricaoNormalizada": "ALUGUEL CONDOMINIOS"
+  },
+  {
+    "codigoReduzido": "434",
+    "classificacao": "41304004",
+    "descricao": "Água   ",
+    "tipo": "A",
+    "descricaoNormalizada": "AGUA"
+  },
+  {
+    "codigoReduzido": "435",
+    "classificacao": "41304005",
+    "descricao": "Energia Elétrica   ",
+    "tipo": "A",
+    "descricaoNormalizada": "ENERGIA ELETRICA"
+  },
+  {
+    "codigoReduzido": "436",
+    "classificacao": "41304006",
+    "descricao": "Manutenção e Reparos   ",
+    "tipo": "A",
+    "descricaoNormalizada": "MANUTENCAO REPAROS"
+  },
+  {
+    "codigoReduzido": "437",
+    "classificacao": "41304007",
+    "descricao": "Ferramentas   ",
+    "tipo": "A",
+    "descricaoNormalizada": "FERRAMENTAS"
+  },
+  {
+    "codigoReduzido": "438",
+    "classificacao": "41304008",
+    "descricao": "Custos com Condução   ",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTOS COM CONDUCAO"
+  },
+  {
+    "codigoReduzido": "439",
+    "classificacao": "41304009",
+    "descricao": "Custos com Refeitório   ",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTOS COM REFEITORIO"
+  },
+  {
+    "codigoReduzido": "440",
+    "classificacao": "41304010",
+    "descricao": "Custos com Comunicação   ",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTOS COM COMUNICACAO"
+  },
+  {
+    "codigoReduzido": "441",
+    "classificacao": "41304011",
+    "descricao": "Custos com Treinamento    ",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTOS COM TREINAMENTOS"
+  },
+  {
+    "codigoReduzido": "442",
+    "classificacao": "41304012",
+    "descricao": "Impostos e Taxas Diversas   ",
+    "tipo": "A",
+    "descricaoNormalizada": "IMPOSTOS TAXAS DIVERSAS"
+  },
+  {
+    "codigoReduzido": "443",
+    "classificacao": "41304013",
+    "descricao": "Roupas e Equipamentos de Proteção   ",
+    "tipo": "A",
+    "descricaoNormalizada": "ROUPAS EQUIPAMENTOS PROTECAO"
+  },
+  {
+    "codigoReduzido": "444",
+    "classificacao": "41304014",
+    "descricao": "Depreciações   ",
+    "tipo": "A",
+    "descricaoNormalizada": "DEPRECIACAO"
+  },
+  {
+    "codigoReduzido": "445",
+    "classificacao": "41304015",
+    "descricao": "Amortizações   ",
+    "tipo": "A",
+    "descricaoNormalizada": "AMORTIZACAO"
+  },
+  {
+    "codigoReduzido": "446",
+    "classificacao": "41304016",
+    "descricao": "Custos Diversos   ",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTOS DIVERSOS"
+  },
+  {
+    "codigoReduzido": "447",
+    "classificacao": "41304098",
+    "descricao": "( - ) Recuperação de Custos   ",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS RECUPERACAO CUSTOS"
+  },
+  {
+    "codigoReduzido": "448",
+    "classificacao": "41304099",
+    "descricao": "( - ) Transferências para Estoque",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS TRANSFERENCIAS P ESTOQUE"
+  },
+  {
+    "codigoReduzido": "4150",
+    "classificacao": "415",
+    "descricao": "Custo dos Serviços Prestados",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTO SERVICOS PRESTADOS"
+  },
+  {
+    "codigoReduzido": "4151",
+    "classificacao": "41501",
+    "descricao": "Custos com Pessoal",
+    "tipo": "S",
+    "descricaoNormalizada": "CUSTOS COM PESSOAL"
+  },
+  {
+    "codigoReduzido": "451",
+    "classificacao": "41501001",
+    "descricao": "Salários",
+    "tipo": "A",
+    "descricaoNormalizada": "SALARIOS"
+  },
+  {
+    "codigoReduzido": "452",
+    "classificacao": "41501002",
+    "descricao": "Férias",
+    "tipo": "A",
+    "descricaoNormalizada": "FERIAS"
+  },
+  {
+    "codigoReduzido": "453",
+    "classificacao": "41501003",
+    "descricao": "13º Salários",
+    "tipo": "A",
+    "descricaoNormalizada": "13"
+  },
+  {
+    "codigoReduzido": "454",
+    "classificacao": "41501004",
+    "descricao": "Previdência Social   ",
+    "tipo": "A",
+    "descricaoNormalizada": "INSS"
+  },
+  {
+    "codigoReduzido": "455",
+    "classificacao": "41501005",
+    "descricao": "FGTS",
+    "tipo": "A",
+    "descricaoNormalizada": "FGTS"
+  },
+  {
+    "codigoReduzido": "456",
+    "classificacao": "41501006",
+    "descricao": "Aviso Prévio e Indenizações   ",
+    "tipo": "A",
+    "descricaoNormalizada": "AVISO PREVIO INDENIZACOES"
+  },
+  {
+    "codigoReduzido": "457",
+    "classificacao": "41501007",
+    "descricao": "Prêmios de Seguros   ",
+    "tipo": "A",
+    "descricaoNormalizada": "PREMIOS SEGUROS"
+  },
+  {
+    "codigoReduzido": "458",
+    "classificacao": "41501008",
+    "descricao": "Assistência Médica   ",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSISTENCIA MEDICA"
+  },
+  {
+    "codigoReduzido": "459",
+    "classificacao": "41501009",
+    "descricao": "Vale-Refeição   ",
+    "tipo": "A",
+    "descricaoNormalizada": "VALE REFEICOES"
+  },
+  {
+    "codigoReduzido": "460",
+    "classificacao": "41501011",
+    "descricao": "Vale-Transporte   ",
+    "tipo": "A",
+    "descricaoNormalizada": "VALE TRANSPORTE"
+  },
+  {
+    "codigoReduzido": "461",
+    "classificacao": "41501013",
+    "descricao": "Provisões Trabalhistas   ",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO TRABALHISTAS"
+  },
+  {
+    "codigoReduzido": "462",
+    "classificacao": "41501014",
+    "descricao": "Horas Extras",
+    "tipo": "A",
+    "descricaoNormalizada": "HORAS EXTRAS"
+  },
+  {
+    "codigoReduzido": "463",
+    "classificacao": "41501015",
+    "descricao": "Gratificações, Bônus e Prêmios",
+    "tipo": "A",
+    "descricaoNormalizada": "GRATIFICACOES BONUS PREMIOS"
+  },
+  {
+    "codigoReduzido": "4152",
+    "classificacao": "41502",
+    "descricao": "Outros Custos",
+    "tipo": "S",
+    "descricaoNormalizada": "OUTROS CUSTOS"
+  },
+  {
+    "codigoReduzido": "464",
+    "classificacao": "41502001",
+    "descricao": "Serviços de Terceiros   ",
+    "tipo": "A",
+    "descricaoNormalizada": "SERVICOS TERCEIROS"
+  },
+  {
+    "codigoReduzido": "465",
+    "classificacao": "41502002",
+    "descricao": "Previdência Social   ",
+    "tipo": "A",
+    "descricaoNormalizada": "INSS"
+  },
+  {
+    "codigoReduzido": "466",
+    "classificacao": "41502003",
+    "descricao": "Aluguéis e Condomínios   ",
+    "tipo": "A",
+    "descricaoNormalizada": "ALUGUEL CONDOMINIOS"
+  },
+  {
+    "codigoReduzido": "467",
+    "classificacao": "41502004",
+    "descricao": "Água",
+    "tipo": "A",
+    "descricaoNormalizada": "AGUA"
+  },
+  {
+    "codigoReduzido": "468",
+    "classificacao": "41502005",
+    "descricao": "Energia Elétrica   ",
+    "tipo": "A",
+    "descricaoNormalizada": "ENERGIA ELETRICA"
+  },
+  {
+    "codigoReduzido": "469",
+    "classificacao": "41502006",
+    "descricao": "Manutenção e Reparos   ",
+    "tipo": "A",
+    "descricaoNormalizada": "MANUTENCAO REPAROS"
+  },
+  {
+    "codigoReduzido": "470",
+    "classificacao": "41502007",
+    "descricao": "Despesas com Viagens",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS COM VIAGENS"
+  },
+  {
+    "codigoReduzido": "471",
+    "classificacao": "41502008",
+    "descricao": "Despesas com Condução   ",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS COM CONDUCAO"
+  },
+  {
+    "codigoReduzido": "472",
+    "classificacao": "41502009",
+    "descricao": "Despesas com Refeitório",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS COM REFEITORIO"
+  },
+  {
+    "codigoReduzido": "473",
+    "classificacao": "41502010",
+    "descricao": "Despesas com Comunicação   ",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS COM COMUNICACAO"
+  },
+  {
+    "codigoReduzido": "474",
+    "classificacao": "41502011",
+    "descricao": "Custos com Treinamento    ",
+    "tipo": "A",
+    "descricaoNormalizada": "CUSTOS COM TREINAMENTOS"
+  },
+  {
+    "codigoReduzido": "475",
+    "classificacao": "41502012",
+    "descricao": "Impostos e Taxas Diversas   ",
+    "tipo": "A",
+    "descricaoNormalizada": "IMPOSTOS TAXAS DIVERSAS"
+  },
+  {
+    "codigoReduzido": "476",
+    "classificacao": "41502013",
+    "descricao": "Despesas com Atendimento ao Cliente   ",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS COM ATENDIMENTO AO CLIENTES"
+  },
+  {
+    "codigoReduzido": "477",
+    "classificacao": "41502014",
+    "descricao": "Propaganda e Publicidade   ",
+    "tipo": "A",
+    "descricaoNormalizada": "PROPAGANDA PUBLICIDADE"
+  },
+  {
+    "codigoReduzido": "478",
+    "classificacao": "41502015",
+    "descricao": "Pesquisa de Mercado   ",
+    "tipo": "A",
+    "descricaoNormalizada": "PESQUISA MERCADO"
+  },
+  {
+    "codigoReduzido": "479",
+    "classificacao": "41502016",
+    "descricao": "Depreciações   ",
+    "tipo": "A",
+    "descricaoNormalizada": "DEPRECIACAO"
+  },
+  {
+    "codigoReduzido": "480",
+    "classificacao": "41502017",
+    "descricao": "Amortizações   ",
+    "tipo": "A",
+    "descricaoNormalizada": "AMORTIZACAO"
+  },
+  {
+    "codigoReduzido": "481",
+    "classificacao": "41502018",
+    "descricao": "Despesas Diversas   ",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS DIVERSAS"
+  },
+  {
+    "codigoReduzido": "482",
+    "classificacao": "41502099",
+    "descricao": "( - ) Recuperação de Despesas   ",
+    "tipo": "A",
+    "descricaoNormalizada": "MENOS RECUPERACAO DESPESAS"
+  },
+  {
+    "codigoReduzido": "4200",
+    "classificacao": "42",
+    "descricao": "Despesas Operacionais",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS OPERACIONAIS"
+  },
+  {
+    "codigoReduzido": "4210",
+    "classificacao": "421",
+    "descricao": "Despesas Gerais e Administrativas",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS GERAIS ADMINISTRATIVAS"
+  },
+  {
+    "codigoReduzido": "4211",
+    "classificacao": "42101",
+    "descricao": "Despesas com Pessoal",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM PESSOAL"
+  },
+  {
+    "codigoReduzido": "485",
+    "classificacao": "42101001",
+    "descricao": "Salários",
+    "tipo": "A",
+    "descricaoNormalizada": "SALARIOS"
+  },
+  {
+    "codigoReduzido": "486",
+    "classificacao": "42101002",
+    "descricao": "13º Salário",
+    "tipo": "A",
+    "descricaoNormalizada": "13"
+  },
+  {
+    "codigoReduzido": "487",
+    "classificacao": "42101003",
+    "descricao": "Férias",
+    "tipo": "A",
+    "descricaoNormalizada": "FERIAS"
+  },
+  {
+    "codigoReduzido": "488",
+    "classificacao": "42101004",
+    "descricao": "INSS",
+    "tipo": "A",
+    "descricaoNormalizada": "INSS"
+  },
+  {
+    "codigoReduzido": "489",
+    "classificacao": "42101005",
+    "descricao": "FGTS",
+    "tipo": "A",
+    "descricaoNormalizada": "FGTS"
+  },
+  {
+    "codigoReduzido": "490",
+    "classificacao": "42101006",
+    "descricao": "Vale-Transporte",
+    "tipo": "A",
+    "descricaoNormalizada": "VALE TRANSPORTE"
+  },
+  {
+    "codigoReduzido": "491",
+    "classificacao": "42101007",
+    "descricao": "Assistência Médica",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSISTENCIA MEDICA"
+  },
+  {
+    "codigoReduzido": "492",
+    "classificacao": "42101008",
+    "descricao": "Vale Refeição",
+    "tipo": "A",
+    "descricaoNormalizada": "VALE REFEICOES"
+  },
+  {
+    "codigoReduzido": "493",
+    "classificacao": "42101009",
+    "descricao": "Pró-Labore",
+    "tipo": "A",
+    "descricaoNormalizada": "PRO LABORE"
+  },
+  {
+    "codigoReduzido": "494",
+    "classificacao": "42101010",
+    "descricao": "Contribuição Sindical",
+    "tipo": "A",
+    "descricaoNormalizada": "CONTRIBUICAO SINDICAL"
+  },
+  {
+    "codigoReduzido": "495",
+    "classificacao": "42101011",
+    "descricao": "Contribuição Confederativa",
+    "tipo": "A",
+    "descricaoNormalizada": "CONTRIBUICAO CONFEDERATIVA"
+  },
+  {
+    "codigoReduzido": "496",
+    "classificacao": "42101012",
+    "descricao": "Convênio Odontológico",
+    "tipo": "A",
+    "descricaoNormalizada": "CONVENIO ODONTOLOGICO"
+  },
+  {
+    "codigoReduzido": "497",
+    "classificacao": "42101013",
+    "descricao": "Saúde Ocupacional",
+    "tipo": "A",
+    "descricaoNormalizada": "SAUDE OCUPACIONAL"
+  },
+  {
+    "codigoReduzido": "498",
+    "classificacao": "42101014",
+    "descricao": "Participação nos Lucros",
+    "tipo": "A",
+    "descricaoNormalizada": "PARTICIPACAO NOS LUCRO"
+  },
+  {
+    "codigoReduzido": "499",
+    "classificacao": "42101015",
+    "descricao": "Curso Técnico/Superior",
+    "tipo": "A",
+    "descricaoNormalizada": "CURSOS TECNICO SUPERIOR"
+  },
+  {
+    "codigoReduzido": "500",
+    "classificacao": "42101016",
+    "descricao": "Assessoria em Recursos Humanos",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSESSORIA RECURSOS HUMANOS"
+  },
+  {
+    "codigoReduzido": "501",
+    "classificacao": "42101017",
+    "descricao": "Anúncios, Recrutamento e Seleção",
+    "tipo": "A",
+    "descricaoNormalizada": "ANUNCIOS RECRUTAMENTO SELECAO"
+  },
+  {
+    "codigoReduzido": "502",
+    "classificacao": "42101018",
+    "descricao": "Farmácia e Medicamentos",
+    "tipo": "A",
+    "descricaoNormalizada": "FARMACIA MEDICAMENTOS"
+  },
+  {
+    "codigoReduzido": "503",
+    "classificacao": "42101019",
+    "descricao": "Confraternizações",
+    "tipo": "A",
+    "descricaoNormalizada": "CONFRATERNIZACOES"
+  },
+  {
+    "codigoReduzido": "504",
+    "classificacao": "42101020",
+    "descricao": "Seguro de Vida",
+    "tipo": "A",
+    "descricaoNormalizada": "SEGUROS VIDA"
+  },
+  {
+    "codigoReduzido": "505",
+    "classificacao": "42101021",
+    "descricao": "Indenizações",
+    "tipo": "A",
+    "descricaoNormalizada": "INDENIZACOES"
+  },
+  {
+    "codigoReduzido": "516",
+    "classificacao": "42101022",
+    "descricao": "Estágio",
+    "tipo": "A",
+    "descricaoNormalizada": "ESTAGIO"
+  },
+  {
+    "codigoReduzido": "483",
+    "classificacao": "42101023",
+    "descricao": "Horas extras e reflexos",
+    "tipo": "A",
+    "descricaoNormalizada": "HORAS EXTRAS REFLEXOS"
+  },
+  {
+    "codigoReduzido": "484",
+    "classificacao": "42101024",
+    "descricao": "Gratificações, Bônus e Prêmios",
+    "tipo": "A",
+    "descricaoNormalizada": "GRATIFICACOES BONUS PREMIOS"
+  },
+  {
+    "codigoReduzido": "515",
+    "classificacao": "42101025",
+    "descricao": "Cursos de Treinamentos",
+    "tipo": "A",
+    "descricaoNormalizada": "CURSOS TREINAMENTOS"
+  },
+  {
+    "codigoReduzido": "521",
+    "classificacao": "42101026",
+    "descricao": "Auxílio Creche",
+    "tipo": "A",
+    "descricaoNormalizada": "AUXILIO CRECHE"
+  },
+  {
+    "codigoReduzido": "522",
+    "classificacao": "42101027",
+    "descricao": "Perdas com Coparticipação",
+    "tipo": "A",
+    "descricaoNormalizada": "PERDAS COM COPARTICIPACAO"
+  },
+  {
+    "codigoReduzido": "4212",
+    "classificacao": "42102",
+    "descricao": "Despesas com Vendas",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM VENDAS"
+  },
+  {
+    "codigoReduzido": "506",
+    "classificacao": "42102001",
+    "descricao": "Comissões",
+    "tipo": "A",
+    "descricaoNormalizada": "COMISSOES"
+  },
+  {
+    "codigoReduzido": "507",
+    "classificacao": "42102002",
+    "descricao": "Propaganda e Publicidade",
+    "tipo": "A",
+    "descricaoNormalizada": "PROPAGANDA PUBLICIDADE"
+  },
+  {
+    "codigoReduzido": "508",
+    "classificacao": "42102003",
+    "descricao": "Despesas com Viagens",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS COM VIAGENS"
+  },
+  {
+    "codigoReduzido": "509",
+    "classificacao": "42102004",
+    "descricao": "Amostras, Prêmios e Bonificações",
+    "tipo": "A",
+    "descricaoNormalizada": "AMOSTRAS PREMIOS BONIFICACOES"
+  },
+  {
+    "codigoReduzido": "510",
+    "classificacao": "42102005",
+    "descricao": "Tributos e Contrib. sobre Outras Saídas",
+    "tipo": "A",
+    "descricaoNormalizada": "TRIBUTOS CONTRIBUICAO S OUTRAS SAIDAS"
+  },
+  {
+    "codigoReduzido": "511",
+    "classificacao": "42102006",
+    "descricao": "Assessoria de Imprensa/Marketing",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSESSORIA IMPRENSA MARKETING"
+  },
+  {
+    "codigoReduzido": "512",
+    "classificacao": "42102007",
+    "descricao": "Materiais Gráficos",
+    "tipo": "A",
+    "descricaoNormalizada": "MATERIAIS GRAFICOS"
+  },
+  {
+    "codigoReduzido": "513",
+    "classificacao": "42102008",
+    "descricao": "Brindes e Doações",
+    "tipo": "A",
+    "descricaoNormalizada": "BRINDES DOACOES"
+  },
+  {
+    "codigoReduzido": "514",
+    "classificacao": "42102009",
+    "descricao": "Feiras e Exposições",
+    "tipo": "A",
+    "descricaoNormalizada": "FEIRAS EXPOSICOES"
+  },
+  {
+    "codigoReduzido": "4213",
+    "classificacao": "42103",
+    "descricao": "Despesas com Viagens",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM VIAGENS"
+  },
+  {
+    "codigoReduzido": "517",
+    "classificacao": "42103001",
+    "descricao": "Hospedagens e Diárias",
+    "tipo": "A",
+    "descricaoNormalizada": "HOSPEDAGENS DIARIAS"
+  },
+  {
+    "codigoReduzido": "518",
+    "classificacao": "42103002",
+    "descricao": "Táxi, Locom., KM, Estacionam., Pedágio",
+    "tipo": "A",
+    "descricaoNormalizada": "TAXI LOCOM KM ESTACIONAM PEDAGIOS"
+  },
+  {
+    "codigoReduzido": "519",
+    "classificacao": "42103003",
+    "descricao": "Refeições e Representações",
+    "tipo": "A",
+    "descricaoNormalizada": "REFEICOES REPRESENTACOES"
+  },
+  {
+    "codigoReduzido": "520",
+    "classificacao": "42103004",
+    "descricao": "Passagens Aéreas e Rodoviárias",
+    "tipo": "A",
+    "descricaoNormalizada": "PASSAGENS AEREAS RODOVIARIAS"
+  },
+  {
+    "codigoReduzido": "4214",
+    "classificacao": "42104",
+    "descricao": "Despesas com Bens Móveis e Imóveis",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM BENS MOVEIS IMOVEIS"
+  },
+  {
+    "codigoReduzido": "523",
+    "classificacao": "42104001",
+    "descricao": "Manutenção de Equipamentos e Instalações",
+    "tipo": "A",
+    "descricaoNormalizada": "MANUTENCAO EQUIPAMENTOS INSTALACOES"
+  },
+  {
+    "codigoReduzido": "524",
+    "classificacao": "42104002",
+    "descricao": "Manutenção de Veículos",
+    "tipo": "A",
+    "descricaoNormalizada": "MANUTENCAO VEICULOS"
+  },
+  {
+    "codigoReduzido": "525",
+    "classificacao": "42104003",
+    "descricao": "Licenciamento e IPVA de Veículos",
+    "tipo": "A",
+    "descricaoNormalizada": "LICENCIAMENTO IPVA VEICULOS"
+  },
+  {
+    "codigoReduzido": "526",
+    "classificacao": "42104004",
+    "descricao": "Depreciação",
+    "tipo": "A",
+    "descricaoNormalizada": "DEPRECIACAO"
+  },
+  {
+    "codigoReduzido": "527",
+    "classificacao": "42104005",
+    "descricao": "Amortização",
+    "tipo": "A",
+    "descricaoNormalizada": "AMORTIZACAO"
+  },
+  {
+    "codigoReduzido": "528",
+    "classificacao": "42104006",
+    "descricao": "Prêmios de Seguros de Bens",
+    "tipo": "A",
+    "descricaoNormalizada": "PREMIOS SEGUROS BENS"
+  },
+  {
+    "codigoReduzido": "529",
+    "classificacao": "42104007",
+    "descricao": "Limpeza",
+    "tipo": "A",
+    "descricaoNormalizada": "LIMPEZA"
+  },
+  {
+    "codigoReduzido": "530",
+    "classificacao": "42104008",
+    "descricao": "Segurança",
+    "tipo": "A",
+    "descricaoNormalizada": "SEGURANCA"
+  },
+  {
+    "codigoReduzido": "531",
+    "classificacao": "42104009",
+    "descricao": "IPTU",
+    "tipo": "A",
+    "descricaoNormalizada": "IPTU"
+  },
+  {
+    "codigoReduzido": "532",
+    "classificacao": "42104010",
+    "descricao": "Condomínio",
+    "tipo": "A",
+    "descricaoNormalizada": "CONDOMINIO"
+  },
+  {
+    "codigoReduzido": "533",
+    "classificacao": "42104011",
+    "descricao": "TLIF e outras Taxas Municipais",
+    "tipo": "A",
+    "descricaoNormalizada": "TLIF OUTRAS TAXAS MUNICIPAIS"
+  },
+  {
+    "codigoReduzido": "534",
+    "classificacao": "42104012",
+    "descricao": "Combustíveis e Lubrificantes",
+    "tipo": "A",
+    "descricaoNormalizada": "COMBUSTIVEIS LUBRIFICANTES"
+  },
+  {
+    "codigoReduzido": "535",
+    "classificacao": "42104013",
+    "descricao": "Decoração",
+    "tipo": "A",
+    "descricaoNormalizada": "DECORACAO"
+  },
+  {
+    "codigoReduzido": "4215",
+    "classificacao": "42105",
+    "descricao": "Despesas com Utilidades",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM UTILIDADES"
+  },
+  {
+    "codigoReduzido": "536",
+    "classificacao": "42105001",
+    "descricao": "Energia Elétrica",
+    "tipo": "A",
+    "descricaoNormalizada": "ENERGIA ELETRICA"
+  },
+  {
+    "codigoReduzido": "537",
+    "classificacao": "42105002",
+    "descricao": "Telefone",
+    "tipo": "A",
+    "descricaoNormalizada": "TELEFONIA"
+  },
+  {
+    "codigoReduzido": "538",
+    "classificacao": "42105003",
+    "descricao": "Água",
+    "tipo": "A",
+    "descricaoNormalizada": "AGUA"
+  },
+  {
+    "codigoReduzido": "539",
+    "classificacao": "42105004",
+    "descricao": "Condomínio",
+    "tipo": "A",
+    "descricaoNormalizada": "CONDOMINIO"
+  },
+  {
+    "codigoReduzido": "540",
+    "classificacao": "42105005",
+    "descricao": "Materiais Escritório, Limpeza e Consumo",
+    "tipo": "A",
+    "descricaoNormalizada": "MATERIAIS ESCRITORIO LIMPEZA CONSUMO"
+  },
+  {
+    "codigoReduzido": "541",
+    "classificacao": "42105006",
+    "descricao": "Internet e TV a Cabo",
+    "tipo": "A",
+    "descricaoNormalizada": "INTERNET TV CABO"
+  },
+  {
+    "codigoReduzido": "4216",
+    "classificacao": "42106",
+    "descricao": "Despesas com Serviços Prestados",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM SERVICOS PRESTADOS"
+  },
+  {
+    "codigoReduzido": "544",
+    "classificacao": "42106001",
+    "descricao": "Assessoria por Pessoa Física",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSESSORIA POR PESSOA FISICA"
+  },
+  {
+    "codigoReduzido": "545",
+    "classificacao": "42106002",
+    "descricao": "Assessoria Jurídica",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSESSORIA JURIDICA"
+  },
+  {
+    "codigoReduzido": "546",
+    "classificacao": "42106003",
+    "descricao": "Assessoria Contábil",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSESSORIA CONTABIL"
+  },
+  {
+    "codigoReduzido": "547",
+    "classificacao": "42106004",
+    "descricao": "Auditoria",
+    "tipo": "A",
+    "descricaoNormalizada": "AUDITORIA"
+  },
+  {
+    "codigoReduzido": "548",
+    "classificacao": "42106005",
+    "descricao": "Informática",
+    "tipo": "A",
+    "descricaoNormalizada": "TI"
+  },
+  {
+    "codigoReduzido": "549",
+    "classificacao": "42106006",
+    "descricao": "Traduções e Revisões de Texto",
+    "tipo": "A",
+    "descricaoNormalizada": "TRADUCOES REVISOES TEXTO"
+  },
+  {
+    "codigoReduzido": "550",
+    "classificacao": "42106007",
+    "descricao": "Assessoria Administrativa",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSESSORIA ADMINISTRATIVA"
+  },
+  {
+    "codigoReduzido": "551",
+    "classificacao": "42106008",
+    "descricao": "Assessoria em Recursos Humanos",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSESSORIA RECURSOS HUMANOS"
+  },
+  {
+    "codigoReduzido": "557",
+    "classificacao": "42106009",
+    "descricao": "Guarda de Documentos",
+    "tipo": "A",
+    "descricaoNormalizada": "GUARDA DOCUMENTOS"
+  },
+  {
+    "codigoReduzido": "4217",
+    "classificacao": "42107",
+    "descricao": "Despesas com Aluguéis e Arrendamento",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM ALUGUEL ARRENDAMENTO"
+  },
+  {
+    "codigoReduzido": "552",
+    "classificacao": "42107001",
+    "descricao": "Aluguel de Imóvel",
+    "tipo": "A",
+    "descricaoNormalizada": "ALUGUEL IMOVEL"
+  },
+  {
+    "codigoReduzido": "553",
+    "classificacao": "42107002",
+    "descricao": "Aluguel de Equipamentos",
+    "tipo": "A",
+    "descricaoNormalizada": "ALUGUEL EQUIPAMENTOS"
+  },
+  {
+    "codigoReduzido": "554",
+    "classificacao": "42107003",
+    "descricao": "Aluguel de Automóvel",
+    "tipo": "A",
+    "descricaoNormalizada": "ALUGUEL AUTOMOVEL"
+  },
+  {
+    "codigoReduzido": "555",
+    "classificacao": "42107004",
+    "descricao": "Arrendamento Mercantil",
+    "tipo": "A",
+    "descricaoNormalizada": "ARRENDAMENTO MERCANTIL"
+  },
+  {
+    "codigoReduzido": "4218",
+    "classificacao": "42108",
+    "descricao": "Despesas com Provisões",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM PROVISAO"
+  },
+  {
+    "codigoReduzido": "558",
+    "classificacao": "42108001",
+    "descricao": "Provisões Perdas com Créditos Duvidosos",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO PERDAS COM CREDITOS DUVIDOSOS"
+  },
+  {
+    "codigoReduzido": "559",
+    "classificacao": "42108002",
+    "descricao": "Provisões para Contingência",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO P CONTINGENCIA"
+  },
+  {
+    "codigoReduzido": "560",
+    "classificacao": "42108098",
+    "descricao": "Recuperação de Créditos Baixados",
+    "tipo": "A",
+    "descricaoNormalizada": "RECUPERACAO CREDITOS BAIXADOS"
+  },
+  {
+    "codigoReduzido": "561",
+    "classificacao": "42108099",
+    "descricao": "Reversão de Provisões",
+    "tipo": "A",
+    "descricaoNormalizada": "REVERSAO PROVISAO"
+  },
+  {
+    "codigoReduzido": "4219",
+    "classificacao": "42109",
+    "descricao": "Despesas Gerais",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS GERAIS"
+  },
+  {
+    "codigoReduzido": "564",
+    "classificacao": "42109001",
+    "descricao": "Assinat.de Revistas, Jornais, Periódicos",
+    "tipo": "A",
+    "descricaoNormalizada": "ASSINAT REVISTAS JORNAIS PERIODICOS"
+  },
+  {
+    "codigoReduzido": "565",
+    "classificacao": "42109002",
+    "descricao": "Correios e Courrier",
+    "tipo": "A",
+    "descricaoNormalizada": "CORREIOS COURRIER"
+  },
+  {
+    "codigoReduzido": "566",
+    "classificacao": "42109003",
+    "descricao": "Mensageiros e Serviços de Motoboy",
+    "tipo": "A",
+    "descricaoNormalizada": "MENSAGEIROS SERVICOS MOTOBOY"
+  },
+  {
+    "codigoReduzido": "567",
+    "classificacao": "42109004",
+    "descricao": "Despachantes e Desp. com Órgãos Públicos",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPACHANTES DESPESAS COM ORGAOS PUBLICOS"
+  },
+  {
+    "codigoReduzido": "568",
+    "classificacao": "42109005",
+    "descricao": "Cartórios, Taxas, Licenças e Emolumentos",
+    "tipo": "A",
+    "descricaoNormalizada": "CARTORIOS TAXAS LICENCAS EMOLUMENTOS"
+  },
+  {
+    "codigoReduzido": "569",
+    "classificacao": "42109006",
+    "descricao": "Fretes, Carretos, Táxi, outras Conduções",
+    "tipo": "A",
+    "descricaoNormalizada": "FRETES CARRETOS TAXI OUTRAS CONDUCOES"
+  },
+  {
+    "codigoReduzido": "570",
+    "classificacao": "42109007",
+    "descricao": "Anuidades e Contribuições",
+    "tipo": "A",
+    "descricaoNormalizada": "ANUIDADES CONTRIBUICAO"
+  },
+  {
+    "codigoReduzido": "571",
+    "classificacao": "42109008",
+    "descricao": "Papelaria e Serviços Gráficos",
+    "tipo": "A",
+    "descricaoNormalizada": "PAPELARIA SERVICOS GRAFICOS"
+  },
+  {
+    "codigoReduzido": "572",
+    "classificacao": "42109009",
+    "descricao": "Bens Permanentes de Pequeno Valor",
+    "tipo": "A",
+    "descricaoNormalizada": "BENS PERMANENTES PEQUENO VALORES"
+  },
+  {
+    "codigoReduzido": "4250",
+    "classificacao": "425",
+    "descricao": "Despesas Financeiras",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "4251",
+    "classificacao": "42501",
+    "descricao": "Despesas com Empréstimos Bancários",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM EMPRESTIMOS BANCARIOS"
+  },
+  {
+    "codigoReduzido": "575",
+    "classificacao": "42501001",
+    "descricao": "Juros Cta. Garantida e Cheque Especial",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS CONTA GARANTIDA CHEQUE ESPECIAL"
+  },
+  {
+    "codigoReduzido": "576",
+    "classificacao": "42501002",
+    "descricao": "Juros sobre Empréstimos Bancários Locais",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS S EMPRESTIMOS BANCARIOS LOCAIS"
+  },
+  {
+    "codigoReduzido": "577",
+    "classificacao": "42501003",
+    "descricao": "Juros sobre Empréstimos do Exterior",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS S EMPRESTIMOS EXTERIOR"
+  },
+  {
+    "codigoReduzido": "578",
+    "classificacao": "42501004",
+    "descricao": "IOF e IOC sobre Empréstimos Bancários",
+    "tipo": "A",
+    "descricaoNormalizada": "IOF IOC S EMPRESTIMOS BANCARIOS"
+  },
+  {
+    "codigoReduzido": "579",
+    "classificacao": "42501005",
+    "descricao": "Fianças, Avais e outras Garantias",
+    "tipo": "A",
+    "descricaoNormalizada": "FIANCAS AVAIS OUTRAS GARANTIAS"
+  },
+  {
+    "codigoReduzido": "580",
+    "classificacao": "42501006",
+    "descricao": "Outras Taxas com Empréstimos",
+    "tipo": "A",
+    "descricaoNormalizada": "OUTRAS TAXAS COM EMPRESTIMOS"
+  },
+  {
+    "codigoReduzido": "4252",
+    "classificacao": "42502",
+    "descricao": "Despesas com Empréstimos não Bancários",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS COM EMPRESTIMOS NAO BANCARIOS"
+  },
+  {
+    "codigoReduzido": "583",
+    "classificacao": "42502001",
+    "descricao": "Juros sobre Empréstimos de Mútuo",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS S EMPRESTIMOS MUTUO"
+  },
+  {
+    "codigoReduzido": "584",
+    "classificacao": "42502002",
+    "descricao": "IOF e outras Taxas",
+    "tipo": "A",
+    "descricaoNormalizada": "IOF OUTRAS TAXAS"
+  },
+  {
+    "codigoReduzido": "4253",
+    "classificacao": "42503",
+    "descricao": "Var. Monet. Passivas Pessoas não Vinc.",
+    "tipo": "S",
+    "descricaoNormalizada": "VAR MONET PASSIVAS PESSOAS NAO VINC"
+  },
+  {
+    "codigoReduzido": "587",
+    "classificacao": "42503001",
+    "descricao": "Variações Monetárias Emprést.Bancários",
+    "tipo": "A",
+    "descricaoNormalizada": "VARIACOES MONETARIAS EMPRESTIMOS BANCARIOS"
+  },
+  {
+    "codigoReduzido": "588",
+    "classificacao": "42503002",
+    "descricao": "Variações Monetárias sobre Mútuos",
+    "tipo": "A",
+    "descricaoNormalizada": "VARIACOES MONETARIAS S MUTUOS"
+  },
+  {
+    "codigoReduzido": "4254",
+    "classificacao": "42504",
+    "descricao": "Variações Cambiais Passivas",
+    "tipo": "S",
+    "descricaoNormalizada": "VARIACOES CAMBIAIS PASSIVAS"
+  },
+  {
+    "codigoReduzido": "591",
+    "classificacao": "42504001",
+    "descricao": "Variações Cambiais de Importações",
+    "tipo": "A",
+    "descricaoNormalizada": "VARIACOES CAMBIAIS IMPORTACOES"
+  },
+  {
+    "codigoReduzido": "592",
+    "classificacao": "42504002",
+    "descricao": "Variações Cambiais de Emprést. Externos",
+    "tipo": "A",
+    "descricaoNormalizada": "VARIACOES CAMBIAIS EMPRESTIMOS EXTERNOS"
+  },
+  {
+    "codigoReduzido": "593",
+    "classificacao": "42504003",
+    "descricao": "Outras Variações Cambiais Devedoras",
+    "tipo": "A",
+    "descricaoNormalizada": "OUTRAS VARIACOES CAMBIAIS DEVEDORAS"
+  },
+  {
+    "codigoReduzido": "4256",
+    "classificacao": "42506",
+    "descricao": "Outras Despesas Financeiras",
+    "tipo": "S",
+    "descricaoNormalizada": "OUTRAS DESPESAS FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "596",
+    "classificacao": "42506001",
+    "descricao": "Juros sobre Títulos Passivos",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS S TITULOS PASSIVOS"
+  },
+  {
+    "codigoReduzido": "597",
+    "classificacao": "42506002",
+    "descricao": "Juros sobre Tributos e Contribuições",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS S TRIBUTOS CONTRIBUICAO"
+  },
+  {
+    "codigoReduzido": "598",
+    "classificacao": "42506003",
+    "descricao": "Descontos Incondicionais Concedidos",
+    "tipo": "A",
+    "descricaoNormalizada": "DESCONTOS INCONDICIONAIS CONCEDIDOS"
+  },
+  {
+    "codigoReduzido": "599",
+    "classificacao": "42506004",
+    "descricao": "Taxas e Serviços Bancários",
+    "tipo": "A",
+    "descricaoNormalizada": "TAXAS SERVICOS BANCARIOS"
+  },
+  {
+    "codigoReduzido": "600",
+    "classificacao": "42506005",
+    "descricao": "Corretagens de Câmbio, Bolsa e Intermed.",
+    "tipo": "A",
+    "descricaoNormalizada": "CORRETAGENS CAMBIO BOLSA INTERMED"
+  },
+  {
+    "codigoReduzido": "601",
+    "classificacao": "42506006",
+    "descricao": "Amortização de Ágio",
+    "tipo": "A",
+    "descricaoNormalizada": "AMORTIZACAO AGIO"
+  },
+  {
+    "codigoReduzido": "602",
+    "classificacao": "42506007",
+    "descricao": "Outros Ganhos de Capital",
+    "tipo": "A",
+    "descricaoNormalizada": "OUTROS GANHOS CAPITAL"
+  },
+  {
+    "codigoReduzido": "603",
+    "classificacao": "42506008",
+    "descricao": "Recuperação de Despesas Financeiras",
+    "tipo": "A",
+    "descricaoNormalizada": "RECUPERACAO DESPESAS FINANCEIRAS"
+  },
+  {
+    "codigoReduzido": "604",
+    "classificacao": "42506099",
+    "descricao": "CPMF",
+    "tipo": "A",
+    "descricaoNormalizada": "CPMF"
+  },
+  {
+    "codigoReduzido": "4258",
+    "classificacao": "42508",
+    "descricao": "Despesas Financeiras Partes Relacionadas",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS FINANCEIRAS PARTES RELACIONADAS"
+  },
+  {
+    "codigoReduzido": "607",
+    "classificacao": "42508001",
+    "descricao": "Juros sobre Empréstimos",
+    "tipo": "A",
+    "descricaoNormalizada": "JUROS S EMPRESTIMOS"
+  },
+  {
+    "codigoReduzido": "608",
+    "classificacao": "42508002",
+    "descricao": "Variações Monetárias Passivas",
+    "tipo": "A",
+    "descricaoNormalizada": "VARIACOES MONETARIAS PASSIVAS"
+  },
+  {
+    "codigoReduzido": "609",
+    "classificacao": "42508003",
+    "descricao": "Variações Cambiais Passivas",
+    "tipo": "A",
+    "descricaoNormalizada": "VARIACOES CAMBIAIS PASSIVAS"
+  },
+  {
+    "codigoReduzido": "610",
+    "classificacao": "42508004",
+    "descricao": "Despesas Diversas Relacionadas",
+    "tipo": "A",
+    "descricaoNormalizada": "DESPESAS DIVERSAS RELACIONADAS"
+  },
+  {
+    "codigoReduzido": "4500",
+    "classificacao": "45",
+    "descricao": "Resultados Extraordinários",
+    "tipo": "S",
+    "descricaoNormalizada": "RESULTADOS EXTRAORDINARIOS"
+  },
+  {
+    "codigoReduzido": "4550",
+    "classificacao": "455",
+    "descricao": "Despesas Extraordinárias",
+    "tipo": "S",
+    "descricaoNormalizada": "DESPESAS EXTRAORDINARIAS"
+  },
+  {
+    "codigoReduzido": "4551",
+    "classificacao": "45501",
+    "descricao": "Perdas Eventuais",
+    "tipo": "S",
+    "descricaoNormalizada": "PERDAS EVENTUAIS"
+  },
+  {
+    "codigoReduzido": "613",
+    "classificacao": "45501001",
+    "descricao": "Avarias e Deteriorações em Estoques",
+    "tipo": "A",
+    "descricaoNormalizada": "AVARIAS DETERIORACOES ESTOQUES"
+  },
+  {
+    "codigoReduzido": "614",
+    "classificacao": "45501002",
+    "descricao": "Avarias e Deteriorações no Imobilizado",
+    "tipo": "A",
+    "descricaoNormalizada": "AVARIAS DETERIORACOES IMOBILIZADO"
+  },
+  {
+    "codigoReduzido": "615",
+    "classificacao": "45501003",
+    "descricao": "Multas Contratuais",
+    "tipo": "A",
+    "descricaoNormalizada": "MULTAS CONTRATUAIS"
+  },
+  {
+    "codigoReduzido": "616",
+    "classificacao": "45501004",
+    "descricao": "Multas sobre Tributos e Contribuições",
+    "tipo": "A",
+    "descricaoNormalizada": "MULTAS S TRIBUTOS CONTRIBUICAO"
+  },
+  {
+    "codigoReduzido": "617",
+    "classificacao": "45501005",
+    "descricao": "Perdas de Capital",
+    "tipo": "A",
+    "descricaoNormalizada": "PERDAS CAPITAL"
+  },
+  {
+    "codigoReduzido": "618",
+    "classificacao": "45501006",
+    "descricao": "Multas por Autuações Fiscais",
+    "tipo": "A",
+    "descricaoNormalizada": "MULTAS POR AUTUACOES FISCAIS"
+  },
+  {
+    "codigoReduzido": "619",
+    "classificacao": "45501007",
+    "descricao": "Multas sobre Títulos Passivos",
+    "tipo": "A",
+    "descricaoNormalizada": "MULTAS S TITULOS PASSIVOS"
+  },
+  {
+    "codigoReduzido": "4600",
+    "classificacao": "46",
+    "descricao": "Tributos e Contrib. sobre o Resultado",
+    "tipo": "S",
+    "descricaoNormalizada": "TRIBUTOS CONTRIBUICAO S RESULTADO"
+  },
+  {
+    "codigoReduzido": "4610",
+    "classificacao": "461",
+    "descricao": "Tributos e Contribuições Federais",
+    "tipo": "S",
+    "descricaoNormalizada": "TRIBUTOS CONTRIBUICAO FEDERAIS"
+  },
+  {
+    "codigoReduzido": "4611",
+    "classificacao": "46101",
+    "descricao": "Trib.e Contrib. Federais Lucro Presumido",
+    "tipo": "S",
+    "descricaoNormalizada": "TRIB CONTRIBUICAO FEDERAIS LUCRO PRESUMIDO"
+  },
+  {
+    "codigoReduzido": "621",
+    "classificacao": "46101001",
+    "descricao": "IRPJ",
+    "tipo": "A",
+    "descricaoNormalizada": "IRPJ"
+  },
+  {
+    "codigoReduzido": "622",
+    "classificacao": "46101002",
+    "descricao": "CSLL",
+    "tipo": "A",
+    "descricaoNormalizada": "CSLL"
+  },
+  {
+    "codigoReduzido": "623",
+    "classificacao": "46101003",
+    "descricao": "Provisões Tributárias por Competência",
+    "tipo": "A",
+    "descricaoNormalizada": "PROVISAO TRIBUTARIAS POR COMPETENCIA"
+  },
+  {
+    "codigoReduzido": "4612",
+    "classificacao": "46102",
+    "descricao": "Trib.e Contribuições Federais Lucro Real",
+    "tipo": "S",
+    "descricaoNormalizada": "TRIB CONTRIBUICAO FEDERAIS LUCRO REAL"
+  },
+  {
+    "codigoReduzido": "625",
+    "classificacao": "46102001",
+    "descricao": "IRPJ",
+    "tipo": "A",
+    "descricaoNormalizada": "IRPJ"
+  },
+  {
+    "codigoReduzido": "626",
+    "classificacao": "46102002",
+    "descricao": "CSLL",
+    "tipo": "A",
+    "descricaoNormalizada": "CSLL"
+  },
+  {
+    "codigoReduzido": "627",
+    "classificacao": "46102003",
+    "descricao": "IRPJ Diferido s/ Prejuízos e Dif. Temp.",
+    "tipo": "A",
+    "descricaoNormalizada": "IRPJ DIFERIDO S PREJUIZO DIF TEMP"
+  },
+  {
+    "codigoReduzido": "628",
+    "classificacao": "46102004",
+    "descricao": "CSLL Diferido s/ Base Neg. e Dif. Temp.",
+    "tipo": "A",
+    "descricaoNormalizada": "CSLL DIFERIDO S BASE NEG DIF TEMP"
+  }
+]

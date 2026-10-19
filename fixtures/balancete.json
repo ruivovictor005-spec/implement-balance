@@ -1,0 +1,1981 @@
+[
+  {
+    "codiCta": "000083-3",
+    "nomeCta": "Ativo Realizável",
+    "clasCta": "1.0.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -15331328.6,
+    "totalDebito": 1983.96,
+    "totalCredito": 3937.78,
+    "saldoAtual": -15329374.78,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000013-2",
+    "nomeCta": "DISPONIBILIDADES",
+    "clasCta": "1.1.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -39.33,
+    "totalDebito": 1949.87,
+    "totalCredito": 1987.91,
+    "saldoAtual": -1.29,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO CIRCULANTE",
+    "gruposEsperados": [
+      "11"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000019-1",
+    "nomeCta": "Depósitos Bancários",
+    "clasCta": "1.1.2.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -39.33,
+    "totalDebito": 1949.87,
+    "totalCredito": 1987.91,
+    "saldoAtual": -1.29,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO CIRCULANTE",
+    "gruposEsperados": [
+      "11"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000027-2",
+    "nomeCta": "DEPÓSITOS BANCÁRIOS DE INSTITUIÇÕES SEM",
+    "clasCta": "1.1.2.30.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -39.33,
+    "totalDebito": 1949.87,
+    "totalCredito": 1987.91,
+    "saldoAtual": -1.29,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO CIRCULANTE",
+    "gruposEsperados": [
+      "11"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000029-9",
+    "nomeCta": "DEPÓSITOS BANCÁRIOS DE INSTITUIÇÕES SEM",
+    "clasCta": "1.1.2.30.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -39.33,
+    "totalDebito": 1949.87,
+    "totalCredito": 1987.91,
+    "saldoAtual": -1.29,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO CIRCULANTE",
+    "gruposEsperados": [
+      "11"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000030-2",
+    "nomeCta": "DEPÓSITOS BANCÁRIOS DE INSTITUIÇÕES SEM",
+    "clasCta": "1.1.2.30.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -39.33,
+    "totalDebito": 1949.87,
+    "totalCredito": 1987.91,
+    "saldoAtual": -1.29,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO CIRCULANTE",
+    "gruposEsperados": [
+      "11"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000025-6",
+    "nomeCta": "CITI BANK - 0429901014",
+    "clasCta": "1.1.2.30.01.01.00040",
+    "tipoCta": "A",
+    "saldoAnterior": -39.33,
+    "totalDebito": 1949.87,
+    "totalCredito": 1987.91,
+    "saldoAtual": -1.29,
+    "nomeNormalizadoEsperado": "CITI BANK 0429901014",
+    "naturezaEsperada": "ATIVO CIRCULANTE",
+    "gruposEsperados": [
+      "11"
+    ],
+    "codigoEsperado": "18",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000031-0",
+    "nomeCta": "TÍTULOS E VALORES MOBILIÁRIOS E INSTRUME",
+    "clasCta": "1.3.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -31257.02,
+    "totalDebito": 33.22,
+    "totalCredito": 1949.87,
+    "saldoAtual": -29340.37,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000033-7",
+    "nomeCta": "Livres",
+    "clasCta": "1.3.1.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -31257.02,
+    "totalDebito": 33.22,
+    "totalCredito": 1949.87,
+    "saldoAtual": -29340.37,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000034-5",
+    "nomeCta": "TÍTULOS DE RENDA FIXA",
+    "clasCta": "1.3.1.10.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -31257.02,
+    "totalDebito": 33.22,
+    "totalCredito": 1949.87,
+    "saldoAtual": -29340.37,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000035-3",
+    "nomeCta": "Títulos Privados de Instituições Finance",
+    "clasCta": "1.3.1.10.31.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -31257.02,
+    "totalDebito": 33.22,
+    "totalCredito": 1949.87,
+    "saldoAtual": -29340.37,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000036-1",
+    "nomeCta": "Saldo Contábil Bruto",
+    "clasCta": "1.3.1.10.31.10.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -31257.02,
+    "totalDebito": 33.22,
+    "totalCredito": 1949.87,
+    "saldoAtual": -29340.37,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000162-7",
+    "nomeCta": "CITI",
+    "clasCta": "1.3.1.10.31.10.00025",
+    "tipoCta": "A",
+    "saldoAnterior": -31257.02,
+    "totalDebito": 33.22,
+    "totalCredito": 1949.87,
+    "saldoAtual": -29340.37,
+    "nomeNormalizadoEsperado": "CITI",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "18",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000048-5",
+    "nomeCta": "OUTROS CRÉDITOS",
+    "clasCta": "1.8.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -15300032.25,
+    "totalDebito": 0.87,
+    "totalCredito": 0,
+    "saldoAtual": -15300033.12,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000049-3",
+    "nomeCta": "Diversos",
+    "clasCta": "1.8.8.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -15300032.25,
+    "totalDebito": 0.87,
+    "totalCredito": 0,
+    "saldoAtual": -15300033.12,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000063-9",
+    "nomeCta": "IMPOSTOS E CONTRIBUIÇÕES A COMPENSAR",
+    "clasCta": "1.8.8.45.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -32.25,
+    "totalDebito": 0.87,
+    "totalCredito": 0,
+    "saldoAtual": -33.12,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000064-7",
+    "nomeCta": "Antecipações de IRPJ Não Compensadas no",
+    "clasCta": "1.8.8.45.10.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -32.25,
+    "totalDebito": 0.87,
+    "totalCredito": 0,
+    "saldoAtual": -33.12,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000066-3",
+    "nomeCta": "Antecipações de IRPJ Não Compensadas no",
+    "clasCta": "1.8.8.45.10.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -32.25,
+    "totalDebito": 0.87,
+    "totalCredito": 0,
+    "saldoAtual": -33.12,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "002043-5",
+    "nomeCta": "IRRF DE RESGATES DE APLICACOES FINANCEIR",
+    "clasCta": "1.8.8.45.10.01.00010",
+    "tipoCta": "A",
+    "saldoAnterior": -32.25,
+    "totalDebito": 0.87,
+    "totalCredito": 0,
+    "saldoAtual": -33.12,
+    "nomeNormalizadoEsperado": "IRRF RESGATES APLICACAO FINANCEIR",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "62",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000074-4",
+    "nomeCta": "VALORES A RECEBER DE SOCIEDADES LIGADAS",
+    "clasCta": "1.8.8.85.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -15300000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -15300000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000076-0",
+    "nomeCta": "VALORES A RECEBER DE SOCIEDADES LIGADAS",
+    "clasCta": "1.8.8.85.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -15300000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -15300000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000077-9",
+    "nomeCta": "VALORES A RECEBER DE SOCIEDADES LIGADAS",
+    "clasCta": "1.8.8.85.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -15300000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -15300000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000153-8",
+    "nomeCta": "VLRS A REC SOC LIGADAS - BOKU NET IP",
+    "clasCta": "1.8.8.85.01.01.00015",
+    "tipoCta": "A",
+    "saldoAnterior": -15300000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -15300000,
+    "nomeNormalizadoEsperado": "VALORES REC SOC LIGADAS BOKU NET IP",
+    "naturezaEsperada": "ATIVO",
+    "gruposEsperados": [
+      "11",
+      "12"
+    ],
+    "codigoEsperado": "100",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000098-1",
+    "nomeCta": "Ativo Permanente",
+    "clasCta": "2.0.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -5619506.78,
+    "totalDebito": 0,
+    "totalCredito": 72712.03,
+    "saldoAtual": -5546794.75,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000005-1",
+    "nomeCta": "INVESTIMENTOS",
+    "clasCta": "2.1.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -5619506.78,
+    "totalDebito": 0,
+    "totalCredito": 72712.03,
+    "saldoAtual": -5546794.75,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000016-7",
+    "nomeCta": "Participações em Coligadas, Controladas",
+    "clasCta": "2.1.2.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -5619506.78,
+    "totalDebito": 0,
+    "totalCredito": 72712.03,
+    "saldoAtual": -5546794.75,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000017-5",
+    "nomeCta": "PARTICIPAÇÕES EM COLIGADAS, CONTROLADAS",
+    "clasCta": "2.1.2.10.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -6500000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -6500000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000145-7",
+    "nomeCta": "AUT AFUNC BCB VLR EQUIP PAT.",
+    "clasCta": "2.1.2.10.11.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -6500000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -6500000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000146-5",
+    "nomeCta": "AUT AFUNC BCB VLR EQUIP PAT.",
+    "clasCta": "2.1.2.10.11.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -6500000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -6500000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000150-3",
+    "nomeCta": "AUT AFUNC BCB VLR EQUIP PAT. BOKU NET IP",
+    "clasCta": "2.1.2.10.11.01.00005",
+    "tipoCta": "A",
+    "saldoAnterior": -6500000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -6500000,
+    "nomeNormalizadoEsperado": "AUT AFUNC BCB VALORES EQUIPAMENTOS PAT BOKU NET IP",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "109",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000046-9",
+    "nomeCta": "(-) PROVISÃO PARA PERDAS EM SOCIEDADES C",
+    "clasCta": "2.1.2.99.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 880493.22,
+    "totalDebito": 0,
+    "totalCredito": 72712.03,
+    "saldoAtual": 953205.25,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000052-3",
+    "nomeCta": "(-) Outras Participações - Valor de Equi",
+    "clasCta": "2.1.2.99.21.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 880493.22,
+    "totalDebito": 0,
+    "totalCredito": 72712.03,
+    "saldoAtual": 953205.25,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000053-1",
+    "nomeCta": "(-) Outras Participações - Valor de Equi",
+    "clasCta": "2.1.2.99.21.05.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 880493.22,
+    "totalDebito": 0,
+    "totalCredito": 72712.03,
+    "saldoAtual": 953205.25,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000054-0",
+    "nomeCta": "Boku Network Brasil Servicos",
+    "clasCta": "2.1.2.99.21.05.00005",
+    "tipoCta": "A",
+    "saldoAnterior": 880493.22,
+    "totalDebito": 0,
+    "totalCredito": 72712.03,
+    "saldoAtual": 953205.25,
+    "nomeNormalizadoEsperado": "BOKU NETWORK BRASIL SERVICOS",
+    "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
+    "gruposEsperados": [
+      "13"
+    ],
+    "codigoEsperado": "109",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000173-2",
+    "nomeCta": "PASSIVO EXIGÍVEL",
+    "clasCta": "4.0.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 184.32,
+    "totalDebito": 699.54,
+    "totalCredito": 3440.95,
+    "saldoAtual": 2925.73,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000193-7",
+    "nomeCta": "OUTRAS OBRIGAÇÕES",
+    "clasCta": "4.9.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 184.32,
+    "totalDebito": 699.54,
+    "totalCredito": 3440.95,
+    "saldoAtual": 2925.73,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000194-5",
+    "nomeCta": "Fiscais e Previdenciárias",
+    "clasCta": "4.9.4.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 184.32,
+    "totalDebito": 179.54,
+    "totalCredito": 181.09,
+    "saldoAtual": 185.87,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000202-0",
+    "nomeCta": "IMPOSTOS E CONTRIBUIÇÕES A RECOLHER",
+    "clasCta": "4.9.4.20.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 184.32,
+    "totalDebito": 179.54,
+    "totalCredito": 181.09,
+    "saldoAtual": 185.87,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000230-5",
+    "nomeCta": "Outros",
+    "clasCta": "4.9.4.20.90.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 184.32,
+    "totalDebito": 179.54,
+    "totalCredito": 181.09,
+    "saldoAtual": 185.87,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000231-3",
+    "nomeCta": "Outros",
+    "clasCta": "4.9.4.20.90.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 184.32,
+    "totalDebito": 179.54,
+    "totalCredito": 181.09,
+    "saldoAtual": 185.87,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "001456-7",
+    "nomeCta": "PIS A PAGAR",
+    "clasCta": "4.9.4.20.90.01.00010",
+    "tipoCta": "A",
+    "saldoAnterior": 0.67,
+    "totalDebito": 0,
+    "totalCredito": 0.22,
+    "saldoAtual": 0.89,
+    "nomeNormalizadoEsperado": "PIS PAGAR",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "235",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "001458-3",
+    "nomeCta": "COFINS A PAGAR",
+    "clasCta": "4.9.4.20.90.01.00015",
+    "tipoCta": "A",
+    "saldoAnterior": 4.11,
+    "totalDebito": 0,
+    "totalCredito": 1.33,
+    "saldoAtual": 5.44,
+    "nomeNormalizadoEsperado": "COFINS PAGAR",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "236",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "001459-1",
+    "nomeCta": "PIS-COFINS-CSLL COD 5952",
+    "clasCta": "4.9.4.20.90.01.00020",
+    "tipoCta": "A",
+    "saldoAnterior": 135.75,
+    "totalDebito": 135.75,
+    "totalCredito": 135.75,
+    "saldoAtual": 135.75,
+    "nomeNormalizadoEsperado": "PIS COFINS CSLL COD 5952",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "241",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "001461-3",
+    "nomeCta": "IRRF A PAGAR 1708",
+    "clasCta": "4.9.4.20.90.01.00025",
+    "tipoCta": "A",
+    "saldoAnterior": 43.79,
+    "totalDebito": 43.79,
+    "totalCredito": 43.79,
+    "saldoAtual": 43.79,
+    "nomeNormalizadoEsperado": "IRRF PAGAR 1708",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "238",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000235-6",
+    "nomeCta": "Diversas",
+    "clasCta": "4.9.9.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 0,
+    "totalDebito": 520,
+    "totalCredito": 3259.86,
+    "saldoAtual": 2739.86,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000250-0",
+    "nomeCta": "CREDORES DIVERSOS - PAÍS",
+    "clasCta": "4.9.9.92.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 0,
+    "totalDebito": 520,
+    "totalCredito": 3259.86,
+    "saldoAtual": 2739.86,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000261-5",
+    "nomeCta": "CREDORES DIVERSOS - PAÍS",
+    "clasCta": "4.9.9.92.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 0,
+    "totalDebito": 520,
+    "totalCredito": 3259.86,
+    "saldoAtual": 2739.86,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000262-3",
+    "nomeCta": "CREDORES DIVERSOS - PAÍS",
+    "clasCta": "4.9.9.92.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 0,
+    "totalDebito": 520,
+    "totalCredito": 3259.86,
+    "saldoAtual": 2739.86,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "001561-0",
+    "nomeCta": "FORNECEDORES",
+    "clasCta": "4.9.9.92.01.01.00010",
+    "tipoCta": "A",
+    "saldoAnterior": 0,
+    "totalDebito": 520,
+    "totalCredito": 3259.86,
+    "saldoAtual": 2739.86,
+    "nomeNormalizadoEsperado": "FORNECEDORES",
+    "naturezaEsperada": "PASSIVO",
+    "gruposEsperados": [
+      "21",
+      "22"
+    ],
+    "codigoEsperado": "201",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "      -",
+    "nomeCta": "********** (P.L.A.) **********",
+    "clasCta": "5.9.9.99.99.99.99999",
+    "tipoCta": "A",
+    "saldoAnterior": 20950651.06,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": 20873243.8,
+    "nomeNormalizadoEsperado": "P L",
+    "naturezaEsperada": "TOTALIZADOR P.L.A.",
+    "gruposEsperados": [
+      "NÃO MIGRAR"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": "Não migrar - TOTALIZADOR P.L.A."
+  },
+  {
+    "codiCta": "000263-1",
+    "nomeCta": "PATRIMÔNIO LÍQUIDO",
+    "clasCta": "6.0.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 21559746.75,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": 21559746.75,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000264-0",
+    "nomeCta": "PATRIMÔNIO LÍQUIDO",
+    "clasCta": "6.1.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 21559746.75,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": 21559746.75,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000265-8",
+    "nomeCta": "Capital Social",
+    "clasCta": "6.1.1.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 22000000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": 22000000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000266-6",
+    "nomeCta": "CAPITAL",
+    "clasCta": "6.1.1.10.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 22000000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": 22000000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000142-2",
+    "nomeCta": "COTAS EXTERIOR",
+    "clasCta": "6.1.1.10.29.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 22000000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": 22000000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000143-0",
+    "nomeCta": "COTAS EXTERIOR",
+    "clasCta": "6.1.1.10.29.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 22000000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": 22000000,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000144-9",
+    "nomeCta": "COTAS EXTERIOR",
+    "clasCta": "6.1.1.10.29.01.00005",
+    "tipoCta": "A",
+    "saldoAnterior": 22000000,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": 22000000,
+    "nomeNormalizadoEsperado": "COTAS EXTERIOR",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "267",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000281-0",
+    "nomeCta": "Lucros ou Prejuízos Acumulados",
+    "clasCta": "6.1.8.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -440253.25,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -440253.25,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000282-8",
+    "nomeCta": "LUCROS OU PREJUÍZOS ACUMULADOS",
+    "clasCta": "6.1.8.10.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -440253.25,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -440253.25,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000283-6",
+    "nomeCta": "LUCROS OU PREJUÍZOS ACUMULADOS",
+    "clasCta": "6.1.8.10.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -440253.25,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -440253.25,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000284-4",
+    "nomeCta": "LUCROS OU PREJUÍZOS ACUMULADOS",
+    "clasCta": "6.1.8.10.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -440253.25,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -440253.25,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "001690-0",
+    "nomeCta": "LUCROS OU PREJUIZOS ACUMULADOS",
+    "clasCta": "6.1.8.10.01.01.00005",
+    "tipoCta": "A",
+    "saldoAnterior": -440253.25,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -440253.25,
+    "nomeNormalizadoEsperado": "LUCRO OU PREJUIZO ACUMULADOS",
+    "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
+    "gruposEsperados": [
+      "24"
+    ],
+    "codigoEsperado": "299",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000285-2",
+    "nomeCta": "RESULTADO CREDOR",
+    "clasCta": "7.0.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 925.55,
+    "totalDebito": 0,
+    "totalCredito": 33.22,
+    "saldoAtual": 958.77,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "RECEITA",
+    "gruposEsperados": [
+      "3"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000286-0",
+    "nomeCta": "RECEITAS OPERACIONAIS",
+    "clasCta": "7.1.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 925.55,
+    "totalDebito": 0,
+    "totalCredito": 33.22,
+    "saldoAtual": 958.77,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "RECEITA",
+    "gruposEsperados": [
+      "3"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000294-1",
+    "nomeCta": "Rendas com Títulos e Valores Mobiliários",
+    "clasCta": "7.1.5.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 925.55,
+    "totalDebito": 0,
+    "totalCredito": 33.22,
+    "saldoAtual": 958.77,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "RECEITA FINANCEIRA",
+    "gruposEsperados": [
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000295-0",
+    "nomeCta": "RENDAS DE TÍTULOS DE RENDA FIXA",
+    "clasCta": "7.1.5.10.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 925.55,
+    "totalDebito": 0,
+    "totalCredito": 33.22,
+    "saldoAtual": 958.77,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "RECEITA FINANCEIRA",
+    "gruposEsperados": [
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000296-8",
+    "nomeCta": "RENDAS DE TÍTULOS DE RENDA FIXA",
+    "clasCta": "7.1.5.10.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 925.55,
+    "totalDebito": 0,
+    "totalCredito": 33.22,
+    "saldoAtual": 958.77,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "RECEITA FINANCEIRA",
+    "gruposEsperados": [
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000297-6",
+    "nomeCta": "RENDAS DE TÍTULOS DE RENDA FIXA",
+    "clasCta": "7.1.5.10.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": 925.55,
+    "totalDebito": 0,
+    "totalCredito": 33.22,
+    "saldoAtual": 958.77,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "RECEITA FINANCEIRA",
+    "gruposEsperados": [
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "001721-3",
+    "nomeCta": "RENDAS DE TITULOS DE RENDA FIXA",
+    "clasCta": "7.1.5.10.01.01.00005",
+    "tipoCta": "A",
+    "saldoAnterior": 925.55,
+    "totalDebito": 0,
+    "totalCredito": 33.22,
+    "saldoAtual": 958.77,
+    "nomeNormalizadoEsperado": "RENDAS TITULOS RENDA FIXA",
+    "naturezaEsperada": "RECEITA FINANCEIRA",
+    "gruposEsperados": [
+      "33"
+    ],
+    "codigoEsperado": "330",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000317-4",
+    "nomeCta": "RESULTADO DEVEDOR",
+    "clasCta": "8.0.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -610021.24,
+    "totalDebito": 77440.48,
+    "totalCredito": 0,
+    "saldoAtual": -687461.72,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA / CUSTO",
+    "gruposEsperados": [
+      "4",
+      "32"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000318-2",
+    "nomeCta": "(-) DESPESAS OPERACIONAIS",
+    "clasCta": "8.1.0.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -610021.24,
+    "totalDebito": 77440.48,
+    "totalCredito": 0,
+    "saldoAtual": -687461.72,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA / CUSTO",
+    "gruposEsperados": [
+      "4",
+      "32"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "032626-7",
+    "nomeCta": "(-) Despesas de Investimentos",
+    "clasCta": "8.1.6.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -510988.36,
+    "totalDebito": 72712.03,
+    "totalCredito": 0,
+    "saldoAtual": -583700.39,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA / CUSTO",
+    "gruposEsperados": [
+      "4",
+      "32"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "032627-5",
+    "nomeCta": "(-) DESPESAS DE AJUSTES EM PARTICIPAÇÕES",
+    "clasCta": "8.1.6.20.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -510988.36,
+    "totalDebito": 72712.03,
+    "totalCredito": 0,
+    "saldoAtual": -583700.39,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA / CUSTO",
+    "gruposEsperados": [
+      "4",
+      "32"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "032628-3",
+    "nomeCta": "(-) DESPESAS DE AJUSTES EM PARTICIPAÇÕES",
+    "clasCta": "8.1.6.20.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -510988.36,
+    "totalDebito": 72712.03,
+    "totalCredito": 0,
+    "saldoAtual": -583700.39,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA / CUSTO",
+    "gruposEsperados": [
+      "4",
+      "32"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "032629-1",
+    "nomeCta": "(-) DESPESAS DE AJUSTES EM PARTICIPAÇÕES",
+    "clasCta": "8.1.6.20.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -510988.36,
+    "totalDebito": 72712.03,
+    "totalCredito": 0,
+    "saldoAtual": -583700.39,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA / CUSTO",
+    "gruposEsperados": [
+      "4",
+      "32"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "032630-5",
+    "nomeCta": "(-) DESPESAS DE AJUSTES EM PARTICIPAÇÕES",
+    "clasCta": "8.1.6.20.01.01.00005",
+    "tipoCta": "A",
+    "saldoAnterior": -510988.36,
+    "totalDebito": 72712.03,
+    "totalCredito": 0,
+    "saldoAtual": -583700.39,
+    "nomeNormalizadoEsperado": "MENOS DESPESAS AJUSTES PARTICIPACOES",
+    "naturezaEsperada": "DESPESA / CUSTO",
+    "gruposEsperados": [
+      "4",
+      "32"
+    ],
+    "codigoEsperado": "485",
+    "statusEsperado": "Manual (coluna L)"
+  },
+  {
+    "codiCta": "000319-0",
+    "nomeCta": "(-) Despesas Administrativas",
+    "clasCta": "8.1.7.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -98989.85,
+    "totalDebito": 4726.9,
+    "totalCredito": 0,
+    "saldoAtual": -103716.75,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000320-4",
+    "nomeCta": "(-) DESPESAS DE ALUGUÉIS",
+    "clasCta": "8.1.7.06.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -2390,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -2390,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000321-2",
+    "nomeCta": "(-) DESPESAS DE ALUGUÉIS",
+    "clasCta": "8.1.7.06.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -2390,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -2390,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000323-9",
+    "nomeCta": "(-) DESPESAS DE ALUGUÉIS",
+    "clasCta": "8.1.7.06.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -2390,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -2390,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "002009-5",
+    "nomeCta": "ALUGUEIS",
+    "clasCta": "8.1.7.06.01.01.00005",
+    "tipoCta": "A",
+    "saldoAnterior": -2390,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -2390,
+    "nomeNormalizadoEsperado": "ALUGUEL",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "552",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000347-6",
+    "nomeCta": "(-) DESPESAS DE SERVIÇOS DO SISTEMA FINA",
+    "clasCta": "8.1.7.54.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -68609.79,
+    "totalDebito": 1281,
+    "totalCredito": 0,
+    "saldoAtual": -69890.79,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000348-4",
+    "nomeCta": "(-) DESPESAS DE SERVIÇOS DO SISTEMA FINA",
+    "clasCta": "8.1.7.54.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -68609.79,
+    "totalDebito": 1281,
+    "totalCredito": 0,
+    "saldoAtual": -69890.79,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000349-2",
+    "nomeCta": "(-) DESPESAS DE SERVIÇOS DO SISTEMA FINA",
+    "clasCta": "8.1.7.54.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -68609.79,
+    "totalDebito": 1281,
+    "totalCredito": 0,
+    "saldoAtual": -69890.79,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "002111-3",
+    "nomeCta": "IOF",
+    "clasCta": "8.1.7.54.01.01.00010",
+    "tipoCta": "A",
+    "saldoAnterior": -59648.79,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -59648.79,
+    "nomeNormalizadoEsperado": "IOF",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "584",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "002112-1",
+    "nomeCta": "TARIFA E COMISSOES BANCARIAS",
+    "clasCta": "8.1.7.54.01.01.00015",
+    "tipoCta": "A",
+    "saldoAnterior": -8961,
+    "totalDebito": 1281,
+    "totalCredito": 0,
+    "saldoAtual": -10242,
+    "nomeNormalizadoEsperado": "TARIFAS COMISSOES BANCARIAS",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "599",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "032704-2",
+    "nomeCta": "(-) DESPESAS COM AUDITORIA, ASSEGURAÇÃO,",
+    "clasCta": "8.1.7.62.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -2919.4,
+    "totalDebito": 2919.4,
+    "totalCredito": 0,
+    "saldoAtual": -5838.8,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "032722-0",
+    "nomeCta": "(-) Despesas com Outras Empresas",
+    "clasCta": "8.1.7.62.20.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -2919.4,
+    "totalDebito": 2919.4,
+    "totalCredito": 0,
+    "saldoAtual": -5838.8,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "032729-8",
+    "nomeCta": "(-) Despesas com Consultoria",
+    "clasCta": "8.1.7.62.20.40.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -2919.4,
+    "totalDebito": 2919.4,
+    "totalCredito": 0,
+    "saldoAtual": -5838.8,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000166-0",
+    "nomeCta": "(-) Despesas com Serviços Contabeis",
+    "clasCta": "8.1.7.62.20.40.00006",
+    "tipoCta": "A",
+    "saldoAnterior": -2919.4,
+    "totalDebito": 2919.4,
+    "totalCredito": 0,
+    "saldoAtual": -5838.8,
+    "nomeNormalizadoEsperado": "MENOS DESPESAS COM SERVICOS CONTABEIS",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "546",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000350-6",
+    "nomeCta": "(-) DESPESAS DE SERVIÇOS TÉCNICOS ESPECI",
+    "clasCta": "8.1.7.63.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -20435.8,
+    "totalDebito": 520,
+    "totalCredito": 0,
+    "saldoAtual": -20955.8,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000351-4",
+    "nomeCta": "(-) DESPESAS DE SERVIÇOS TÉCNICOS ESPECI",
+    "clasCta": "8.1.7.63.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -20435.8,
+    "totalDebito": 520,
+    "totalCredito": 0,
+    "saldoAtual": -20955.8,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000352-2",
+    "nomeCta": "(-) DESPESAS DE SERVIÇOS TÉCNICOS ESPECI",
+    "clasCta": "8.1.7.63.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -20435.8,
+    "totalDebito": 520,
+    "totalCredito": 0,
+    "saldoAtual": -20955.8,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "002126-1",
+    "nomeCta": "SERVICOS CONTABEIS",
+    "clasCta": "8.1.7.63.01.01.00005",
+    "tipoCta": "A",
+    "saldoAnterior": -20435.8,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -20435.8,
+    "nomeNormalizadoEsperado": "SERVICOS CONTABEIS",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "546",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "002127-0",
+    "nomeCta": "SERVICOS DE CONSULTORIA",
+    "clasCta": "8.1.7.63.01.01.00010",
+    "tipoCta": "A",
+    "saldoAnterior": 0,
+    "totalDebito": 520,
+    "totalCredito": 0,
+    "saldoAtual": -520,
+    "nomeNormalizadoEsperado": "SERVICOS CONSULTORIA",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "550",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000356-5",
+    "nomeCta": "(-) DESPESAS TRIBUTÁRIAS",
+    "clasCta": "8.1.7.69.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -4355.4,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -4355.4,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000357-3",
+    "nomeCta": "(-) DESPESAS TRIBUTÁRIAS",
+    "clasCta": "8.1.7.69.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -4355.4,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -4355.4,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000358-1",
+    "nomeCta": "(-) DESPESAS TRIBUTÁRIAS",
+    "clasCta": "8.1.7.69.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -4355.4,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -4355.4,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "002149-0",
+    "nomeCta": "TAXAS MUNICIPAIS DIVERSAS",
+    "clasCta": "8.1.7.69.01.01.00010",
+    "tipoCta": "A",
+    "saldoAnterior": -4355.4,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -4355.4,
+    "nomeNormalizadoEsperado": "TAXAS MUNICIPAIS DIVERSAS",
+    "naturezaEsperada": "DESPESA ADMINISTRATIVA",
+    "gruposEsperados": [
+      "42"
+    ],
+    "codigoEsperado": "533",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000362-0",
+    "nomeCta": "(-) OUTRAS DESPESAS ADMINISTRATIVAS",
+    "clasCta": "8.1.7.99.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -279.46,
+    "totalDebito": 6.5,
+    "totalCredito": 0,
+    "saldoAtual": -285.96,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000363-8",
+    "nomeCta": "(-) OUTRAS DESPESAS ADMINISTRATIVAS",
+    "clasCta": "8.1.7.99.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -279.46,
+    "totalDebito": 6.5,
+    "totalCredito": 0,
+    "saldoAtual": -285.96,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000364-6",
+    "nomeCta": "(-) OUTRAS DESPESAS ADMINISTRATIVAS",
+    "clasCta": "8.1.7.99.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -279.46,
+    "totalDebito": 6.5,
+    "totalCredito": 0,
+    "saldoAtual": -285.96,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "002170-9",
+    "nomeCta": "MULTAS E JUROS",
+    "clasCta": "8.1.7.99.01.01.00010",
+    "tipoCta": "A",
+    "saldoAnterior": -5.17,
+    "totalDebito": 6.5,
+    "totalCredito": 0,
+    "saldoAtual": -11.67,
+    "nomeNormalizadoEsperado": "MULTAS JUROS",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "596",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "002171-7",
+    "nomeCta": "OUTRAS",
+    "clasCta": "8.1.7.99.01.01.00015",
+    "tipoCta": "A",
+    "saldoAnterior": -274.29,
+    "totalDebito": 0,
+    "totalCredito": 0,
+    "saldoAtual": -274.29,
+    "nomeNormalizadoEsperado": "OUTRAS",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "41"
+    ],
+    "codigoEsperado": "485",
+    "statusEsperado": "Manual (coluna L)"
+  },
+  {
+    "codiCta": "000372-7",
+    "nomeCta": "(-) Outras Despesas Operacionais",
+    "clasCta": "8.1.9.00.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -43.03,
+    "totalDebito": 1.55,
+    "totalCredito": 0,
+    "saldoAtual": -44.58,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DESPESA",
+    "gruposEsperados": [
+      "42",
+      "45"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000376-0",
+    "nomeCta": "(-) DESPESAS DE CONTRIBUIÇÃO AO COFINS",
+    "clasCta": "8.1.9.30.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -37.01,
+    "totalDebito": 1.33,
+    "totalCredito": 0,
+    "saldoAtual": -38.34,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DEDUÇÃO DA RECEITA",
+    "gruposEsperados": [
+      "32",
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000377-8",
+    "nomeCta": "(-) DESPESAS DE CONTRIBUIÇÃO AO COFINS",
+    "clasCta": "8.1.9.30.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -37.01,
+    "totalDebito": 1.33,
+    "totalCredito": 0,
+    "saldoAtual": -38.34,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DEDUÇÃO DA RECEITA",
+    "gruposEsperados": [
+      "32",
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000378-6",
+    "nomeCta": "(-) DESPESAS DE CONTRIBUIÇÃO AO COFINS",
+    "clasCta": "8.1.9.30.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -37.01,
+    "totalDebito": 1.33,
+    "totalCredito": 0,
+    "saldoAtual": -38.34,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DEDUÇÃO DA RECEITA",
+    "gruposEsperados": [
+      "32",
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "002264-0",
+    "nomeCta": "COFINS SOBRE RECEITA FINANCEIRA",
+    "clasCta": "8.1.9.30.01.01.00015",
+    "tipoCta": "A",
+    "saldoAnterior": -37.01,
+    "totalDebito": 1.33,
+    "totalCredito": 0,
+    "saldoAtual": -38.34,
+    "nomeNormalizadoEsperado": "COFINS S RECEITA FINANCEIRA",
+    "naturezaEsperada": "DEDUÇÃO DA RECEITA",
+    "gruposEsperados": [
+      "32",
+      "33"
+    ],
+    "codigoEsperado": "348",
+    "statusEsperado": "Pela aba Sinônimos"
+  },
+  {
+    "codiCta": "000379-4",
+    "nomeCta": "(-) DESPESAS DE CONTRIBUIÇÃO AO PIS/PASE",
+    "clasCta": "8.1.9.33.00.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -6.02,
+    "totalDebito": 0.22,
+    "totalCredito": 0,
+    "saldoAtual": -6.24,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DEDUÇÃO DA RECEITA",
+    "gruposEsperados": [
+      "32",
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000380-8",
+    "nomeCta": "(-) DESPESAS DE CONTRIBUIÇÃO AO PIS/PASE",
+    "clasCta": "8.1.9.33.01.00.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -6.02,
+    "totalDebito": 0.22,
+    "totalCredito": 0,
+    "saldoAtual": -6.24,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DEDUÇÃO DA RECEITA",
+    "gruposEsperados": [
+      "32",
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "000381-6",
+    "nomeCta": "(-) DESPESAS DE CONTRIBUIÇÃO AO PIS/PASE",
+    "clasCta": "8.1.9.33.01.01.00000",
+    "tipoCta": "S",
+    "saldoAnterior": -6.02,
+    "totalDebito": 0.22,
+    "totalCredito": 0,
+    "saldoAtual": -6.24,
+    "nomeNormalizadoEsperado": "",
+    "naturezaEsperada": "DEDUÇÃO DA RECEITA",
+    "gruposEsperados": [
+      "32",
+      "33"
+    ],
+    "codigoEsperado": "",
+    "statusEsperado": ""
+  },
+  {
+    "codiCta": "002268-3",
+    "nomeCta": "PIS SOBRE RECEITA FINANCEIRA",
+    "clasCta": "8.1.9.33.01.01.00015",
+    "tipoCta": "A",
+    "saldoAnterior": -6.02,
+    "totalDebito": 0.22,
+    "totalCredito": 0,
+    "saldoAtual": -6.24,
+    "nomeNormalizadoEsperado": "PIS S RECEITA FINANCEIRA",
+    "naturezaEsperada": "DEDUÇÃO DA RECEITA",
+    "gruposEsperados": [
+      "32",
+      "33"
+    ],
+    "codigoEsperado": "347",
+    "statusEsperado": "Pela aba Sinônimos"
+  }
+]

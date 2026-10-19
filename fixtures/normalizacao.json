@@ -1,0 +1,1094 @@
+[
+  {
+    "etapa": 1,
+    "ordem": 1,
+    "de": "( - )",
+    "para": " MENOS "
+  },
+  {
+    "etapa": 1,
+    "ordem": 2,
+    "de": "(- )",
+    "para": " MENOS "
+  },
+  {
+    "etapa": 1,
+    "ordem": 3,
+    "de": "( -)",
+    "para": " MENOS "
+  },
+  {
+    "etapa": 1,
+    "ordem": 4,
+    "de": "(-)",
+    "para": " MENOS "
+  },
+  {
+    "etapa": 1,
+    "ordem": 5,
+    "de": "()",
+    "para": " MENOS "
+  },
+  {
+    "etapa": 1,
+    "ordem": 6,
+    "de": "Á",
+    "para": "A"
+  },
+  {
+    "etapa": 1,
+    "ordem": 7,
+    "de": "À",
+    "para": "A"
+  },
+  {
+    "etapa": 1,
+    "ordem": 8,
+    "de": "Â",
+    "para": "A"
+  },
+  {
+    "etapa": 1,
+    "ordem": 9,
+    "de": "Ã",
+    "para": "A"
+  },
+  {
+    "etapa": 1,
+    "ordem": 10,
+    "de": "Ä",
+    "para": "A"
+  },
+  {
+    "etapa": 1,
+    "ordem": 11,
+    "de": "É",
+    "para": "E"
+  },
+  {
+    "etapa": 1,
+    "ordem": 12,
+    "de": "È",
+    "para": "E"
+  },
+  {
+    "etapa": 1,
+    "ordem": 13,
+    "de": "Ê",
+    "para": "E"
+  },
+  {
+    "etapa": 1,
+    "ordem": 14,
+    "de": "Ë",
+    "para": "E"
+  },
+  {
+    "etapa": 1,
+    "ordem": 15,
+    "de": "Í",
+    "para": "I"
+  },
+  {
+    "etapa": 1,
+    "ordem": 16,
+    "de": "Ì",
+    "para": "I"
+  },
+  {
+    "etapa": 1,
+    "ordem": 17,
+    "de": "Î",
+    "para": "I"
+  },
+  {
+    "etapa": 1,
+    "ordem": 18,
+    "de": "Ó",
+    "para": "O"
+  },
+  {
+    "etapa": 1,
+    "ordem": 19,
+    "de": "Ò",
+    "para": "O"
+  },
+  {
+    "etapa": 1,
+    "ordem": 20,
+    "de": "Ô",
+    "para": "O"
+  },
+  {
+    "etapa": 1,
+    "ordem": 21,
+    "de": "Õ",
+    "para": "O"
+  },
+  {
+    "etapa": 1,
+    "ordem": 22,
+    "de": "Ö",
+    "para": "O"
+  },
+  {
+    "etapa": 1,
+    "ordem": 23,
+    "de": "Ú",
+    "para": "U"
+  },
+  {
+    "etapa": 1,
+    "ordem": 24,
+    "de": "Ù",
+    "para": "U"
+  },
+  {
+    "etapa": 1,
+    "ordem": 25,
+    "de": "Û",
+    "para": "U"
+  },
+  {
+    "etapa": 1,
+    "ordem": 26,
+    "de": "Ü",
+    "para": "U"
+  },
+  {
+    "etapa": 1,
+    "ordem": 27,
+    "de": "Ç",
+    "para": "C"
+  },
+  {
+    "etapa": 1,
+    "ordem": 28,
+    "de": "º",
+    "para": ""
+  },
+  {
+    "etapa": 1,
+    "ordem": 29,
+    "de": "ª",
+    "para": ""
+  },
+  {
+    "etapa": 1,
+    "ordem": 30,
+    "de": "°",
+    "para": ""
+  },
+  {
+    "etapa": 1,
+    "ordem": 31,
+    "de": ".",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 32,
+    "de": ",",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 33,
+    "de": "-",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 34,
+    "de": "–",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 35,
+    "de": "/",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 36,
+    "de": "\\",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 37,
+    "de": "(",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 38,
+    "de": ")",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 39,
+    "de": "[",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 40,
+    "de": "]",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 41,
+    "de": "&",
+    "para": " E "
+  },
+  {
+    "etapa": 1,
+    "ordem": 42,
+    "de": "*",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 43,
+    "de": "_",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 44,
+    "de": ":",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 45,
+    "de": "+",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 46,
+    "de": "!",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 47,
+    "de": "?",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 48,
+    "de": "#",
+    "para": " "
+  },
+  {
+    "etapa": 1,
+    "ordem": 49,
+    "de": "%",
+    "para": " PCT "
+  },
+  {
+    "etapa": 1,
+    "ordem": 50,
+    "de": "\"",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 1,
+    "de": " SOBRE ",
+    "para": " S "
+  },
+  {
+    "etapa": 2,
+    "ordem": 2,
+    "de": " PARA ",
+    "para": " P "
+  },
+  {
+    "etapa": 2,
+    "ordem": 3,
+    "de": " S A ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 4,
+    "de": " SA ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 5,
+    "de": " LTDA ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 6,
+    "de": " ME ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 7,
+    "de": " EPP ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 8,
+    "de": " DE ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 9,
+    "de": " DA ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 10,
+    "de": " DO ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 11,
+    "de": " DAS ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 12,
+    "de": " DOS ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 13,
+    "de": " EM ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 14,
+    "de": " NO ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 15,
+    "de": " NA ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 16,
+    "de": " A ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 17,
+    "de": " O ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 18,
+    "de": " E ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 19,
+    "de": " 13O ",
+    "para": " 13 "
+  },
+  {
+    "etapa": 2,
+    "ordem": 20,
+    "de": " 13A ",
+    "para": " 13 "
+  },
+  {
+    "etapa": 2,
+    "ordem": 21,
+    "de": " DECIMO TERCEIRO ",
+    "para": " 13 "
+  },
+  {
+    "etapa": 2,
+    "ordem": 22,
+    "de": " 13 SALARIO ",
+    "para": " 13 "
+  },
+  {
+    "etapa": 2,
+    "ordem": 23,
+    "de": " 13 SALARIOS ",
+    "para": " 13 "
+  },
+  {
+    "etapa": 2,
+    "ordem": 24,
+    "de": " BCO ",
+    "para": " BANCO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 25,
+    "de": " BCOS ",
+    "para": " BANCO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 26,
+    "de": " BANCOS ",
+    "para": " BANCO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 27,
+    "de": " UNIBANCO ",
+    "para": " "
+  },
+  {
+    "etapa": 2,
+    "ordem": 28,
+    "de": " CAIXA ECONOMICA FEDERAL ",
+    "para": " CEF "
+  },
+  {
+    "etapa": 2,
+    "ordem": 29,
+    "de": " CX ",
+    "para": " CAIXA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 30,
+    "de": " CTA ",
+    "para": " CONTA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 31,
+    "de": " CTAS ",
+    "para": " CONTA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 32,
+    "de": " CONTAS ",
+    "para": " CONTA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 33,
+    "de": " C C ",
+    "para": " CC "
+  },
+  {
+    "etapa": 2,
+    "ordem": 34,
+    "de": " CONTA CORRENTE ",
+    "para": " CC "
+  },
+  {
+    "etapa": 2,
+    "ordem": 35,
+    "de": " MOVTO ",
+    "para": " MOVIMENTO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 36,
+    "de": " ADTO ",
+    "para": " ADIANTAMENTO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 37,
+    "de": " ADTOS ",
+    "para": " ADIANTAMENTO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 38,
+    "de": " ADIANT ",
+    "para": " ADIANTAMENTO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 39,
+    "de": " ADIANTAMENTOS ",
+    "para": " ADIANTAMENTO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 40,
+    "de": " PROV ",
+    "para": " PROVISAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 41,
+    "de": " PROVISOES ",
+    "para": " PROVISAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 42,
+    "de": " DEPREC ",
+    "para": " DEPRECIACAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 43,
+    "de": " DEPRECIACOES ",
+    "para": " DEPRECIACAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 44,
+    "de": " DEPREC ACUM ",
+    "para": " DEPRECIACAO ACUMULADA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 45,
+    "de": " AMORT ",
+    "para": " AMORTIZACAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 46,
+    "de": " AMORTIZACOES ",
+    "para": " AMORTIZACAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 47,
+    "de": " CONTRIB ",
+    "para": " CONTRIBUICAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 48,
+    "de": " CONTRIBUICOES ",
+    "para": " CONTRIBUICAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 49,
+    "de": " SERV ",
+    "para": " SERVICOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 50,
+    "de": " SERVS ",
+    "para": " SERVICOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 51,
+    "de": " SERVICO ",
+    "para": " SERVICOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 52,
+    "de": " VLR ",
+    "para": " VALORES "
+  },
+  {
+    "etapa": 2,
+    "ordem": 53,
+    "de": " VLRS ",
+    "para": " VALORES "
+  },
+  {
+    "etapa": 2,
+    "ordem": 54,
+    "de": " VALOR ",
+    "para": " VALORES "
+  },
+  {
+    "etapa": 2,
+    "ordem": 55,
+    "de": " EMPREST ",
+    "para": " EMPRESTIMOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 56,
+    "de": " EMPRESTIMO ",
+    "para": " EMPRESTIMOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 57,
+    "de": " FINANC ",
+    "para": " FINANCIAMENTOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 58,
+    "de": " FINANCIAMENTO ",
+    "para": " FINANCIAMENTOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 59,
+    "de": " APLIC ",
+    "para": " APLICACAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 60,
+    "de": " APLICACOES ",
+    "para": " APLICACAO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 61,
+    "de": " RECEITAS ",
+    "para": " RECEITA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 62,
+    "de": " DESPESA ",
+    "para": " DESPESAS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 63,
+    "de": " DESP ",
+    "para": " DESPESAS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 64,
+    "de": " IMPOSTO ",
+    "para": " IMPOSTOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 65,
+    "de": " TRIBUTO ",
+    "para": " TRIBUTOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 66,
+    "de": " TAXA ",
+    "para": " TAXAS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 67,
+    "de": " TARIFA ",
+    "para": " TARIFAS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 68,
+    "de": " JURO ",
+    "para": " JUROS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 69,
+    "de": " SALARIO ",
+    "para": " SALARIOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 70,
+    "de": " FORNECEDOR ",
+    "para": " FORNECEDORES "
+  },
+  {
+    "etapa": 2,
+    "ordem": 71,
+    "de": " FORNEC ",
+    "para": " FORNECEDORES "
+  },
+  {
+    "etapa": 2,
+    "ordem": 72,
+    "de": " CLIENTE ",
+    "para": " CLIENTES "
+  },
+  {
+    "etapa": 2,
+    "ordem": 73,
+    "de": " EQUIP ",
+    "para": " EQUIPAMENTOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 74,
+    "de": " EQUIPAMENTO ",
+    "para": " EQUIPAMENTOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 75,
+    "de": " MAQ ",
+    "para": " MAQUINAS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 76,
+    "de": " MAQUINA ",
+    "para": " MAQUINAS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 77,
+    "de": " VEICULO ",
+    "para": " VEICULOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 78,
+    "de": " MOVEL ",
+    "para": " MOVEIS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 79,
+    "de": " ENC ",
+    "para": " ENCARGOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 80,
+    "de": " ENCARGO ",
+    "para": " ENCARGOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 81,
+    "de": " FUNC ",
+    "para": " FUNCIONARIOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 82,
+    "de": " FUNCIONARIO ",
+    "para": " FUNCIONARIOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 83,
+    "de": " EMPREGADO ",
+    "para": " FUNCIONARIOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 84,
+    "de": " EMPREGADOS ",
+    "para": " FUNCIONARIOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 85,
+    "de": " COLABORADORES ",
+    "para": " FUNCIONARIOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 86,
+    "de": " RECOLHER ",
+    "para": " PAGAR "
+  },
+  {
+    "etapa": 2,
+    "ordem": 87,
+    "de": " RECUPERAR ",
+    "para": " COMPENSAR "
+  },
+  {
+    "etapa": 2,
+    "ordem": 88,
+    "de": " RETIDA ",
+    "para": " RETIDO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 89,
+    "de": " RETIDOS ",
+    "para": " RETIDO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 90,
+    "de": " RETIDAS ",
+    "para": " RETIDO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 91,
+    "de": " NAC ",
+    "para": " NACIONAL "
+  },
+  {
+    "etapa": 2,
+    "ordem": 92,
+    "de": " NACIONAIS ",
+    "para": " NACIONAL "
+  },
+  {
+    "etapa": 2,
+    "ordem": 93,
+    "de": " EXT ",
+    "para": " EXTERIOR "
+  },
+  {
+    "etapa": 2,
+    "ordem": 94,
+    "de": " ESTRANGEIRO ",
+    "para": " EXTERIOR "
+  },
+  {
+    "etapa": 2,
+    "ordem": 95,
+    "de": " ESTRANGEIROS ",
+    "para": " EXTERIOR "
+  },
+  {
+    "etapa": 2,
+    "ordem": 96,
+    "de": " ESTRANGEIRAS ",
+    "para": " EXTERIOR "
+  },
+  {
+    "etapa": 2,
+    "ordem": 97,
+    "de": " ISSQN ",
+    "para": " ISS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 98,
+    "de": " PREVIDENCIA SOCIAL ",
+    "para": " INSS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 99,
+    "de": " CONTRIBUICAO PREVIDENCIARIA ",
+    "para": " INSS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 100,
+    "de": " CONTRIBUICAO SOCIAL ",
+    "para": " CSLL "
+  },
+  {
+    "etapa": 2,
+    "ordem": 101,
+    "de": " IMPOSTOS RENDA PESSOA JURIDICA ",
+    "para": " IRPJ "
+  },
+  {
+    "etapa": 2,
+    "ordem": 102,
+    "de": " IMPOSTOS RENDA RETIDO FONTE ",
+    "para": " IRRF "
+  },
+  {
+    "etapa": 2,
+    "ordem": 103,
+    "de": " IR RETIDO FONTE ",
+    "para": " IRRF "
+  },
+  {
+    "etapa": 2,
+    "ordem": 104,
+    "de": " LUCROS ",
+    "para": " LUCRO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 105,
+    "de": " PREJUIZOS ",
+    "para": " PREJUIZO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 106,
+    "de": " RESERVAS ",
+    "para": " RESERVA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 107,
+    "de": " PAGTO ",
+    "para": " PAGAMENTO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 108,
+    "de": " PGTO ",
+    "para": " PAGAMENTO "
+  },
+  {
+    "etapa": 2,
+    "ordem": 109,
+    "de": " ACUM ",
+    "para": " ACUMULADA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 110,
+    "de": " ACUMULADO ",
+    "para": " ACUMULADA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 111,
+    "de": " ACUMULADAS ",
+    "para": " ACUMULADA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 112,
+    "de": " TERC ",
+    "para": " TERCEIROS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 113,
+    "de": " 3OS ",
+    "para": " TERCEIROS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 114,
+    "de": " ALUGUEIS ",
+    "para": " ALUGUEL "
+  },
+  {
+    "etapa": 2,
+    "ordem": 115,
+    "de": " LOCACAO ",
+    "para": " ALUGUEL "
+  },
+  {
+    "etapa": 2,
+    "ordem": 116,
+    "de": " LOCACOES ",
+    "para": " ALUGUEL "
+  },
+  {
+    "etapa": 2,
+    "ordem": 117,
+    "de": " HONORARIO ",
+    "para": " HONORARIOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 118,
+    "de": " MULTA ",
+    "para": " MULTAS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 119,
+    "de": " COMISSAO ",
+    "para": " COMISSOES "
+  },
+  {
+    "etapa": 2,
+    "ordem": 120,
+    "de": " TELEFONE ",
+    "para": " TELEFONIA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 121,
+    "de": " TELEFONES ",
+    "para": " TELEFONIA "
+  },
+  {
+    "etapa": 2,
+    "ordem": 122,
+    "de": " COMBUSTIVEL ",
+    "para": " COMBUSTIVEIS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 123,
+    "de": " SEGURO ",
+    "para": " SEGUROS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 124,
+    "de": " ASSINATURA ",
+    "para": " ASSINATURAS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 125,
+    "de": " TREINAMENTO ",
+    "para": " TREINAMENTOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 126,
+    "de": " CURSO ",
+    "para": " CURSOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 127,
+    "de": " VIAGEM ",
+    "para": " VIAGENS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 128,
+    "de": " REFEICAO ",
+    "para": " REFEICOES "
+  },
+  {
+    "etapa": 2,
+    "ordem": 129,
+    "de": " PASSAGEM ",
+    "para": " PASSAGENS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 130,
+    "de": " PEDAGIO ",
+    "para": " PEDAGIOS "
+  },
+  {
+    "etapa": 2,
+    "ordem": 131,
+    "de": " INFORMATICA ",
+    "para": " TI "
+  },
+  {
+    "etapa": 2,
+    "ordem": 132,
+    "de": " TECNOLOGIA INFORMACAO ",
+    "para": " TI "
+  }
+]
