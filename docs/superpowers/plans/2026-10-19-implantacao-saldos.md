@@ -86,7 +86,9 @@ export type SinonimoFixture = { nomeOriginal: string; chaveNormalizada: string; 
 export type LinhaBalancete = { codiCta: string; nomeCta: string; clasCta: string; tipoCta: string; saldoAnterior: number; totalDebito: number; totalCredito: number; saldoAtual: number };
 ```
 
-A fixture do balancete guarda também, por linha, os valores que a planilha calculou — `nomeNormalizadoEsperado` (coluna K), `naturezaEsperada` (Q), `gruposEsperados` (R), `codigoEsperado` (M) e `statusEsperado` (P) — que são o gabarito das Tasks 2, 3, 4 e 6.
+A fixture do balancete guarda também, por linha, o **ajuste manual** que a pessoa digitou (coluna L, campo `ajusteManual`, vazio quando não houve) e os valores que a planilha calculou — `nomeNormalizadoEsperado` (coluna K), `naturezaEsperada` (Q), `gruposEsperados` (R), `codigoEsperado` (M) e `statusEsperado` (P) — que são o gabarito das Tasks 2, 3, 4 e 6.
+
+A coluna L é **entrada**, não resultado, e sem ela o gabarito é irreprodutível: duas linhas (`032630-5` e `002171-7`) têm código esperado `485` e status `Manual (coluna L)` justamente porque alguém digitou o código à mão — `OUTRAS` não casa com conta nenhuma por nome.
 
 - [ ] **Step 1: Criar o projeto**
 
@@ -99,7 +101,9 @@ A fixture do balancete guarda também, por linha, os valores que a planilha calc
 it('plano tem 711 contas, 529 analíticas e 182 sintéticas', ...)
 it('sinônimos tem 1387 linhas, todas com chave e código', ...)
 it('normalização tem 50 regras na etapa 1 e 132 na etapa 2, com ordem sem buraco', ...)
-it('regras cujo valor de substituição é só espaços são preservadas sem trim', ...)   // 19 na etapa 1, 17 na etapa 2
+it('regras cujo valor de substituição é só espaços são preservadas sem trim', ...)
+// 18 na etapa 1 e 17 na etapa 2 com `para` só de espaços; 3 na etapa 1 com `para` vazio;
+// e 132 regras cujo `de` difere do próprio `de.trim()` — é este número que pega um trim em massa
 it('natureza tem 25 regras, com NÃO MIGRAR em 5.9.9.99, 3 e 9', ...)
 it('balancete tem 113 linhas, 27 analíticas e 86 sintéticas', ...)
 it('TXT esperado tem 24 linhas: 1 registro 02, 22 registros 03, 1 registro 99', ...)
@@ -381,6 +385,8 @@ export function converter(entrada: {
 
 `LinhaResolvida` é `LinhaBalancete` mais `nomeNormalizado`, `natureza`, `gruposDominio`, `codigo`, `origem` e `status`. `ajustesManuais` é indexado por `codiCta`.
 
+No teste de equivalência, `ajustesManuais` é **semeado a partir do campo `ajusteManual` da fixture** (as duas linhas que a planilha resolveu pela coluna L). Sem isso, as duas saem como pendência e a equivalência falha por um motivo que não é defeito do motor.
+
 - [ ] **Step 1: Escrever os testes do leiaute (vão falhar)**
 
 ```ts
@@ -535,7 +541,9 @@ it('só uma versão de plano pode estar vigente', ...);
 it('sinônimo ativo é único por chave normalizada e versão de plano', ...);
 it('sinônimo arquivado não conflita com o ativo de mesma chave', ...);
 it('só uma implantação em andamento por pessoa', ...);
-it('carga inicial grava 711 contas, 1387 sinônimos, 182 regras de normalização e 25 de natureza', ...);
+it('carga inicial grava 711 contas, 1386 sinônimos, 182 regras de normalização e 25 de natureza', ...);
+it('chave normalizada repetida com o mesmo código é colapsada na carga, com aviso', ...);   // "ISS PAGAR" → 237, duas vezes na planilha
+it('chave normalizada repetida com código diferente aborta a carga', ...);
 ```
 
 - [ ] **Step 3: Rodar e confirmar que falha**

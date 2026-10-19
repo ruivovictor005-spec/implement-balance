@@ -113,7 +113,9 @@ Entram **apenas contas analíticas**. Se `tipo_cta` começa com `S` (sintética)
 
 A planilha percorre 199 posições fixas em cada etapa, das quais hoje **50 estão preenchidas na etapa 1** (linhas 2 a 52) **e 132 na etapa 2** (linhas 2 a 133). Posição vazia é inócua (substitui nada por nada), então percorrer a tabela real na ordem produz exatamente o mesmo resultado.
 
-**O valor de substituição pode ser só espaços, e isso é significativo** — 19 regras da etapa 1 e 17 da etapa 2 substituem por um texto feito apenas de espaços (` MENOS `, por exemplo). Nenhuma regra pode ter `de` ou `para` com espaços removidos: é o espaço que faz o trecho casar palavra inteira.
+**O valor de substituição pode ser só espaços, e isso é significativo** — 18 regras da etapa 1 e 17 da etapa 2 substituem por um texto feito apenas de espaços (`.` → ` `, por exemplo, que separa em vez de colar). Outras 3 substituem por nada, apagando o trecho. Nenhuma regra pode ter `de` ou `para` com espaços removidos: é o espaço que faz o trecho casar palavra inteira.
+
+Linha com `de` vazio é inerte (no Excel, `SUBSTITUTE` com texto antigo vazio devolve o texto intacto) e não entra na tabela.
 
 ### 6.3 Natureza e grupos permitidos
 
