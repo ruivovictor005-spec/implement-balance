@@ -6,13 +6,15 @@
 
 **Architecture:** Um aplicativo Next.js (App Router) com Postgres. O núcleo de conversão vive em `src/motor/**` e `src/leitores/**` como funções puras — sem banco, sem rede, sem Next — o que permite prová-lo contra a planilha atual com massa real. O resto (telas, ações de servidor, acesso, auditoria) é casca em volta desse núcleo. As regras de negócio (normalização, natureza, plano de contas) são dados no banco, nunca código.
 
-**Tech Stack:** TypeScript, Next.js 15 (App Router) + React 19, Postgres 16, Drizzle ORM, Auth.js v5 com provider `microsoft-entra-id`, Vitest + Testing Library, SheetJS (`xlsx`) para ler e escrever planilha, Docker.
+**Tech Stack:** TypeScript, Next.js 15 (App Router) + React 19, Postgres 16, Drizzle ORM, Auth.js v5 com provider `microsoft-entra-id`, Vitest + Testing Library, `exceljs` para ler e escrever planilha em produção (SheetJS só como dependência de desenvolvimento, no script de extração de fixtures), Docker.
 
 **Spec:** `docs/superpowers/specs/2026-10-19-implantacao-saldos-design.md`
 
 ## Global Constraints
 
 - Node ≥ 22.11 (LTS); Postgres ≥ 16; TypeScript em modo `strict`.
+- **Nenhuma regra de normalização sofre `trim`**: `de` e `para` entram e saem com os espaços exatos da planilha, porque é o espaço que faz o trecho casar palavra inteira.
+- **Leitura de arquivo enviado pela pessoa usa `exceljs`**, não SheetJS. SheetJS fica como dependência só de desenvolvimento, para o script de extração de fixtures: a versão publicada no npm tem vulnerabilidades sem correção disponível e, na Task 7, essa biblioteca recebe arquivo de qualquer usuário.
 - Versões exatas fixadas no `package.json` no momento da instalação; nenhuma dependência `alpha`/`rc`. Exceção única: `next-auth@5`, que é a linha atual para App Router.
 - `src/motor/**` e `src/leitores/**` **não podem importar** banco, rede, Next, `process.env` ou qualquer módulo de I/O. Regra verificada por teste (Task 2, Step 6).
 - Toda a interface em português, usando os termos da planilha (`código reduzido`, `classificação`, `balancete`, `de-para`, `sinônimo`, `lote`, `histórico`, `complemento`).
@@ -96,7 +98,8 @@ A fixture do balancete guarda também, por linha, os valores que a planilha calc
 // tests/fixtures/integridade.test.ts
 it('plano tem 711 contas, 529 analíticas e 182 sintéticas', ...)
 it('sinônimos tem 1387 linhas, todas com chave e código', ...)
-it('normalização tem 78 regras na etapa 1 e 104 na etapa 2, com ordem sem buraco', ...)
+it('normalização tem 50 regras na etapa 1 e 132 na etapa 2, com ordem sem buraco', ...)
+it('regras cujo valor de substituição é só espaços são preservadas sem trim', ...)   // 19 na etapa 1, 17 na etapa 2
 it('natureza tem 25 regras, com NÃO MIGRAR em 5.9.9.99, 3 e 9', ...)
 it('balancete tem 113 linhas, 27 analíticas e 86 sintéticas', ...)
 it('TXT esperado tem 24 linhas: 1 registro 02, 22 registros 03, 1 registro 99', ...)

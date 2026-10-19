@@ -111,7 +111,9 @@ Entram **apenas contas analíticas**. Se `tipo_cta` começa com `S` (sintética)
 
 **A ordem das linhas da tabela é parte da regra.** O campo `ordem` é explícito, visível e editável; nada reordena a tabela implicitamente.
 
-A planilha percorre 199 posições fixas em cada etapa, das quais hoje **78 estão preenchidas na etapa 1 e 104 na etapa 2**. Posição vazia é inócua (substitui nada por nada), então percorrer a tabela real na ordem produz exatamente o mesmo resultado.
+A planilha percorre 199 posições fixas em cada etapa, das quais hoje **50 estão preenchidas na etapa 1** (linhas 2 a 52) **e 132 na etapa 2** (linhas 2 a 133). Posição vazia é inócua (substitui nada por nada), então percorrer a tabela real na ordem produz exatamente o mesmo resultado.
+
+**O valor de substituição pode ser só espaços, e isso é significativo** — 19 regras da etapa 1 e 17 da etapa 2 substituem por um texto feito apenas de espaços (` MENOS `, por exemplo). Nenhuma regra pode ter `de` ou `para` com espaços removidos: é o espaço que faz o trecho casar palavra inteira.
 
 ### 6.3 Natureza e grupos permitidos
 
@@ -190,7 +192,7 @@ As fórmulas atuais operam em faixas fixas (balancete até a linha 2000, plano a
 - **Layout conhecido:** o do balancete presente na planilha atual (campos `codi_cta`, `nome_cta`, `clas_cta`, `tipo_cta`, `saldoant`, `totdeb`, `totcre`, `saldoatu`), reconhecido automaticamente pelos nomes de coluna.
 - **Resposta da tela:** o site diz o que entendeu — *"Reconheci balancete Domínio — 487 linhas, 312 analíticas, 175 sintéticas ignoradas"*.
 - **Layout desconhecido:** abre o mapeamento manual de colunas, onde a pessoa aponta qual coluna é qual. É a rede de segurança, não o caminho normal.
-- **Extensões aceitas:** `.xlsx`, `.xls`, `.csv` e `.txt` delimitado.
+- **Extensões aceitas:** `.xlsx`, `.xlsm`, `.csv` e `.txt` delimitado. O formato antigo `.xls` **não** é lido: a biblioteca que o lê tem vulnerabilidades conhecidas sem correção publicada, e aqui ela receberia arquivo de qualquer pessoa. Quem tiver `.xls` recebe a instrução de abrir no Excel e salvar como `.xlsx`.
 - **Acrescentar um layout novo** é cadastro de perfil de leitura, não programação.
 
 > **Dependência externa:** Victor fornecerá amostras reais dos balancetes Domínio e INFOBANK para confirmar e estender o reconhecimento. Não bloqueia o início: a v1 nasce com o layout já conhecido.
@@ -254,7 +256,7 @@ Idioma: português, com os nomes de campo da planilha. Público: desktop.
 
 Não é promessa, é teste automático que roda a cada mudança:
 
-- **Massa real**, extraída da planilha atual (números conferidos célula por célula): o balancete com **113 linhas, das quais 27 analíticas** e 86 sintéticas ignoradas; os **1.387 sinônimos**; o plano padrão com **711 contas** (529 analíticas, 182 sintéticas); **182 regras de normalização** (78 na etapa 1, 104 na etapa 2); **25 regras de natureza**.
+- **Massa real**, extraída da planilha atual (números conferidos célula por célula): o balancete com **113 linhas, das quais 27 analíticas** e 86 sintéticas ignoradas; os **1.387 sinônimos**; o plano padrão com **711 contas** (529 analíticas, 182 sintéticas); **182 regras de normalização** (50 na etapa 1, 132 na etapa 2); **25 regras de natureza**.
 - **Resultado esperado**, também da planilha: 27 contas analíticas mapeadas, **22 lançamentos** (cinco contas caem fora por saldo zero), R$ 22.003.884,50 em débito e em crédito, diferença zero, e um TXT de **24 linhas** — 1 registro `02`, 22 registros `03` com sequência de `0000002` a `0000023`, e 1 registro `99`.
 - **Asserções:** mesmo código resolvido por linha, mesmo texto de status por linha, mesmas linhas agregadas, e **TXT idêntico caractere por caractere**.
 - **Testes de unidade** por etapa: normalização (as 199 regras em cadeia), precedência da natureza (específico antes de genérico), cada um dos 12 status, o limite dos 25 caracteres, descarte de saldo zero, sinal → débito/crédito, e as larguras de cada campo do leiaute.
