@@ -49,7 +49,11 @@ export type LinhaBalancete = {
 // grupos (Q, R) para todas as linhas, mas nome normalizado, código e status (K, M, P) só para as
 // analíticas: nas sintéticas esses três ficam vazios. Na coluna R, "NÃO MIGRAR" aparece como o
 // item literal ["NÃO MIGRAR"].
+// `ajusteManual` (coluna L) é ENTRADA, não resultado: o código de Domínio que a pessoa digitou à mão
+// para a linha, vazio quando não houve. Sem ele o gabarito é irreprodutível nas linhas em que a
+// planilha responde "Manual (coluna L)".
 export type LinhaBalanceteGabarito = LinhaBalancete & {
+  ajusteManual: string;
   nomeNormalizadoEsperado: string;
   naturezaEsperada: string;
   gruposEsperados: string[];

@@ -193,6 +193,8 @@ function extrairBalancete(aba: Aba): LinhaBalanceteGabarito[] {
       totalDebito: numero(aba, nome, 'F', linha),
       totalCredito: numero(aba, nome, 'G', linha),
       saldoAtual: numero(aba, nome, 'H', linha),
+      // Entrada digitada pela pessoa (coluna L), não resultado de fórmula. Vazia quando não houve.
+      ajusteManual: texto(aba, nome, 'L', linha),
       // Gabarito: o que a planilha calculou, copiado como está (K, Q, R, M, P). Texto vazio onde a
       // planilha deixa vazio. "NÃO MIGRAR" na coluna R vira o item literal ["NÃO MIGRAR"].
       nomeNormalizadoEsperado: texto(aba, nome, 'K', linha),

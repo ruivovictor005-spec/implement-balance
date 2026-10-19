@@ -8,6 +8,7 @@
     "totalDebito": 1983.96,
     "totalCredito": 3937.78,
     "saldoAtual": -15329374.78,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -26,6 +27,7 @@
     "totalDebito": 1949.87,
     "totalCredito": 1987.91,
     "saldoAtual": -1.29,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO CIRCULANTE",
     "gruposEsperados": [
@@ -43,6 +45,7 @@
     "totalDebito": 1949.87,
     "totalCredito": 1987.91,
     "saldoAtual": -1.29,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO CIRCULANTE",
     "gruposEsperados": [
@@ -60,6 +63,7 @@
     "totalDebito": 1949.87,
     "totalCredito": 1987.91,
     "saldoAtual": -1.29,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO CIRCULANTE",
     "gruposEsperados": [
@@ -77,6 +81,7 @@
     "totalDebito": 1949.87,
     "totalCredito": 1987.91,
     "saldoAtual": -1.29,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO CIRCULANTE",
     "gruposEsperados": [
@@ -94,6 +99,7 @@
     "totalDebito": 1949.87,
     "totalCredito": 1987.91,
     "saldoAtual": -1.29,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO CIRCULANTE",
     "gruposEsperados": [
@@ -111,6 +117,7 @@
     "totalDebito": 1949.87,
     "totalCredito": 1987.91,
     "saldoAtual": -1.29,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "CITI BANK 0429901014",
     "naturezaEsperada": "ATIVO CIRCULANTE",
     "gruposEsperados": [
@@ -128,6 +135,7 @@
     "totalDebito": 33.22,
     "totalCredito": 1949.87,
     "saldoAtual": -29340.37,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -146,6 +154,7 @@
     "totalDebito": 33.22,
     "totalCredito": 1949.87,
     "saldoAtual": -29340.37,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -164,6 +173,7 @@
     "totalDebito": 33.22,
     "totalCredito": 1949.87,
     "saldoAtual": -29340.37,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -182,6 +192,7 @@
     "totalDebito": 33.22,
     "totalCredito": 1949.87,
     "saldoAtual": -29340.37,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -200,6 +211,7 @@
     "totalDebito": 33.22,
     "totalCredito": 1949.87,
     "saldoAtual": -29340.37,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -218,6 +230,7 @@
     "totalDebito": 33.22,
     "totalCredito": 1949.87,
     "saldoAtual": -29340.37,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "CITI",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -236,6 +249,7 @@
     "totalDebito": 0.87,
     "totalCredito": 0,
     "saldoAtual": -15300033.12,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -254,6 +268,7 @@
     "totalDebito": 0.87,
     "totalCredito": 0,
     "saldoAtual": -15300033.12,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -272,6 +287,7 @@
     "totalDebito": 0.87,
     "totalCredito": 0,
     "saldoAtual": -33.12,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -290,6 +306,7 @@
     "totalDebito": 0.87,
     "totalCredito": 0,
     "saldoAtual": -33.12,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -308,6 +325,7 @@
     "totalDebito": 0.87,
     "totalCredito": 0,
     "saldoAtual": -33.12,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -326,6 +344,7 @@
     "totalDebito": 0.87,
     "totalCredito": 0,
     "saldoAtual": -33.12,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "IRRF RESGATES APLICACAO FINANCEIR",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -344,6 +363,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -15300000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -362,6 +382,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -15300000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -380,6 +401,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -15300000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -398,6 +420,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -15300000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "VALORES REC SOC LIGADAS BOKU NET IP",
     "naturezaEsperada": "ATIVO",
     "gruposEsperados": [
@@ -416,6 +439,7 @@
     "totalDebito": 0,
     "totalCredito": 72712.03,
     "saldoAtual": -5546794.75,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -433,6 +457,7 @@
     "totalDebito": 0,
     "totalCredito": 72712.03,
     "saldoAtual": -5546794.75,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -450,6 +475,7 @@
     "totalDebito": 0,
     "totalCredito": 72712.03,
     "saldoAtual": -5546794.75,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -467,6 +493,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -6500000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -484,6 +511,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -6500000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -501,6 +529,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -6500000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -518,6 +547,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -6500000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "AUT AFUNC BCB VALORES EQUIPAMENTOS PAT BOKU NET IP",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -535,6 +565,7 @@
     "totalDebito": 0,
     "totalCredito": 72712.03,
     "saldoAtual": 953205.25,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -552,6 +583,7 @@
     "totalDebito": 0,
     "totalCredito": 72712.03,
     "saldoAtual": 953205.25,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -569,6 +601,7 @@
     "totalDebito": 0,
     "totalCredito": 72712.03,
     "saldoAtual": 953205.25,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -586,6 +619,7 @@
     "totalDebito": 0,
     "totalCredito": 72712.03,
     "saldoAtual": 953205.25,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "BOKU NETWORK BRASIL SERVICOS",
     "naturezaEsperada": "ATIVO NÃO CIRCULANTE",
     "gruposEsperados": [
@@ -603,6 +637,7 @@
     "totalDebito": 699.54,
     "totalCredito": 3440.95,
     "saldoAtual": 2925.73,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -621,6 +656,7 @@
     "totalDebito": 699.54,
     "totalCredito": 3440.95,
     "saldoAtual": 2925.73,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -639,6 +675,7 @@
     "totalDebito": 179.54,
     "totalCredito": 181.09,
     "saldoAtual": 185.87,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -657,6 +694,7 @@
     "totalDebito": 179.54,
     "totalCredito": 181.09,
     "saldoAtual": 185.87,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -675,6 +713,7 @@
     "totalDebito": 179.54,
     "totalCredito": 181.09,
     "saldoAtual": 185.87,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -693,6 +732,7 @@
     "totalDebito": 179.54,
     "totalCredito": 181.09,
     "saldoAtual": 185.87,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -711,6 +751,7 @@
     "totalDebito": 0,
     "totalCredito": 0.22,
     "saldoAtual": 0.89,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "PIS PAGAR",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -729,6 +770,7 @@
     "totalDebito": 0,
     "totalCredito": 1.33,
     "saldoAtual": 5.44,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "COFINS PAGAR",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -747,6 +789,7 @@
     "totalDebito": 135.75,
     "totalCredito": 135.75,
     "saldoAtual": 135.75,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "PIS COFINS CSLL COD 5952",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -765,6 +808,7 @@
     "totalDebito": 43.79,
     "totalCredito": 43.79,
     "saldoAtual": 43.79,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "IRRF PAGAR 1708",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -783,6 +827,7 @@
     "totalDebito": 520,
     "totalCredito": 3259.86,
     "saldoAtual": 2739.86,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -801,6 +846,7 @@
     "totalDebito": 520,
     "totalCredito": 3259.86,
     "saldoAtual": 2739.86,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -819,6 +865,7 @@
     "totalDebito": 520,
     "totalCredito": 3259.86,
     "saldoAtual": 2739.86,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -837,6 +884,7 @@
     "totalDebito": 520,
     "totalCredito": 3259.86,
     "saldoAtual": 2739.86,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -855,6 +903,7 @@
     "totalDebito": 520,
     "totalCredito": 3259.86,
     "saldoAtual": 2739.86,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "FORNECEDORES",
     "naturezaEsperada": "PASSIVO",
     "gruposEsperados": [
@@ -873,6 +922,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": 20873243.8,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "P L",
     "naturezaEsperada": "TOTALIZADOR P.L.A.",
     "gruposEsperados": [
@@ -890,6 +940,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": 21559746.75,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -907,6 +958,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": 21559746.75,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -924,6 +976,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": 22000000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -941,6 +994,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": 22000000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -958,6 +1012,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": 22000000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -975,6 +1030,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": 22000000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -992,6 +1048,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": 22000000,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "COTAS EXTERIOR",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -1009,6 +1066,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -440253.25,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -1026,6 +1084,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -440253.25,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -1043,6 +1102,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -440253.25,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -1060,6 +1120,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -440253.25,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -1077,6 +1138,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -440253.25,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "LUCRO OU PREJUIZO ACUMULADOS",
     "naturezaEsperada": "PATRIMÔNIO LÍQUIDO",
     "gruposEsperados": [
@@ -1094,6 +1156,7 @@
     "totalDebito": 0,
     "totalCredito": 33.22,
     "saldoAtual": 958.77,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "RECEITA",
     "gruposEsperados": [
@@ -1111,6 +1174,7 @@
     "totalDebito": 0,
     "totalCredito": 33.22,
     "saldoAtual": 958.77,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "RECEITA",
     "gruposEsperados": [
@@ -1128,6 +1192,7 @@
     "totalDebito": 0,
     "totalCredito": 33.22,
     "saldoAtual": 958.77,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "RECEITA FINANCEIRA",
     "gruposEsperados": [
@@ -1145,6 +1210,7 @@
     "totalDebito": 0,
     "totalCredito": 33.22,
     "saldoAtual": 958.77,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "RECEITA FINANCEIRA",
     "gruposEsperados": [
@@ -1162,6 +1228,7 @@
     "totalDebito": 0,
     "totalCredito": 33.22,
     "saldoAtual": 958.77,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "RECEITA FINANCEIRA",
     "gruposEsperados": [
@@ -1179,6 +1246,7 @@
     "totalDebito": 0,
     "totalCredito": 33.22,
     "saldoAtual": 958.77,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "RECEITA FINANCEIRA",
     "gruposEsperados": [
@@ -1196,6 +1264,7 @@
     "totalDebito": 0,
     "totalCredito": 33.22,
     "saldoAtual": 958.77,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "RENDAS TITULOS RENDA FIXA",
     "naturezaEsperada": "RECEITA FINANCEIRA",
     "gruposEsperados": [
@@ -1213,6 +1282,7 @@
     "totalDebito": 77440.48,
     "totalCredito": 0,
     "saldoAtual": -687461.72,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA / CUSTO",
     "gruposEsperados": [
@@ -1231,6 +1301,7 @@
     "totalDebito": 77440.48,
     "totalCredito": 0,
     "saldoAtual": -687461.72,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA / CUSTO",
     "gruposEsperados": [
@@ -1249,6 +1320,7 @@
     "totalDebito": 72712.03,
     "totalCredito": 0,
     "saldoAtual": -583700.39,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA / CUSTO",
     "gruposEsperados": [
@@ -1267,6 +1339,7 @@
     "totalDebito": 72712.03,
     "totalCredito": 0,
     "saldoAtual": -583700.39,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA / CUSTO",
     "gruposEsperados": [
@@ -1285,6 +1358,7 @@
     "totalDebito": 72712.03,
     "totalCredito": 0,
     "saldoAtual": -583700.39,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA / CUSTO",
     "gruposEsperados": [
@@ -1303,6 +1377,7 @@
     "totalDebito": 72712.03,
     "totalCredito": 0,
     "saldoAtual": -583700.39,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA / CUSTO",
     "gruposEsperados": [
@@ -1321,6 +1396,7 @@
     "totalDebito": 72712.03,
     "totalCredito": 0,
     "saldoAtual": -583700.39,
+    "ajusteManual": "485",
     "nomeNormalizadoEsperado": "MENOS DESPESAS AJUSTES PARTICIPACOES",
     "naturezaEsperada": "DESPESA / CUSTO",
     "gruposEsperados": [
@@ -1339,6 +1415,7 @@
     "totalDebito": 4726.9,
     "totalCredito": 0,
     "saldoAtual": -103716.75,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1356,6 +1433,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -2390,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1373,6 +1451,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -2390,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1390,6 +1469,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -2390,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1407,6 +1487,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -2390,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "ALUGUEL",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1424,6 +1505,7 @@
     "totalDebito": 1281,
     "totalCredito": 0,
     "saldoAtual": -69890.79,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1441,6 +1523,7 @@
     "totalDebito": 1281,
     "totalCredito": 0,
     "saldoAtual": -69890.79,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1458,6 +1541,7 @@
     "totalDebito": 1281,
     "totalCredito": 0,
     "saldoAtual": -69890.79,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1475,6 +1559,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -59648.79,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "IOF",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1492,6 +1577,7 @@
     "totalDebito": 1281,
     "totalCredito": 0,
     "saldoAtual": -10242,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "TARIFAS COMISSOES BANCARIAS",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1509,6 +1595,7 @@
     "totalDebito": 2919.4,
     "totalCredito": 0,
     "saldoAtual": -5838.8,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1526,6 +1613,7 @@
     "totalDebito": 2919.4,
     "totalCredito": 0,
     "saldoAtual": -5838.8,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1543,6 +1631,7 @@
     "totalDebito": 2919.4,
     "totalCredito": 0,
     "saldoAtual": -5838.8,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1560,6 +1649,7 @@
     "totalDebito": 2919.4,
     "totalCredito": 0,
     "saldoAtual": -5838.8,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "MENOS DESPESAS COM SERVICOS CONTABEIS",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1577,6 +1667,7 @@
     "totalDebito": 520,
     "totalCredito": 0,
     "saldoAtual": -20955.8,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1595,6 +1686,7 @@
     "totalDebito": 520,
     "totalCredito": 0,
     "saldoAtual": -20955.8,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1613,6 +1705,7 @@
     "totalDebito": 520,
     "totalCredito": 0,
     "saldoAtual": -20955.8,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1631,6 +1724,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -20435.8,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "SERVICOS CONTABEIS",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1649,6 +1743,7 @@
     "totalDebito": 520,
     "totalCredito": 0,
     "saldoAtual": -520,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "SERVICOS CONSULTORIA",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1667,6 +1762,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -4355.4,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1684,6 +1780,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -4355.4,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1701,6 +1798,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -4355.4,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1718,6 +1816,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -4355.4,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "TAXAS MUNICIPAIS DIVERSAS",
     "naturezaEsperada": "DESPESA ADMINISTRATIVA",
     "gruposEsperados": [
@@ -1735,6 +1834,7 @@
     "totalDebito": 6.5,
     "totalCredito": 0,
     "saldoAtual": -285.96,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1753,6 +1853,7 @@
     "totalDebito": 6.5,
     "totalCredito": 0,
     "saldoAtual": -285.96,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1771,6 +1872,7 @@
     "totalDebito": 6.5,
     "totalCredito": 0,
     "saldoAtual": -285.96,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1789,6 +1891,7 @@
     "totalDebito": 6.5,
     "totalCredito": 0,
     "saldoAtual": -11.67,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "MULTAS JUROS",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1807,6 +1910,7 @@
     "totalDebito": 0,
     "totalCredito": 0,
     "saldoAtual": -274.29,
+    "ajusteManual": "485",
     "nomeNormalizadoEsperado": "OUTRAS",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1825,6 +1929,7 @@
     "totalDebito": 1.55,
     "totalCredito": 0,
     "saldoAtual": -44.58,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DESPESA",
     "gruposEsperados": [
@@ -1843,6 +1948,7 @@
     "totalDebito": 1.33,
     "totalCredito": 0,
     "saldoAtual": -38.34,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DEDUÇÃO DA RECEITA",
     "gruposEsperados": [
@@ -1861,6 +1967,7 @@
     "totalDebito": 1.33,
     "totalCredito": 0,
     "saldoAtual": -38.34,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DEDUÇÃO DA RECEITA",
     "gruposEsperados": [
@@ -1879,6 +1986,7 @@
     "totalDebito": 1.33,
     "totalCredito": 0,
     "saldoAtual": -38.34,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DEDUÇÃO DA RECEITA",
     "gruposEsperados": [
@@ -1897,6 +2005,7 @@
     "totalDebito": 1.33,
     "totalCredito": 0,
     "saldoAtual": -38.34,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "COFINS S RECEITA FINANCEIRA",
     "naturezaEsperada": "DEDUÇÃO DA RECEITA",
     "gruposEsperados": [
@@ -1915,6 +2024,7 @@
     "totalDebito": 0.22,
     "totalCredito": 0,
     "saldoAtual": -6.24,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DEDUÇÃO DA RECEITA",
     "gruposEsperados": [
@@ -1933,6 +2043,7 @@
     "totalDebito": 0.22,
     "totalCredito": 0,
     "saldoAtual": -6.24,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DEDUÇÃO DA RECEITA",
     "gruposEsperados": [
@@ -1951,6 +2062,7 @@
     "totalDebito": 0.22,
     "totalCredito": 0,
     "saldoAtual": -6.24,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "",
     "naturezaEsperada": "DEDUÇÃO DA RECEITA",
     "gruposEsperados": [
@@ -1969,6 +2081,7 @@
     "totalDebito": 0.22,
     "totalCredito": 0,
     "saldoAtual": -6.24,
+    "ajusteManual": "",
     "nomeNormalizadoEsperado": "PIS S RECEITA FINANCEIRA",
     "naturezaEsperada": "DEDUÇÃO DA RECEITA",
     "gruposEsperados": [

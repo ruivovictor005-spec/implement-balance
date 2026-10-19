@@ -65,6 +65,24 @@ describe('integridade das fixtures extraídas da planilha', () => {
     expect(etapa1).toContainEqual(expect.objectContaining({ de: '\u00BA', para: '' })); // º (U+00BA) é apagado
   });
 
+  it('regras cujo valor de substituição é só espaços são preservadas sem trim', () => {
+    // Na planilha, o espaço é o conteúdo: " DE " vira " " (a palavra some, o espaço fica) e
+    // "." vira " ". Um trim em massa transformaria essas regras em apagar sem deixar espaço e
+    // juntaria palavras vizinhas. Por isso se contam as regras, e não só se amostram duas.
+    const regras = carregar<RegraNormalizacao[]>('normalizacao.json');
+    const etapa1 = regras.filter((r) => r.etapa === 1);
+    const etapa2 = regras.filter((r) => r.etapa === 2);
+    const soEspacos = (r: RegraNormalizacao) => r.para !== '' && r.para.trim() === '';
+    expect(etapa1.filter(soEspacos)).toHaveLength(18);
+    expect(etapa2.filter(soEspacos)).toHaveLength(17);
+    expect(etapa1.filter((r) => r.para === '')).toHaveLength(3);
+    expect(etapa2.filter((r) => r.para === '')).toHaveLength(0);
+    // Todas as 132 palavras da etapa 2 têm espaço nas pontas (palavra inteira); nenhum trecho
+    // da etapa 1 tem. É este número que pega um trim em massa em `de`.
+    expect(regras.filter((r) => r.de !== r.de.trim())).toHaveLength(132);
+    expect(etapa2.every((r) => r.de !== r.de.trim())).toBe(true);
+  });
+
   it('natureza tem 25 regras, com NÃO MIGRAR em 5.9.9.99, 3 e 9', () => {
     const regras = carregar<RegraNatureza[]>('natureza.json');
     expect(regras).toHaveLength(25);
@@ -112,6 +130,18 @@ describe('integridade das fixtures extraídas da planilha', () => {
       expect(linha.codigoEsperado === '', linha.codiCta).toBe(naoMigrar);
     }
     expect(analiticas.map((l) => l.codigoEsperado)).toContain('18');
+    // Coluna L (ajusteManual) é entrada digitada, não resultado de fórmula. Sem ela, as duas linhas
+    // abaixo são irreprodutíveis: o código 485 veio da mão da pessoa, não de nome nem de sinônimo.
+    for (const linha of balancete) {
+      expect(typeof linha.ajusteManual, linha.codiCta).toBe('string');
+    }
+    const comAjuste = balancete.filter((l) => l.ajusteManual !== '');
+    expect(comAjuste.map((l) => l.codiCta).sort()).toEqual(['002171-7', '032630-5']);
+    for (const linha of comAjuste) {
+      expect(linha.ajusteManual, linha.codiCta).toBe('485');
+      expect(linha.codigoEsperado, linha.codiCta).toBe('485');
+      expect(linha.statusEsperado, linha.codiCta).toBe('Manual (coluna L)');
+    }
   });
 
   it('TXT esperado tem 24 linhas: 1 registro 02, 22 registros 03, 1 registro 99', () => {
