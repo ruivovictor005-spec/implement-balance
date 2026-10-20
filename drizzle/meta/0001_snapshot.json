@@ -1,0 +1,1254 @@
+{
+  "id": "133cf62e-b073-4d7c-97d1-3f857a2c44b1",
+  "prevId": "5024ba1c-44ed-4b6d-9c48-73cbf7f4bdfa",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.alteracao_sinonimo": {
+      "name": "alteracao_sinonimo",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "sinonimo_id": {
+          "name": "sinonimo_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "codigo_proposto": {
+          "name": "codigo_proposto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "motivo": {
+          "name": "motivo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "solicitado_por": {
+          "name": "solicitado_por",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
+          "type": "status_alteracao",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'pendente'"
+        },
+        "revisado_por": {
+          "name": "revisado_por",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "observacao_revisor": {
+          "name": "observacao_revisor",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "alteracao_sinonimo_sinonimo_id_sinonimo_id_fk": {
+          "name": "alteracao_sinonimo_sinonimo_id_sinonimo_id_fk",
+          "tableFrom": "alteracao_sinonimo",
+          "columnsFrom": [
+            "sinonimo_id"
+          ],
+          "tableTo": "sinonimo",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        },
+        "alteracao_sinonimo_solicitado_por_usuario_id_fk": {
+          "name": "alteracao_sinonimo_solicitado_por_usuario_id_fk",
+          "tableFrom": "alteracao_sinonimo",
+          "columnsFrom": [
+            "solicitado_por"
+          ],
+          "tableTo": "usuario",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        },
+        "alteracao_sinonimo_revisado_por_usuario_id_fk": {
+          "name": "alteracao_sinonimo_revisado_por_usuario_id_fk",
+          "tableFrom": "alteracao_sinonimo",
+          "columnsFrom": [
+            "revisado_por"
+          ],
+          "tableTo": "usuario",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.auditoria": {
+      "name": "auditoria",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "usuario_id": {
+          "name": "usuario_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "acao": {
+          "name": "acao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "entidade": {
+          "name": "entidade",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "entidade_id": {
+          "name": "entidade_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "detalhes": {
+          "name": "detalhes",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ip": {
+          "name": "ip",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "auditoria_usuario_id_usuario_id_fk": {
+          "name": "auditoria_usuario_id_usuario_id_fk",
+          "tableFrom": "auditoria",
+          "columnsFrom": [
+            "usuario_id"
+          ],
+          "tableTo": "usuario",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.conta_criada": {
+      "name": "conta_criada",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "implantacao_id": {
+          "name": "implantacao_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "codigo_reduzido": {
+          "name": "codigo_reduzido",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "descricao": {
+          "name": "descricao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "classificacao": {
+          "name": "classificacao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "conta_criada_implantacao_id_implantacao_id_fk": {
+          "name": "conta_criada_implantacao_id_implantacao_id_fk",
+          "tableFrom": "conta_criada",
+          "columnsFrom": [
+            "implantacao_id"
+          ],
+          "tableTo": "implantacao",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.implantacao": {
+      "name": "implantacao",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "usuario_id": {
+          "name": "usuario_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "empresa_codigo_dominio": {
+          "name": "empresa_codigo_dominio",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "empresa_cnpj": {
+          "name": "empresa_cnpj",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "empresa_nome": {
+          "name": "empresa_nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "data_saldo": {
+          "name": "data_saldo",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tipo_lote": {
+          "name": "tipo_lote",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "codigo_historico": {
+          "name": "codigo_historico",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "incluir_cabecalho": {
+          "name": "incluir_cabecalho",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "plano_versao_id": {
+          "name": "plano_versao_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "layout_detectado": {
+          "name": "layout_detectado",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "arquivo_origem": {
+          "name": "arquivo_origem",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
+          "type": "status_implantacao",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'em_andamento'"
+        },
+        "iniciada_em": {
+          "name": "iniciada_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "concluida_em": {
+          "name": "concluida_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tempo_ativo_segundos": {
+          "name": "tempo_ativo_segundos",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "qtd_analiticas": {
+          "name": "qtd_analiticas",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "qtd_mapeadas": {
+          "name": "qtd_mapeadas",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "qtd_pendentes": {
+          "name": "qtd_pendentes",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "saldo_pendente": {
+          "name": "saldo_pendente",
+          "type": "numeric(18, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_debito": {
+          "name": "total_debito",
+          "type": "numeric(18, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_credito": {
+          "name": "total_credito",
+          "type": "numeric(18, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "diferenca": {
+          "name": "diferenca",
+          "type": "numeric(18, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "liberacao_motivo": {
+          "name": "liberacao_motivo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "txt_gerado": {
+          "name": "txt_gerado",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "txt_hash": {
+          "name": "txt_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "implantacao_uma_em_andamento": {
+          "name": "implantacao_uma_em_andamento",
+          "columns": [
+            {
+              "expression": "usuario_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "with": {},
+          "method": "btree",
+          "where": "\"implantacao\".\"status\" = 'em_andamento'",
+          "concurrently": false
+        }
+      },
+      "foreignKeys": {
+        "implantacao_usuario_id_usuario_id_fk": {
+          "name": "implantacao_usuario_id_usuario_id_fk",
+          "tableFrom": "implantacao",
+          "columnsFrom": [
+            "usuario_id"
+          ],
+          "tableTo": "usuario",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        },
+        "implantacao_plano_versao_id_plano_versao_id_fk": {
+          "name": "implantacao_plano_versao_id_plano_versao_id_fk",
+          "tableFrom": "implantacao",
+          "columnsFrom": [
+            "plano_versao_id"
+          ],
+          "tableTo": "plano_versao",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.implantacao_linha": {
+      "name": "implantacao_linha",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "implantacao_id": {
+          "name": "implantacao_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ordem": {
+          "name": "ordem",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "codi_cta": {
+          "name": "codi_cta",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nome_cta": {
+          "name": "nome_cta",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "clas_cta": {
+          "name": "clas_cta",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tipo_cta": {
+          "name": "tipo_cta",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "saldo_anterior": {
+          "name": "saldo_anterior",
+          "type": "numeric(18, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_debito": {
+          "name": "total_debito",
+          "type": "numeric(18, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_credito": {
+          "name": "total_credito",
+          "type": "numeric(18, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "saldo_atual": {
+          "name": "saldo_atual",
+          "type": "numeric(18, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nome_normalizado": {
+          "name": "nome_normalizado",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "natureza": {
+          "name": "natureza",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "grupos_permitidos": {
+          "name": "grupos_permitidos",
+          "type": "text[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ajuste_manual": {
+          "name": "ajuste_manual",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "codigo_resolvido": {
+          "name": "codigo_resolvido",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "origem_resolucao": {
+          "name": "origem_resolucao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status_texto": {
+          "name": "status_texto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "implantacao_linha_implantacao_id_implantacao_id_fk": {
+          "name": "implantacao_linha_implantacao_id_implantacao_id_fk",
+          "tableFrom": "implantacao_linha",
+          "columnsFrom": [
+            "implantacao_id"
+          ],
+          "tableTo": "implantacao",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.plano_conta": {
+      "name": "plano_conta",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "plano_versao_id": {
+          "name": "plano_versao_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "codigo_reduzido": {
+          "name": "codigo_reduzido",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "classificacao": {
+          "name": "classificacao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "descricao": {
+          "name": "descricao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo": {
+          "name": "tipo",
+          "type": "tipo_conta",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "descricao_normalizada": {
+          "name": "descricao_normalizada",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "plano_conta_codigo_por_versao": {
+          "name": "plano_conta_codigo_por_versao",
+          "columns": [
+            {
+              "expression": "plano_versao_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "codigo_reduzido",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "with": {},
+          "method": "btree",
+          "concurrently": false
+        }
+      },
+      "foreignKeys": {
+        "plano_conta_plano_versao_id_plano_versao_id_fk": {
+          "name": "plano_conta_plano_versao_id_plano_versao_id_fk",
+          "tableFrom": "plano_conta",
+          "columnsFrom": [
+            "plano_versao_id"
+          ],
+          "tableTo": "plano_versao",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.plano_versao": {
+      "name": "plano_versao",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "descricao": {
+          "name": "descricao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "vigente": {
+          "name": "vigente",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "criada_por": {
+          "name": "criada_por",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "criada_em": {
+          "name": "criada_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "plano_versao_uma_vigente": {
+          "name": "plano_versao_uma_vigente",
+          "columns": [
+            {
+              "expression": "vigente",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "with": {},
+          "method": "btree",
+          "where": "\"plano_versao\".\"vigente\"",
+          "concurrently": false
+        }
+      },
+      "foreignKeys": {
+        "plano_versao_criada_por_usuario_id_fk": {
+          "name": "plano_versao_criada_por_usuario_id_fk",
+          "tableFrom": "plano_versao",
+          "columnsFrom": [
+            "criada_por"
+          ],
+          "tableTo": "usuario",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.regra_natureza": {
+      "name": "regra_natureza",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "plano_versao_id": {
+          "name": "plano_versao_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ordem": {
+          "name": "ordem",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prefixo_classificacao": {
+          "name": "prefixo_classificacao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "grupo_cosif": {
+          "name": "grupo_cosif",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "natureza": {
+          "name": "natureza",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "grupos_dominio": {
+          "name": "grupos_dominio",
+          "type": "text[]",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nao_migrar": {
+          "name": "nao_migrar",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "observacao": {
+          "name": "observacao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "regra_natureza_plano_versao_id_plano_versao_id_fk": {
+          "name": "regra_natureza_plano_versao_id_plano_versao_id_fk",
+          "tableFrom": "regra_natureza",
+          "columnsFrom": [
+            "plano_versao_id"
+          ],
+          "tableTo": "plano_versao",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.regra_normalizacao": {
+      "name": "regra_normalizacao",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "plano_versao_id": {
+          "name": "plano_versao_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "etapa": {
+          "name": "etapa",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ordem": {
+          "name": "ordem",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "de": {
+          "name": "de",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "para": {
+          "name": "para",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ativo": {
+          "name": "ativo",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "regra_normalizacao_plano_versao_id_plano_versao_id_fk": {
+          "name": "regra_normalizacao_plano_versao_id_plano_versao_id_fk",
+          "tableFrom": "regra_normalizacao",
+          "columnsFrom": [
+            "plano_versao_id"
+          ],
+          "tableTo": "plano_versao",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.sinonimo": {
+      "name": "sinonimo",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "plano_versao_id": {
+          "name": "plano_versao_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nome_original": {
+          "name": "nome_original",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "chave_normalizada": {
+          "name": "chave_normalizada",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "codigo_reduzido": {
+          "name": "codigo_reduzido",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fora_do_padrao": {
+          "name": "fora_do_padrao",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "motivo": {
+          "name": "motivo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
+          "type": "status_sinonimo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'ativo'"
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "sinonimo_ativo_unico": {
+          "name": "sinonimo_ativo_unico",
+          "columns": [
+            {
+              "expression": "chave_normalizada",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "plano_versao_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "with": {},
+          "method": "btree",
+          "where": "\"sinonimo\".\"status\" = 'ativo'",
+          "concurrently": false
+        }
+      },
+      "foreignKeys": {
+        "sinonimo_plano_versao_id_plano_versao_id_fk": {
+          "name": "sinonimo_plano_versao_id_plano_versao_id_fk",
+          "tableFrom": "sinonimo",
+          "columnsFrom": [
+            "plano_versao_id"
+          ],
+          "tableTo": "plano_versao",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.sinonimo_evento": {
+      "name": "sinonimo_evento",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "sinonimo_id": {
+          "name": "sinonimo_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo": {
+          "name": "tipo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "codigo_de": {
+          "name": "codigo_de",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "codigo_para": {
+          "name": "codigo_para",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "motivo": {
+          "name": "motivo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "autor_id": {
+          "name": "autor_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "sinonimo_evento_sinonimo_id_sinonimo_id_fk": {
+          "name": "sinonimo_evento_sinonimo_id_sinonimo_id_fk",
+          "tableFrom": "sinonimo_evento",
+          "columnsFrom": [
+            "sinonimo_id"
+          ],
+          "tableTo": "sinonimo",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        },
+        "sinonimo_evento_autor_id_usuario_id_fk": {
+          "name": "sinonimo_evento_autor_id_usuario_id_fk",
+          "tableFrom": "sinonimo_evento",
+          "columnsFrom": [
+            "autor_id"
+          ],
+          "tableTo": "usuario",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.usuario": {
+      "name": "usuario",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "oid_entra": {
+          "name": "oid_entra",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "papel": {
+          "name": "papel",
+          "type": "papel",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'usuario'"
+        },
+        "ativo": {
+          "name": "ativo",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "ultimo_acesso_em": {
+          "name": "ultimo_acesso_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "usuario_oid_entra_unique": {
+          "name": "usuario_oid_entra_unique",
+          "columns": [
+            "oid_entra"
+          ],
+          "nullsNotDistinct": false
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {
+    "public.papel": {
+      "name": "papel",
+      "schema": "public",
+      "values": [
+        "usuario",
+        "revisor",
+        "admin"
+      ]
+    },
+    "public.status_alteracao": {
+      "name": "status_alteracao",
+      "schema": "public",
+      "values": [
+        "pendente",
+        "aprovada",
+        "rejeitada"
+      ]
+    },
+    "public.status_implantacao": {
+      "name": "status_implantacao",
+      "schema": "public",
+      "values": [
+        "em_andamento",
+        "concluida",
+        "descartada"
+      ]
+    },
+    "public.status_sinonimo": {
+      "name": "status_sinonimo",
+      "schema": "public",
+      "values": [
+        "ativo",
+        "arquivado"
+      ]
+    },
+    "public.tipo_conta": {
+      "name": "tipo_conta",
+      "schema": "public",
+      "values": [
+        "A",
+        "S"
+      ]
+    }
+  },
+  "schemas": {},
+  "views": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792457364354,
+      "tag": "0000_early_sue_storm",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792457377679,
+      "tag": "0001_sinonimo_evento_imutavel",
+      "breakpoints": true
+    }
+  ]
+}
