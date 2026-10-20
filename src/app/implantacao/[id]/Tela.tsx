@@ -8,6 +8,7 @@ import {
   carregarContas,
   definirAjusteManual,
   estadoImplantacao,
+  reaplicar,
   recalcular,
   registrarContaCriada,
   salvarDadosEmpresa,
@@ -52,6 +53,7 @@ export function Tela({ id }: { id: number }) {
   const [linhas, setLinhas] = useState<LinhaResolvida[]>([]);
   const [contas, setContas] = useState<ContaBusca[]>([]);
   const [justificativa, setJustificativa] = useState('');
+  const [aviso, setAviso] = useState<string | null>(null);
   const montado = useRef(false);
 
   useEffect(() => {
@@ -81,6 +83,24 @@ export function Tela({ id }: { id: number }) {
     }, 600);
     return () => clearTimeout(t);
   }, [dados, id]);
+
+  // Consulta de tempos em tempos se alguém ensinou um sinônimo que resolve as pendências.
+  useEffect(() => {
+    if (linhas.length === 0) return;
+    const t = setInterval(() => {
+      void (async () => {
+        const r = await reaplicar(id);
+        if (r.resolvidas > 0) {
+          const fresh = await recalcular(id);
+          setPainel(fresh.painel);
+          setLinhas(fresh.linhas);
+          const quem = r.porQuem.length > 0 ? ` pelo que ${r.porQuem.join(', ')} ensinou` : '';
+          setAviso(`${r.resolvidas} pendência(s) resolvida(s) sozinha(s)${quem}.`);
+        }
+      })();
+    }, 15000);
+    return () => clearInterval(t);
+  }, [id, linhas.length]);
 
   const onArquivo = useCallback(
     async (arquivo: File) => {
@@ -158,6 +178,8 @@ export function Tela({ id }: { id: number }) {
         erro={erro}
         onArquivo={onArquivo}
       />
+
+      {aviso && <div className="reconhecido">{aviso}</div>}
 
       {linhas.length > 0 && (
         <>

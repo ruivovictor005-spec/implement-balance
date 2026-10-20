@@ -16,6 +16,7 @@ import {
   type ContaCriadaEntrada,
   type Reconhecimento,
 } from '../../dados/implantacoes.js';
+import { reaplicarSinonimos } from './reaplicar.js';
 import { carregarPlanoVigente } from '../../dados/plano.js';
 import { carregarRegras } from '../../dados/regras.js';
 import { registrarEntrada } from '../../dados/usuarios.js';
@@ -129,6 +130,11 @@ export async function registrarContaCriada(id: number, conta: ContaCriadaEntrada
 
 export async function recalcular(id: number): Promise<{ painel: Painel; linhas: LinhaResolvida[] }> {
   return recalcularNoBanco(db(), id, await usuarioAtualId());
+}
+
+/** Reaplica sinônimos novos nas pendências desta implantação (chamada periódica da tela). */
+export async function reaplicar(id: number): Promise<{ resolvidas: number; porQuem: string[] }> {
+  return reaplicarSinonimos(db(), id, await usuarioAtualId());
 }
 
 /** Contas do plano vigente com a natureza, para a busca mostrar e evitar escolher natureza errada. */
