@@ -1,10 +1,13 @@
 // Leitura do plano de contas vigente, no tipo que o motor consome.
 import { eq } from 'drizzle-orm';
+import type { PgDatabase } from 'drizzle-orm/pg-core';
 import type { ContaPlano } from '../motor/tipos.js';
-import { db, type Banco } from './cliente.js';
+import { db } from './cliente.js';
 import { planoConta, planoVersao } from './schema.js';
 
-export async function carregarPlanoVigente(banco: Banco = db()): Promise<ContaPlano[]> {
+export async function carregarPlanoVigente(
+  banco: PgDatabase<any, any, any> = db(),
+): Promise<ContaPlano[]> {
   const linhas = await banco
     .select({
       codigoReduzido: planoConta.codigoReduzido,

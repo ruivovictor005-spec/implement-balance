@@ -18,5 +18,16 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (!entraConfigurado) return true; // dev sem provedor: não trava a tela
       return Boolean(sessao?.user);
     },
+    // Carrega o `oid` do Entra para a sessão: é a identidade estável da pessoa (nunca o e-mail).
+    jwt({ token, profile }) {
+      const oid = (profile as { oid?: unknown } | undefined)?.oid;
+      if (typeof oid === 'string') (token as Record<string, unknown>).oid = oid;
+      return token;
+    },
+    session({ session, token }) {
+      const oid = (token as Record<string, unknown>).oid;
+      (session as unknown as Record<string, unknown>).oid = typeof oid === 'string' ? oid : undefined;
+      return session;
+    },
   },
 });

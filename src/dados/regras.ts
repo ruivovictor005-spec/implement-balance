@@ -1,8 +1,11 @@
 // Leitura das regras de normalização e natureza da versão vigente, nos tipos do motor.
 import { eq } from 'drizzle-orm';
+import type { PgDatabase } from 'drizzle-orm/pg-core';
 import type { RegraNatureza, RegraNormalizacao } from '../motor/tipos.js';
-import { db, type Banco } from './cliente.js';
+import { db } from './cliente.js';
 import { planoVersao, regraNatureza, regraNormalizacao } from './schema.js';
+
+type Banco = PgDatabase<any, any, any>;
 
 async function idVigente(banco: Banco): Promise<number> {
   const [v] = await banco

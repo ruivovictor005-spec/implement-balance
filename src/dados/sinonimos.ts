@@ -1,9 +1,12 @@
 // Leitura dos sinônimos ativos da versão vigente, no formato que o motor consome.
 import { and, eq } from 'drizzle-orm';
-import { db, type Banco } from './cliente.js';
+import type { PgDatabase } from 'drizzle-orm/pg-core';
+import { db } from './cliente.js';
 import { planoVersao, sinonimo } from './schema.js';
 
-export async function carregarSinonimos(banco: Banco = db()): Promise<Map<string, string>> {
+export async function carregarSinonimos(
+  banco: PgDatabase<any, any, any> = db(),
+): Promise<Map<string, string>> {
   const linhas = await banco
     .select({ chave: sinonimo.chaveNormalizada, codigo: sinonimo.codigoReduzido })
     .from(sinonimo)
