@@ -2,7 +2,8 @@
 
 // Ações de servidor da implantação: resolvem quem está logado (pela sessão do Entra) e delegam para
 // a camada de dados, que faz o trabalho e a auditoria. A tela (Task 11) chama estas funções.
-import { eq } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
+import { redirect } from 'next/navigation';
 import { auth } from '../../acesso/auth.js';
 import { db } from '../../dados/cliente.js';
 import {
@@ -13,10 +14,35 @@ import {
   registrarContaCriada as registrarContaNoBanco,
   salvarDadosEmpresa as salvarDadosNoBanco,
   type ContaCriadaEntrada,
-  type DadosEmpresa,
+  type Reconhecimento,
 } from '../../dados/implantacoes.js';
+import { carregarPlanoVigente } from '../../dados/plano.js';
+import { carregarRegras } from '../../dados/regras.js';
 import { registrarEntrada } from '../../dados/usuarios.js';
-import { usuario } from '../../dados/schema.js';
+import { implantacao, usuario } from '../../dados/schema.js';
+import type { LinhaResolvida, Painel } from '../../motor/converter.js';
+import { resolverNatureza } from '../../motor/natureza.js';
+import type { ContaPlano } from '../../motor/tipos.js';
+import { PERFIS } from '../../leitores/perfis.js';
+
+export type { ContaCriadaEntrada, Reconhecimento } from '../../dados/implantacoes.js';
+export type ContaBusca = ContaPlano & { natureza: string };
+
+export type DadosEmpresaForm = {
+  dataSaldo: string;
+  cnpj: string;
+  codigoEmpresa: string;
+  tipoLote: string;
+  codigoHistorico: string;
+  incluirCabecalho: boolean;
+};
+
+export type EstadoImplantacao = {
+  dados: DadosEmpresaForm;
+  reconhecimento: Reconhecimento | null;
+  painel: Painel;
+  linhas: LinhaResolvida[];
+};
 
 async function garantirUsuario(
   oid: string,
@@ -46,18 +72,50 @@ async function usuarioAtualId(): Promise<number> {
   return garantirUsuario(oid, sessao.user.email ?? undefined, sessao.user.name ?? undefined);
 }
 
+/** Id da implantação em andamento de quem está logado, ou null se não houver. */
+export async function minhaImplantacaoAberta(): Promise<number | null> {
+  const uid = await usuarioAtualId();
+  const [aberta] = await db()
+    .select({ id: implantacao.id })
+    .from(implantacao)
+    .where(and(eq(implantacao.usuarioId, uid), eq(implantacao.status, 'em_andamento')))
+    .limit(1);
+  return aberta?.id ?? null;
+}
+
 export async function iniciarImplantacao(): Promise<number> {
   return iniciarNoBanco(db(), await usuarioAtualId());
 }
 
-export async function salvarDadosEmpresa(id: number, dados: DadosEmpresa): Promise<void> {
-  return salvarDadosNoBanco(db(), id, await usuarioAtualId(), dados);
+/** Inicia uma implantação e leva para a tela dela — usada pelo formulário da "minha mesa". */
+export async function iniciarERedirecionar(): Promise<void> {
+  const id = await iniciarNoBanco(db(), await usuarioAtualId());
+  redirect(`/implantacao/${id}`);
 }
 
-export async function anexarBalancete(
-  id: number,
-  arquivo: { bytes: Uint8Array; nomeArquivo: string },
-) {
+/** O TXT gerado por último para esta implantação (o `recalcular` o mantém atualizado). */
+export async function baixarTxt(id: number): Promise<string> {
+  await usuarioAtualId();
+  const [imp] = await db()
+    .select({ txt: implantacao.txtGerado })
+    .from(implantacao)
+    .where(eq(implantacao.id, id))
+    .limit(1);
+  return imp?.txt ?? '';
+}
+
+export async function salvarDadosEmpresa(id: number, dados: DadosEmpresaForm): Promise<void> {
+  return salvarDadosNoBanco(db(), id, await usuarioAtualId(), {
+    empresaCnpj: dados.cnpj,
+    empresaCodigoDominio: dados.codigoEmpresa,
+    dataSaldo: dados.dataSaldo === '' ? undefined : dados.dataSaldo,
+    tipoLote: dados.tipoLote,
+    codigoHistorico: dados.codigoHistorico,
+    incluirCabecalho: dados.incluirCabecalho,
+  });
+}
+
+export async function anexarBalancete(id: number, arquivo: { bytes: Uint8Array; nomeArquivo: string }) {
   return anexarNoBanco(db(), id, await usuarioAtualId(), arquivo);
 }
 
@@ -69,6 +127,52 @@ export async function registrarContaCriada(id: number, conta: ContaCriadaEntrada
   return registrarContaNoBanco(db(), id, await usuarioAtualId(), conta);
 }
 
-export async function recalcular(id: number) {
+export async function recalcular(id: number): Promise<{ painel: Painel; linhas: LinhaResolvida[] }> {
   return recalcularNoBanco(db(), id, await usuarioAtualId());
+}
+
+/** Contas do plano vigente com a natureza, para a busca mostrar e evitar escolher natureza errada. */
+export async function carregarContas(): Promise<ContaBusca[]> {
+  await usuarioAtualId();
+  const regras = await carregarRegras(db());
+  const plano = await carregarPlanoVigente(db());
+  return plano.map((c) => ({
+    ...c,
+    natureza: resolverNatureza(c.classificacao, regras.natureza)?.natureza ?? '',
+  }));
+}
+
+/** Estado atual da implantação para a tela montar: dados da empresa, reconhecimento, painel e linhas. */
+export async function estadoImplantacao(id: number): Promise<EstadoImplantacao> {
+  const uid = await usuarioAtualId();
+  const [imp] = await db().select().from(implantacao).where(eq(implantacao.id, id)).limit(1);
+  if (imp === undefined || imp.usuarioId !== uid) throw new Error('Implantação não encontrada.');
+
+  const { painel, linhas } = await recalcularNoBanco(db(), id, uid);
+
+  const perfil = PERFIS.find((p) => p.id === imp.layoutDetectado);
+  const reconhecimento: Reconhecimento | null =
+    perfil === undefined
+      ? null
+      : {
+          perfilId: perfil.id,
+          perfilNome: perfil.nome,
+          linhas: imp.qtdAnaliticas ?? 0,
+          analiticas: imp.qtdAnaliticas ?? 0,
+          sinteticas: 0,
+        };
+
+  return {
+    dados: {
+      dataSaldo: imp.dataSaldo ?? '',
+      cnpj: imp.empresaCnpj ?? '',
+      codigoEmpresa: imp.empresaCodigoDominio ?? '',
+      tipoLote: imp.tipoLote ?? 'V',
+      codigoHistorico: imp.codigoHistorico ?? '700',
+      incluirCabecalho: imp.incluirCabecalho,
+    },
+    reconhecimento,
+    painel,
+    linhas,
+  };
 }

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { Painel } from '../../motor/converter.js';
+import type { Painel } from '../../../motor/converter.js';
 
 const brl = (n: number): string =>
   n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });

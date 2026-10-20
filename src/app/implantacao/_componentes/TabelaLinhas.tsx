@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useState } from 'react';
-import type { LinhaResolvida } from '../../motor/converter.js';
+import type { LinhaResolvida } from '../../../motor/converter.js';
 import type { ContaBusca } from '../acoes.js';
 import { LinhaPendente } from './LinhaPendente.js';
 

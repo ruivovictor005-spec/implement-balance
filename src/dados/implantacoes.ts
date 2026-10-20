@@ -110,7 +110,7 @@ export async function anexarBalancete(
   id: number,
   usuarioId: number,
   arquivo: { bytes: Uint8Array; nomeArquivo: string },
-): Promise<{ painel: Painel; linhas: LinhaResolvida[] }> {
+): Promise<{ reconhecimento: Reconhecimento; painel: Painel; linhas: LinhaResolvida[] }> {
   await exigirMinhaEmAndamento(banco, id, usuarioId);
 
   const matriz = await lerArquivo(arquivo.bytes, arquivo.nomeArquivo);
@@ -154,7 +154,18 @@ export async function anexarBalancete(
     detalhes: { perfil: deteccao.perfil.id, linhas: analiticas.length },
   });
 
-  return recalcular(banco, id, usuarioId);
+  const { painel, linhas } = await recalcular(banco, id, usuarioId);
+  return {
+    reconhecimento: {
+      perfilId: deteccao.perfil.id,
+      perfilNome: deteccao.perfil.nome,
+      linhas: balancete.length,
+      analiticas: analiticas.length,
+      sinteticas: balancete.length - analiticas.length,
+    },
+    painel,
+    linhas,
+  };
 }
 
 export async function definirAjusteManual(

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { ParametrosEntrada } from '../acoes.js';
+import type { DadosEmpresaForm } from '../acoes.js';
 
 export const soDigitos = (s: string): string => s.replace(/\D/g, '');
 export const cnpjValido = (cnpj: string): boolean => soDigitos(cnpj).length === 14;
@@ -9,10 +9,10 @@ export function DadosEmpresa({
   valor,
   onChange,
 }: {
-  valor: ParametrosEntrada;
-  onChange: (v: ParametrosEntrada) => void;
+  valor: DadosEmpresaForm;
+  onChange: (v: DadosEmpresaForm) => void;
 }) {
-  const set = (campo: keyof ParametrosEntrada, v: string | boolean): void =>
+  const set = (campo: keyof DadosEmpresaForm, v: string | boolean): void =>
     onChange({ ...valor, [campo]: v });
   const cnpjErrado = valor.cnpj.trim() !== '' && !cnpjValido(valor.cnpj);
 

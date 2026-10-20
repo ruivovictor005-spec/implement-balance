@@ -267,3 +267,15 @@ button:disabled {
 .filtro select {
   width: auto;
 }
+
+a.botao {
+  display: inline-block;
+  font: inherit;
+  padding: 9px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--acento);
+  background: var(--acento);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}

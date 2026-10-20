@@ -8,23 +8,25 @@ import * as schema from './schema.js';
 
 export type Banco = PgDatabase<any, typeof schema, any>;
 
-let banco: Banco | undefined;
+// Guardado em globalThis: no Next, o instrumentation e as rotas vivem em bundles diferentes; um
+// singleton de módulo não é compartilhado entre eles, mas o globalThis do processo é.
+const global = globalThis as unknown as { __bancoApp?: Banco };
 
 export function db(): Banco {
-  if (banco !== undefined) return banco;
+  if (global.__bancoApp !== undefined) return global.__bancoApp;
   const url = process.env.DATABASE_URL;
   if (url === undefined || url === '') {
     throw new Error(
       'Banco não inicializado. Em desenvolvimento ele sobe pelo instrumentation (pglite); em produção defina DATABASE_URL.',
     );
   }
-  banco = drizzle(new Pool({ connectionString: url }), { schema });
-  return banco;
+  global.__bancoApp = drizzle(new Pool({ connectionString: url }), { schema });
+  return global.__bancoApp;
 }
 
 /** Registra o banco já pronto (usado pela inicialização do banco embutido em desenvolvimento). */
 export function definirBanco(b: Banco): void {
-  banco = b;
+  global.__bancoApp = b;
 }
 
 /** Handle isolado com `fechar()` — para scripts (semear) que gerenciam o próprio ciclo de vida. */

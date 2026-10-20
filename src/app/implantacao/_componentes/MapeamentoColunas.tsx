@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useState } from 'react';
-import type { Celula } from '../../leitores/ler-arquivo.js';
+import type { Celula } from '../../../leitores/ler-arquivo.js';
 
 // Rede de segurança (spec §7): quando o layout não é reconhecido, a pessoa aponta qual coluna é
 // qual. Não é o caminho normal.

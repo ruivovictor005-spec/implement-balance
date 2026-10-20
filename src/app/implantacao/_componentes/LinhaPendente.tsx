@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { LinhaResolvida } from '../../motor/converter.js';
+import type { LinhaResolvida } from '../../../motor/converter.js';
 import type { ContaBusca } from '../acoes.js';
 import { BuscaConta } from './BuscaConta.js';
 

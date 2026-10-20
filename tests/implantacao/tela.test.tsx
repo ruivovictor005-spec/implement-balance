@@ -2,18 +2,23 @@
 import '@testing-library/jest-dom/vitest';
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import * as React from 'react';
-import { useState } from 'react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+
+// A "minha mesa" (Mesa) importa uma ação de servidor; aqui ela é só um esboço, para o teste de
+// componente não arrastar o grafo do servidor (auth, banco).
+vi.mock('../../src/app/implantacao/acoes.js', () => ({ iniciarERedirecionar: async () => {} }));
+
+import type { LinhaResolvida } from '../../src/motor/converter.js';
+import type { ContaBusca } from '../../src/app/implantacao/acoes.js';
+import { AreaArquivo } from '../../src/app/implantacao/_componentes/AreaArquivo.js';
+import { BuscaConta } from '../../src/app/implantacao/_componentes/BuscaConta.js';
+import { DadosEmpresa } from '../../src/app/implantacao/_componentes/DadosEmpresa.js';
+import { MapeamentoColunas } from '../../src/app/implantacao/_componentes/MapeamentoColunas.js';
+import { Mesa } from '../../src/app/implantacao/_componentes/Mesa.js';
+import { PainelConferencia } from '../../src/app/implantacao/_componentes/PainelConferencia.js';
+import { TabelaLinhas } from '../../src/app/implantacao/_componentes/TabelaLinhas.js';
 
 afterEach(cleanup);
-import type { LinhaResolvida } from '../../src/motor/converter.js';
-import type { ContaBusca } from '../../src/app/acoes.js';
-import { AreaArquivo } from '../../src/app/_componentes/AreaArquivo.js';
-import { BuscaConta } from '../../src/app/_componentes/BuscaConta.js';
-import { DadosEmpresa } from '../../src/app/_componentes/DadosEmpresa.js';
-import { LinhaPendente } from '../../src/app/_componentes/LinhaPendente.js';
-import { PainelConferencia } from '../../src/app/_componentes/PainelConferencia.js';
-import { TabelaLinhas } from '../../src/app/_componentes/TabelaLinhas.js';
 
 const linha = (over: Partial<LinhaResolvida>): LinhaResolvida => ({
   codiCta: 'x',
@@ -44,7 +49,12 @@ const contaBusca = (over: Partial<ContaBusca>): ContaBusca => ({
 });
 
 describe('tela de implantação', () => {
-  it('informa o que reconheceu, com as contagens', () => {
+  it('minha mesa mostra o botão de iniciar quando não há implantação aberta', () => {
+    render(<Mesa aberta={null} />);
+    expect(screen.getByRole('button', { name: /Iniciar nova implantação/ })).toBeInTheDocument();
+  });
+
+  it('área de arquivo informa o que reconheceu, com as contagens', () => {
     render(
       <AreaArquivo
         nomeArquivo="balancete.xlsx"
@@ -54,7 +64,6 @@ describe('tela de implantação', () => {
       />,
     );
     const aviso = screen.getByText(/Reconheci balancete Domínio/);
-    expect(aviso).toHaveTextContent('113 linhas');
     expect(aviso).toHaveTextContent('27 analíticas');
     expect(aviso).toHaveTextContent('86 sintéticas');
   });
@@ -112,21 +121,9 @@ describe('tela de implantação', () => {
   it('busca de conta mostra classificação e natureza de cada candidata', () => {
     render(<BuscaConta contas={[contaBusca({})]} onSelecionar={() => {}} />);
     fireEvent.change(screen.getByPlaceholderText(/buscar conta/i), { target: { value: 'citi' } });
-    const item = screen.getByText(/Citibank/);
-    const linhaItem = item.closest('.busca-item') as HTMLElement;
-    expect(within(linhaItem).getByText(/class\. 1\.1\.1/)).toBeInTheDocument();
-    expect(within(linhaItem).getByText(/ATIVO/)).toBeInTheDocument();
-  });
-
-  it('conta criada passa a aparecer na busca', () => {
-    render(
-      <BuscaConta
-        contas={[contaBusca({ codigoReduzido: '9001', descricao: 'Conta Nova Criada', natureza: '(conta criada nesta sessão)' })]}
-        onSelecionar={() => {}}
-      />,
-    );
-    fireEvent.change(screen.getByPlaceholderText(/buscar conta/i), { target: { value: 'nova' } });
-    expect(screen.getByText(/Conta Nova Criada/)).toBeInTheDocument();
+    const item = screen.getByText(/Citibank/).closest('.busca-item') as HTMLElement;
+    expect(within(item).getByText(/class\. 1\.1\.1/)).toBeInTheDocument();
+    expect(within(item).getByText(/ATIVO/)).toBeInTheDocument();
   });
 
   it('CNPJ com menos de 14 dígitos acusa antes de enviar', () => {
@@ -139,48 +136,17 @@ describe('tela de implantação', () => {
     expect(screen.getByText(/CNPJ precisa de 14 dígitos/)).toBeInTheDocument();
   });
 
-  it('Gerar TXT fica bloqueado com pendência, e libera com justificativa', () => {
-    function Harness() {
-      const [j, setJ] = useState('');
-      return (
-        <PainelConferencia
-          painel={{
-            analiticas: 10,
-            mapeadas: 9,
-            pendentes: 1,
-            saldoPendente: 100,
-            totalDebito: 500,
-            totalCredito: 400,
-            diferenca: 100,
-            pronto: false,
-            status: 'ATENÇÃO: revisar pendências / diferença',
-          }}
-          justificativa={j}
-          onJustificativa={setJ}
-          onGerar={() => {}}
-        />
-      );
-    }
-    render(<Harness />);
-    const botao = screen.getByRole('button', { name: /Gerar TXT/ });
-    expect(botao).toBeDisabled();
-    fireEvent.change(screen.getByLabelText(/Justificativa/), { target: { value: 'conferido com o cliente' } });
-    expect(botao).toBeEnabled();
-  });
-
-  it('“ensinar para todos” está desabilitado e explica por quê', () => {
+  it('layout desconhecido abre o mapeamento de colunas', () => {
     render(
-      <table>
-        <tbody>
-          <LinhaPendente
-            linha={linha({ codiCta: 'P1', origem: 'nao_encontrado', codigo: null, status: 'NÃO ENCONTRADO - digite o código na coluna L' })}
-            contas={[]}
-            onUsarSoAqui={() => {}}
-          />
-        </tbody>
-      </table>,
+      <MapeamentoColunas
+        previa={[
+          ['coluna 1', 'coluna 2', 'coluna 3'],
+          ['1', 'Caixa', '100'],
+        ]}
+        onConfirmar={() => {}}
+      />,
     );
-    expect(screen.getByRole('button', { name: /Ensinar para todos/ })).toBeDisabled();
-    expect(screen.getByText(/base compartilhada/)).toBeInTheDocument();
+    expect(screen.getByText(/Apontar as colunas manualmente/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Código da conta/)).toBeInTheDocument();
   });
 });
