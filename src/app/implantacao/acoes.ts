@@ -18,24 +18,32 @@ import {
 import { registrarEntrada } from '../../dados/usuarios.js';
 import { usuario } from '../../dados/schema.js';
 
-async function usuarioAtualId(): Promise<number> {
-  const sessao = await auth();
-  const oid = (sessao as { oid?: string } | null)?.oid;
-  if (sessao?.user === undefined || oid === undefined || oid === '') {
-    throw new Error('Não autenticado.');
-  }
+async function garantirUsuario(
+  oid: string,
+  email: string | undefined,
+  nome: string | undefined,
+): Promise<number> {
   const [existente] = await db()
     .select({ id: usuario.id })
     .from(usuario)
     .where(eq(usuario.oidEntra, oid))
     .limit(1);
   if (existente !== undefined) return existente.id;
-  const novo = await registrarEntrada(db(), {
-    oid,
-    email: sessao.user.email ?? undefined,
-    nome: sessao.user.name ?? undefined,
-  });
+  const novo = await registrarEntrada(db(), { oid, email, nome });
   return novo.id;
+}
+
+async function usuarioAtualId(): Promise<number> {
+  const sessao = await auth();
+  const oid = (sessao as { oid?: string } | null)?.oid;
+  if (sessao?.user === undefined || oid === undefined || oid === '') {
+    // Dev sem provedor Entra: usuário local, para a tela funcionar sem login.
+    if (!process.env.AUTH_MICROSOFT_ENTRA_ID_ID) {
+      return garantirUsuario('dev-local', 'dev@local', 'Desenvolvimento');
+    }
+    throw new Error('Não autenticado.');
+  }
+  return garantirUsuario(oid, sessao.user.email ?? undefined, sessao.user.name ?? undefined);
 }
 
 export async function iniciarImplantacao(): Promise<number> {

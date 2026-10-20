@@ -6,3 +6,4 @@ dist/
 next-env.d.ts
 *.tsbuildinfo
 .claude/settings.local.json
+.pglite-dev/

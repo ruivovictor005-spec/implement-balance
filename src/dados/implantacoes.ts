@@ -29,6 +29,14 @@ export type DadosEmpresa = {
 
 export type ContaCriadaEntrada = { codigoReduzido: string; descricao: string; classificacao: string };
 
+export type Reconhecimento = {
+  perfilId: string;
+  perfilNome: string;
+  linhas: number;
+  analiticas: number;
+  sinteticas: number;
+};
+
 const dinheiro = (n: number): string => n.toFixed(2);
 const numero = (v: string | null): number => (v === null ? 0 : Number(v));
 
