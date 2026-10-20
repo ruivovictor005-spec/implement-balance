@@ -4,10 +4,11 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { LinhaResolvida, Painel } from '../../../motor/converter.js';
 import {
   anexarBalancete,
-  baixarTxt,
   carregarContas,
+  concluir,
   definirAjusteManual,
   estadoImplantacao,
+  gerarTxt,
   reaplicar,
   recalcular,
   registrarContaCriada,
@@ -151,17 +152,32 @@ export function Tela({ id }: { id: number }) {
   );
 
   const onGerar = useCallback(async () => {
-    const texto = await baixarTxt(id);
-    const blob = new Blob([`${texto}\r\n`], { type: 'text/plain;charset=utf-8' });
+    setAviso(null);
+    const r = await gerarTxt(id, painel.pronto ? undefined : justificativa);
+    if (!r.ok) {
+      setAviso(r.erro);
+      return;
+    }
+    const blob = new Blob([r.conteudo], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'Importacao_Dominio.txt';
+    a.download = r.nomeArquivo;
     document.body.appendChild(a);
     a.click();
     a.remove();
     URL.revokeObjectURL(url);
-  }, [id]);
+  }, [id, painel.pronto, justificativa]);
+
+  const onConcluir = useCallback(async () => {
+    setAviso(null);
+    const r = await concluir(id, painel.pronto ? undefined : justificativa);
+    if (!r.ok) {
+      setAviso(r.erro);
+      return;
+    }
+    window.location.href = '/';
+  }, [id, painel.pronto, justificativa]);
 
   return (
     <main>
@@ -189,6 +205,15 @@ export function Tela({ id }: { id: number }) {
             onJustificativa={setJustificativa}
             onGerar={onGerar}
           />
+          <section className="cartao">
+            <h2>Concluir</h2>
+            <p className="sub">Baixe o TXT e conclua. Depois de concluída, a implantação sai da sua mesa.</p>
+            <div className="linha-acoes">
+              <button type="button" className="secundario" onClick={onConcluir}>
+                Concluir implantação
+              </button>
+            </div>
+          </section>
           <RegistrarContaCriada onRegistrar={onRegistrarConta} />
           <TabelaLinhas linhas={linhas} contas={contas} onUsarSoAqui={onUsarSoAqui} />
         </>

@@ -161,6 +161,7 @@ export const implantacao = pgTable(
     planoVersaoId: integer('plano_versao_id').references(() => planoVersao.id),
     layoutDetectado: text('layout_detectado'),
     arquivoOrigem: text('arquivo_origem'),
+    nomeArquivoTxt: text('nome_arquivo_txt'),
     status: statusImplantacao('status').notNull().default('em_andamento'),
     iniciadaEm: timestamp('iniciada_em', { withTimezone: true }).notNull().defaultNow(),
     concluidaEm: timestamp('concluida_em', { withTimezone: true }),

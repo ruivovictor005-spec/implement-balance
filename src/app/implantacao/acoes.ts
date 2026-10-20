@@ -17,6 +17,7 @@ import {
   type Reconhecimento,
 } from '../../dados/implantacoes.js';
 import { reaplicarSinonimos } from './reaplicar.js';
+import { concluirImplantacao, gerarTxtDaImplantacao } from './concluir.js';
 import { carregarPlanoVigente } from '../../dados/plano.js';
 import { carregarRegras } from '../../dados/regras.js';
 import { registrarEntrada } from '../../dados/usuarios.js';
@@ -135,6 +136,16 @@ export async function recalcular(id: number): Promise<{ painel: Painel; linhas: 
 /** Reaplica sinônimos novos nas pendências desta implantação (chamada periódica da tela). */
 export async function reaplicar(id: number): Promise<{ resolvidas: number; porQuem: string[] }> {
   return reaplicarSinonimos(db(), id, await usuarioAtualId());
+}
+
+/** Gera o TXT com a trava (zero pendências e diferença zero, ou motivo de liberação). */
+export async function gerarTxt(id: number, liberacaoMotivo?: string) {
+  return gerarTxtDaImplantacao(db(), id, await usuarioAtualId(), liberacaoMotivo);
+}
+
+/** Conclui a implantação (exige ter gerado o TXT antes). */
+export async function concluir(id: number, liberacaoMotivo?: string) {
+  return concluirImplantacao(db(), id, await usuarioAtualId(), liberacaoMotivo);
 }
 
 /** Contas do plano vigente com a natureza, para a busca mostrar e evitar escolher natureza errada. */

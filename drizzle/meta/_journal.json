@@ -15,6 +15,13 @@
       "when": 1792457377679,
       "tag": "0001_sinonimo_evento_imutavel",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792510017282,
+      "tag": "0002_nome_arquivo_txt",
+      "breakpoints": true
     }
   ]
 }

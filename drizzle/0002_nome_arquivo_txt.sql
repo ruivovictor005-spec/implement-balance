@@ -1,0 +1,1 @@
+ALTER TABLE "implantacao" ADD COLUMN "nome_arquivo_txt" text;
