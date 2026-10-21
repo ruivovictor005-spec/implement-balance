@@ -16,9 +16,11 @@ import {
   type ContaBusca,
   type ContaCriadaEntrada,
   type DadosEmpresaForm,
+  type Lancamento,
   type Reconhecimento,
 } from '../acoes.js';
 import { AreaArquivo } from '../_componentes/AreaArquivo.js';
+import { PreviaDominio } from '../_componentes/PreviaDominio.js';
 import { DadosEmpresa } from '../_componentes/DadosEmpresa.js';
 import { PainelConferencia } from '../_componentes/PainelConferencia.js';
 import { RegistrarContaCriada } from '../_componentes/RegistrarContaCriada.js';
@@ -52,6 +54,7 @@ export function Tela({ id }: { id: number }) {
   const [erro, setErro] = useState<string | null>(null);
   const [painel, setPainel] = useState<Painel>(PAINEL_VAZIO);
   const [linhas, setLinhas] = useState<LinhaResolvida[]>([]);
+  const [lancamentos, setLancamentos] = useState<Lancamento[]>([]);
   const [contas, setContas] = useState<ContaBusca[]>([]);
   const [justificativa, setJustificativa] = useState('');
   const [aviso, setAviso] = useState<string | null>(null);
@@ -64,6 +67,7 @@ export function Tela({ id }: { id: number }) {
       setReconhecimento(estado.reconhecimento);
       setPainel(estado.painel);
       setLinhas(estado.linhas);
+      setLancamentos(estado.lancamentos);
       setContas(lista);
       setTimeout(() => {
         montado.current = true;
@@ -95,6 +99,7 @@ export function Tela({ id }: { id: number }) {
           const fresh = await recalcular(id);
           setPainel(fresh.painel);
           setLinhas(fresh.linhas);
+          setLancamentos(fresh.lancamentos);
           const quem = r.porQuem.length > 0 ? ` pelo que ${r.porQuem.join(', ')} ensinou` : '';
           setAviso(`${r.resolvidas} pendência(s) resolvida(s) sozinha(s)${quem}.`);
         }
@@ -113,6 +118,7 @@ export function Tela({ id }: { id: number }) {
         setReconhecimento(r.reconhecimento);
         setPainel(r.painel);
         setLinhas(r.linhas);
+        setLancamentos(r.lancamentos);
       } catch (e) {
         setErro((e as Error).message);
       }
@@ -126,6 +132,7 @@ export function Tela({ id }: { id: number }) {
       const r = await recalcular(id);
       setPainel(r.painel);
       setLinhas(r.linhas);
+      setLancamentos(r.lancamentos);
     },
     [id],
   );
@@ -147,6 +154,7 @@ export function Tela({ id }: { id: number }) {
       const r = await recalcular(id);
       setPainel(r.painel);
       setLinhas(r.linhas);
+      setLancamentos(r.lancamentos);
     },
     [id],
   );
@@ -216,6 +224,7 @@ export function Tela({ id }: { id: number }) {
           </section>
           <RegistrarContaCriada onRegistrar={onRegistrarConta} />
           <TabelaLinhas linhas={linhas} contas={contas} onUsarSoAqui={onUsarSoAqui} />
+          <PreviaDominio lancamentos={lancamentos} />
         </>
       )}
     </main>

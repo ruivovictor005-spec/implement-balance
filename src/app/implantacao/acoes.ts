@@ -22,7 +22,10 @@ import { carregarPlanoVigente } from '../../dados/plano.js';
 import { carregarRegras } from '../../dados/regras.js';
 import { registrarEntrada } from '../../dados/usuarios.js';
 import { implantacao, usuario } from '../../dados/schema.js';
+import type { Lancamento } from '../../motor/agregar.js';
 import type { LinhaResolvida, Painel } from '../../motor/converter.js';
+
+export type { Lancamento } from '../../motor/agregar.js';
 import { resolverNatureza } from '../../motor/natureza.js';
 import type { ContaPlano } from '../../motor/tipos.js';
 import { PERFIS } from '../../leitores/perfis.js';
@@ -44,6 +47,7 @@ export type EstadoImplantacao = {
   reconhecimento: Reconhecimento | null;
   painel: Painel;
   linhas: LinhaResolvida[];
+  lancamentos: Lancamento[];
 };
 
 async function garantirUsuario(
@@ -129,7 +133,9 @@ export async function registrarContaCriada(id: number, conta: ContaCriadaEntrada
   return registrarContaNoBanco(db(), id, await usuarioAtualId(), conta);
 }
 
-export async function recalcular(id: number): Promise<{ painel: Painel; linhas: LinhaResolvida[] }> {
+export async function recalcular(
+  id: number,
+): Promise<{ painel: Painel; linhas: LinhaResolvida[]; lancamentos: Lancamento[] }> {
   return recalcularNoBanco(db(), id, await usuarioAtualId());
 }
 
@@ -165,7 +171,7 @@ export async function estadoImplantacao(id: number): Promise<EstadoImplantacao> 
   const [imp] = await db().select().from(implantacao).where(eq(implantacao.id, id)).limit(1);
   if (imp === undefined || imp.usuarioId !== uid) throw new Error('Implantação não encontrada.');
 
-  const { painel, linhas } = await recalcularNoBanco(db(), id, uid);
+  const { painel, linhas, lancamentos } = await recalcularNoBanco(db(), id, uid);
 
   const perfil = PERFIS.find((p) => p.id === imp.layoutDetectado);
   const reconhecimento: Reconhecimento | null =
@@ -191,5 +197,6 @@ export async function estadoImplantacao(id: number): Promise<EstadoImplantacao> 
     reconhecimento,
     painel,
     linhas,
+    lancamentos,
   };
 }

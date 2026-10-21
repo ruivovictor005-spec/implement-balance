@@ -5,6 +5,7 @@ import { and, eq } from 'drizzle-orm';
 import type { PgDatabase } from 'drizzle-orm/pg-core';
 import { lerArquivoComFormato } from '../leitores/ler-arquivo.js';
 import { detectarPerfil, extrairLinhas } from '../leitores/detectar.js';
+import type { Lancamento } from '../motor/agregar.js';
 import { converter, type LinhaResolvida, type Painel } from '../motor/converter.js';
 import { normalizarNome } from '../motor/normalizar.js';
 import type { ContaPlano, LinhaBalancete } from '../motor/tipos.js';
@@ -110,7 +111,12 @@ export async function anexarBalancete(
   id: number,
   usuarioId: number,
   arquivo: { bytes: Uint8Array; nomeArquivo: string },
-): Promise<{ reconhecimento: Reconhecimento; painel: Painel; linhas: LinhaResolvida[] }> {
+): Promise<{
+  reconhecimento: Reconhecimento;
+  painel: Painel;
+  linhas: LinhaResolvida[];
+  lancamentos: Lancamento[];
+}> {
   await exigirMinhaEmAndamento(banco, id, usuarioId);
 
   const { matriz, negrito } = await lerArquivoComFormato(arquivo.bytes, arquivo.nomeArquivo);
@@ -154,7 +160,7 @@ export async function anexarBalancete(
     detalhes: { perfil: deteccao.perfil.id, linhas: analiticas.length },
   });
 
-  const { painel, linhas } = await recalcular(banco, id, usuarioId);
+  const { painel, linhas, lancamentos } = await recalcular(banco, id, usuarioId);
   return {
     reconhecimento: {
       perfilId: deteccao.perfil.id,
@@ -165,6 +171,7 @@ export async function anexarBalancete(
     },
     painel,
     linhas,
+    lancamentos,
   };
 }
 
@@ -220,7 +227,7 @@ export async function recalcular(
   banco: Banco,
   id: number,
   usuarioId: number,
-): Promise<{ painel: Painel; linhas: LinhaResolvida[] }> {
+): Promise<{ painel: Painel; linhas: LinhaResolvida[]; lancamentos: Lancamento[] }> {
   const imp = await exigirMinhaEmAndamento(banco, id, usuarioId);
 
   const linhasOrigem = await banco
@@ -319,5 +326,5 @@ export async function recalcular(
     detalhes: { pendentes: p.pendentes, pronto: p.pronto },
   });
 
-  return { painel: p, linhas: resultado.linhas };
+  return { painel: p, linhas: resultado.linhas, lancamentos: resultado.lancamentos };
 }
