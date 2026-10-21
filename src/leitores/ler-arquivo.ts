@@ -1,27 +1,32 @@
-// Borda de entrada: transforma os bytes de um arquivo em uma matriz de células, sem conhecer o
-// significado das colunas (isso é do `detectar`). Lê .xlsx/.xlsm por exceljs e .csv/.txt por um
-// leitor de delimitado. O formato antigo .xls é recusado: a biblioteca que o lê tem vulnerabilidades
-// sem correção publicada e aqui receberia arquivo de qualquer pessoa (spec §7).
-//
-// Sem `fs`, `path` nem rede: recebe bytes e devolve dados em memória, para poder rodar no servidor
-// ou no navegador.
+// Borda de entrada: transforma os bytes de um arquivo em uma matriz de células (e um mapa de quais
+// estão em NEGRITO, para reconhecer contas sintéticas por formatação). Lê .xlsx/.xlsm por exceljs e
+// .csv/.txt por um leitor de delimitado. O .xls antigo é recusado (vulnerabilidades sem correção).
 import ExcelJS from 'exceljs';
 
 export type Celula = string | number | null;
 export type Matriz = Celula[][];
+export type Leitura = { matriz: Matriz; negrito: boolean[][] };
 
 const MENSAGEM_XLS = 'Este arquivo está no formato antigo .xls; abra no Excel e salve como .xlsx.';
 
+/** Devolve só os valores (compatibilidade). Use `lerArquivoComFormato` para também saber o negrito. */
 export async function lerArquivo(bytes: Uint8Array, nomeArquivo: string): Promise<Matriz> {
+  return (await lerArquivoComFormato(bytes, nomeArquivo)).matriz;
+}
+
+export async function lerArquivoComFormato(bytes: Uint8Array, nomeArquivo: string): Promise<Leitura> {
   const ponto = nomeArquivo.lastIndexOf('.');
   const ext = ponto === -1 ? '' : nomeArquivo.slice(ponto).toLowerCase();
   if (ext === '.xls') throw new Error(MENSAGEM_XLS);
   if (ext === '.xlsx' || ext === '.xlsm') return lerPlanilha(bytes);
-  if (ext === '.csv' || ext === '.txt') return lerDelimitado(bytes);
+  if (ext === '.csv' || ext === '.txt') {
+    const matriz = lerDelimitado(bytes);
+    return { matriz, negrito: matriz.map((linha) => linha.map(() => false)) };
+  }
   throw new Error(`Extensão não suportada: "${ext || nomeArquivo}". Use .xlsx, .xlsm, .csv ou .txt.`);
 }
 
-/** Uma cópia do conteúdo como ArrayBuffer puro, sem a visão `Uint8Array` nem o buffer ao redor. */
+/** Uma cópia do conteúdo como ArrayBuffer puro. */
 function paraArrayBuffer(bytes: Uint8Array): ArrayBuffer {
   return bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer;
 }
@@ -41,20 +46,27 @@ function valorDaCelula(v: ExcelJS.CellValue): Celula {
   return null;
 }
 
-async function lerPlanilha(bytes: Uint8Array): Promise<Matriz> {
+async function lerPlanilha(bytes: Uint8Array): Promise<Leitura> {
   const wb = new ExcelJS.Workbook();
   await wb.xlsx.load(paraArrayBuffer(bytes));
   const ws = wb.worksheets[0];
-  if (ws === undefined) return [];
   const matriz: Matriz = [];
+  const negrito: boolean[][] = [];
+  if (ws === undefined) return { matriz, negrito };
+
+  const nCols = ws.columnCount;
   ws.eachRow({ includeEmpty: true }, (row) => {
-    // `row.values` é 1-based (o índice 0 é sempre vazio); preserva a posição real das colunas.
-    const valores = row.values as ExcelJS.CellValue[];
     const linha: Celula[] = [];
-    for (let col = 1; col < valores.length; col++) linha.push(valorDaCelula(valores[col] ?? null));
+    const linhaNegrito: boolean[] = [];
+    for (let col = 1; col <= nCols; col++) {
+      const cell = row.getCell(col);
+      linha.push(valorDaCelula(cell.value));
+      linhaNegrito.push(cell.font?.bold === true);
+    }
     matriz.push(linha);
+    negrito.push(linhaNegrito);
   });
-  return matriz;
+  return { matriz, negrito };
 }
 
 function lerDelimitado(bytes: Uint8Array): Matriz {

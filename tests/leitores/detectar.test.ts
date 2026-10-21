@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs';
+import ExcelJS from 'exceljs';
 import { describe, expect, it } from 'vitest';
 import { converterNumero, detectarPerfil, extrairLinhas } from '../../src/leitores/detectar.js';
-import { lerArquivo } from '../../src/leitores/ler-arquivo.js';
+import { lerArquivo, lerArquivoComFormato } from '../../src/leitores/ler-arquivo.js';
 import type { Matriz } from '../../src/leitores/ler-arquivo.js';
 
 const bytesDe = (arquivo: string): Uint8Array =>
@@ -65,5 +66,30 @@ describe('reconhecimento e extração', () => {
 
   it('texto não numérico lança erro citando o valor', () => {
     expect(() => converterNumero('abc')).toThrow(/abc/);
+  });
+});
+
+describe('contas sintéticas por negrito', () => {
+  it('marca como sintética a linha em negrito, mesmo sem coluna tipo_cta', async () => {
+    const wb = new ExcelJS.Workbook();
+    const ws = wb.addWorksheet('B');
+    ws.addRow(['codi_cta', 'nome_cta', 'clas_cta', 'saldoant', 'totdeb', 'totcre', 'saldoatu']);
+    const grupo = ws.addRow(['1', 'ATIVO', '1', '0', '0', '0', '100']);
+    grupo.font = { bold: true };
+    grupo.getCell(1).font = { bold: true };
+    grupo.getCell(2).font = { bold: true };
+    ws.addRow(['18', 'Citibank', '1.1.1', '0', '0', '0', '50']);
+
+    const bytes = new Uint8Array((await wb.xlsx.writeBuffer()) as ArrayBuffer);
+    const { matriz, negrito } = await lerArquivoComFormato(bytes, 'b.xlsx');
+    const d = detectarPerfil(matriz);
+    expect(d).not.toBeNull();
+    const linhas = extrairLinhas(matriz, d!.linhaCabecalho, d!.colunas, negrito);
+
+    const grupoLinha = linhas.find((l) => l.codiCta === '1');
+    const analitica = linhas.find((l) => l.codiCta === '18');
+    expect(grupoLinha?.tipoCta.startsWith('S')).toBe(true);
+    expect(analitica?.tipoCta.startsWith('S')).toBe(false);
+    expect(linhas.filter((l) => !l.tipoCta.startsWith('S'))).toHaveLength(1);
   });
 });

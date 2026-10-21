@@ -3,7 +3,7 @@
 // e o painel. Cada ação confirma que a implantação é de quem chama e está em andamento, e audita.
 import { and, eq } from 'drizzle-orm';
 import type { PgDatabase } from 'drizzle-orm/pg-core';
-import { lerArquivo } from '../leitores/ler-arquivo.js';
+import { lerArquivoComFormato } from '../leitores/ler-arquivo.js';
 import { detectarPerfil, extrairLinhas } from '../leitores/detectar.js';
 import { converter, type LinhaResolvida, type Painel } from '../motor/converter.js';
 import { normalizarNome } from '../motor/normalizar.js';
@@ -113,7 +113,7 @@ export async function anexarBalancete(
 ): Promise<{ reconhecimento: Reconhecimento; painel: Painel; linhas: LinhaResolvida[] }> {
   await exigirMinhaEmAndamento(banco, id, usuarioId);
 
-  const matriz = await lerArquivo(arquivo.bytes, arquivo.nomeArquivo);
+  const { matriz, negrito } = await lerArquivoComFormato(arquivo.bytes, arquivo.nomeArquivo);
   const deteccao = detectarPerfil(matriz);
   if (deteccao === null) {
     throw new Error(
@@ -121,7 +121,7 @@ export async function anexarBalancete(
     );
   }
 
-  const balancete = extrairLinhas(matriz, deteccao.linhaCabecalho, deteccao.colunas);
+  const balancete = extrairLinhas(matriz, deteccao.linhaCabecalho, deteccao.colunas, negrito);
   const analiticas = balancete.filter((l) => !l.tipoCta.startsWith('S'));
 
   await banco.delete(implantacaoLinha).where(eq(implantacaoLinha.implantacaoId, id));

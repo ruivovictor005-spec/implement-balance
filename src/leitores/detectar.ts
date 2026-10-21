@@ -110,6 +110,7 @@ export function extrairLinhas(
   m: Matriz,
   linhaCabecalho: number,
   colunas: Record<string, number>,
+  negrito?: boolean[][],
 ): LinhaBalancete[] {
   const celula = (linha: Celula[], campo: string): Celula => {
     const idx = colunas[campo];
@@ -120,15 +121,29 @@ export function extrairLinhas(
     return v === null ? '' : String(v);
   };
 
+  // Conta sintética (de grupo): quando a coluna tipo_cta começa com "S" OU quando a linha vem em
+  // NEGRITO no arquivo (padrão dos balancetes exportados, onde os grupos ficam em negrito).
+  const emNegrito = (r: number): boolean => {
+    if (negrito === undefined) return false;
+    const idxNome = colunas.nomeCta;
+    const idxCodi = colunas.codiCta;
+    return (
+      (idxNome !== undefined && negrito[r]?.[idxNome] === true) ||
+      (idxCodi !== undefined && negrito[r]?.[idxCodi] === true)
+    );
+  };
+
   const linhas: LinhaBalancete[] = [];
   for (let r = linhaCabecalho; r < m.length; r++) {
     const linha = m[r];
     if (texto(linha, 'codiCta').trim() === '') continue;
+    const tipoColuna = texto(linha, 'tipoCta');
+    const tipoCta = tipoColuna.startsWith('S') || emNegrito(r) ? 'S' : tipoColuna || 'A';
     linhas.push({
       codiCta: texto(linha, 'codiCta'),
       nomeCta: texto(linha, 'nomeCta'),
       clasCta: texto(linha, 'clasCta'),
-      tipoCta: texto(linha, 'tipoCta'),
+      tipoCta,
       saldoAnterior: converterNumero(celula(linha, 'saldoAnterior')),
       totalDebito: converterNumero(celula(linha, 'totalDebito')),
       totalCredito: converterNumero(celula(linha, 'totalCredito')),
