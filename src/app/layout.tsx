@@ -14,6 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <nav className="menu">
           <span className="menu-marca">Implantação de Saldos</span>
           <a href="/">Minha mesa</a>
+          <a href="/plano">Plano de contas</a>
           <a href="/concluidas">Concluídas</a>
           <a href="/sinonimos">Sinônimos</a>
           <a href="/painel">Painel</a>
