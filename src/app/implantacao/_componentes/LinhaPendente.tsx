@@ -22,6 +22,10 @@ export function LinhaPendente({
         <strong>{linha.nomeCta}</strong>
         <br />
         <span className="status-pend">{linha.status}</span>
+        <br />
+        <span className="meta">
+          grupo: classif. {linha.clasCta || '—'} · {linha.natureza || 'sem natureza'}
+        </span>
         <BuscaConta contas={contas} onSelecionar={(codigo) => onUsarSoAqui(linha.codiCta, codigo)} />
         <div className="linha-acoes">
           <button type="button" disabled title="Chega junto com a base compartilhada">

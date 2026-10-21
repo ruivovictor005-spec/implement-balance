@@ -3,9 +3,57 @@ import * as React from 'react';
 import { useState } from 'react';
 import type { LinhaResolvida } from '../../../motor/converter.js';
 import type { ContaBusca } from '../acoes.js';
+import { BuscaConta } from './BuscaConta.js';
 import { LinhaPendente } from './LinhaPendente.js';
 
 const brl = (n: number): string => n.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+
+// Linha já resolvida: mostra o grupo (classificação + natureza) e deixa ALTERAR a conta a qualquer
+// momento — inclusive para corrigir uma classificação que o motor resolveu para outra natureza.
+function LinhaResolvidaRow({
+  linha,
+  contas,
+  onUsarSoAqui,
+}: {
+  linha: LinhaResolvida;
+  contas: ContaBusca[];
+  onUsarSoAqui: (codiCta: string, codigo: string) => void;
+}) {
+  const [editando, setEditando] = useState(false);
+  const atencao = linha.status.toLowerCase().includes('conferir');
+  return (
+    <tr data-codi={linha.codiCta} data-origem={linha.origem}>
+      <td>{linha.codiCta}</td>
+      <td>
+        {linha.nomeCta}
+        <br />
+        <span className={atencao ? 'status-pend' : 'meta'}>
+          {linha.codigo ? `→ ${linha.codigo} · ` : ''}
+          {linha.status}
+        </span>
+        <br />
+        <span className="meta">
+          grupo: classif. {linha.clasCta || '—'} · {linha.natureza || 'sem natureza'}
+        </span>
+        <div className="linha-acoes">
+          <button type="button" className="secundario" onClick={() => setEditando((e) => !e)}>
+            {editando ? 'Cancelar' : 'Alterar conta'}
+          </button>
+        </div>
+        {editando && (
+          <BuscaConta
+            contas={contas}
+            onSelecionar={(codigo) => {
+              onUsarSoAqui(linha.codiCta, codigo);
+              setEditando(false);
+            }}
+          />
+        )}
+      </td>
+      <td className="num">{brl(linha.saldoAtual)}</td>
+    </tr>
+  );
+}
 
 export function TabelaLinhas({
   linhas,
@@ -16,35 +64,21 @@ export function TabelaLinhas({
   contas: ContaBusca[];
   onUsarSoAqui: (codiCta: string, codigo: string) => void;
 }) {
-  const [filtro, setFiltro] = useState('todos');
-  const statuses = Array.from(new Set(linhas.map((l) => l.status)));
-  const passa = (l: LinhaResolvida): boolean => filtro === 'todos' || l.status === filtro;
-
-  // Pendentes primeiro (o que precisa de decisão), depois as já resolvidas.
-  const pendentes = linhas.filter((l) => l.origem === 'nao_encontrado').filter(passa);
-  const resolvidas = linhas.filter((l) => l.origem !== 'nao_encontrado').filter(passa);
+  // Pendentes primeiro (o que precisa de decisão), depois as já resolvidas. Todas aparecem juntas,
+  // sem obrigar a filtrar.
+  const pendentes = linhas.filter((l) => l.origem === 'nao_encontrado');
+  const resolvidas = linhas.filter((l) => l.origem !== 'nao_encontrado');
 
   return (
     <section className="cartao">
-      <h2>Linhas do balancete</h2>
-      <div className="filtro">
-        <label htmlFor="filtro" style={{ margin: 0 }}>
-          Filtrar por status
-        </label>
-        <select id="filtro" value={filtro} onChange={(e) => setFiltro(e.target.value)}>
-          <option value="todos">Todos</option>
-          {statuses.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
-      </div>
+      <h2>
+        Linhas do balancete — {pendentes.length} pendente(s), {resolvidas.length} resolvida(s)
+      </h2>
       <table>
         <thead>
           <tr>
             <th>Cód. origem</th>
-            <th>Conta</th>
+            <th>Conta / grupo</th>
             <th style={{ textAlign: 'right' }}>Saldo atual</th>
           </tr>
         </thead>
@@ -53,18 +87,7 @@ export function TabelaLinhas({
             <LinhaPendente key={`p-${l.codiCta}`} linha={l} contas={contas} onUsarSoAqui={onUsarSoAqui} />
           ))}
           {resolvidas.map((l) => (
-            <tr key={`r-${l.codiCta}`} data-codi={l.codiCta} data-origem={l.origem}>
-              <td>{l.codiCta}</td>
-              <td>
-                {l.nomeCta}
-                <br />
-                <span className="meta">
-                  {l.codigo ? `→ ${l.codigo} · ` : ''}
-                  {l.status}
-                </span>
-              </td>
-              <td className="num">{brl(l.saldoAtual)}</td>
-            </tr>
+            <LinhaResolvidaRow key={`r-${l.codiCta}`} linha={l} contas={contas} onUsarSoAqui={onUsarSoAqui} />
           ))}
         </tbody>
       </table>
