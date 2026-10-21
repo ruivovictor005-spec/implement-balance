@@ -66,6 +66,9 @@ descobre. Falta um **cabeçalho/menu** visível em todas as telas. Tudo precisa 
 ## 11. Layout de balancete Domínio não reconhecido (B) — investigar depois
 Um balancete exportado do **sistema Domínio** (fora de ordem / outro layout) **não foi reconhecido**.
 Investigar a detecção de layout e cadastrar o(s) perfil(is) reais depois.
+- **PARCIAL FEITO:** o leitor agora reconhece **contas sintéticas pelo negrito** (além da coluna
+  tipo_cta), funcionando mesmo sem essa coluna. Falta investigar por que aquele balancete específico
+  não casou nenhum perfil (provavelmente nomes de coluna diferentes) e cadastrar o perfil real.
 
 ---
 
