@@ -3,10 +3,21 @@
 Registro das considerações do parceiro após o primeiro uso real, para retomar nas próximas sessões.
 Prioridade: **A = alta, B = média**.
 
-> **JÁ FEITO nesta sessão** (commits após o registro): pontos **1, 3, 5, 8** (grupo da conta visível
-> em toda linha + alterar qualquer conta, não só pendentes + pendências sem filtro), **10** (menu de
-> navegação) e **9 parcial** (tela /painel de supervisão por pessoa). **Falta:** 2, 4, 6, 7 (resumos/
-> prévia/comparação lado a lado), 9 completo (mais parâmetros + restrição a supervisor) e 11 (layout).
+> **JÁ FEITO** (commits após o registro):
+> - **1** grupo (classificação + natureza) visível em toda linha.
+> - **3** "Alterar conta" em qualquer linha (não só pendentes).
+> - **4 e 7 (parcial)** seção "Prévia do balancete no Domínio" com os lançamentos e totais.
+> - **5 e 6 (parcial)** tela **/plano** para navegar/buscar o plano de contas por grupo/natureza.
+> - **8** pendências todas juntas, sem filtro.
+> - **9 (parcial)** tela **/painel** de supervisão por pessoa (tempos, quantidades).
+> - **10** menu de navegação em todas as telas.
+> - **11 (parcial)** sintéticas por **negrito** + **mapeamento manual de colunas** quando o layout
+>   não é reconhecido (destrava carregar qualquer balancete).
+> - **Bug corrigido:** dá para **ver** uma implantação concluída/descartada (antes dava erro 500).
+>
+> **FALTA:** 2 (resumo do de-para dedicado — hoje coberto pela tabela + prévia), 6 completo (visão
+> lado a lado de verdade), 9 completo (restringir /painel a supervisor + mais parâmetros), 11
+> investigar o layout específico do Domínio que não casou, e a **Task 15** (Docker + manual).
 
 ## 1. Ver o balancete do cliente enquanto identifica as contas (A)
 Ao identificar uma conta pendente, a pessoa precisa enxergar **de que grupo a conta é** (ativo,
