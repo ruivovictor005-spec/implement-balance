@@ -111,6 +111,7 @@ export async function anexarBalancete(
   id: number,
   usuarioId: number,
   arquivo: { bytes: Uint8Array; nomeArquivo: string },
+  manual?: { linhaCabecalho: number; colunas: Record<string, number> },
 ): Promise<{
   reconhecimento: Reconhecimento;
   painel: Painel;
@@ -120,7 +121,9 @@ export async function anexarBalancete(
   await exigirMinhaEmAndamento(banco, id, usuarioId);
 
   const { matriz, negrito } = await lerArquivoComFormato(arquivo.bytes, arquivo.nomeArquivo);
-  const deteccao = detectarPerfil(matriz);
+  const deteccao = manual
+    ? { perfil: { id: 'manual', nome: 'Mapeamento manual' }, linhaCabecalho: manual.linhaCabecalho, colunas: manual.colunas }
+    : detectarPerfil(matriz);
   if (deteccao === null) {
     throw new Error(
       'Layout não reconhecido: aponte as colunas manualmente ou confira se é um balancete Domínio ou Infobank.',

@@ -30,6 +30,7 @@ export type { Lancamento } from '../../motor/agregar.js';
 import { resolverNatureza } from '../../motor/natureza.js';
 import type { ContaPlano } from '../../motor/tipos.js';
 import { PERFIS } from '../../leitores/perfis.js';
+import { lerArquivoComFormato, type Celula } from '../../leitores/ler-arquivo.js';
 
 export type { ContaCriadaEntrada, Reconhecimento } from '../../dados/implantacoes.js';
 export type ContaBusca = ContaPlano & { natureza: string };
@@ -122,8 +123,31 @@ export async function salvarDadosEmpresa(id: number, dados: DadosEmpresaForm): P
   });
 }
 
-export async function anexarBalancete(id: number, arquivo: { bytes: Uint8Array; nomeArquivo: string }) {
-  return anexarNoBanco(db(), id, await usuarioAtualId(), arquivo);
+export type ResultadoAnexo =
+  | {
+      reconhecido: true;
+      reconhecimento: Reconhecimento;
+      painel: Painel;
+      linhas: LinhaResolvida[];
+      lancamentos: Lancamento[];
+    }
+  | { reconhecido: false; previa: Celula[][] };
+
+export async function anexarBalancete(
+  id: number,
+  arquivo: { bytes: Uint8Array; nomeArquivo: string },
+  manual?: { linhaCabecalho: number; colunas: Record<string, number> },
+): Promise<ResultadoAnexo> {
+  const uid = await usuarioAtualId();
+  try {
+    const r = await anexarNoBanco(db(), id, uid, arquivo, manual);
+    return { reconhecido: true, ...r };
+  } catch (e) {
+    const msg = (e as Error).message;
+    if (!msg.includes('Layout não reconhecido')) throw e;
+    const { matriz } = await lerArquivoComFormato(arquivo.bytes, arquivo.nomeArquivo);
+    return { reconhecido: false, previa: matriz.slice(0, 15) };
+  }
 }
 
 export async function definirAjusteManual(id: number, codiCta: string, codigo: string | null) {

@@ -1,6 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import type { Celula } from '../../../leitores/ler-arquivo.js';
 import type { LinhaResolvida, Painel } from '../../../motor/converter.js';
 import {
   anexarBalancete,
@@ -20,6 +21,7 @@ import {
   type Reconhecimento,
 } from '../acoes.js';
 import { AreaArquivo } from '../_componentes/AreaArquivo.js';
+import { MapeamentoColunas } from '../_componentes/MapeamentoColunas.js';
 import { PreviaDominio } from '../_componentes/PreviaDominio.js';
 import { DadosEmpresa } from '../_componentes/DadosEmpresa.js';
 import { PainelConferencia } from '../_componentes/PainelConferencia.js';
@@ -58,7 +60,9 @@ export function Tela({ id }: { id: number }) {
   const [contas, setContas] = useState<ContaBusca[]>([]);
   const [justificativa, setJustificativa] = useState('');
   const [aviso, setAviso] = useState<string | null>(null);
+  const [previa, setPrevia] = useState<Celula[][] | null>(null);
   const montado = useRef(false);
+  const ultimoArquivo = useRef<{ bytes: Uint8Array; nome: string } | null>(null);
 
   useEffect(() => {
     void (async () => {
@@ -111,14 +115,43 @@ export function Tela({ id }: { id: number }) {
   const onArquivo = useCallback(
     async (arquivo: File) => {
       const bytes = new Uint8Array(await arquivo.arrayBuffer());
+      ultimoArquivo.current = { bytes, nome: arquivo.name };
       setNomeArquivo(arquivo.name);
       setErro(null);
       try {
         const r = await anexarBalancete(id, { bytes, nomeArquivo: arquivo.name });
+        if (!r.reconhecido) {
+          setPrevia(r.previa);
+          return;
+        }
         setReconhecimento(r.reconhecimento);
         setPainel(r.painel);
         setLinhas(r.linhas);
         setLancamentos(r.lancamentos);
+        setPrevia(null);
+      } catch (e) {
+        setErro((e as Error).message);
+      }
+    },
+    [id],
+  );
+
+  const onMapear = useCallback(
+    async (linhaCabecalho: number, colunas: Record<string, number>) => {
+      const a = ultimoArquivo.current;
+      if (a === null) return;
+      setErro(null);
+      try {
+        const r = await anexarBalancete(id, { bytes: a.bytes, nomeArquivo: a.nome }, { linhaCabecalho, colunas });
+        if (!r.reconhecido) {
+          setErro('Ainda não consegui ler com esse mapeamento; confira as colunas.');
+          return;
+        }
+        setReconhecimento(r.reconhecimento);
+        setPainel(r.painel);
+        setLinhas(r.linhas);
+        setLancamentos(r.lancamentos);
+        setPrevia(null);
       } catch (e) {
         setErro((e as Error).message);
       }
@@ -202,6 +235,8 @@ export function Tela({ id }: { id: number }) {
         erro={erro}
         onArquivo={onArquivo}
       />
+
+      {previa && <MapeamentoColunas previa={previa} onConfirmar={onMapear} />}
 
       {aviso && <div className="reconhecido">{aviso}</div>}
 
