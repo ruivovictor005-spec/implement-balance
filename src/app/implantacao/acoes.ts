@@ -10,6 +10,7 @@ import {
   anexarBalancete as anexarNoBanco,
   definirAjusteManual as definirNoBanco,
   iniciarImplantacao as iniciarNoBanco,
+  lerImplantacao as lerImplantacaoNoBanco,
   recalcular as recalcularNoBanco,
   registrarContaCriada as registrarContaNoBanco,
   salvarDadosEmpresa as salvarDadosNoBanco,
@@ -171,7 +172,10 @@ export async function estadoImplantacao(id: number): Promise<EstadoImplantacao> 
   const [imp] = await db().select().from(implantacao).where(eq(implantacao.id, id)).limit(1);
   if (imp === undefined || imp.usuarioId !== uid) throw new Error('Implantação não encontrada.');
 
-  const { painel, linhas, lancamentos } = await recalcularNoBanco(db(), id, uid);
+  const { painel, linhas, lancamentos } =
+    imp.status === 'em_andamento'
+      ? await recalcularNoBanco(db(), id, uid)
+      : await lerImplantacaoNoBanco(db(), id, uid);
 
   const perfil = PERFIS.find((p) => p.id === imp.layoutDetectado);
   const reconhecimento: Reconhecimento | null =

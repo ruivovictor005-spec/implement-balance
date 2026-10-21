@@ -328,3 +328,67 @@ export async function recalcular(
 
   return { painel: p, linhas: resultado.linhas, lancamentos: resultado.lancamentos };
 }
+
+/**
+ * Estado CALCULADO sem gravar — para VER uma implantação em qualquer status (em andamento, concluída
+ * ou descartada), sem a trava de "em andamento" do recalcular.
+ */
+export async function lerImplantacao(
+  banco: Banco,
+  id: number,
+  usuarioId: number,
+): Promise<{ painel: Painel; linhas: LinhaResolvida[]; lancamentos: Lancamento[] }> {
+  const [imp] = await banco.select().from(implantacao).where(eq(implantacao.id, id)).limit(1);
+  if (imp === undefined) throw new Error('Implantação não encontrada.');
+  if (imp.usuarioId !== usuarioId) throw new Error('Esta implantação é de outra pessoa.');
+
+  const linhasOrigem = await banco
+    .select()
+    .from(implantacaoLinha)
+    .where(eq(implantacaoLinha.implantacaoId, id))
+    .orderBy(implantacaoLinha.ordem);
+  const regras = await carregarRegras(banco);
+  const criadas = await banco.select().from(contaCriada).where(eq(contaCriada.implantacaoId, id));
+  const contasCriadas: ContaPlano[] = criadas.map((c) => ({
+    codigoReduzido: c.codigoReduzido,
+    classificacao: c.classificacao,
+    descricao: c.descricao,
+    tipo: 'A',
+    descricaoNormalizada: normalizarNome(c.descricao, regras.normalizacao),
+  }));
+  const ajustesManuais = new Map<string, string>();
+  for (const l of linhasOrigem) {
+    if (l.codiCta !== null && l.ajusteManual !== null && l.ajusteManual !== '') {
+      ajustesManuais.set(l.codiCta, l.ajusteManual);
+    }
+  }
+  const balancete: LinhaBalancete[] = linhasOrigem.map((l) => ({
+    codiCta: l.codiCta ?? '',
+    nomeCta: l.nomeCta ?? '',
+    clasCta: l.clasCta ?? '',
+    tipoCta: l.tipoCta ?? '',
+    saldoAnterior: numero(l.saldoAnterior),
+    totalDebito: numero(l.totalDebito),
+    totalCredito: numero(l.totalCredito),
+    saldoAtual: numero(l.saldoAtual),
+  }));
+
+  const resultado = converter({
+    balancete,
+    plano: await carregarPlanoVigente(banco),
+    contasCriadas,
+    sinonimos: await carregarSinonimos(banco),
+    regrasNormalizacao: regras.normalizacao,
+    regrasNatureza: regras.natureza,
+    ajustesManuais,
+    parametros: {
+      dataSaldo: imp.dataSaldo === null ? new Date(1970, 0, 1) : dataLocal(imp.dataSaldo),
+      cnpj: imp.empresaCnpj ?? '',
+      codigoEmpresa: imp.empresaCodigoDominio ?? '',
+      tipoLote: imp.tipoLote ?? 'V',
+      codigoHistorico: imp.codigoHistorico ?? '700',
+      incluirCabecalho: imp.incluirCabecalho,
+    },
+  });
+  return { painel: resultado.painel, linhas: resultado.linhas, lancamentos: resultado.lancamentos };
+}
