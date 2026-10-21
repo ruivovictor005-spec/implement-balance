@@ -10,7 +10,16 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <nav className="menu">
+          <span className="menu-marca">Implantação de Saldos</span>
+          <a href="/">Minha mesa</a>
+          <a href="/concluidas">Concluídas</a>
+          <a href="/sinonimos">Sinônimos</a>
+          <a href="/painel">Painel</a>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }

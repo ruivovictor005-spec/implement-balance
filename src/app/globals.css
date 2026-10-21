@@ -268,6 +268,30 @@ button:disabled {
   width: auto;
 }
 
+.menu {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: var(--papel);
+  border-bottom: 1px solid var(--borda);
+}
+
+.menu-marca {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.menu a {
+  color: var(--acento);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
 a.botao {
   display: inline-block;
   font: inherit;
