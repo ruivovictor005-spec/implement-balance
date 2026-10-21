@@ -1,7 +1,12 @@
 # Feedback do 1º teste (Victor) — melhorias a fazer
 
 Registro das considerações do parceiro após o primeiro uso real, para retomar nas próximas sessões.
-Nada aqui está feito ainda, salvo onde indicado. Prioridade: **A = alta, B = média**.
+Prioridade: **A = alta, B = média**.
+
+> **JÁ FEITO nesta sessão** (commits após o registro): pontos **1, 3, 5, 8** (grupo da conta visível
+> em toda linha + alterar qualquer conta, não só pendentes + pendências sem filtro), **10** (menu de
+> navegação) e **9 parcial** (tela /painel de supervisão por pessoa). **Falta:** 2, 4, 6, 7 (resumos/
+> prévia/comparação lado a lado), 9 completo (mais parâmetros + restrição a supervisor) e 11 (layout).
 
 ## 1. Ver o balancete do cliente enquanto identifica as contas (A)
 Ao identificar uma conta pendente, a pessoa precisa enxergar **de que grupo a conta é** (ativo,
