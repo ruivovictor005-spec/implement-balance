@@ -50,6 +50,8 @@ export type EstadoImplantacao = {
   painel: Painel;
   linhas: LinhaResolvida[];
   lancamentos: Lancamento[];
+  /** false quando a implantação já foi concluída/descartada — a tela fica só leitura. */
+  editavel: boolean;
 };
 
 async function garantirUsuario(
@@ -150,6 +152,16 @@ export async function anexarBalancete(
   }
 }
 
+/** Primeiras linhas do arquivo (para a pessoa apontar as colunas manualmente quando quiser). */
+export async function lerPrevia(arquivo: {
+  bytes: Uint8Array;
+  nomeArquivo: string;
+}): Promise<Celula[][]> {
+  await usuarioAtualId();
+  const { matriz } = await lerArquivoComFormato(arquivo.bytes, arquivo.nomeArquivo);
+  return matriz.slice(0, 15);
+}
+
 export async function definirAjusteManual(id: number, codiCta: string, codigo: string | null) {
   return definirNoBanco(db(), id, await usuarioAtualId(), codiCta, codigo);
 }
@@ -226,5 +238,6 @@ export async function estadoImplantacao(id: number): Promise<EstadoImplantacao> 
     painel,
     linhas,
     lancamentos,
+    editavel: imp.status === 'em_andamento',
   };
 }

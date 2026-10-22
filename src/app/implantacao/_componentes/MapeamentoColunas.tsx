@@ -19,9 +19,15 @@ const CAMPOS: { chave: string; rotulo: string }[] = [
 export function MapeamentoColunas({
   previa,
   onConfirmar,
+  titulo = 'Apontar as colunas manualmente',
+  descricao = 'O layout não foi reconhecido. Indique a linha do cabeçalho e qual coluna é cada campo.',
+  onCancelar,
 }: {
   previa: Celula[][];
   onConfirmar: (linhaCabecalho: number, colunas: Record<string, number>) => void;
+  titulo?: string;
+  descricao?: string;
+  onCancelar?: () => void;
 }) {
   const [linhaCab, setLinhaCab] = useState(0);
   const [mapa, setMapa] = useState<Record<string, string>>({});
@@ -34,8 +40,8 @@ export function MapeamentoColunas({
 
   return (
     <section className="cartao">
-      <h2>Apontar as colunas manualmente</h2>
-      <p className="sub">O layout não foi reconhecido. Indique a linha do cabeçalho e qual coluna é cada campo.</p>
+      <h2>{titulo}</h2>
+      <p className="sub">{descricao}</p>
       <div className="grade">
         <div>
           <label htmlFor="linha-cab">Linha do cabeçalho</label>
@@ -78,6 +84,11 @@ export function MapeamentoColunas({
         >
           Usar este mapeamento
         </button>
+        {onCancelar && (
+          <button type="button" className="secundario" onClick={onCancelar}>
+            Cancelar
+          </button>
+        )}
       </div>
     </section>
   );
