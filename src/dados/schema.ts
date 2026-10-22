@@ -177,12 +177,6 @@ export const implantacao = pgTable(
     txtGerado: text('txt_gerado'),
     txtHash: text('txt_hash'),
   },
-  (t) => [
-    // Só uma implantação em andamento por pessoa.
-    uniqueIndex('implantacao_uma_em_andamento')
-      .on(t.usuarioId)
-      .where(sql`${t.status} = 'em_andamento'`),
-  ],
 );
 
 export const implantacaoLinha = pgTable('implantacao_linha', {

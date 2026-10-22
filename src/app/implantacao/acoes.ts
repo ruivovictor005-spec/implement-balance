@@ -2,7 +2,7 @@
 
 // Ações de servidor da implantação: resolvem quem está logado (pela sessão do Entra) e delegam para
 // a camada de dados, que faz o trabalho e a auditoria. A tela (Task 11) chama estas funções.
-import { and, eq } from 'drizzle-orm';
+import { eq } from 'drizzle-orm';
 import { redirect } from 'next/navigation';
 import { auth } from '../../acesso/auth.js';
 import { db } from '../../dados/cliente.js';
@@ -11,10 +11,12 @@ import {
   definirAjusteManual as definirNoBanco,
   iniciarImplantacao as iniciarNoBanco,
   lerImplantacao as lerImplantacaoNoBanco,
+  minhasImplantacoesAbertas as minhasAbertasNoBanco,
   recalcular as recalcularNoBanco,
   registrarContaCriada as registrarContaNoBanco,
   salvarDadosEmpresa as salvarDadosNoBanco,
   type ContaCriadaEntrada,
+  type ImplantacaoAberta,
   type Reconhecimento,
 } from '../../dados/implantacoes.js';
 import { reaplicarSinonimos } from './reaplicar.js';
@@ -32,10 +34,11 @@ import type { ContaPlano } from '../../motor/tipos.js';
 import { PERFIS } from '../../leitores/perfis.js';
 import { lerArquivoComFormato, type Celula } from '../../leitores/ler-arquivo.js';
 
-export type { ContaCriadaEntrada, Reconhecimento } from '../../dados/implantacoes.js';
+export type { ContaCriadaEntrada, ImplantacaoAberta, Reconhecimento } from '../../dados/implantacoes.js';
 export type ContaBusca = ContaPlano & { natureza: string };
 
 export type DadosEmpresaForm = {
+  nomeEmpresa: string;
   dataSaldo: string;
   cnpj: string;
   codigoEmpresa: string;
@@ -82,15 +85,9 @@ async function usuarioAtualId(): Promise<number> {
   return garantirUsuario(oid, sessao.user.email ?? undefined, sessao.user.name ?? undefined);
 }
 
-/** Id da implantação em andamento de quem está logado, ou null se não houver. */
-export async function minhaImplantacaoAberta(): Promise<number | null> {
-  const uid = await usuarioAtualId();
-  const [aberta] = await db()
-    .select({ id: implantacao.id })
-    .from(implantacao)
-    .where(and(eq(implantacao.usuarioId, uid), eq(implantacao.status, 'em_andamento')))
-    .limit(1);
-  return aberta?.id ?? null;
+/** As implantações em andamento de quem está logado (pode ter várias, uma por empresa). */
+export async function minhasImplantacoesAbertas(): Promise<ImplantacaoAberta[]> {
+  return minhasAbertasNoBanco(db(), await usuarioAtualId());
 }
 
 export async function iniciarImplantacao(): Promise<number> {
@@ -116,6 +113,7 @@ export async function baixarTxt(id: number): Promise<string> {
 
 export async function salvarDadosEmpresa(id: number, dados: DadosEmpresaForm): Promise<void> {
   return salvarDadosNoBanco(db(), id, await usuarioAtualId(), {
+    empresaNome: dados.nomeEmpresa,
     empresaCnpj: dados.cnpj,
     empresaCodigoDominio: dados.codigoEmpresa,
     dataSaldo: dados.dataSaldo === '' ? undefined : dados.dataSaldo,
@@ -227,6 +225,7 @@ export async function estadoImplantacao(id: number): Promise<EstadoImplantacao> 
 
   return {
     dados: {
+      nomeEmpresa: imp.empresaNome ?? '',
       dataSaldo: imp.dataSaldo ?? '',
       cnpj: imp.empresaCnpj ?? '',
       codigoEmpresa: imp.empresaCodigoDominio ?? '',

@@ -49,9 +49,21 @@ const contaBusca = (over: Partial<ContaBusca>): ContaBusca => ({
 });
 
 describe('tela de implantação', () => {
-  it('minha mesa mostra o botão de iniciar quando não há implantação aberta', () => {
-    render(<Mesa aberta={null} />);
-    expect(screen.getByRole('button', { name: /Iniciar nova implantação/ })).toBeInTheDocument();
+  it('mesa mostra o botão de começar quando não há implantação aberta', () => {
+    render(<Mesa abertas={[]} />);
+    expect(screen.getByRole('button', { name: /Começar uma nova/ })).toBeInTheDocument();
+  });
+
+  it('mesa lista as implantações em andamento pelo nome da empresa', () => {
+    render(
+      <Mesa
+        abertas={[
+          { id: 7, empresaNome: 'Padaria Pão Quente', empresaCnpj: '12.345.678/0001-90', iniciadaEm: new Date('2026-10-20') },
+        ]}
+      />,
+    );
+    expect(screen.getByText('Padaria Pão Quente')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Padaria Pão Quente/ })).toHaveAttribute('href', '/implantacao/7');
   });
 
   it('área de arquivo informa o que reconheceu, com as contagens', () => {
@@ -129,7 +141,7 @@ describe('tela de implantação', () => {
   it('CNPJ com menos de 14 dígitos acusa antes de enviar', () => {
     render(
       <DadosEmpresa
-        valor={{ dataSaldo: '2026-08-31', cnpj: '123', codigoEmpresa: '1', tipoLote: 'V', codigoHistorico: '700', incluirCabecalho: false }}
+        valor={{ nomeEmpresa: 'Teste', dataSaldo: '2026-08-31', cnpj: '123', codigoEmpresa: '1', tipoLote: 'V', codigoHistorico: '700', incluirCabecalho: false }}
         onChange={() => {}}
       />,
     );

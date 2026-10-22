@@ -3,7 +3,7 @@ import * as React from 'react';
 import { usePathname } from 'next/navigation';
 
 const LINKS: { href: string; rotulo: string }[] = [
-  { href: '/', rotulo: 'Minha mesa' },
+  { href: '/', rotulo: 'Início' },
   { href: '/plano', rotulo: 'Plano de contas' },
   { href: '/concluidas', rotulo: 'Concluídas' },
   { href: '/sinonimos', rotulo: 'Sinônimos' },

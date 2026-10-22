@@ -20,6 +20,16 @@ export function DadosEmpresa({
     <section className="cartao">
       <h2>Dados da empresa e do lote</h2>
       <div className="grade">
+        <div style={{ gridColumn: '1 / -1' }}>
+          <label htmlFor="nome-empresa">Nome da empresa</label>
+          <input
+            id="nome-empresa"
+            type="text"
+            value={valor.nomeEmpresa}
+            placeholder="Ex.: Padaria Pão Quente Ltda"
+            onChange={(e) => set('nomeEmpresa', e.target.value)}
+          />
+        </div>
         <div>
           <label htmlFor="data">Data do saldo</label>
           <input id="data" type="date" value={valor.dataSaldo} onChange={(e) => set('dataSaldo', e.target.value)} />

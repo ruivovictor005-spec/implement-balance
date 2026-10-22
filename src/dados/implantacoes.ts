@@ -1,7 +1,7 @@
 // A implantação como unidade de trabalho no servidor: cria, guarda os dados da empresa, anexa o
 // balancete, aceita ajustes manuais e contas criadas, e recalcula (roda o motor) gravando as linhas
 // e o painel. Cada ação confirma que a implantação é de quem chama e está em andamento, e audita.
-import { and, eq } from 'drizzle-orm';
+import { and, desc, eq } from 'drizzle-orm';
 import type { PgDatabase } from 'drizzle-orm/pg-core';
 import { lerArquivoComFormato } from '../leitores/ler-arquivo.js';
 import { detectarPerfil, extrairLinhas } from '../leitores/detectar.js';
@@ -56,12 +56,11 @@ async function exigirMinhaEmAndamento(banco: Banco, id: number, usuarioId: numbe
   return imp;
 }
 
-/** Nova implantação. A anterior em andamento é DESCARTADA (não apagada), para o histórico ficar. */
+/**
+ * Nova implantação. As anteriores em andamento FICAM em andamento — a pessoa pode ter várias
+ * (uma por empresa), pausar e voltar. A escolha de qual continuar é feita na "mesa".
+ */
 export async function iniciarImplantacao(banco: Banco, usuarioId: number): Promise<number> {
-  await banco
-    .update(implantacao)
-    .set({ status: 'descartada' })
-    .where(and(eq(implantacao.usuarioId, usuarioId), eq(implantacao.status, 'em_andamento')));
   const [nova] = await banco
     .insert(implantacao)
     .values({ usuarioId })
@@ -73,6 +72,31 @@ export async function iniciarImplantacao(banco: Banco, usuarioId: number): Promi
     entidadeId: String(nova.id),
   });
   return nova.id;
+}
+
+export type ImplantacaoAberta = {
+  id: number;
+  empresaNome: string | null;
+  empresaCnpj: string | null;
+  iniciadaEm: Date;
+};
+
+/** As implantações em andamento da pessoa (pode ter várias), mais recentes primeiro. */
+export async function minhasImplantacoesAbertas(
+  banco: Banco,
+  usuarioId: number,
+): Promise<ImplantacaoAberta[]> {
+  const linhas = await banco
+    .select({
+      id: implantacao.id,
+      empresaNome: implantacao.empresaNome,
+      empresaCnpj: implantacao.empresaCnpj,
+      iniciadaEm: implantacao.iniciadaEm,
+    })
+    .from(implantacao)
+    .where(and(eq(implantacao.usuarioId, usuarioId), eq(implantacao.status, 'em_andamento')))
+    .orderBy(desc(implantacao.iniciadaEm));
+  return linhas;
 }
 
 export async function salvarDadosEmpresa(

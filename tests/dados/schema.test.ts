@@ -104,15 +104,18 @@ describe('schema e carga (Postgres embutido)', () => {
     ).resolves.toBeDefined();
   });
 
-  it('só uma implantação em andamento por pessoa', async () => {
+  it('a pessoa pode ter várias implantações em andamento (uma por empresa)', async () => {
     const [u] = await banco
       .insert(schema.usuario)
       .values({ oidEntra: 'oid-1', email: 'a@b.c', nome: 'A' })
       .returning({ id: schema.usuario.id });
     await banco.insert(schema.implantacao).values({ usuarioId: u.id, status: 'em_andamento' });
-    await expect(
-      banco.insert(schema.implantacao).values({ usuarioId: u.id, status: 'em_andamento' }),
-    ).rejects.toThrow();
+    await banco.insert(schema.implantacao).values({ usuarioId: u.id, status: 'em_andamento' });
+    const abertas = await banco
+      .select()
+      .from(schema.implantacao)
+      .where(sql`${schema.implantacao.status} = 'em_andamento'`);
+    expect(abertas).toHaveLength(2);
   });
 
   it('sinonimo_evento é imutável: UPDATE e DELETE são barrados', async () => {

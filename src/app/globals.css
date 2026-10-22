@@ -74,10 +74,30 @@ body {
 }
 
 main {
-  max-width: 1120px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 28px 20px 72px;
+  padding: 28px 24px 72px;
   animation: entra 0.25s ease both;
+}
+
+/* Home: conteúdo centralizado vertical e horizontalmente. */
+main.home {
+  min-height: calc(100dvh - 58px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main.home .sub {
+  text-align: center;
+}
+
+main.home .cartao {
+  width: 100%;
+  max-width: 580px;
+  text-align: left;
 }
 
 @keyframes entra {
@@ -344,7 +364,7 @@ textarea:focus {
 /* ---------- Painel de conferência (stat tiles) ---------- */
 .painel {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 12px;
 }
 
@@ -352,7 +372,7 @@ textarea:focus {
   background: linear-gradient(180deg, var(--papel), var(--papel-2));
   border: 1px solid var(--borda);
   border-radius: var(--raio-sm);
-  padding: 13px 14px;
+  padding: 14px 16px;
   transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
 }
 
@@ -373,11 +393,12 @@ textarea:focus {
 .painel .numero .valor {
   margin-top: 4px;
   font-family: var(--mono);
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
   color: var(--texto);
+  white-space: nowrap;
 }
 
 .semaforo {
@@ -623,6 +644,53 @@ code,
 .cod {
   font-family: var(--mono);
   font-size: 0.92em;
+}
+
+/* ---------- Lista de implantações abertas (home) ---------- */
+.lista-abertas {
+  list-style: none;
+  margin: 0 0 4px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-aberta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2px 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-sm);
+  text-decoration: none;
+  color: var(--texto);
+  background: var(--papel-2);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.08s;
+}
+
+.item-aberta:hover {
+  border-color: var(--n-400);
+  box-shadow: var(--sombra-1);
+}
+
+.item-aberta .item-nome {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.item-aberta .meta {
+  grid-column: 1;
+}
+
+.item-aberta .item-seta {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink);
+  white-space: nowrap;
 }
 
 /* ---------- Cabeçalho da implantação ---------- */

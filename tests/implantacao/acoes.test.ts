@@ -47,14 +47,14 @@ describe('ações da implantação', () => {
       incluirCabecalho: false,
     });
 
-  it('iniciar uma nova descarta a anterior em andamento, sem apagá-la', async () => {
+  it('iniciar uma nova mantém as anteriores em andamento (várias por pessoa)', async () => {
     const id1 = await iniciarImplantacao(banco, usuarioId);
     const id2 = await iniciarImplantacao(banco, usuarioId);
     expect(id2).not.toBe(id1);
     const linhas = await banco.select().from(schema.implantacao);
     expect(linhas).toHaveLength(2);
     const porId = new Map(linhas.map((l) => [l.id, l.status]));
-    expect(porId.get(id1)).toBe('descartada');
+    expect(porId.get(id1)).toBe('em_andamento');
     expect(porId.get(id2)).toBe('em_andamento');
   });
 

@@ -43,6 +43,7 @@ const PAINEL_VAZIO: Painel = {
 };
 
 const DADOS_VAZIO: DadosEmpresaForm = {
+  nomeEmpresa: '',
   dataSaldo: '',
   cnpj: '',
   codigoEmpresa: '',
@@ -250,9 +251,9 @@ export function Tela({ id }: { id: number }) {
     <main>
       <header className="cab-impl">
         <div>
-          <h1>Implementação de saldos</h1>
+          <h1>{dados.nomeEmpresa.trim() !== '' ? dados.nomeEmpresa : 'Implementação de saldos'}</h1>
           <p className="sub" style={{ margin: 0 }}>
-            <a href="/">← Minha mesa</a>
+            <a href="/">← Início</a>
           </p>
         </div>
         {temLinhas && (
