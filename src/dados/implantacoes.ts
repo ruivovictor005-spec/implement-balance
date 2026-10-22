@@ -131,6 +131,23 @@ export async function anexarBalancete(
   }
 
   const balancete = extrairLinhas(matriz, deteccao.linhaCabecalho, deteccao.colunas, negrito);
+
+  // Rede de segurança: às vezes o cabeçalho casa colunas suficientes para "reconhecer" o layout, mas
+  // a coluna do NOME da conta não casou (ou casou uma coluna vazia). Sem nome, nada resolve e tudo
+  // vira pendência. Nesse caso não fingimos reconhecer: pedimos o mapeamento manual, onde a pessoa
+  // aponta a coluna do nome. Só vale para a detecção automática — no mapeamento manual a pessoa já
+  // escolheu as colunas.
+  if (manual === undefined) {
+    const comNome = balancete.filter((l) => l.nomeCta.trim() !== '').length;
+    const fracaoComNome = balancete.length === 0 ? 1 : comNome / balancete.length;
+    if (deteccao.colunas.nomeCta === undefined || fracaoComNome < 0.5) {
+      throw new Error(
+        'Layout não reconhecido: achei as colunas de código e saldo, mas não a do NOME da conta. ' +
+          'Aponte as colunas manualmente (escolha a coluna do nome).',
+      );
+    }
+  }
+
   const analiticas = balancete.filter((l) => !l.tipoCta.startsWith('S'));
 
   await banco.delete(implantacaoLinha).where(eq(implantacaoLinha.implantacaoId, id));

@@ -18,7 +18,7 @@ export const PERFIS: Perfil[] = [
     nome: 'Domínio',
     apelidos: {
       codiCta: ['codi_cta', 'código', 'conta', 'código reduzido', 'cod conta'],
-      nomeCta: ['nome_cta', 'nome', 'descrição', 'nome da conta'],
+      nomeCta: ['nome_cta', 'nome', 'descrição', 'nome da conta', 'descrição da conta', 'descrição conta'],
       clasCta: ['clas_cta', 'classificação', 'máscara'],
       tipoCta: ['tipo_cta', 'tipo'],
       saldoAnterior: ['saldoant', 'saldo anterior'],

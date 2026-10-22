@@ -142,6 +142,30 @@ describe('ações da implantação', () => {
     await expect(anexarBalancete(banco, id, usuarioId, lixo)).rejects.toThrow(/manual|reconhecido/i);
   });
 
+  it('reconhece colunas mas sem a do NOME pede mapeamento manual (não finge reconhecer)', async () => {
+    // Cabeçalho casa código/classif/tipo/saldos (o header do nome é "Conta", que o perfil usa como
+    // código), então a coluna do NOME não casa e todo nome viria vazio. Deve cair no manual.
+    const csv =
+      'Conta;Código;Classificação;Tipo;Saldo anterior;Débito;Crédito;Saldo atual\n' +
+      'BANCO INTER;536;1.1.1.02.000003;A;0;0;0;1,00\n' +
+      'CLIENTES;540;1.1.2.01.000001;A;0;0;0;2,00\n';
+    const id = await iniciarImplantacao(banco, usuarioId);
+    const semNome = { bytes: new TextEncoder().encode(csv), nomeArquivo: 'dominio-sem-nome.csv' };
+    await expect(anexarBalancete(banco, id, usuarioId, semNome)).rejects.toThrow(/NOME|manual/i);
+
+    // Com o mapeamento manual apontando a coluna do nome, grava com o nome preenchido.
+    const r = await anexarBalancete(banco, id, usuarioId, semNome, {
+      linhaCabecalho: 1,
+      colunas: { nomeCta: 0, codiCta: 1, clasCta: 2, tipoCta: 3, saldoAnterior: 4, totalDebito: 5, totalCredito: 6, saldoAtual: 7 },
+    });
+    expect(r.painel.analiticas).toBe(2);
+    const linhas = await banco
+      .select()
+      .from(schema.implantacaoLinha)
+      .where(eq(schema.implantacaoLinha.implantacaoId, id));
+    expect(linhas.map((l) => l.nomeCta).sort()).toEqual(['BANCO INTER', 'CLIENTES']);
+  });
+
   it('cada ação grava auditoria com usuário e implantação', async () => {
     const id = await iniciarImplantacao(banco, usuarioId);
     await comDados(id);
