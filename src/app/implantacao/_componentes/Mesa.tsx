@@ -5,7 +5,7 @@ import { iniciarERedirecionar } from '../acoes.js';
 export function Mesa({ aberta }: { aberta: number | null }) {
   return (
     <main>
-      <h1>Implantação de Saldos</h1>
+      <h1><span className="marca-glow">Implement Balance</span></h1>
       <p className="sub">
         Converte o balancete de origem no arquivo de importação posicional do Domínio (leiaute 19).
       </p>
