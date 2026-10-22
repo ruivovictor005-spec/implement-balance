@@ -1,6 +1,7 @@
 'use client';
 import * as React from 'react';
 import { usePathname } from 'next/navigation';
+import { sair } from './sessao-acoes.js';
 
 const LINKS: { href: string; rotulo: string }[] = [
   { href: '/', rotulo: 'Início' },
@@ -13,8 +14,11 @@ const LINKS: { href: string; rotulo: string }[] = [
 const ativo = (href: string, caminho: string): boolean =>
   href === '/' ? caminho === '/' : caminho.startsWith(href);
 
-// Barra superior do app: marca "Implement Balance" + navegação com estado ativo.
-export function BarraTopo() {
+const primeiroNome = (nome: string | null): string =>
+  nome && nome.trim() !== '' ? nome.trim().split(/\s+/)[0] : 'Conta';
+
+// Barra superior do app: marca "Implement Balance" + navegação (quando logado) + usuário/sair.
+export function BarraTopo({ usuario }: { usuario: { nome: string | null } | null }) {
   const caminho = usePathname() ?? '/';
   return (
     <nav className="menu">
@@ -31,13 +35,27 @@ export function BarraTopo() {
           <small>Leiaute 19 · Domínio</small>
         </span>
       </span>
-      {LINKS.map((l) => (
-        <a key={l.href} href={l.href} className={ativo(l.href, caminho) ? 'ativo' : undefined}>
-          {l.rotulo}
-        </a>
-      ))}
+      {usuario &&
+        LINKS.map((l) => (
+          <a key={l.href} href={l.href} className={ativo(l.href, caminho) ? 'ativo' : undefined}>
+            {l.rotulo}
+          </a>
+        ))}
       <span className="menu-espaco" />
-      <span className="menu-tag">balancete → TXT</span>
+      {usuario ? (
+        <>
+          <span className="menu-usuario" title={usuario.nome ?? undefined}>
+            {primeiroNome(usuario.nome)}
+          </span>
+          <form action={sair} style={{ margin: 0 }}>
+            <button type="submit" className="menu-sair">
+              Sair
+            </button>
+          </form>
+        </>
+      ) : (
+        <span className="menu-tag">balancete → TXT</span>
+      )}
     </nav>
   );
 }

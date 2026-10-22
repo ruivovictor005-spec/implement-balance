@@ -224,6 +224,29 @@ h1 .marca-glow {
   padding: 4px 10px;
 }
 
+.menu-usuario {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+.menu .menu-sair {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.82);
+  padding: 6px 12px;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.menu .menu-sair:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  box-shadow: none;
+}
+
 /* ---------- Cartões ---------- */
 .cartao {
   background: var(--papel);

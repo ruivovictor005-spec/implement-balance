@@ -29,6 +29,13 @@
       "when": 1792598400000,
       "tag": "0003_varias_em_andamento",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792598460000,
+      "tag": "0004_cadastro_senha",
+      "breakpoints": true
     }
   ]
 }

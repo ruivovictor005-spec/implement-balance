@@ -24,10 +24,13 @@ export const statusImplantacao = pgEnum('status_implantacao', ['em_andamento', '
 
 export const usuario = pgTable('usuario', {
   id: serial('id').primaryKey(),
-  // A identidade vem do Entra ID (oid), nunca o e-mail. O papel é local ao site.
-  oidEntra: text('oid_entra').notNull().unique(),
+  // Identidade por e-mail+senha (cadastro próprio). O oid do Entra fica opcional (legado).
+  oidEntra: text('oid_entra').unique(),
   email: text('email').notNull(),
   nome: text('nome').notNull(),
+  senhaHash: text('senha_hash'),
+  recuperacaoCodigoHash: text('recuperacao_codigo_hash'),
+  recuperacaoExpira: timestamp('recuperacao_expira', { withTimezone: true }),
   papel: papel('papel').notNull().default('usuario'),
   ativo: boolean('ativo').notNull().default(true),
   ultimoAcessoEm: timestamp('ultimo_acesso_em', { withTimezone: true }),

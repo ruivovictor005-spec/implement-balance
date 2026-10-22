@@ -11,23 +11,13 @@ import {
   ensinarSinonimo as ensinarNoBanco,
   solicitarAlteracao as solicitarNoBanco,
 } from '../../dados/sinonimos.js';
-import { registrarEntrada } from '../../dados/usuarios.js';
-import { alteracaoSinonimo, sinonimo, sinonimoEvento, usuario } from '../../dados/schema.js';
+import { alteracaoSinonimo, sinonimo, sinonimoEvento } from '../../dados/schema.js';
 
 async function usuarioAtualId(): Promise<number> {
   const sessao = await auth();
-  const oid = (sessao as { oid?: string } | null)?.oid;
-  const identidade =
-    sessao?.user !== undefined && oid !== undefined && oid !== ''
-      ? { oid, email: sessao.user.email ?? undefined, nome: sessao.user.name ?? undefined }
-      : { oid: 'dev-local', email: 'dev@local', nome: 'Desenvolvimento' };
-  const [e] = await db()
-    .select({ id: usuario.id })
-    .from(usuario)
-    .where(eq(usuario.oidEntra, identidade.oid))
-    .limit(1);
-  if (e !== undefined) return e.id;
-  return (await registrarEntrada(db(), identidade)).id;
+  const uid = (sessao as { uid?: number } | null)?.uid;
+  if (uid === undefined || uid === null) throw new Error('Não autenticado.');
+  return uid;
 }
 
 export async function ensinar(nomeOriginal: string, codigo: string, motivo: string) {

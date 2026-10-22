@@ -1,6 +1,7 @@
 import * as React from 'react';
 import type { ReactNode } from 'react';
 import './globals.css';
+import { auth } from '../acesso/auth.js';
 import { BarraTopo } from './_componentes/BarraTopo.js';
 
 export const metadata = {
@@ -8,7 +9,9 @@ export const metadata = {
   description: 'Converte o balancete de origem no arquivo de importação posicional do Domínio (leiaute 19).',
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const sessao = await auth();
+  const usuario = sessao?.user ? { nome: sessao.user.name ?? null } : null;
   return (
     <html lang="pt-BR">
       <head>
@@ -20,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        <BarraTopo />
+        <BarraTopo usuario={usuario} />
         {children}
       </body>
     </html>

@@ -23,8 +23,7 @@ import { reaplicarSinonimos } from './reaplicar.js';
 import { concluirImplantacao, gerarTxtDaImplantacao } from './concluir.js';
 import { carregarPlanoVigente } from '../../dados/plano.js';
 import { carregarRegras } from '../../dados/regras.js';
-import { registrarEntrada } from '../../dados/usuarios.js';
-import { implantacao, usuario } from '../../dados/schema.js';
+import { implantacao } from '../../dados/schema.js';
 import type { Lancamento } from '../../motor/agregar.js';
 import type { LinhaResolvida, Painel } from '../../motor/converter.js';
 
@@ -57,32 +56,11 @@ export type EstadoImplantacao = {
   editavel: boolean;
 };
 
-async function garantirUsuario(
-  oid: string,
-  email: string | undefined,
-  nome: string | undefined,
-): Promise<number> {
-  const [existente] = await db()
-    .select({ id: usuario.id })
-    .from(usuario)
-    .where(eq(usuario.oidEntra, oid))
-    .limit(1);
-  if (existente !== undefined) return existente.id;
-  const novo = await registrarEntrada(db(), { oid, email, nome });
-  return novo.id;
-}
-
 async function usuarioAtualId(): Promise<number> {
   const sessao = await auth();
-  const oid = (sessao as { oid?: string } | null)?.oid;
-  if (sessao?.user === undefined || oid === undefined || oid === '') {
-    // Dev sem provedor Entra: usuário local, para a tela funcionar sem login.
-    if (!process.env.AUTH_MICROSOFT_ENTRA_ID_ID) {
-      return garantirUsuario('dev-local', 'dev@local', 'Desenvolvimento');
-    }
-    throw new Error('Não autenticado.');
-  }
-  return garantirUsuario(oid, sessao.user.email ?? undefined, sessao.user.name ?? undefined);
+  const uid = (sessao as { uid?: number } | null)?.uid;
+  if (uid === undefined || uid === null) throw new Error('Não autenticado.');
+  return uid;
 }
 
 /** As implantações em andamento de quem está logado (pode ter várias, uma por empresa). */
