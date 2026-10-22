@@ -24,6 +24,7 @@ import {
 import { Abas, type AbaId } from '../_componentes/Abas.js';
 import { AreaArquivo } from '../_componentes/AreaArquivo.js';
 import { MapeamentoColunas } from '../_componentes/MapeamentoColunas.js';
+import { PlanoDrawer } from '../_componentes/PlanoDrawer.js';
 import { PreviaBalancete } from '../_componentes/PreviaBalancete.js';
 import { TabelaDePara, Pendencias } from '../_componentes/TabelaDePara.js';
 import { DadosEmpresa } from '../_componentes/DadosEmpresa.js';
@@ -67,6 +68,7 @@ export function Tela({ id }: { id: number }) {
   const [previaManual, setPreviaManual] = useState(false);
   const [aba, setAba] = useState<AbaId>('config');
   const [editavel, setEditavel] = useState(true);
+  const [planoAberto, setPlanoAberto] = useState(false);
   const montado = useRef(false);
   const ultimoArquivo = useRef<{ bytes: Uint8Array; nome: string } | null>(null);
 
@@ -256,13 +258,20 @@ export function Tela({ id }: { id: number }) {
             <a href="/">← Início</a>
           </p>
         </div>
-        {temLinhas && (
-          <div className={`pill ${painel.pronto ? 'pronto' : 'revisar'}`}>
-            <span className="ponto" />
-            {painel.pronto ? 'Pronto para importar' : `${painel.pendentes} pendência(s) · dif. verificar`}
-          </div>
-        )}
+        <div className="cab-acoes">
+          <button type="button" className="secundario" onClick={() => setPlanoAberto(true)}>
+            Consultar plano de contas
+          </button>
+          {temLinhas && (
+            <div className={`pill ${painel.pronto ? 'pronto' : 'revisar'}`}>
+              <span className="ponto" />
+              {painel.pronto ? 'Pronto para importar' : `${painel.pendentes} pendência(s) · dif. verificar`}
+            </div>
+          )}
+        </div>
       </header>
+
+      <PlanoDrawer contas={contas} aberto={planoAberto} onFechar={() => setPlanoAberto(false)} />
 
       {aviso && <div className="reconhecido">{aviso}</div>}
 
