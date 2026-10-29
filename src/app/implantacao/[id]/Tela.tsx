@@ -9,7 +9,9 @@ import {
   concluir,
   definirAjusteManual,
   estadoImplantacao,
+  excluirImplantacao,
   gerarTxt,
+  guardarParaDepois,
   lerPrevia,
   reaplicar,
   recalcular,
@@ -30,6 +32,7 @@ import { TabelaDePara, Pendencias } from '../_componentes/TabelaDePara.js';
 import { DadosEmpresa } from '../_componentes/DadosEmpresa.js';
 import { PainelConferencia } from '../_componentes/PainelConferencia.js';
 import { RegistrarContaCriada } from '../_componentes/RegistrarContaCriada.js';
+import { SairDaImplantacao } from '../_componentes/SairDaImplantacao.js';
 
 const PAINEL_VAZIO: Painel = {
   analiticas: 0,
@@ -69,6 +72,10 @@ export function Tela({ id }: { id: number }) {
   const [aba, setAba] = useState<AbaId>('config');
   const [editavel, setEditavel] = useState(true);
   const [planoAberto, setPlanoAberto] = useState(false);
+  const [guardada, setGuardada] = useState(false);
+  const [saindo, setSaindo] = useState(false);
+  const [ocupado, setOcupado] = useState<'salvar' | 'excluir' | null>(null);
+  const [erroSaida, setErroSaida] = useState<string | null>(null);
   const montado = useRef(false);
   const ultimoArquivo = useRef<{ bytes: Uint8Array; nome: string } | null>(null);
 
@@ -82,6 +89,7 @@ export function Tela({ id }: { id: number }) {
       setLancamentos(estado.lancamentos);
       setContas(lista);
       setEditavel(estado.editavel);
+      setGuardada(estado.guardada);
       if (estado.linhas.length > 0) setAba('depara');
       setTimeout(() => {
         montado.current = true;
@@ -258,6 +266,62 @@ export function Tela({ id }: { id: number }) {
     window.location.href = '/';
   }, [id, painel.pronto, justificativa]);
 
+  const onSalvarParaDepois = useCallback(async () => {
+    setOcupado('salvar');
+    setErroSaida(null);
+    try {
+      // Os campos da empresa são gravados 600ms DEPOIS de a pessoa parar de digitar. Quem aperta
+      // "salvar" pode ter acabado de digitar, então gravamos agora para não guardar pela metade.
+      await salvarDadosEmpresa(id, dados);
+      const r = await guardarParaDepois(id);
+      if (!r.ok) {
+        // Abre o diálogo mesmo quando o clique veio do cabeçalho: é onde a mensagem aparece.
+        setErroSaida(r.erro);
+        setSaindo(true);
+        setOcupado(null);
+        return;
+      }
+    } catch {
+      setErroSaida('Não consegui salvar agora. Confira a conexão e tente de novo.');
+      setSaindo(true);
+      setOcupado(null);
+      return;
+    }
+    setGuardada(true);
+    window.location.href = '/';
+  }, [id, dados]);
+
+  const onExcluir = useCallback(async () => {
+    setOcupado('excluir');
+    setErroSaida(null);
+    try {
+      const r = await excluirImplantacao(id);
+      if (!r.ok) {
+        setErroSaida(r.erro);
+        setOcupado(null);
+        return;
+      }
+    } catch {
+      setErroSaida('Não consegui excluir agora. Confira a conexão e tente de novo.');
+      setOcupado(null);
+      return;
+    }
+    window.location.href = '/';
+  }, [id]);
+
+  // Sair de uma implantação que ainda não foi guardada passa pela pergunta; se já foi guardada (ou
+  // se a tela é só leitura), o link do cabeçalho navega direto.
+  const precisaPerguntarAoSair = editavel && !guardada;
+  const onSairPeloLink = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (!precisaPerguntarAoSair) return;
+      e.preventDefault();
+      setErroSaida(null);
+      setSaindo(true);
+    },
+    [precisaPerguntarAoSair],
+  );
+
   const temArquivoNaSessao = ultimoArquivo.current !== null;
   const temLinhas = linhas.length > 0;
 
@@ -267,10 +331,17 @@ export function Tela({ id }: { id: number }) {
         <div>
           <h1>{dados.nomeEmpresa.trim() !== '' ? dados.nomeEmpresa : 'Implementação de saldos'}</h1>
           <p className="sub" style={{ margin: 0 }}>
-            <a href="/">← Início</a>
+            <a href="/" onClick={onSairPeloLink}>
+              ← Início
+            </a>
           </p>
         </div>
         <div className="cab-acoes">
+          {editavel && (
+            <button type="button" disabled={ocupado !== null} onClick={onSalvarParaDepois}>
+              {ocupado === 'salvar' ? 'Salvando…' : 'Salvar e continuar depois'}
+            </button>
+          )}
           <button type="button" className="secundario" onClick={() => setPlanoAberto(true)}>
             Consultar plano de contas
           </button>
@@ -284,6 +355,16 @@ export function Tela({ id }: { id: number }) {
       </header>
 
       <PlanoDrawer contas={contas} aberto={planoAberto} onFechar={() => setPlanoAberto(false)} />
+
+      {saindo && (
+        <SairDaImplantacao
+          onSalvar={onSalvarParaDepois}
+          onExcluir={onExcluir}
+          onCancelar={() => setSaindo(false)}
+          ocupado={ocupado}
+          erro={erroSaida}
+        />
+      )}
 
       {aviso && <div className="reconhecido">{aviso}</div>}
 

@@ -5,8 +5,7 @@ import type { LinhaResolvida } from '../../../motor/converter.js';
 import type { ContaBusca } from '../acoes.js';
 import { BuscaConta } from './BuscaConta.js';
 import { LinhaPendente } from './LinhaPendente.js';
-
-const brl = (n: number): string => n.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+import { SaldoCelula } from './SaldoCelula.js';
 
 // Linha já resolvida: mostra o grupo (classificação + natureza) e deixa ALTERAR a conta a qualquer
 // momento — inclusive para corrigir uma classificação que o motor resolveu para outra natureza.
@@ -50,7 +49,7 @@ function LinhaResolvidaRow({
           />
         )}
       </td>
-      <td className="num">{brl(linha.saldoAtual)}</td>
+      <SaldoCelula saldoAtual={linha.saldoAtual} natureza={linha.natureza} />
     </tr>
   );
 }
@@ -79,7 +78,7 @@ export function TabelaLinhas({
           <tr>
             <th>Cód. origem</th>
             <th>Conta / grupo</th>
-            <th style={{ textAlign: 'right' }}>Saldo atual</th>
+            <th style={{ textAlign: 'right' }}>Saldo atual (D/C)</th>
           </tr>
         </thead>
         <tbody>

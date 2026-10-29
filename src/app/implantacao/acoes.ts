@@ -9,6 +9,8 @@ import { db } from '../../dados/cliente.js';
 import {
   anexarBalancete as anexarNoBanco,
   definirAjusteManual as definirNoBanco,
+  excluirImplantacao as excluirNoBanco,
+  guardarImplantacao as guardarNoBanco,
   iniciarImplantacao as iniciarNoBanco,
   lerImplantacao as lerImplantacaoNoBanco,
   minhasImplantacoesAbertas as minhasAbertasNoBanco,
@@ -18,6 +20,7 @@ import {
   type ContaCriadaEntrada,
   type ImplantacaoAberta,
   type Reconhecimento,
+  type ResultadoImplantacao,
 } from '../../dados/implantacoes.js';
 import { reaplicarSinonimos } from './reaplicar.js';
 import { concluirImplantacao, gerarTxtDaImplantacao } from './concluir.js';
@@ -33,7 +36,12 @@ import type { ContaPlano } from '../../motor/tipos.js';
 import { PERFIS } from '../../leitores/perfis.js';
 import { ErroDeArquivo, lerArquivoComFormato, type Celula } from '../../leitores/ler-arquivo.js';
 
-export type { ContaCriadaEntrada, ImplantacaoAberta, Reconhecimento } from '../../dados/implantacoes.js';
+export type {
+  ContaCriadaEntrada,
+  ImplantacaoAberta,
+  Reconhecimento,
+  ResultadoImplantacao,
+} from '../../dados/implantacoes.js';
 export type ContaBusca = ContaPlano & { natureza: string };
 
 export type DadosEmpresaForm = {
@@ -54,6 +62,8 @@ export type EstadoImplantacao = {
   lancamentos: Lancamento[];
   /** false quando a implantação já foi concluída/descartada — a tela fica só leitura. */
   editavel: boolean;
+  /** true depois de "Salvar e continuar depois": a tela não precisa mais perguntar ao sair. */
+  guardada: boolean;
 };
 
 async function usuarioAtualId(): Promise<number> {
@@ -182,6 +192,16 @@ export async function concluir(id: number, liberacaoMotivo?: string) {
   return concluirImplantacao(db(), id, await usuarioAtualId(), liberacaoMotivo);
 }
 
+/** "Salvar e continuar depois": guarda a implantação para a pessoa retomar em outro momento. */
+export async function guardarParaDepois(id: number): Promise<ResultadoImplantacao> {
+  return guardarNoBanco(db(), id, await usuarioAtualId());
+}
+
+/** Tira a implantação da mesa (fica descartada no histórico, não é apagada). */
+export async function excluirImplantacao(id: number): Promise<ResultadoImplantacao> {
+  return excluirNoBanco(db(), id, await usuarioAtualId());
+}
+
 /** Contas do plano vigente com a natureza, para a busca mostrar e evitar escolher natureza errada. */
 export async function carregarContas(): Promise<ContaBusca[]> {
   await usuarioAtualId();
@@ -231,5 +251,6 @@ export async function estadoImplantacao(id: number): Promise<EstadoImplantacao> 
     linhas,
     lancamentos,
     editavel: imp.status === 'em_andamento',
+    guardada: imp.guardadaEm !== null,
   };
 }

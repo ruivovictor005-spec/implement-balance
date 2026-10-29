@@ -167,6 +167,8 @@ export const implantacao = pgTable(
     nomeArquivoTxt: text('nome_arquivo_txt'),
     status: statusImplantacao('status').notNull().default('em_andamento'),
     iniciadaEm: timestamp('iniciada_em', { withTimezone: true }).notNull().defaultNow(),
+    // Quando a pessoa apertou "Salvar e continuar depois". Nulo = começou e saiu sem decidir.
+    guardadaEm: timestamp('guardada_em', { withTimezone: true }),
     concluidaEm: timestamp('concluida_em', { withTimezone: true }),
     tempoAtivoSegundos: integer('tempo_ativo_segundos'),
     qtdAnaliticas: integer('qtd_analiticas'),

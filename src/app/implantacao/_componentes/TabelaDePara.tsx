@@ -4,8 +4,7 @@ import { useState } from 'react';
 import type { LinhaResolvida } from '../../../motor/converter.js';
 import type { ContaBusca } from '../acoes.js';
 import { BuscaConta } from './BuscaConta.js';
-
-const brl = (n: number): string => n.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+import { SaldoCelula } from './SaldoCelula.js';
 
 /** Célula do meio: onde a pessoa INDICA a conta do Domínio (ou troca a que o motor sugeriu). */
 function CelulaDominio({
@@ -118,7 +117,7 @@ export function TabelaDePara({
         <thead>
           <tr>
             <th>Conta de origem</th>
-            <th style={{ textAlign: 'right' }}>Saldo atual</th>
+            <th style={{ textAlign: 'right' }}>Saldo atual (D/C)</th>
             <th>→ Conta no Domínio</th>
           </tr>
         </thead>
@@ -130,7 +129,7 @@ export function TabelaDePara({
               className={l.origem === 'nao_encontrado' ? 'pendente' : undefined}
             >
               <td>{colunaOrigem(l)}</td>
-              <td className="num">{brl(l.saldoAtual)}</td>
+              <SaldoCelula saldoAtual={l.saldoAtual} natureza={l.natureza} />
               <td className="col-dominio">
                 <CelulaDominio linha={l} contas={contas} porCodigo={porCodigo} onIndicar={onIndicar} editavel={editavel} />
               </td>
@@ -178,7 +177,7 @@ export function Pendencias({
             <th>Cód. origem</th>
             <th>Nome da conta</th>
             <th>Classificação</th>
-            <th style={{ textAlign: 'right' }}>Saldo atual</th>
+            <th style={{ textAlign: 'right' }}>Saldo atual (D/C)</th>
             <th>Indicar conta no Domínio</th>
           </tr>
         </thead>
@@ -191,7 +190,7 @@ export function Pendencias({
                 <div className="meta">{l.natureza || 'sem natureza'}</div>
               </td>
               <td className="cod">{l.clasCta || '—'}</td>
-              <td className="num">{brl(l.saldoAtual)}</td>
+              <SaldoCelula saldoAtual={l.saldoAtual} natureza={l.natureza} />
               <td className="col-dominio">
                 <CelulaDominio linha={l} contas={contas} porCodigo={porCodigo} onIndicar={onIndicar} editavel={editavel} />
               </td>

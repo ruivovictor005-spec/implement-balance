@@ -977,3 +977,93 @@ tr.total td {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------- Excluir / salvar uma implantação da mesa ---------- */
+.item-linha {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.item-linha > .item-aberta {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-confirma {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0 4px 0 10px;
+  border: 1px solid var(--alerta-borda);
+  background: var(--alerta-fundo);
+  border-radius: var(--raio-sm);
+}
+
+.item-excluir {
+  align-self: center;
+}
+
+/* Ação destrutiva: o único vermelho do sistema, e só na borda e no texto. */
+button.perigo {
+  background: var(--papel);
+  color: var(--alerta-texto);
+  border-color: var(--alerta-borda);
+}
+
+button.perigo:hover {
+  background: var(--alerta-fundo);
+  border-color: var(--alerta-texto);
+}
+
+/* ---------- Diálogo central (ex.: sair da implantação) ---------- */
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(10, 12, 16, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: entra 0.15s ease both;
+}
+
+.modal {
+  width: min(520px, 100%);
+  background: var(--papel);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-2);
+  padding: 20px 22px;
+}
+
+.modal h2 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.modal .sub {
+  margin: 0;
+}
+
+/* ---------- Lado do saldo (D/C) ---------- */
+.lado {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 0.9em;
+  color: var(--suave);
+  margin-left: 2px;
+}
+
+/* Saldo no lado contrário ao da natureza da conta: usa o vermelho de pendência, porque é
+   exatamente isso — algo a conferir antes de importar. */
+.lado-invertido {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.9em;
+  color: var(--alerta-texto);
+  margin-left: 2px;
+}

@@ -3,8 +3,7 @@ import * as React from 'react';
 import type { LinhaResolvida } from '../../../motor/converter.js';
 import type { ContaBusca } from '../acoes.js';
 import { BuscaConta } from './BuscaConta.js';
-
-const brl = (n: number): string => n.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+import { SaldoCelula } from './SaldoCelula.js';
 
 export function LinhaPendente({
   linha,
@@ -37,7 +36,7 @@ export function LinhaPendente({
           enquanto, “usar só aqui” resolve a conta apenas nesta implantação.
         </div>
       </td>
-      <td className="num">{brl(linha.saldoAtual)}</td>
+      <SaldoCelula saldoAtual={linha.saldoAtual} natureza={linha.natureza} />
     </tr>
   );
 }
