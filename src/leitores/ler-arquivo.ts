@@ -9,6 +9,19 @@ export type Leitura = { matriz: Matriz; negrito: boolean[][] };
 
 const MENSAGEM_XLS = 'Este arquivo está no formato antigo .xls; abra no Excel e salve como .xlsx.';
 
+/**
+ * Falha causada pelo arquivo enviado, não por um defeito do sistema: a mensagem é escrita para a
+ * pessoa ler e pode ser mostrada na tela. Quem chama distingue isto de um erro interno, que não
+ * deve virar texto de interface. Erros lançados de dentro de uma Server Action são censurados em
+ * produção, então esta mensagem precisa chegar à tela como valor de retorno, nunca lançada.
+ */
+export class ErroDeArquivo extends Error {
+  constructor(mensagem: string) {
+    super(mensagem);
+    this.name = 'ErroDeArquivo';
+  }
+}
+
 /** Devolve só os valores (compatibilidade). Use `lerArquivoComFormato` para também saber o negrito. */
 export async function lerArquivo(bytes: Uint8Array, nomeArquivo: string): Promise<Matriz> {
   return (await lerArquivoComFormato(bytes, nomeArquivo)).matriz;
@@ -17,13 +30,15 @@ export async function lerArquivo(bytes: Uint8Array, nomeArquivo: string): Promis
 export async function lerArquivoComFormato(bytes: Uint8Array, nomeArquivo: string): Promise<Leitura> {
   const ponto = nomeArquivo.lastIndexOf('.');
   const ext = ponto === -1 ? '' : nomeArquivo.slice(ponto).toLowerCase();
-  if (ext === '.xls') throw new Error(MENSAGEM_XLS);
+  if (ext === '.xls') throw new ErroDeArquivo(MENSAGEM_XLS);
   if (ext === '.xlsx' || ext === '.xlsm') return lerPlanilha(bytes);
   if (ext === '.csv' || ext === '.txt') {
     const matriz = lerDelimitado(bytes);
     return { matriz, negrito: matriz.map((linha) => linha.map(() => false)) };
   }
-  throw new Error(`Extensão não suportada: "${ext || nomeArquivo}". Use .xlsx, .xlsm, .csv ou .txt.`);
+  throw new ErroDeArquivo(
+    `Extensão não suportada: "${ext || nomeArquivo}". Use .xlsx, .xlsm, .csv ou .txt.`,
+  );
 }
 
 /** Uma cópia do conteúdo como ArrayBuffer puro. */
@@ -48,7 +63,16 @@ function valorDaCelula(v: ExcelJS.CellValue): Celula {
 
 async function lerPlanilha(bytes: Uint8Array): Promise<Leitura> {
   const wb = new ExcelJS.Workbook();
-  await wb.xlsx.load(paraArrayBuffer(bytes));
+  try {
+    await wb.xlsx.load(paraArrayBuffer(bytes));
+  } catch {
+    // Arquivo corrompido, vazio, ou .xls antigo renomeado para .xlsx: o exceljs lança algo
+    // ininteligível para quem está na tela. Vira mensagem de arquivo.
+    throw new ErroDeArquivo(
+      'Não consegui abrir esta planilha. Confira se o arquivo não está corrompido e se foi mesmo ' +
+        'salvo como .xlsx (renomear um .xls para .xlsx não converte o arquivo).',
+    );
+  }
   const ws = wb.worksheets[0];
   const matriz: Matriz = [];
   const negrito: boolean[][] = [];

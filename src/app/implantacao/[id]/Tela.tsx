@@ -141,7 +141,11 @@ export function Tela({ id }: { id: number }) {
       setPreviaManual(false);
       try {
         const r = await anexarBalancete(id, { bytes, nomeArquivo: arquivo.name });
-        if (!r.reconhecido) {
+        if (r.tipo === 'erro') {
+          setErro(r.mensagem);
+          return;
+        }
+        if (r.tipo === 'previa') {
           setPrevia(r.previa);
           return;
         }
@@ -163,7 +167,11 @@ export function Tela({ id }: { id: number }) {
       setErro(null);
       try {
         const r = await anexarBalancete(id, { bytes: a.bytes, nomeArquivo: a.nome }, { linhaCabecalho, colunas });
-        if (!r.reconhecido) {
+        if (r.tipo === 'erro') {
+          setErro(r.mensagem);
+          return;
+        }
+        if (r.tipo === 'previa') {
           setErro('Ainda não consegui ler com esse mapeamento; confira as colunas.');
           return;
         }
@@ -185,7 +193,11 @@ export function Tela({ id }: { id: number }) {
     if (a === null) return;
     setErro(null);
     const p = await lerPrevia({ bytes: a.bytes, nomeArquivo: a.nome });
-    setPrevia(p);
+    if (p.tipo === 'erro') {
+      setErro(p.mensagem);
+      return;
+    }
+    setPrevia(p.previa);
     setPreviaManual(true);
   }, []);
 

@@ -31,7 +31,7 @@ export type { Lancamento } from '../../motor/agregar.js';
 import { resolverNatureza } from '../../motor/natureza.js';
 import type { ContaPlano } from '../../motor/tipos.js';
 import { PERFIS } from '../../leitores/perfis.js';
-import { lerArquivoComFormato, type Celula } from '../../leitores/ler-arquivo.js';
+import { ErroDeArquivo, lerArquivoComFormato, type Celula } from '../../leitores/ler-arquivo.js';
 
 export type { ContaCriadaEntrada, ImplantacaoAberta, Reconhecimento } from '../../dados/implantacoes.js';
 export type ContaBusca = ContaPlano & { natureza: string };
@@ -103,13 +103,14 @@ export async function salvarDadosEmpresa(id: number, dados: DadosEmpresaForm): P
 
 export type ResultadoAnexo =
   | {
-      reconhecido: true;
+      tipo: 'ok';
       reconhecimento: Reconhecimento;
       painel: Painel;
       linhas: LinhaResolvida[];
       lancamentos: Lancamento[];
     }
-  | { reconhecido: false; previa: Celula[][] };
+  | { tipo: 'previa'; previa: Celula[][] }
+  | { tipo: 'erro'; mensagem: string };
 
 export async function anexarBalancete(
   id: number,
@@ -119,23 +120,37 @@ export async function anexarBalancete(
   const uid = await usuarioAtualId();
   try {
     const r = await anexarNoBanco(db(), id, uid, arquivo, manual);
-    return { reconhecido: true, ...r };
+    return { tipo: 'ok', ...r };
   } catch (e) {
-    const msg = (e as Error).message;
-    if (!msg.includes('Layout não reconhecido')) throw e;
-    const { matriz } = await lerArquivoComFormato(arquivo.bytes, arquivo.nomeArquivo);
-    return { reconhecido: false, previa: matriz.slice(0, 15) };
+    // Problema do arquivo: a mensagem é para a pessoa ler. Lançar daqui faria o Next censurá-la em
+    // produção e a tela mostraria o aviso genérico de erro de servidor.
+    if (e instanceof ErroDeArquivo) return { tipo: 'erro', mensagem: e.message };
+    if (!(e as Error).message.includes('Layout não reconhecido')) throw e;
+    try {
+      const { matriz } = await lerArquivoComFormato(arquivo.bytes, arquivo.nomeArquivo);
+      return { tipo: 'previa', previa: matriz.slice(0, 15) };
+    } catch (e2) {
+      if (e2 instanceof ErroDeArquivo) return { tipo: 'erro', mensagem: e2.message };
+      throw e2;
+    }
   }
 }
+
+export type ResultadoPrevia = { tipo: 'previa'; previa: Celula[][] } | { tipo: 'erro'; mensagem: string };
 
 /** Primeiras linhas do arquivo (para a pessoa apontar as colunas manualmente quando quiser). */
 export async function lerPrevia(arquivo: {
   bytes: Uint8Array;
   nomeArquivo: string;
-}): Promise<Celula[][]> {
+}): Promise<ResultadoPrevia> {
   await usuarioAtualId();
-  const { matriz } = await lerArquivoComFormato(arquivo.bytes, arquivo.nomeArquivo);
-  return matriz.slice(0, 15);
+  try {
+    const { matriz } = await lerArquivoComFormato(arquivo.bytes, arquivo.nomeArquivo);
+    return { tipo: 'previa', previa: matriz.slice(0, 15) };
+  } catch (e) {
+    if (e instanceof ErroDeArquivo) return { tipo: 'erro', mensagem: e.message };
+    throw e;
+  }
 }
 
 export async function definirAjusteManual(id: number, codiCta: string, codigo: string | null) {
