@@ -3,8 +3,12 @@
 // embutido (pglite) é montado pelo instrumentation e registrado aqui por `definirBanco`.
 import { drizzle, type NodePgDatabase } from 'drizzle-orm/node-postgres';
 import type { PgDatabase } from 'drizzle-orm/pg-core';
-import { Pool } from 'pg';
+import pg from 'pg';
 import * as schema from './schema.js';
+
+// `pg` é CommonJS: o import default + destructuring funciona tanto no bundler do Next quanto no Node
+// puro (tsx/scripts), ao contrário do `import { Pool } from 'pg'`.
+const { Pool } = pg;
 
 export type Banco = PgDatabase<any, typeof schema, any>;
 
