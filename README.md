@@ -3,6 +3,9 @@
 > Converte o **balancete de verificação** de um cliente no **arquivo de importação posicional do
 > sistema Domínio** (leiaute 19) — automatizando um trabalho que antes era feito à mão em planilhas.
 
+**▶ Demo ao vivo:** https://implement-balance.vercel.app — crie uma conta para entrar (o primeiro
+cadastro recebe perfil de administrador).
+
 Aplicação web completa (Next.js + Postgres) que recebe o balancete exportado de qualquer sistema
 contábil, faz o **de-para** das contas para o plano de contas do Domínio e gera o **TXT de importação
 byte a byte idêntico** ao que a planilha de referência produzia — com login, trilha de auditoria e
