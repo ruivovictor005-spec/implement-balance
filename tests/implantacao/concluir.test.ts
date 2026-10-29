@@ -86,7 +86,7 @@ describe('conclusão e lista de concluídas', () => {
     expect(i.concluidaEm).not.toBeNull();
   });
 
-  it('exportação traz empresa, data, pessoa, tempo total, tempo ativo e liberação', async () => {
+  it('exportação traz empresa, data, pessoa, conclusão e liberação (sem tempos)', async () => {
     await gerarTxtDaImplantacao(banco, id, usuarioId, 'liberado');
     await concluirImplantacao(banco, id, usuarioId);
     const bytes = await exportarConcluidas(banco);
@@ -94,9 +94,10 @@ describe('conclusão e lista de concluídas', () => {
     await wb.xlsx.load(bytes.buffer as ArrayBuffer);
     const ws = wb.worksheets[0];
     const header = (ws.getRow(1).values as unknown[]).map((v) => String(v)).join('|');
-    for (const col of ['Empresa', 'Data do saldo', 'Pessoa', 'Tempo total', 'Tempo ativo', 'Liberação']) {
+    for (const col of ['Empresa', 'Data do saldo', 'Pessoa', 'Concluída em', 'Liberação']) {
       expect(header).toContain(col);
     }
+    expect(header).not.toContain('Tempo');
     expect(ws.rowCount).toBeGreaterThanOrEqual(2);
   });
 });

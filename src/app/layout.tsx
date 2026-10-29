@@ -11,7 +11,9 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const sessao = await auth();
-  const usuario = sessao?.user ? { nome: sessao.user.name ?? null } : null;
+  const usuario = sessao?.user
+    ? { nome: sessao.user.name ?? null, papel: (sessao as { papel?: string }).papel ?? 'usuario' }
+    : null;
   return (
     <html lang="pt-BR">
       <head>

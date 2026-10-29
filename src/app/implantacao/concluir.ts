@@ -4,7 +4,6 @@ import { desc, eq } from 'drizzle-orm';
 import type { PgDatabase } from 'drizzle-orm/pg-core';
 import ExcelJS from 'exceljs';
 import { recalcular } from '../../dados/implantacoes.js';
-import { tempoAtivoSegundos, tempoTotalSegundos } from '../../dados/tempo.js';
 import { implantacao, usuario } from '../../dados/schema.js';
 
 type Banco = PgDatabase<any, any, any>;
@@ -59,13 +58,11 @@ export async function concluirImplantacao(
   if (imp.usuarioId !== usuarioId) return { ok: false, erro: 'Esta implantação é de outra pessoa.' };
   if (imp.txtHash === null) return { ok: false, erro: 'Gere o TXT antes de concluir.' };
 
-  const ativo = await tempoAtivoSegundos(banco, id);
   await banco
     .update(implantacao)
     .set({
       status: 'concluida',
       concluidaEm: new Date(),
-      tempoAtivoSegundos: ativo,
       liberacaoMotivo:
         liberacaoMotivo !== undefined && liberacaoMotivo.trim() !== ''
           ? liberacaoMotivo
@@ -81,8 +78,7 @@ export type ConcluidaResumo = {
   empresaCnpj: string | null;
   dataSaldo: string | null;
   pessoa: string;
-  tempoTotal: number;
-  tempoAtivo: number;
+  concluidaEm: Date | null;
   liberacao: string | null;
 };
 
@@ -94,9 +90,7 @@ export async function listarConcluidas(banco: Banco): Promise<ConcluidaResumo[]>
       empresaCnpj: implantacao.empresaCnpj,
       dataSaldo: implantacao.dataSaldo,
       pessoa: usuario.nome,
-      iniciadaEm: implantacao.iniciadaEm,
       concluidaEm: implantacao.concluidaEm,
-      tempoAtivo: implantacao.tempoAtivoSegundos,
       liberacao: implantacao.liberacaoMotivo,
     })
     .from(implantacao)
@@ -110,8 +104,7 @@ export async function listarConcluidas(banco: Banco): Promise<ConcluidaResumo[]>
     empresaCnpj: r.empresaCnpj,
     dataSaldo: r.dataSaldo,
     pessoa: r.pessoa,
-    tempoTotal: r.concluidaEm !== null ? tempoTotalSegundos(r.iniciadaEm, r.concluidaEm) : 0,
-    tempoAtivo: r.tempoAtivo ?? 0,
+    concluidaEm: r.concluidaEm,
     liberacao: r.liberacao,
   }));
 }
@@ -120,23 +113,14 @@ export async function exportarConcluidas(banco: Banco): Promise<Uint8Array> {
   const lista = await listarConcluidas(banco);
   const wb = new ExcelJS.Workbook();
   const ws = wb.addWorksheet('Concluídas');
-  ws.addRow([
-    'Empresa',
-    'CNPJ',
-    'Data do saldo',
-    'Pessoa',
-    'Tempo total (s)',
-    'Tempo ativo (s)',
-    'Liberação',
-  ]);
+  ws.addRow(['Empresa', 'CNPJ', 'Data do saldo', 'Pessoa', 'Concluída em', 'Liberação']);
   for (const c of lista) {
     ws.addRow([
       c.empresaNome ?? '',
       c.empresaCnpj ?? '',
       c.dataSaldo ?? '',
       c.pessoa,
-      c.tempoTotal,
-      c.tempoAtivo,
+      c.concluidaEm !== null ? c.concluidaEm.toISOString().slice(0, 10) : '',
       c.liberacao ?? '',
     ]);
   }

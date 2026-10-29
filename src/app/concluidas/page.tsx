@@ -3,7 +3,8 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { exportarConcluidas, listarConcluidas, type ConcluidaResumo } from './acoes.js';
 
-const minutos = (s: number): string => `${Math.round(s / 60)} min`;
+const dataBR = (d: Date | null): string =>
+  d === null ? '—' : new Date(d).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
 export default function Pagina() {
   const [lista, setLista] = useState<ConcluidaResumo[]>([]);
@@ -48,8 +49,7 @@ export default function Pagina() {
                 <th>Empresa</th>
                 <th>Data do saldo</th>
                 <th>Pessoa</th>
-                <th>Tempo total</th>
-                <th>Tempo ativo</th>
+                <th>Concluída em</th>
                 <th>Liberação</th>
               </tr>
             </thead>
@@ -59,8 +59,7 @@ export default function Pagina() {
                   <td>{c.empresaNome ?? c.empresaCnpj ?? '—'}</td>
                   <td>{c.dataSaldo ?? '—'}</td>
                   <td>{c.pessoa}</td>
-                  <td>{minutos(c.tempoTotal)}</td>
-                  <td>{minutos(c.tempoAtivo)}</td>
+                  <td>{dataBR(c.concluidaEm)}</td>
                   <td>{c.liberacao ?? ''}</td>
                 </tr>
               ))}
