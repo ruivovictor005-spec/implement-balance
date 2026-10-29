@@ -13,6 +13,8 @@
     "start": "next start",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
+    "db:migrate": "tsx scripts/migrar.ts",
+    "db:seed": "tsx scripts/semear.ts",
     "fixtures": "tsx scripts/extrair-fixtures.ts",
     "exemplos": "tsx scripts/gerar-arquivos-exemplo.ts"
   },
