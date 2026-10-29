@@ -20,6 +20,7 @@ import { DadosEmpresa } from '../../src/app/implantacao/_componentes/DadosEmpres
 import { MapeamentoColunas } from '../../src/app/implantacao/_componentes/MapeamentoColunas.js';
 import { Mesa } from '../../src/app/implantacao/_componentes/Mesa.js';
 import { PainelConferencia } from '../../src/app/implantacao/_componentes/PainelConferencia.js';
+import { ResumoBalancete } from '../../src/app/implantacao/_componentes/ResumoBalancete.js';
 import { SairDaImplantacao } from '../../src/app/implantacao/_componentes/SairDaImplantacao.js';
 import { Pendencias, TabelaDePara } from '../../src/app/implantacao/_componentes/TabelaDePara.js';
 import { TabelaLinhas } from '../../src/app/implantacao/_componentes/TabelaLinhas.js';
@@ -341,6 +342,70 @@ describe('tela de implantação', () => {
       expect(celula).toHaveTextContent('D');
       // Receita devedora: é o caso que a pessoa precisa ver.
       expect(within(celula).getByText('saldo invertido')).toBeInTheDocument();
+    });
+  });
+
+  describe('resumo do balancete', () => {
+    const resumoDe = (over: Partial<LinhaResolvida>[]) =>
+      render(<ResumoBalancete linhas={over.map((o) => linha(o))} />);
+
+    const celulas = (id: string): string[] =>
+      Array.from(
+        (document.querySelector(`tr[data-linha="${id}"]`) as HTMLElement).querySelectorAll('td.num'),
+      ).map((td) => (td.textContent ?? '').trim());
+
+    it('mostra os grupos, os totais e o resultado com D/C', () => {
+      resumoDe([
+        {
+          natureza: 'ATIVO CIRCULANTE',
+          saldoAnterior: -18177277.09,
+          totalDebito: 10289559.06,
+          totalCredito: 10795555.65,
+          saldoAtual: -17671280.5,
+        },
+        {
+          natureza: 'DESPESA ADMINISTRATIVA',
+          saldoAnterior: -4858693.11,
+          totalDebito: 335752.92,
+          totalCredito: 0,
+          saldoAtual: -5194446.03,
+        },
+        {
+          natureza: 'RECEITA DE SERVIÇOS',
+          saldoAnterior: 676229.12,
+          totalDebito: 1448.35,
+          totalCredito: 162791.57,
+          saldoAtual: 837572.34,
+        },
+      ]);
+
+      expect(screen.getByText('ATIVO')).toBeInTheDocument();
+      expect(screen.getByText('Patrimônio Líquido')).toBeInTheDocument();
+
+      // Saldo em módulo colado no lado, como no relatório do Domínio.
+      expect(celulas('ativo')[3]).toBe('17.671.280,50D');
+      expect(celulas('receitas')[3]).toBe('837.572,34C');
+
+      // Devedoras = ativo + custos, nas quatro colunas.
+      expect(celulas('devedoras')[0]).toBe('23.035.970,20D');
+      expect(celulas('devedoras')[3]).toBe('22.865.726,53D');
+
+      // Resultado do mês é só a movimentação; o do exercício, o acumulado.
+      expect(celulas('resultadoMes')[3]).toBe('174.409,70D');
+      expect(celulas('resultadoExercicio')[3]).toBe('4.356.873,69D');
+    });
+
+    it('avisa quando alguma linha ficou fora dos totais', () => {
+      resumoDe([
+        { natureza: 'ATIVO', saldoAtual: -10 },
+        { natureza: 'COMPENSAÇÃO', saldoAtual: -999 },
+      ]);
+      expect(screen.getByText(/1 linha\(s\) ficaram fora do resumo/)).toBeInTheDocument();
+    });
+
+    it('não avisa nada quando todas as linhas entraram', () => {
+      resumoDe([{ natureza: 'ATIVO', saldoAtual: -10 }]);
+      expect(screen.queryByText(/fora do resumo/)).not.toBeInTheDocument();
     });
   });
 });

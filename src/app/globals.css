@@ -1067,3 +1067,15 @@ button.perigo:hover {
   color: var(--alerta-texto);
   margin-left: 2px;
 }
+
+/* ---------- Resumo do balancete ---------- */
+.resumo-balancete td:first-child {
+  white-space: nowrap;
+}
+
+/* Separador entre os blocos (grupos / devedoras-credoras / resultado), como no relatório. */
+.resumo-balancete tr.resumo-espaco td {
+  height: 10px;
+  padding: 0;
+  border-bottom: none;
+}

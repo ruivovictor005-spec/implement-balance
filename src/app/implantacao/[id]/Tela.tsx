@@ -32,6 +32,7 @@ import { TabelaDePara, Pendencias } from '../_componentes/TabelaDePara.js';
 import { DadosEmpresa } from '../_componentes/DadosEmpresa.js';
 import { PainelConferencia } from '../_componentes/PainelConferencia.js';
 import { RegistrarContaCriada } from '../_componentes/RegistrarContaCriada.js';
+import { ResumoBalancete } from '../_componentes/ResumoBalancete.js';
 import { SairDaImplantacao } from '../_componentes/SairDaImplantacao.js';
 
 const PAINEL_VAZIO: Painel = {
@@ -448,7 +449,10 @@ export function Tela({ id }: { id: number }) {
 
       {aba === 'previa' &&
         (temLinhas ? (
-          <PreviaBalancete lancamentos={lancamentos} contas={contas} />
+          <>
+            <PreviaBalancete lancamentos={lancamentos} contas={contas} />
+            <ResumoBalancete linhas={linhas} />
+          </>
         ) : (
           <div className="cartao vazio">Anexe um balancete para ver a prévia no Domínio.</div>
         ))}
