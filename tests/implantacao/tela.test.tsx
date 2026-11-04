@@ -13,13 +13,14 @@ vi.mock('../../src/app/implantacao/acoes.js', () => ({
 }));
 
 import type { LinhaResolvida } from '../../src/motor/converter.js';
-import type { ContaBusca, ImplantacaoAberta } from '../../src/app/implantacao/acoes.js';
+import type { ContaBusca, ImplantacaoAberta, Lancamento } from '../../src/app/implantacao/acoes.js';
 import { AreaArquivo } from '../../src/app/implantacao/_componentes/AreaArquivo.js';
 import { BuscaConta } from '../../src/app/implantacao/_componentes/BuscaConta.js';
 import { DadosEmpresa } from '../../src/app/implantacao/_componentes/DadosEmpresa.js';
 import { MapeamentoColunas } from '../../src/app/implantacao/_componentes/MapeamentoColunas.js';
 import { Mesa } from '../../src/app/implantacao/_componentes/Mesa.js';
 import { PainelConferencia } from '../../src/app/implantacao/_componentes/PainelConferencia.js';
+import { PreviaBalancete } from '../../src/app/implantacao/_componentes/PreviaBalancete.js';
 import { ResumoBalancete } from '../../src/app/implantacao/_componentes/ResumoBalancete.js';
 import { SairDaImplantacao } from '../../src/app/implantacao/_componentes/SairDaImplantacao.js';
 import { Pendencias, TabelaDePara } from '../../src/app/implantacao/_componentes/TabelaDePara.js';
@@ -406,6 +407,122 @@ describe('tela de implantação', () => {
     it('não avisa nada quando todas as linhas entraram', () => {
       resumoDe([{ natureza: 'ATIVO', saldoAtual: -10 }]);
       expect(screen.queryByText(/fora do resumo/)).not.toBeInTheDocument();
+    });
+  });
+
+  // A prévia é um balancete de verdade: cada conta de grupo totaliza o que está abaixo dela, em
+  // todos os níveis. É o que permite conferir a realocação sem somar linha a linha.
+  describe('prévia hierárquica no Domínio', () => {
+    const conta = (codigoReduzido: string, classificacao: string, descricao: string): ContaBusca => ({
+      codigoReduzido,
+      classificacao,
+      descricao,
+      tipo: classificacao.length >= 8 ? 'A' : 'S',
+      descricaoNormalizada: '',
+      natureza: '',
+    });
+
+    // Recorte do plano real, com a cadeia de sintéticas que o Domínio imprime.
+    const planinho: ContaBusca[] = [
+      conta('1000', '1', 'ATIVO'),
+      conta('1100', '11', 'Ativo Circulante'),
+      conta('1110', '111', 'Disponível'),
+      conta('1112', '11102', 'Bancos Conta Movimento'),
+      conta('10', '11102001', 'Bradesco'),
+      conta('15', '11102006', 'Santander'),
+      conta('2000', '2', 'PASSIVO'),
+      conta('2140', '21401', 'Impostos e Contribuições a Recolher'),
+      conta('235', '21401003', 'PIS a Recolher'),
+    ];
+
+    const lanc = (codigo: string, valor: number, lado: 'D' | 'C', origem = 'X1'): Lancamento => ({
+      contaDebito: lado === 'D' ? codigo : null,
+      contaCredito: lado === 'C' ? codigo : null,
+      valor,
+      complemento: ' | conta',
+      origemCodigo: origem,
+      origemNome: 'CONTA DE ORIGEM',
+    });
+
+    const previa = (lancamentos: Lancamento[]) =>
+      render(<PreviaBalancete contas={planinho} lancamentos={lancamentos} />);
+
+    const linhaDe = (classificacao: string): HTMLElement =>
+      document.querySelector(`tr[data-classificacao="${classificacao}"]`) as HTMLElement;
+
+    const numeros = (tr: HTMLElement): string[] =>
+      Array.from(tr.querySelectorAll('td.num')).map((td) => (td.textContent ?? '').trim());
+
+    it('mostra a cadeia de grupos acima da conta, na ordem do plano', () => {
+      previa([lanc('10', 100, 'D')]);
+      const classes = Array.from(document.querySelectorAll('tr[data-classificacao]')).map((t) =>
+        t.getAttribute('data-classificacao'),
+      );
+      expect(classes).toEqual(['1', '11', '111', '11102', '11102001']);
+    });
+
+    it('a conta de grupo soma as analíticas abaixo dela', () => {
+      previa([lanc('10', 100, 'D'), lanc('15', 40, 'C')]);
+      // Bancos Conta Movimento junta Bradesco e Santander.
+      expect(numeros(linhaDe('11102'))).toEqual(['100,00', '40,00', '60,00 D']);
+      expect(numeros(linhaDe('1'))).toEqual(['100,00', '40,00', '60,00 D']);
+    });
+
+    it('marca o que é grupo e o que é conta', () => {
+      previa([lanc('10', 100, 'D')]);
+      expect(linhaDe('11102')).toHaveAttribute('data-sintetica', '1');
+      expect(linhaDe('11102001')).toHaveAttribute('data-sintetica', '0');
+      expect(linhaDe('11102')).toHaveClass('grupo');
+      expect(linhaDe('11102001')).not.toHaveClass('grupo');
+    });
+
+    it('cada grupo é indentado conforme o nível', () => {
+      previa([lanc('10', 100, 'D')]);
+      const recuo = (c: string): number =>
+        Number(
+          ((linhaDe(c).querySelectorAll('td')[2] as HTMLElement).style.paddingLeft || '0').replace(
+            'px',
+            '',
+          ),
+        );
+      expect(recuo('1')).toBeLessThan(recuo('11'));
+      expect(recuo('11')).toBeLessThan(recuo('111'));
+      expect(recuo('111')).toBeLessThan(recuo('11102001'));
+    });
+
+    it('grupos de topo diferentes não se misturam', () => {
+      previa([lanc('235', 300, 'C'), lanc('10', 100, 'D')]);
+      expect(numeros(linhaDe('1'))).toEqual(['100,00', '', '100,00 D']);
+      expect(numeros(linhaDe('2'))).toEqual(['', '300,00', '300,00 C']);
+    });
+
+    // O total conta só as analíticas: somar os grupos junto seria contar o mesmo saldo várias vezes.
+    it('o total geral não soma os grupos duas vezes', () => {
+      previa([lanc('10', 100, 'D'), lanc('15', 40, 'C'), lanc('235', 300, 'C')]);
+      const total = document.querySelector('tr.total') as HTMLElement;
+      expect(numeros(total)).toEqual(['100,00', '340,00', '240,00 C']);
+      expect(screen.getByText(/3 conta\(s\)/)).toBeInTheDocument();
+    });
+
+    it('as origens aparecem sob a conta, sem entrar no total do grupo', () => {
+      previa([lanc('10', 60, 'D', 'X1'), lanc('10', 40, 'D', 'X2')]);
+      expect(screen.getAllByText(/veio de/)).toHaveLength(2);
+      expect(numeros(linhaDe('11102'))).toEqual(['100,00', '', '100,00 D']);
+    });
+
+    it('conta fora do plano vai para o fim, sem pendurar em grupo nenhum', () => {
+      previa([lanc('10', 100, 'D'), lanc('999', 7, 'D')]);
+      const linhas = Array.from(document.querySelectorAll('tr[data-classificacao]'));
+      const ultima = linhas[linhas.length - 1];
+      expect(ultima.getAttribute('data-classificacao')).toBe('');
+      expect(ultima).toHaveTextContent('(fora do plano)');
+      expect(numeros(linhaDe('1'))).toEqual(['100,00', '', '100,00 D']);
+    });
+
+    it('sem lançamentos não mostra tabela', () => {
+      previa([]);
+      expect(screen.getByText(/Indique as contas no de-para/)).toBeInTheDocument();
+      expect(document.querySelector('tr[data-classificacao]')).toBeNull();
     });
   });
 });

@@ -1,52 +1,45 @@
 'use client';
 import * as React from 'react';
 import { useState } from 'react';
+import { montarBalancete, type SaldoDaConta } from '../../../motor/arvore-balancete.js';
 import type { ContaBusca, Lancamento } from '../acoes.js';
 
 const brl = (n: number): string => n.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 
 type Origem = { codigo: string; nome: string; debito: number; credito: number };
 
-type LinhaPrevia = {
-  codigo: string;
-  classificacao: string;
-  descricao: string;
-  debito: number;
-  credito: number;
+type ContaComOrigens = SaldoDaConta & {
   /** As contas de origem que compõem o saldo desta conta do Domínio — um lançamento cada. */
   origens: Origem[];
 };
 
-// Monta o balancete como ele vai ficar no Domínio: uma linha por conta do Domínio, ordenada pela
-// classificação — organizada como um balancete. Cada conta guarda as origens que a compõem, porque
-// no TXT cada origem é um lançamento próprio: é por aqui que se explica de onde veio cada saldo.
-function montar(lancamentos: Lancamento[], porCodigo: Map<string, ContaBusca>): LinhaPrevia[] {
-  const mapa = new Map<string, LinhaPrevia>();
+// Uma entrada por conta do Domínio, agregando os lançamentos. Cada conta guarda as origens que a
+// compõem, porque no TXT cada origem é um lançamento próprio: é por aqui que se explica de onde
+// veio cada saldo.
+function agregarPorConta(lancamentos: Lancamento[]): ContaComOrigens[] {
+  const mapa = new Map<string, ContaComOrigens>();
   for (const l of lancamentos) {
     const codigo = l.contaDebito ?? l.contaCredito;
     if (codigo === null) continue;
-    const conta = porCodigo.get(codigo);
-    const linha =
-      mapa.get(codigo) ??
-      {
-        codigo,
-        classificacao: conta?.classificacao ?? '',
-        descricao: conta?.descricao ?? '',
-        debito: 0,
-        credito: 0,
-        origens: [],
-      };
+    const conta = mapa.get(codigo) ?? { codigo, debito: 0, credito: 0, origens: [] };
     const debito = l.contaDebito !== null ? l.valor : 0;
     const credito = l.contaCredito !== null ? l.valor : 0;
-    linha.debito += debito;
-    linha.credito += credito;
-    linha.origens.push({ codigo: l.origemCodigo, nome: l.origemNome, debito, credito });
-    mapa.set(codigo, linha);
+    conta.debito += debito;
+    conta.credito += credito;
+    conta.origens.push({ codigo: l.origemCodigo, nome: l.origemNome, debito, credito });
+    mapa.set(codigo, conta);
   }
-  return [...mapa.values()].sort((a, b) =>
-    a.classificacao.localeCompare(b.classificacao, 'pt-BR', { numeric: true }),
-  );
+  return [...mapa.values()];
 }
+
+const Saldo = ({ debito, credito }: { debito: number; credito: number }) => {
+  const saldo = debito - credito;
+  return (
+    <>
+      {brl(Math.abs(saldo))} {saldo >= 0 ? 'D' : 'C'}
+    </>
+  );
+};
 
 export function PreviaBalancete({
   lancamentos,
@@ -56,29 +49,38 @@ export function PreviaBalancete({
   contas: ContaBusca[];
 }) {
   const [verOrigens, setVerOrigens] = useState(true);
-  const porCodigo = new Map(contas.map((c) => [c.codigoReduzido, c]));
-  const linhas = montar(lancamentos, porCodigo);
-  const totalDebito = linhas.reduce((s, l) => s + l.debito, 0);
-  const totalCredito = linhas.reduce((s, l) => s + l.credito, 0);
+  const porConta = agregarPorConta(lancamentos);
+  const origensPorCodigo = new Map(porConta.map((c) => [c.codigo, c.origens]));
+  const linhas = montarBalancete(porConta, contas);
+
+  const analiticas = linhas.filter((l) => !l.sintetica);
+  const totalDebito = analiticas.reduce((s, l) => s + l.debito, 0);
+  const totalCredito = analiticas.reduce((s, l) => s + l.credito, 0);
 
   return (
     <section className="cartao">
       <h2>
-        Prévia do balancete no Domínio — {linhas.length} conta(s), {lancamentos.length} lançamento(s)
+        Prévia do balancete no Domínio — {analiticas.length} conta(s), {lancamentos.length}{' '}
+        lançamento(s)
       </h2>
       <p className="sub">
-        Como o balancete fica no plano do Domínio, ordenado pela classificação. Cada conta de origem
-        vira um lançamento próprio, com a origem no histórico.
+        Como o balancete fica no plano do Domínio: cada conta de grupo totaliza o que está abaixo
+        dela, em todos os níveis. Cada conta de origem vira um lançamento próprio, com a origem no
+        histórico.
       </p>
-      {linhas.length === 0 ? (
+      {analiticas.length === 0 ? (
         <div className="vazio">Indique as contas no de-para para ver a prévia aqui.</div>
       ) : (
         <>
           <label className="chave">
-            <input type="checkbox" checked={verOrigens} onChange={(e) => setVerOrigens(e.target.checked)} />
+            <input
+              type="checkbox"
+              checked={verOrigens}
+              onChange={(e) => setVerOrigens(e.target.checked)}
+            />
             Mostrar a origem de cada saldo
           </label>
-          <table>
+          <table className="balancete">
             <thead>
               <tr>
                 <th>Código</th>
@@ -91,29 +93,33 @@ export function PreviaBalancete({
             </thead>
             <tbody>
               {linhas.map((l) => {
-                const saldo = l.debito - l.credito;
+                const origens = l.sintetica ? [] : origensPorCodigo.get(l.codigo) ?? [];
                 return (
-                  <React.Fragment key={l.codigo}>
-                    <tr>
+                  <React.Fragment key={`${l.sintetica ? 's' : 'a'}-${l.classificacao}-${l.codigo}`}>
+                    <tr
+                      className={l.sintetica ? 'grupo' : undefined}
+                      data-classificacao={l.classificacao}
+                      data-sintetica={l.sintetica ? '1' : '0'}
+                    >
                       <td className="cod">{l.codigo}</td>
                       <td className="cod">{l.classificacao || '—'}</td>
-                      <td>
-                        {l.descricao}
-                        {l.origens.length > 1 && (
-                          <span className="meta"> · {l.origens.length} origens</span>
+                      <td style={{ paddingLeft: 10 + l.nivel * 18 }}>
+                        {l.descricao || '(fora do plano)'}
+                        {origens.length > 1 && (
+                          <span className="meta"> · {origens.length} origens</span>
                         )}
                       </td>
                       <td className="num">{l.debito ? brl(l.debito) : ''}</td>
                       <td className="num">{l.credito ? brl(l.credito) : ''}</td>
                       <td className="num">
-                        {brl(Math.abs(saldo))} {saldo >= 0 ? 'D' : 'C'}
+                        <Saldo debito={l.debito} credito={l.credito} />
                       </td>
                     </tr>
                     {verOrigens &&
-                      l.origens.map((o, i) => (
+                      origens.map((o, i) => (
                         <tr key={`${l.codigo}-${i}`} className="linha-origem">
                           <td />
-                          <td colSpan={2}>
+                          <td colSpan={2} style={{ paddingLeft: 10 + (l.nivel + 1) * 18 }}>
                             ↳ veio de <span className="cod">{o.codigo}</span> {o.nome}
                           </td>
                           <td className="num">{o.debito ? brl(o.debito) : ''}</td>
@@ -136,7 +142,7 @@ export function PreviaBalancete({
                 </td>
                 <td className="num">
                   <strong>
-                    {brl(Math.abs(totalDebito - totalCredito))} {totalDebito - totalCredito >= 0 ? 'D' : 'C'}
+                    <Saldo debito={totalDebito} credito={totalCredito} />
                   </strong>
                 </td>
               </tr>

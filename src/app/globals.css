@@ -1104,3 +1104,19 @@ label.chave {
   color: var(--suave);
   cursor: pointer;
 }
+
+/* Balancete hierárquico: as contas de GRUPO (sintéticas) totalizam o que está abaixo delas. Elas
+   estruturam a leitura, então ficam destacadas sem roubar a atenção das analíticas. */
+tr.grupo td {
+  background: var(--n-50);
+  font-weight: 600;
+}
+
+tr.grupo td .meta {
+  font-weight: 400;
+}
+
+/* Quanto mais alto o grupo, mais forte a separação — como num balancete impresso. */
+table.balancete tr.grupo td:first-child {
+  box-shadow: inset 2px 0 0 var(--borda-forte);
+}
