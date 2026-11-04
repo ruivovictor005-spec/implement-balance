@@ -74,19 +74,6 @@ export function PreviaBalancete({
         Prévia do balancete no Domínio — {analiticas.length} conta(s), {lancamentos.length}{' '}
         lançamento(s)
       </h2>
-      <p className="sub">
-        Como o balancete fica no plano do Domínio: cada conta de grupo totaliza o que está abaixo
-        dela, em todos os níveis. Cada conta de origem vira um lançamento próprio, com a origem no
-        histórico.
-        {conferencia !== undefined && (
-          <>
-            {' '}
-            A coluna <strong>Confere?</strong> compara o grupo com o balancete de origem. Um
-            <strong> ATENÇÃO</strong> não quer dizer erro: quer dizer que o saldo daquele grupo
-            mudou e vale olhar o motivo.
-          </>
-        )}
-      </p>
       {analiticas.length === 0 ? (
         <div className="vazio">Indique as contas no de-para para ver a prévia aqui.</div>
       ) : (

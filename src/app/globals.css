@@ -1111,6 +1111,12 @@ label.chave {
   cursor: pointer;
 }
 
+/* Conferência por grupo quando tudo bate: uma linha, não um cartão. A tabela inteira dizendo OK em
+   todas as linhas não conta nada que a linha não conte, e ocupava a tela toda. */
+p.conferencia-ok {
+  margin: 0 0 14px;
+}
+
 /* Seletor dentro de um rótulo curto (o plano de contas da origem): controle do tamanho do seu
    conteúdo, ao lado do texto — não um campo de largura total como os do formulário da empresa. */
 label.chave select {

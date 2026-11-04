@@ -13,6 +13,7 @@ import {
   excluirImplantacao as excluirNoBanco,
   guardarImplantacao as guardarNoBanco,
   iniciarImplantacao as iniciarNoBanco,
+  inverterSinalDosSaldos as inverterSinalNoBanco,
   lerImplantacao as lerImplantacaoNoBanco,
   listarContasCriadas as listarCriadasNoBanco,
   minhasImplantacoesAbertas as minhasAbertasNoBanco,
@@ -186,6 +187,14 @@ export async function definirPlanoOrigem(
   plano: PlanoIndicado | null,
 ): Promise<ResultadoImplantacao> {
   return definirPlanoNoBanco(db(), id, await usuarioAtualId(), plano);
+}
+
+/**
+ * Inverte o sinal de todos os saldos: o arquivo veio na convenção contrária (débito positivo).
+ * Sem isso, todo lançamento sairia do lado errado no TXT — e o balancete fecharia igual.
+ */
+export async function inverterSinalDosSaldos(id: number): Promise<ResultadoImplantacao> {
+  return inverterSinalNoBanco(db(), id, await usuarioAtualId());
 }
 
 export async function registrarContaCriada(id: number, conta: ContaCriadaEntrada) {

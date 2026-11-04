@@ -9,6 +9,7 @@ import {
   excluirImplantacao,
   guardarImplantacao,
   iniciarImplantacao,
+  inverterSinalDosSaldos,
   minhasImplantacoesAbertas,
   recalcular,
   registrarContaCriada,
@@ -149,6 +150,74 @@ describe('ações da implantação', () => {
     const linha = linhas.find((l) => l.codiCta === '032630-5');
     expect(linha?.codigo).toBe('485');
     expect(linha?.status).toBe('Manual (coluna L)');
+  });
+
+  // Arquivo que veio na convenção contrária (débito positivo): o conserto é um UPDATE só, e a
+  // conferência de convenção passa a dizer que está normal.
+  describe('inverter o sinal de todos os saldos', () => {
+    const saldosDe = async (id: number) =>
+      banco
+        .select({
+          codi: schema.implantacaoLinha.codiCta,
+          anterior: schema.implantacaoLinha.saldoAnterior,
+          debito: schema.implantacaoLinha.totalDebito,
+          credito: schema.implantacaoLinha.totalCredito,
+          atual: schema.implantacaoLinha.saldoAtual,
+        })
+        .from(schema.implantacaoLinha)
+        .where(eq(schema.implantacaoLinha.implantacaoId, id))
+        .orderBy(schema.implantacaoLinha.ordem);
+
+    it('troca o sinal do saldo anterior e do atual, e só deles', async () => {
+      const id = await iniciarImplantacao(banco, usuarioId);
+      await comDados(id);
+      await anexarBalancete(banco, id, usuarioId, arquivo);
+      const antes = await saldosDe(id);
+
+      const r = await inverterSinalDosSaldos(banco, id, usuarioId);
+      expect(r.ok).toBe(true);
+
+      const depois = await saldosDe(id);
+      expect(depois).toHaveLength(antes.length);
+      antes.forEach((a, i) => {
+        expect(Number(depois[i].atual)).toBeCloseTo(-Number(a.atual), 2);
+        expect(Number(depois[i].anterior)).toBeCloseTo(-Number(a.anterior), 2);
+        // Débito e crédito do mês são movimento, não têm lado: ficam como estavam.
+        expect(depois[i].debito).toBe(a.debito);
+        expect(depois[i].credito).toBe(a.credito);
+      });
+    });
+
+    it('inverter duas vezes volta ao que era', async () => {
+      const id = await iniciarImplantacao(banco, usuarioId);
+      await comDados(id);
+      await anexarBalancete(banco, id, usuarioId, arquivo);
+      const antes = await saldosDe(id);
+      await inverterSinalDosSaldos(banco, id, usuarioId);
+      await inverterSinalDosSaldos(banco, id, usuarioId);
+      const depois = await saldosDe(id);
+      antes.forEach((a, i) => expect(Number(depois[i].atual)).toBeCloseTo(Number(a.atual), 2));
+    });
+
+    it('a conferência de convenção passa de invertida para normal', async () => {
+      const id = await iniciarImplantacao(banco, usuarioId);
+      await comDados(id);
+      await anexarBalancete(banco, id, usuarioId, arquivo);
+
+      await inverterSinalDosSaldos(banco, id, usuarioId);
+      expect((await recalcular(banco, id, usuarioId)).painel.origem.convencao).toBe('invertida');
+
+      await inverterSinalDosSaldos(banco, id, usuarioId);
+      expect((await recalcular(banco, id, usuarioId)).painel.origem.convencao).toBe('normal');
+    });
+
+    it('implantação de outra pessoa não é invertida', async () => {
+      const id = await iniciarImplantacao(banco, usuarioId);
+      await comDados(id);
+      await anexarBalancete(banco, id, usuarioId, arquivo);
+      const r = await inverterSinalDosSaldos(banco, id, usuarioId + 999);
+      expect(r).toEqual({ ok: false, erro: 'Esta implantação é de outra pessoa.' });
+    });
   });
 
   it('conta criada passa a valer para o ajuste manual da mesma implantação', async () => {

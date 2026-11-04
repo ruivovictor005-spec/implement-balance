@@ -357,6 +357,41 @@ export async function definirPlanoOrigem(
 }
 
 /**
+ * Inverte o sinal de todos os saldos desta implantação, para um arquivo que veio na convenção
+ * contrária (débito positivo). Um UPDATE só, não um por linha.
+ *
+ * Mexe no saldo ANTERIOR e no ATUAL, que são os dois que carregam lado; débito e crédito do mês são
+ * movimento, sempre positivos, e ficam como estão — é justamente isso que mantém a identidade
+ * "anterior + débito − crédito = atual" válida na convenção do motor.
+ *
+ * Não guarda marca de "já invertido" de propósito: inverter de novo desfaz, e a conferência de
+ * convenção (motor/origem.ts) volta a dizer o que acha do resultado. Quem anexa o arquivo de novo
+ * recomeça do que veio no arquivo.
+ */
+export async function inverterSinalDosSaldos(
+  banco: Banco,
+  id: number,
+  usuarioId: number,
+): Promise<ResultadoImplantacao> {
+  const meu = await conferirMinhaEmAndamento(banco, id, usuarioId);
+  if (!meu.ok) return meu;
+  await banco
+    .update(implantacaoLinha)
+    .set({
+      saldoAtual: sql`-${implantacaoLinha.saldoAtual}`,
+      saldoAnterior: sql`-${implantacaoLinha.saldoAnterior}`,
+    })
+    .where(eq(implantacaoLinha.implantacaoId, id));
+  await auditar(banco, {
+    usuarioId,
+    acao: 'inverter_sinal_saldos',
+    entidade: 'implantacao',
+    entidadeId: String(id),
+  });
+  return { ok: true };
+}
+
+/**
  * Conta criada para esta implantação. Ela existe SÓ aqui: não entra no plano padrão, não aparece
  * para outras pessoas nem em outras implantações, e não pode virar sinônimo compartilhado.
  * Um código que já existe no plano padrão é recusado — ele substituiria a conta padrão dentro

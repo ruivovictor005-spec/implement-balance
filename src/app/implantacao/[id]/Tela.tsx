@@ -11,6 +11,7 @@ import {
   concluir,
   definirAjusteManual,
   definirPlanoOrigem,
+  inverterSinalDosSaldos,
   estadoImplantacao,
   excluirImplantacao,
   gerarTxt,
@@ -252,6 +253,18 @@ export function Tela({ id }: { id: number }) {
     },
     [id, aplicarResultado],
   );
+
+  // Conserta de uma vez o arquivo que veio na convenção contrária, em vez de mandar a pessoa
+  // editar a coluna de saldo por fora.
+  const onInverterSinal = useCallback(async () => {
+    setAviso(null);
+    const r = await inverterSinalDosSaldos(id);
+    if (!r.ok) {
+      setAviso(r.erro);
+      return;
+    }
+    aplicarResultado(await recalcular(id));
+  }, [id, aplicarResultado]);
 
   const onRegistrarConta = useCallback(
     async (conta: ContaCriadaEntrada) => {
@@ -495,6 +508,7 @@ export function Tela({ id }: { id: number }) {
               <AvisoOrigem
                 origem={painel.origem}
                 onIndicarPlano={onIndicarPlano}
+                onInverterSinal={onInverterSinal}
                 editavel={editavel}
               />
               <PainelConferencia

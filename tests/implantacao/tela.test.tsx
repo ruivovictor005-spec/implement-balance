@@ -414,56 +414,90 @@ describe('tela de implantação', () => {
 
     /** O texto todo do cartão: as frases misturam <strong>, então se lê o conjunto. */
     const textoDe = (over: Partial<AuditoriaOrigem> = {}): string =>
-      render(<AvisoOrigem origem={origem(over)} />).container.textContent ?? '';
+      render(<AvisoOrigem origem={origem(over)} onIndicarPlano={() => {}} />).container
+        .textContent ?? '';
 
-    it('diz em que plano a origem foi lida', () => {
-      expect(textoDe({ plano: 'dominio' })).toContain('plano do Domínio');
-      expect(textoDe({ plano: 'cosif' })).toContain('COSIF (Infobank)');
+    // O cartão é AÇÃO, não explicação: quando não há nada a fazer, só o seletor aparece.
+    it('com tudo em ordem, não sobra texto nenhum além do seletor', () => {
+      const t = textoDe();
+      expect(t).not.toContain('trocado');
+      expect(t).not.toContain('Sinal do saldo conferido');
+      expect(t).not.toContain('evidência');
     });
 
-    it('avisa quando não identificou o plano e diz o que foi assumido', () => {
+    it('sem evidência para conferir o sinal, também não enche a tela', () => {
+      expect(textoDe({ convencao: 'indefinida', conferidas: 1 })).not.toContain('evidência');
+    });
+
+    it('avisa quando não deu para deduzir o plano e diz o que foi assumido', () => {
       // Sem indicação, o plano em uso É o deduzido: "indefinido" nos dois.
       const t = textoDe({ plano: 'indefinido', detectado: 'indefinido' });
-      expect(t).toContain('não identificado');
       expect(t).toContain('foi lido como COSIF');
-      expect(t).toContain('indique o plano abaixo');
+      expect(t).toContain('Indique acima');
     });
 
-    it('sinal trocado: explica a consequência no TXT e mostra os dois totais', () => {
-      const t = textoDe({
-        convencao: 'invertida',
-        devedoras: 25000,
-        credoras: -25000,
-        conferidas: 14,
-      });
-      expect(t).toContain('sinal do saldo neste arquivo parece estar trocado');
+    it('sinal trocado: diz o que está errado e o que isso causa, em duas frases', () => {
+      const t = textoDe({ convencao: 'invertida', devedoras: 25000, credoras: -25000 });
+      expect(t).toContain('sinal do saldo deste arquivo está trocado');
       expect(t).toContain('do lado contrário no TXT');
-      expect(t).toContain('25.000,00 C'); // devedoras somando crédito: o contrário do esperado
-      expect(t).toContain('25.000,00 D');
-      expect(t).toContain('14 contas conferidas');
     });
 
-    it('sinal conferido: confirma sem alarme', () => {
-      const t = textoDe();
-      expect(t).toContain('Sinal do saldo conferido');
-      expect(t).not.toContain('parece estar trocado');
-    });
-
-    it('sem evidência: diz que não deu para conferir, em vez de afirmar', () => {
-      const t = textoDe({ convencao: 'indefinida', conferidas: 1 });
-      expect(t).toContain('Não houve evidência suficiente');
-    });
-
-    // O export que perde o D/C: o lado de cada saldo simplesmente não está no arquivo.
+    // O export que perde o D/C: o lado de cada saldo simplesmente não está no arquivo, e aí não há
+    // o que inverter — só reexportar.
     it('sem D/C no arquivo: diz que a informação não veio e como trazê-la', () => {
       const t = textoDe({ convencao: 'ausente', devedoras: 33445.75, credoras: 1875052.67 });
       expect(t).toContain('não diz de que lado (D/C) está cada saldo');
       expect(t).toContain('5.574,25D');
     });
+  });
 
-    it('diz se o plano foi indicado por você ou deduzido', () => {
-      expect(textoDe({ indicado: false })).toContain('deduzido pelos grupos');
-      expect(textoDe({ plano: 'dominio', indicado: true })).toContain('indicado por você');
+  // Em vez de mandar a pessoa editar a coluna de saldo por fora, o sistema conserta.
+  describe('inverter o sinal de todos os saldos', () => {
+    const comSinalTrocado = (onInverter?: () => void, editavel = true) =>
+      render(
+        <AvisoOrigem
+          origem={{
+            plano: 'dominio',
+            detectado: 'dominio',
+            indicado: true,
+            convencao: 'invertida',
+            devedoras: 720364.47,
+            credoras: -727938.72,
+            conferidas: 35,
+          }}
+          onInverterSinal={onInverter}
+          editavel={editavel}
+        />,
+      );
+
+    it('o botão aparece junto do aviso e avisa quem chamou', () => {
+      const onInverter = vi.fn();
+      comSinalTrocado(onInverter);
+      fireEvent.click(screen.getByRole('button', { name: /Inverter o sinal/ }));
+      expect(onInverter).toHaveBeenCalledTimes(1);
+    });
+
+    it('sem sinal trocado não há botão', () => {
+      render(
+        <AvisoOrigem
+          origem={{
+            plano: 'dominio',
+            detectado: 'dominio',
+            indicado: true,
+            convencao: 'normal',
+            devedoras: -1000,
+            credoras: 1000,
+            conferidas: 35,
+          }}
+          onInverterSinal={() => {}}
+        />,
+      );
+      expect(screen.queryByRole('button', { name: /Inverter o sinal/ })).not.toBeInTheDocument();
+    });
+
+    it('implantação concluída não deixa inverter', () => {
+      comSinalTrocado(vi.fn(), false);
+      expect(screen.getByRole('button', { name: /Inverter o sinal/ })).toBeDisabled();
     });
   });
 
@@ -810,13 +844,15 @@ describe('tela de implantação', () => {
     const grupoDe = (chave: string): HTMLElement =>
       document.querySelector(`tr[data-grupo="${chave}"]`) as HTMLElement;
 
-    it('diz que está tudo certo quando os grupos batem', () => {
+    // Tudo batendo vira UMA linha: a tabela só dizendo OK ocupava a tela sem contar nada.
+    it('quando os grupos batem, sai uma linha e nenhuma tabela', () => {
       conferir([
         { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
         { natureza: 'DESPESA ADMINISTRATIVA', saldoAtual: -400, codigo: '537' },
       ]);
-      expect(screen.getByText(/Todos os grupos conferidos batem/)).toBeInTheDocument();
-      expect(grupoDe('1')).not.toHaveClass('atencao');
+      expect(screen.getByText(/grupos conferidos batem com o balancete de origem/)).toBeInTheDocument();
+      expect(grupoDe('1')).toBeNull();
+      expect(document.querySelector('table')).toBeNull();
     });
 
     it('aponta o grupo com diferença e explica o que ela significa', () => {
@@ -837,11 +873,11 @@ describe('tela de implantação', () => {
         { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
         { natureza: 'ATIVO CIRCULANTE', saldoAtual: -250, codigo: null },
       ]);
-      expect(screen.getByText(/Todos os grupos conferidos batem/)).toBeInTheDocument();
-      expect(grupoDe('1')).toHaveTextContent('250,00D'); // mostrada como pendente
+      expect(screen.getByText(/grupos conferidos batem com o balancete de origem/)).toBeInTheDocument();
     });
 
-    it('avisa o que ficou fora da conferência', () => {
+    // Um "bate" que não cobre tudo tem de dizer o que não cobriu, mesmo na linha curta.
+    it('a ressalva do que ficou fora sai junto com a linha curta', () => {
       conferir([
         { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
         { natureza: 'COMPENSAÇÃO', saldoAtual: -77, codigo: '10' },
@@ -849,9 +885,11 @@ describe('tela de implantação', () => {
       expect(screen.getByText(/1 linha\(s\), somando 77,00/)).toBeInTheDocument();
     });
 
-    it('sem nada indicado, convida a fazer o de-para', () => {
-      conferir([]);
-      expect(screen.getByText(/Indique as contas no de-para para conferir os grupos/)).toBeInTheDocument();
+    // Sem nada indicado não há o que conferir: some em vez de ocupar espaço com um convite que a
+    // prévia logo abaixo já faz.
+    it('sem nada indicado, não desenha nada', () => {
+      const { container } = conferir([]);
+      expect(container).toBeEmptyDOMElement();
     });
   });
 });
