@@ -146,11 +146,13 @@ export function PreviaBalancete({
                         ) : status.confere ? (
                           <span className="selo-ok">OK</span>
                         ) : (
+                          // "NÃO BATE", e não "pendente": neste app pendência é conta sem conta do
+                          // Domínio indicada, que é justamente o que NÃO causa este status.
                           <span
                             className="status-pend"
                             title={`Diferença de ${brl(Math.abs(status.diferenca))} contra o balancete de origem. Alguma conta deste grupo foi indicada para outro grupo.`}
                           >
-                            PENDENTE
+                            NÃO BATE
                           </span>
                         )}
                       </td>

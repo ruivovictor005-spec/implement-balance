@@ -552,14 +552,16 @@ describe('tela de implantação', () => {
         expect(linhaDe('1')).not.toHaveClass('nao-bate');
       });
 
-      it('grupo que não bate fica PENDENTE e destacado', () => {
+      it('grupo que não bate é rotulado NÃO BATE e fica destacado', () => {
         // Saldo de ativo na origem foi indicado para uma conta de passivo.
         comConferencia(
           [lanc('235', 100, 'C')],
           [{ natureza: 'ATIVO CIRCULANTE', saldoAtual: -100, codigo: '235' }],
         );
         expect(linhaDe('2')).toHaveAttribute('data-confere', 'nao');
-        expect(linhaDe('2')).toHaveTextContent('PENDENTE');
+        expect(linhaDe('2')).toHaveTextContent('NÃO BATE');
+        // "pendente" tem outro significado no app: não pode aparecer como rótulo aqui.
+        expect(linhaDe('2')).not.toHaveTextContent(/PENDENTE/i);
         expect(linhaDe('2')).toHaveClass('nao-bate');
       });
 
