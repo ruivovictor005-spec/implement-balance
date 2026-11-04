@@ -2,19 +2,28 @@
 import * as React from 'react';
 import { useState } from 'react';
 
+type Retorno = { ok: true; pendente: boolean; aviso?: string } | { ok: false; erro: string };
+
 export function Busca({
+  admin,
   onEnsinar,
 }: {
-  onEnsinar: (nome: string, codigo: string, motivo: string) => Promise<string | null>;
+  admin: boolean;
+  onEnsinar: (nome: string, codigo: string, motivo: string) => Promise<Retorno>;
 }) {
   const [nome, setNome] = useState('');
   const [codigo, setCodigo] = useState('');
   const [motivo, setMotivo] = useState('');
-  const [msg, setMsg] = useState<string | null>(null);
+  const [msg, setMsg] = useState<{ texto: string; ok: boolean } | null>(null);
 
   return (
     <section className="cartao">
-      <h2>Ensinar um sinônimo</h2>
+      <h2>{admin ? 'Ensinar um sinônimo' : 'Propor um sinônimo'}</h2>
+      <p className="sub">
+        {admin
+          ? 'Como administrador, o que você ensina já vale para todos.'
+          : 'A proposta só passa a valer para todos depois que o administrador aprovar.'}
+      </p>
       <div className="grade">
         <div>
           <label htmlFor="s-nome">Nome da conta (como vem no balancete)</label>
@@ -33,19 +42,24 @@ export function Busca({
         <button
           type="button"
           onClick={async () => {
-            const erro = await onEnsinar(nome.trim(), codigo.trim(), motivo.trim());
-            setMsg(erro ?? 'Sinônimo ensinado para todos.');
-            if (erro === null) {
-              setNome('');
-              setCodigo('');
-              setMotivo('');
+            const r = await onEnsinar(nome.trim(), codigo.trim(), motivo.trim());
+            if (!r.ok) {
+              setMsg({ texto: r.erro, ok: false });
+              return;
             }
+            const base = r.pendente
+              ? 'Proposta enviada. Vale para todos quando o administrador aprovar.'
+              : 'Sinônimo ensinado para todos.';
+            setMsg({ texto: r.aviso ? `${base} ${r.aviso}` : base, ok: true });
+            setNome('');
+            setCodigo('');
+            setMotivo('');
           }}
         >
-          Ensinar para todos
+          {admin ? 'Ensinar para todos' : 'Enviar para aprovação'}
         </button>
       </div>
-      {msg && <div className={msg.includes('ensinado') ? 'reconhecido' : 'erro'}>{msg}</div>}
+      {msg && <div className={msg.ok ? 'reconhecido' : 'erro'}>{msg.texto}</div>}
     </section>
   );
 }

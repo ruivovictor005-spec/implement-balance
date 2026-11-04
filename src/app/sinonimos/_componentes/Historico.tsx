@@ -4,9 +4,11 @@ import type { EventoRecente } from '../acoes.js';
 
 export function Historico({
   eventos,
+  podeDesfazer,
   onDesfazer,
 }: {
   eventos: EventoRecente[];
+  podeDesfazer: boolean;
   onDesfazer: (eventoId: number) => void;
 }) {
   return (
@@ -33,7 +35,7 @@ export function Historico({
                   {e.codigoDe ?? '—'} → {e.codigoPara ?? '—'}
                 </td>
                 <td>
-                  {e.codigoDe ? (
+                  {podeDesfazer && e.codigoDe ? (
                     <button type="button" className="secundario" onClick={() => onDesfazer(e.id)}>
                       Desfazer
                     </button>

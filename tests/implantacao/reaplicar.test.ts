@@ -9,7 +9,7 @@ import {
   definirAjusteManual,
   iniciarImplantacao,
 } from '../../src/dados/implantacoes.js';
-import { ensinarSinonimo } from '../../src/dados/sinonimos.js';
+import { decidirSinonimo, ensinarSinonimo } from '../../src/dados/sinonimos.js';
 import * as schema from '../../src/dados/schema.js';
 import { criarBancoTeste } from '../apoio/banco.js';
 
@@ -46,15 +46,23 @@ describe('reaplicação de sinônimos nas pendências', () => {
     await fechar();
   });
 
-  it('pendência vira resolvida quando alguém ensina o sinônimo, e devolve contagem e quem ensinou', async () => {
+  it('pendência só vira resolvida quando o administrador aprova o sinônimo, e credita quem propôs', async () => {
     const pend = await linha('032630-5');
     expect(pend.origemResolucao).toBe('nao_encontrado');
-    await ensinarSinonimo(banco, {
+    const proposta = await ensinarSinonimo(banco, {
       nomeOriginal: pend.nomeCta ?? '',
       codigo: '485',
       motivo: 'teste',
       usuarioId,
     });
+    // Ainda pendente: não vale para ninguém.
+    expect((await reaplicarSinonimos(banco, id, usuarioId)).resolvidas).toBe(0);
+
+    const [admin] = await banco
+      .insert(schema.usuario)
+      .values({ oidEntra: 'a1', email: 'a@x', nome: 'Admin', papel: 'admin' })
+      .returning({ id: schema.usuario.id });
+    await decidirSinonimo(banco, proposta.ok ? proposta.sinonimoId : 0, true, '', admin.id);
     const r = await reaplicarSinonimos(banco, id, usuarioId);
     expect(r.resolvidas).toBeGreaterThanOrEqual(1);
     expect(r.porQuem).toContain('Karen');

@@ -18,7 +18,8 @@ import {
 
 export const papel = pgEnum('papel', ['usuario', 'revisor', 'admin']);
 export const tipoConta = pgEnum('tipo_conta', ['A', 'S']);
-export const statusSinonimo = pgEnum('status_sinonimo', ['ativo', 'arquivado']);
+// 'pendente': proposto, aguardando o administrador — não vale para ninguém ainda.
+export const statusSinonimo = pgEnum('status_sinonimo', ['ativo', 'arquivado', 'pendente', 'rejeitado']);
 export const statusAlteracao = pgEnum('status_alteracao', ['pendente', 'aprovada', 'rejeitada']);
 export const statusImplantacao = pgEnum('status_implantacao', ['em_andamento', 'concluida', 'descartada']);
 
@@ -111,6 +112,10 @@ export const sinonimo = pgTable(
     motivo: text('motivo'),
     status: statusSinonimo('status').notNull().default('ativo'),
     criadoEm: timestamp('criado_em', { withTimezone: true }).notNull().defaultNow(),
+    // Quem propôs (para a fila do administrador e para "minhas propostas").
+    propostoPor: integer('proposto_por').references(() => usuario.id),
+    // O que o administrador escreveu ao aprovar ou rejeitar.
+    observacaoDecisao: text('observacao_decisao'),
   },
   (t) => [
     // Único por (chave, versão) apenas entre os ATIVOS: um arquivado não conflita com o ativo.

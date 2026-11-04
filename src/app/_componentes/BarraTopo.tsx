@@ -17,8 +17,9 @@ const primeiroNome = (nome: string | null): string =>
   nome && nome.trim() !== '' ? nome.trim().split(/\s+/)[0] : 'Conta';
 
 // Barra superior do app: marca "Implement Balance" + navegação (quando logado) + usuário/sair.
-export function BarraTopo({ usuario }: { usuario: { nome: string | null } | null }) {
+export function BarraTopo({ usuario }: { usuario: { nome: string | null; admin: boolean } | null }) {
   const caminho = usePathname() ?? '/';
+  const links = usuario?.admin ? [...LINKS, { href: '/admin', rotulo: 'Administração' }] : LINKS;
   return (
     <nav className="menu">
       <span className="menu-marca">
@@ -35,7 +36,7 @@ export function BarraTopo({ usuario }: { usuario: { nome: string | null } | null
         </span>
       </span>
       {usuario &&
-        LINKS.map((l) => (
+        links.map((l) => (
           <a key={l.href} href={l.href} className={ativo(l.href, caminho) ? 'ativo' : undefined}>
             {l.rotulo}
           </a>

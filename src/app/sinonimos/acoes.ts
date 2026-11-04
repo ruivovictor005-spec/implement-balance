@@ -1,17 +1,20 @@
 'use server';
 
 // Ações de servidor da base de sinônimos: delegam para a camada de dados, resolvendo quem está
-// logado. Leituras para a tela (pendentes de revisão e histórico de eventos).
+// logado. Quem não é administrador só PROPÕE; decidir e desfazer ficam no painel /admin (e a camada
+// de dados recusa de qualquer forma, mesmo que alguém chame a ação direto).
 import { desc, eq } from 'drizzle-orm';
 import { auth } from '../../acesso/auth.js';
 import { db } from '../../dados/cliente.js';
 import {
-  decidirAlteracao as decidirNoBanco,
   desfazer as desfazerNoBanco,
+  ehAdmin,
   ensinarSinonimo as ensinarNoBanco,
+  listarMinhasPropostas,
   solicitarAlteracao as solicitarNoBanco,
+  type MinhaProposta,
 } from '../../dados/sinonimos.js';
-import { alteracaoSinonimo, sinonimo, sinonimoEvento } from '../../dados/schema.js';
+import { sinonimo, sinonimoEvento } from '../../dados/schema.js';
 
 async function usuarioAtualId(): Promise<number> {
   const sessao = await auth();
@@ -33,37 +36,17 @@ export async function solicitar(sinonimoId: number, codigoProposto: string, moti
   });
 }
 
-export async function decidir(id: number, aprovada: boolean, observacao: string) {
-  return decidirNoBanco(db(), id, aprovada, observacao, await usuarioAtualId());
-}
-
 export async function desfazer(eventoId: number) {
   return desfazerNoBanco(db(), eventoId, await usuarioAtualId());
 }
 
-export type PedidoPendente = {
-  id: number;
-  nomeOriginal: string;
-  codigoAtual: string;
-  codigoProposto: string;
-  motivo: string | null;
-};
+/** O papel vem do banco (não do token), para valer na hora em que o administrador muda. */
+export async function souAdmin(): Promise<boolean> {
+  return ehAdmin(db(), await usuarioAtualId());
+}
 
-export async function listarPendentes(): Promise<PedidoPendente[]> {
-  await usuarioAtualId();
-  const linhas = await db()
-    .select({
-      id: alteracaoSinonimo.id,
-      nomeOriginal: sinonimo.nomeOriginal,
-      codigoAtual: sinonimo.codigoReduzido,
-      codigoProposto: alteracaoSinonimo.codigoProposto,
-      motivo: alteracaoSinonimo.motivo,
-    })
-    .from(alteracaoSinonimo)
-    .innerJoin(sinonimo, eq(alteracaoSinonimo.sinonimoId, sinonimo.id))
-    .where(eq(alteracaoSinonimo.status, 'pendente'))
-    .orderBy(desc(alteracaoSinonimo.id));
-  return linhas;
+export async function minhasPropostas(): Promise<MinhaProposta[]> {
+  return listarMinhasPropostas(db(), await usuarioAtualId());
 }
 
 export type EventoRecente = {

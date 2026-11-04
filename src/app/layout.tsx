@@ -11,7 +11,9 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const sessao = await auth();
-  const usuario = sessao?.user ? { nome: sessao.user.name ?? null } : null;
+  // O link do painel só aparece para o administrador; a página e as ações conferem o papel no banco.
+  const papel = (sessao as { papel?: string } | null)?.papel;
+  const usuario = sessao?.user ? { nome: sessao.user.name ?? null, admin: papel === 'admin' } : null;
   return (
     <html lang="pt-BR">
       <head>
