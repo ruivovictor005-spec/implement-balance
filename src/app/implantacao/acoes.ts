@@ -13,7 +13,9 @@ import {
   guardarImplantacao as guardarNoBanco,
   iniciarImplantacao as iniciarNoBanco,
   lerImplantacao as lerImplantacaoNoBanco,
+  listarContasCriadas as listarCriadasNoBanco,
   minhasImplantacoesAbertas as minhasAbertasNoBanco,
+  reabrirImplantacao as reabrirNoBanco,
   recalcular as recalcularNoBanco,
   registrarContaCriada as registrarContaNoBanco,
   salvarDadosEmpresa as salvarDadosNoBanco,
@@ -31,7 +33,8 @@ import type { Lancamento } from '../../motor/agregar.js';
 import type { LinhaResolvida, Painel } from '../../motor/converter.js';
 
 export type { Lancamento } from '../../motor/agregar.js';
-import { resolverNatureza } from '../../motor/natureza.js';
+import { codificarWindows1252 } from '../../motor/ansi.js';
+import { naturezaContaDominio } from '../../motor/natureza.js';
 import type { ContaPlano } from '../../motor/tipos.js';
 import { PERFIS } from '../../leitores/perfis.js';
 import { ErroDeArquivo, lerArquivoComFormato, type Celula } from '../../leitores/ler-arquivo.js';
@@ -62,8 +65,12 @@ export type EstadoImplantacao = {
   lancamentos: Lancamento[];
   /** false quando a implantação já foi concluída/descartada — a tela fica só leitura. */
   editavel: boolean;
+  /** true quando foi concluída — a tela oferece reabrir para correção. */
+  concluida: boolean;
   /** true depois de "Salvar e continuar depois": a tela não precisa mais perguntar ao sair. */
   guardada: boolean;
+  /** Contas criadas nesta implantação (só valem aqui), para a busca de contas. */
+  contasCriadas: ContaBusca[];
 };
 
 async function usuarioAtualId(): Promise<number> {
@@ -182,9 +189,15 @@ export async function reaplicar(id: number): Promise<{ resolvidas: number; porQu
   return reaplicarSinonimos(db(), id, await usuarioAtualId());
 }
 
-/** Gera o TXT com a trava (zero pendências e diferença zero, ou motivo de liberação). */
+/**
+ * Gera o TXT com a trava (zero pendências e diferença zero, ou motivo de liberação). Além do texto,
+ * devolve o arquivo já em Windows-1252 (base64): é assim que o Domínio lê — em UTF-8 os acentos
+ * saem estragados e as posições do leiaute andam.
+ */
 export async function gerarTxt(id: number, liberacaoMotivo?: string) {
-  return gerarTxtDaImplantacao(db(), id, await usuarioAtualId(), liberacaoMotivo);
+  const r = await gerarTxtDaImplantacao(db(), id, await usuarioAtualId(), liberacaoMotivo);
+  if (!r.ok) return r;
+  return { ...r, ansiBase64: Buffer.from(codificarWindows1252(r.conteudo)).toString('base64') };
 }
 
 /** Conclui a implantação (exige ter gerado o TXT antes). */
@@ -202,15 +215,23 @@ export async function excluirImplantacao(id: number): Promise<ResultadoImplantac
   return excluirNoBanco(db(), id, await usuarioAtualId());
 }
 
-/** Contas do plano vigente com a natureza, para a busca mostrar e evitar escolher natureza errada. */
+/**
+ * Contas do plano vigente com a natureza, para a busca mostrar e evitar escolher natureza errada.
+ * A natureza aqui é a do PLANO DOMÍNIO (custo, despesa, passivo circulante...), não a COSIF da origem.
+ */
 export async function carregarContas(): Promise<ContaBusca[]> {
   await usuarioAtualId();
   const regras = await carregarRegras(db());
   const plano = await carregarPlanoVigente(db());
   return plano.map((c) => ({
     ...c,
-    natureza: resolverNatureza(c.classificacao, regras.natureza)?.natureza ?? '',
+    natureza: naturezaContaDominio(c.classificacao, regras.naturezaDominio),
   }));
+}
+
+/** Reabre uma implantação concluída para corrigir e gerar o TXT de novo. */
+export async function reabrir(id: number): Promise<ResultadoImplantacao> {
+  return reabrirNoBanco(db(), id, await usuarioAtualId());
 }
 
 /** Estado atual da implantação para a tela montar: dados da empresa, reconhecimento, painel e linhas. */
@@ -251,6 +272,11 @@ export async function estadoImplantacao(id: number): Promise<EstadoImplantacao> 
     linhas,
     lancamentos,
     editavel: imp.status === 'em_andamento',
+    concluida: imp.status === 'concluida',
     guardada: imp.guardadaEm !== null,
+    contasCriadas: (await listarCriadasNoBanco(db(), id)).map((c) => ({
+      ...c,
+      natureza: '(conta criada nesta implantação)',
+    })),
   };
 }

@@ -17,15 +17,30 @@ async function idVigente(banco: Banco): Promise<number> {
   return v.id;
 }
 
-export async function carregarRegras(
-  banco: Banco = db(),
-): Promise<{ normalizacao: RegraNormalizacao[]; natureza: RegraNatureza[] }> {
+/**
+ * Regras da versão vigente. `natureza` é a tabela COSIF (conta de ORIGEM); `naturezaDominio` é a
+ * tabela do plano Domínio (conta de DESTINO). Ver src/motor/natureza.ts.
+ */
+export async function carregarRegras(banco: Banco = db()): Promise<{
+  normalizacao: RegraNormalizacao[];
+  natureza: RegraNatureza[];
+  naturezaDominio: RegraNatureza[];
+}> {
   const vid = await idVigente(banco);
   const norm = await banco
     .select()
     .from(regraNormalizacao)
     .where(eq(regraNormalizacao.planoVersaoId, vid));
   const nat = await banco.select().from(regraNatureza).where(eq(regraNatureza.planoVersaoId, vid));
+  const paraMotor = (r: (typeof nat)[number]): RegraNatureza => ({
+    ordem: r.ordem,
+    prefixo: r.prefixoClassificacao,
+    grupoCosif: r.grupoCosif,
+    natureza: r.natureza,
+    gruposDominio: r.gruposDominio,
+    naoMigrar: r.naoMigrar,
+    conjunto: r.conjunto === 'dominio' ? 'dominio' : 'cosif',
+  });
   return {
     normalizacao: norm.map((r) => ({
       etapa: r.etapa as 1 | 2,
@@ -33,13 +48,7 @@ export async function carregarRegras(
       de: r.de,
       para: r.para,
     })),
-    natureza: nat.map((r) => ({
-      ordem: r.ordem,
-      prefixo: r.prefixoClassificacao,
-      grupoCosif: r.grupoCosif,
-      natureza: r.natureza,
-      gruposDominio: r.gruposDominio,
-      naoMigrar: r.naoMigrar,
-    })),
+    natureza: nat.filter((r) => r.conjunto !== 'dominio').map(paraMotor),
+    naturezaDominio: nat.filter((r) => r.conjunto === 'dominio').map(paraMotor),
   };
 }

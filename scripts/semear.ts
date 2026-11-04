@@ -64,6 +64,7 @@ export async function semear(banco: PgDatabase<any, any, any>): Promise<{
   const plano = ler<ContaPlano[]>('plano.json');
   const normalizacao = ler<RegraNormalizacao[]>('normalizacao.json');
   const natureza = ler<RegraNatureza[]>('natureza.json');
+  const naturezaDominio = ler<RegraNatureza[]>('natureza-dominio.json');
   const { inseridos, colapsados } = colapsarSinonimos(ler<SinonimoFixture[]>('sinonimos.json'));
 
   const [versao] = await banco
@@ -87,8 +88,9 @@ export async function semear(banco: PgDatabase<any, any, any>): Promise<{
     normalizacao.map((r) => ({ planoVersaoId, etapa: r.etapa, ordem: r.ordem, de: r.de, para: r.para })),
   );
 
+  // Duas tabelas: COSIF (origem) e Domínio (destino). Ver src/motor/natureza.ts.
   await banco.insert(regraNatureza).values(
-    natureza.map((r) => ({
+    [...natureza, ...naturezaDominio].map((r) => ({
       planoVersaoId,
       ordem: r.ordem,
       prefixoClassificacao: r.prefixo,
@@ -96,6 +98,7 @@ export async function semear(banco: PgDatabase<any, any, any>): Promise<{
       natureza: r.natureza,
       gruposDominio: r.gruposDominio,
       naoMigrar: r.naoMigrar,
+      conjunto: r.conjunto ?? 'cosif',
     })),
   );
 

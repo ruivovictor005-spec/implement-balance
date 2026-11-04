@@ -13,6 +13,7 @@ import {
   gerarTxt,
   guardarParaDepois,
   lerPrevia,
+  reabrir,
   reaplicar,
   recalcular,
   registrarContaCriada,
@@ -72,6 +73,8 @@ export function Tela({ id }: { id: number }) {
   const [previaManual, setPreviaManual] = useState(false);
   const [aba, setAba] = useState<AbaId>('config');
   const [editavel, setEditavel] = useState(true);
+  const [concluida, setConcluida] = useState(false);
+  const [reabrindo, setReabrindo] = useState(false);
   const [planoAberto, setPlanoAberto] = useState(false);
   const [guardada, setGuardada] = useState(false);
   const [saindo, setSaindo] = useState(false);
@@ -88,8 +91,10 @@ export function Tela({ id }: { id: number }) {
       setPainel(estado.painel);
       setLinhas(estado.linhas);
       setLancamentos(estado.lancamentos);
-      setContas(lista);
+      // As contas criadas nesta implantação (só valem aqui) entram na busca junto com o plano.
+      setContas([...estado.contasCriadas, ...lista]);
       setEditavel(estado.editavel);
+      setConcluida(estado.concluida);
       setGuardada(estado.guardada);
       if (estado.linhas.length > 0) setAba('depara');
       setTimeout(() => {
@@ -221,15 +226,20 @@ export function Tela({ id }: { id: number }) {
 
   const onRegistrarConta = useCallback(
     async (conta: ContaCriadaEntrada) => {
-      await registrarContaCriada(id, conta);
+      setAviso(null);
+      const criada = await registrarContaCriada(id, conta);
+      if (!criada.ok) {
+        setAviso(criada.erro);
+        return;
+      }
       setContas((atual) => [
         {
-          codigoReduzido: conta.codigoReduzido,
-          classificacao: conta.classificacao,
-          descricao: conta.descricao,
+          codigoReduzido: conta.codigoReduzido.trim(),
+          classificacao: conta.classificacao.trim(),
+          descricao: conta.descricao.trim(),
           tipo: 'A' as const,
           descricaoNormalizada: '',
-          natureza: '(conta criada nesta sessão)',
+          natureza: '(conta criada nesta implantação)',
         },
         ...atual,
       ]);
@@ -246,7 +256,12 @@ export function Tela({ id }: { id: number }) {
       setAviso(r.erro);
       return;
     }
-    const blob = new Blob([r.conteudo], { type: 'text/plain;charset=utf-8' });
+    // O arquivo vai em Windows-1252 (ANSI), byte a byte como o servidor codificou: é o que o Domínio
+    // lê. Montar o Blob a partir do texto o gravaria em UTF-8.
+    const binario = atob(r.ansiBase64);
+    const bytes = new Uint8Array(binario.length);
+    for (let i = 0; i < binario.length; i++) bytes[i] = binario.charCodeAt(i);
+    const blob = new Blob([bytes], { type: 'text/plain;charset=windows-1252' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -371,7 +386,32 @@ export function Tela({ id }: { id: number }) {
 
       {!editavel && (
         <div className="erro" style={{ marginTop: 0 }}>
-          Esta implantação já foi concluída ou descartada — você está só visualizando (somente leitura).
+          {concluida ? (
+            <div className="linha-acoes" style={{ marginTop: 0, justifyContent: 'space-between' }}>
+              <span>
+                Esta implantação está <strong>concluída</strong> — você está só visualizando. Para
+                corrigir algo, reabra: ela volta para a sua mesa e você gera o TXT de novo.
+              </span>
+              <button
+                type="button"
+                disabled={reabrindo}
+                onClick={() => {
+                  setReabrindo(true);
+                  void reabrir(id).then((r) => {
+                    if (r.ok) window.location.reload();
+                    else {
+                      setAviso(r.erro);
+                      setReabrindo(false);
+                    }
+                  });
+                }}
+              >
+                {reabrindo ? 'Reabrindo…' : 'Reabrir para corrigir'}
+              </button>
+            </div>
+          ) : (
+            'Esta implantação foi excluída — você está só visualizando (somente leitura).'
+          )}
         </div>
       )}
 

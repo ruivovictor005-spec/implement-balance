@@ -575,16 +575,23 @@ a.botao:focus-visible,
   box-shadow: var(--sombra-foco);
 }
 
-button.secundario {
+button.secundario,
+a.botao.secundario {
   background: var(--papel);
   color: var(--texto);
   border-color: var(--borda-forte);
 }
 
-button.secundario:hover {
+button.secundario:hover,
+a.botao.secundario:hover {
   background: var(--n-50);
   border-color: var(--n-400);
   box-shadow: var(--sombra-1);
+}
+
+a.botao.pequeno {
+  padding: 5px 10px;
+  font-size: 12.5px;
 }
 
 button:disabled {
@@ -1078,4 +1085,22 @@ button.perigo:hover {
   height: 10px;
   padding: 0;
   border-bottom: none;
+}
+
+/* Prévia: composição de cada conta do Domínio pelas contas de origem. */
+.linha-origem td {
+  color: var(--suave);
+  font-size: 12.5px;
+  background: var(--n-25);
+  border-top: none;
+}
+
+label.chave {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--suave);
+  cursor: pointer;
 }

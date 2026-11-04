@@ -148,6 +148,7 @@ export function extrairLinhas(
       totalDebito: converterNumero(celula(linha, 'totalDebito')),
       totalCredito: converterNumero(celula(linha, 'totalCredito')),
       saldoAtual: converterNumero(celula(linha, 'saldoAtual')),
+      custoDespesa: texto(linha, 'custoDespesa').trim(),
     });
   }
   return linhas;

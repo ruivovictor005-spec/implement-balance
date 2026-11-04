@@ -25,6 +25,9 @@ export const PERFIS: Perfil[] = [
       totalDebito: ['totdeb', 'débito', 'total débito', 'débitos'],
       totalCredito: ['totcre', 'crédito', 'total crédito', 'créditos'],
       saldoAtual: ['saldoatu', 'saldo atual', 'saldo'],
+      // Opcional: coluna a mais em que a pessoa marca C (custo) ou D (despesa). NÃO confundir com a
+      // coluna "natureza" do Domínio, que diz devedora/credora.
+      custoDespesa: ['custo_despesa', 'custo ou despesa', 'custo/despesa', 'custo despesa', 'c/d'],
     },
   },
   {
@@ -43,6 +46,7 @@ export const PERFIS: Perfil[] = [
       totalDebito: ['totdeb', 'débito', 'total débito'],
       totalCredito: ['totcre', 'crédito', 'total crédito'],
       saldoAtual: ['saldo atual', 'saldoatu'],
+      custoDespesa: ['custo_despesa', 'custo ou despesa', 'custo/despesa', 'custo despesa', 'c/d'],
     },
   },
 ];

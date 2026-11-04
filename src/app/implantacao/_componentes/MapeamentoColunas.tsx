@@ -14,6 +14,7 @@ const CAMPOS: { chave: string; rotulo: string }[] = [
   { chave: 'totalDebito', rotulo: 'Total débito' },
   { chave: 'totalCredito', rotulo: 'Total crédito' },
   { chave: 'saldoAtual', rotulo: 'Saldo atual' },
+  { chave: 'custoDespesa', rotulo: 'Custo ou despesa (C/D) — opcional' },
 ];
 
 export function MapeamentoColunas({

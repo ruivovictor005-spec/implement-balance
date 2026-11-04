@@ -43,6 +43,13 @@
       "when": 1792598520000,
       "tag": "0005_guardar_implantacao",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792598580000,
+      "tag": "0006_natureza_dominio_custo_despesa",
+      "breakpoints": true
     }
   ]
 }

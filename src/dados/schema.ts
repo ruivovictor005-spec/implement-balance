@@ -93,6 +93,8 @@ export const regraNatureza = pgTable('regra_natureza', {
   gruposDominio: text('grupos_dominio').array().notNull(),
   naoMigrar: boolean('nao_migrar').notNull().default(false),
   observacao: text('observacao'),
+  // 'cosif' classifica a conta de ORIGEM; 'dominio' classifica a conta de DESTINO (plano Domínio).
+  conjunto: text('conjunto').notNull().default('cosif'),
 });
 
 export const sinonimo = pgTable(
@@ -198,6 +200,8 @@ export const implantacaoLinha = pgTable('implantacao_linha', {
   totalDebito: numeric('total_debito', { precision: 18, scale: 2 }),
   totalCredito: numeric('total_credito', { precision: 18, scale: 2 }),
   saldoAtual: numeric('saldo_atual', { precision: 18, scale: 2 }),
+  // Indicação opcional de custo ('C') ou despesa ('D') vinda de uma coluna a mais do balancete.
+  custoDespesa: text('custo_despesa'),
   nomeNormalizado: text('nome_normalizado'),
   natureza: text('natureza'),
   gruposPermitidos: text('grupos_permitidos').array(),

@@ -78,6 +78,8 @@ export type ConcluidaResumo = {
   empresaCnpj: string | null;
   dataSaldo: string | null;
   pessoa: string;
+  /** Dono da implantação: só ele pode abrir e reabrir. */
+  usuarioId: number;
   concluidaEm: Date | null;
   liberacao: string | null;
 };
@@ -86,6 +88,7 @@ export async function listarConcluidas(banco: Banco): Promise<ConcluidaResumo[]>
   const rows = await banco
     .select({
       id: implantacao.id,
+      usuarioId: implantacao.usuarioId,
       empresaNome: implantacao.empresaNome,
       empresaCnpj: implantacao.empresaCnpj,
       dataSaldo: implantacao.dataSaldo,
@@ -104,6 +107,7 @@ export async function listarConcluidas(banco: Banco): Promise<ConcluidaResumo[]>
     empresaCnpj: r.empresaCnpj,
     dataSaldo: r.dataSaldo,
     pessoa: r.pessoa,
+    usuarioId: r.usuarioId,
     concluidaEm: r.concluidaEm,
     liberacao: r.liberacao,
   }));

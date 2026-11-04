@@ -7,6 +7,7 @@ import { lerArquivoComFormato } from '../leitores/ler-arquivo.js';
 import { detectarPerfil, extrairLinhas } from '../leitores/detectar.js';
 import type { Lancamento } from '../motor/agregar.js';
 import { converter, type LinhaResolvida, type Painel } from '../motor/converter.js';
+import { lerCustoDespesa } from '../motor/natureza.js';
 import { normalizarNome } from '../motor/normalizar.js';
 import type { ContaPlano, LinhaBalancete } from '../motor/tipos.js';
 import { auditar } from '../observabilidade/auditar.js';
@@ -45,6 +46,21 @@ const numero = (v: string | null): number => (v === null ? 0 : Number(v));
 function dataLocal(iso: string): Date {
   const [ano, mes, dia] = iso.split('-').map(Number);
   return new Date(ano ?? 1970, (mes ?? 1) - 1, dia ?? 1);
+}
+
+/** Linha gravada → linha do balancete que o motor consome. */
+function paraLinhaBalancete(l: typeof implantacaoLinha.$inferSelect): LinhaBalancete {
+  return {
+    codiCta: l.codiCta ?? '',
+    nomeCta: l.nomeCta ?? '',
+    clasCta: l.clasCta ?? '',
+    tipoCta: l.tipoCta ?? '',
+    saldoAnterior: numero(l.saldoAnterior),
+    totalDebito: numero(l.totalDebito),
+    totalCredito: numero(l.totalCredito),
+    saldoAtual: numero(l.saldoAtual),
+    custoDespesa: l.custoDespesa ?? '',
+  };
 }
 
 /** Garante que a implantação existe, é de quem chama e está em andamento. */
@@ -262,6 +278,7 @@ export async function anexarBalancete(
         totalDebito: dinheiro(l.totalDebito),
         totalCredito: dinheiro(l.totalCredito),
         saldoAtual: dinheiro(l.saldoAtual),
+        custoDespesa: lerCustoDespesa(l.custoDespesa) || null,
       })),
     );
   }
@@ -314,26 +331,96 @@ export async function definirAjusteManual(
   });
 }
 
+/**
+ * Conta criada para esta implantação. Ela existe SÓ aqui: não entra no plano padrão, não aparece
+ * para outras pessoas nem em outras implantações, e não pode virar sinônimo compartilhado.
+ * Um código que já existe no plano padrão é recusado — ele substituiria a conta padrão dentro
+ * desta implantação sem a pessoa perceber.
+ */
 export async function registrarContaCriada(
   banco: Banco,
   id: number,
   usuarioId: number,
   conta: ContaCriadaEntrada,
-): Promise<void> {
-  await exigirMinhaEmAndamento(banco, id, usuarioId);
-  await banco.insert(contaCriada).values({
-    implantacaoId: id,
-    codigoReduzido: conta.codigoReduzido,
-    descricao: conta.descricao,
-    classificacao: conta.classificacao,
-  });
+): Promise<ResultadoImplantacao> {
+  const conferido = await conferirMinhaEmAndamento(banco, id, usuarioId);
+  if (!conferido.ok) return conferido;
+  const codigo = conta.codigoReduzido.trim();
+  const descricao = conta.descricao.trim();
+  const classificacao = conta.classificacao.trim();
+  if (codigo === '' || descricao === '' || classificacao === '') {
+    return { ok: false, erro: 'Informe o código, a descrição e a classificação da conta.' };
+  }
+  const plano = await carregarPlanoVigente(banco);
+  if (plano.some((c) => c.codigoReduzido === codigo)) {
+    return {
+      ok: false,
+      erro: `O código ${codigo} já existe no plano padrão. Use a conta existente ou escolha outro código.`,
+    };
+  }
+  const [jaCriada] = await banco
+    .select({ id: contaCriada.id })
+    .from(contaCriada)
+    .where(and(eq(contaCriada.implantacaoId, id), eq(contaCriada.codigoReduzido, codigo)))
+    .limit(1);
+  if (jaCriada !== undefined) {
+    return { ok: false, erro: `A conta ${codigo} já foi criada nesta implantação.` };
+  }
+  await banco.insert(contaCriada).values({ implantacaoId: id, codigoReduzido: codigo, descricao, classificacao });
   await auditar(banco, {
     usuarioId,
     acao: 'registrar_conta_criada',
     entidade: 'implantacao',
     entidadeId: String(id),
-    detalhes: { codigoReduzido: conta.codigoReduzido },
+    detalhes: { codigoReduzido: codigo },
   });
+  return { ok: true };
+}
+
+/** As contas criadas NESTA implantação, para a busca de quem a está fazendo (e de mais ninguém). */
+export async function listarContasCriadas(banco: Banco, id: number): Promise<ContaPlano[]> {
+  const criadas = await banco.select().from(contaCriada).where(eq(contaCriada.implantacaoId, id));
+  return criadas.map((c) => ({
+    codigoReduzido: c.codigoReduzido,
+    classificacao: c.classificacao,
+    descricao: c.descricao,
+    tipo: 'A',
+    descricaoNormalizada: '',
+  }));
+}
+
+/**
+ * Reabre uma implantação CONCLUÍDA para correção: ela volta a "em andamento", sai da lista de
+ * concluídas e volta para a mesa, com tudo o que já foi feito. O TXT tem de ser gerado de novo antes
+ * de concluir outra vez — o registro do TXT anterior é apagado, para o arquivo novo refletir as
+ * correções.
+ */
+export async function reabrirImplantacao(
+  banco: Banco,
+  id: number,
+  usuarioId: number,
+): Promise<ResultadoImplantacao> {
+  const [imp] = await banco
+    .select({ usuarioId: implantacao.usuarioId, status: implantacao.status })
+    .from(implantacao)
+    .where(eq(implantacao.id, id))
+    .limit(1);
+  if (imp === undefined) return { ok: false, erro: 'Implantação não encontrada.' };
+  if (imp.usuarioId !== usuarioId) return { ok: false, erro: 'Esta implantação é de outra pessoa.' };
+  if (imp.status !== 'concluida') {
+    return { ok: false, erro: 'Só dá para reabrir uma implantação concluída.' };
+  }
+  await banco
+    .update(implantacao)
+    .set({ status: 'em_andamento', concluidaEm: null, txtHash: null, guardadaEm: new Date() })
+    .where(eq(implantacao.id, id));
+  await auditar(banco, {
+    usuarioId,
+    acao: 'reabrir_implantacao',
+    entidade: 'implantacao',
+    entidadeId: String(id),
+  });
+  return { ok: true };
 }
 
 type LinhaResolvidaGravavel = {
@@ -413,16 +500,7 @@ export async function recalcular(
     .where(eq(implantacaoLinha.implantacaoId, id))
     .orderBy(implantacaoLinha.ordem);
 
-  const balancete: LinhaBalancete[] = linhasOrigem.map((l) => ({
-    codiCta: l.codiCta ?? '',
-    nomeCta: l.nomeCta ?? '',
-    clasCta: l.clasCta ?? '',
-    tipoCta: l.tipoCta ?? '',
-    saldoAnterior: numero(l.saldoAnterior),
-    totalDebito: numero(l.totalDebito),
-    totalCredito: numero(l.totalCredito),
-    saldoAtual: numero(l.saldoAtual),
-  }));
+  const balancete = linhasOrigem.map(paraLinhaBalancete);
 
   const regras = await carregarRegras(banco);
   const criadas = await banco
@@ -539,16 +617,7 @@ export async function lerImplantacao(
       ajustesManuais.set(l.codiCta, l.ajusteManual);
     }
   }
-  const balancete: LinhaBalancete[] = linhasOrigem.map((l) => ({
-    codiCta: l.codiCta ?? '',
-    nomeCta: l.nomeCta ?? '',
-    clasCta: l.clasCta ?? '',
-    tipoCta: l.tipoCta ?? '',
-    saldoAnterior: numero(l.saldoAnterior),
-    totalDebito: numero(l.totalDebito),
-    totalCredito: numero(l.totalCredito),
-    saldoAtual: numero(l.saldoAtual),
-  }));
+  const balancete = linhasOrigem.map(paraLinhaBalancete);
 
   const resultado = converter({
     balancete,
