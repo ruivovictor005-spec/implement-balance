@@ -5,7 +5,7 @@
 // A base é compartilhada: um sinônimo vale para as implantações de TODO MUNDO. Por isso nada entra
 // direto — quem não é administrador PROPÕE, a proposta fica 'pendente' (o motor só lê 'ativo') e só
 // passa a valer quando o administrador aprova. Decidir alterações e desfazer também é só dele.
-import { and, desc, eq } from 'drizzle-orm';
+import { and, desc, eq, ilike, inArray, or } from 'drizzle-orm';
 import type { PgDatabase } from 'drizzle-orm/pg-core';
 import { podeAdministrar } from '../acesso/papeis.js';
 import { normalizarNome } from '../motor/normalizar.js';
@@ -57,6 +57,39 @@ export async function ehAdmin(banco: Banco, usuarioId: number): Promise<boolean>
 
 const SO_ADMIN = { ok: false as const, erro: 'Apenas o administrador pode fazer isso.' };
 
+type CodigoConferido =
+  | { ok: true; foraDoPadrao: boolean; aviso?: string }
+  | { ok: false; erro: string };
+
+/**
+ * O código de destino existe? No plano vigente, em outro (entra como "fora do padrão"), ou em
+ * nenhum (recusa). Vale tanto para ensinar um sinônimo quanto para alterar um que já existe — os
+ * dois caminhos gravam o mesmo tipo de regra e não podem aceitar códigos diferentes.
+ */
+async function conferirCodigo(banco: Banco, codigo: string): Promise<CodigoConferido> {
+  const vid = await idVigente(banco);
+  const [noVigente] = await banco
+    .select({ id: planoConta.id })
+    .from(planoConta)
+    .where(and(eq(planoConta.planoVersaoId, vid), eq(planoConta.codigoReduzido, codigo)))
+    .limit(1);
+  if (noVigente !== undefined) return { ok: true, foraDoPadrao: false };
+
+  const [emAlgum] = await banco
+    .select({ id: planoConta.id })
+    .from(planoConta)
+    .where(eq(planoConta.codigoReduzido, codigo))
+    .limit(1);
+  if (emAlgum === undefined) {
+    return { ok: false, erro: `Código ${codigo} não existe em nenhum plano.` };
+  }
+  return {
+    ok: true,
+    foraDoPadrao: true,
+    aviso: `Código ${codigo} não está no plano vigente; marcado como fora do padrão.`,
+  };
+}
+
 /**
  * Ensina um sinônimo novo. Para quem NÃO é administrador, vira uma PROPOSTA pendente — não vale para
  * ninguém até o administrador aprovar (enquanto isso, a pessoa resolve a própria linha com "usar só
@@ -74,25 +107,9 @@ export async function ensinarSinonimo(
   const chave = normalizarNome(entrada.nomeOriginal, regras.normalizacao);
   const admin = await ehAdmin(banco, entrada.usuarioId);
 
-  const [noVigente] = await banco
-    .select({ id: planoConta.id })
-    .from(planoConta)
-    .where(and(eq(planoConta.planoVersaoId, vid), eq(planoConta.codigoReduzido, entrada.codigo)))
-    .limit(1);
-  let foraDoPadrao = false;
-  let aviso: string | undefined;
-  if (noVigente === undefined) {
-    const [emAlgum] = await banco
-      .select({ id: planoConta.id })
-      .from(planoConta)
-      .where(eq(planoConta.codigoReduzido, entrada.codigo))
-      .limit(1);
-    if (emAlgum === undefined) {
-      return { ok: false, erro: `Código ${entrada.codigo} não existe em nenhum plano.` };
-    }
-    foraDoPadrao = true;
-    aviso = `Código ${entrada.codigo} não está no plano vigente; marcado como fora do padrão.`;
-  }
+  const conferido = await conferirCodigo(banco, entrada.codigo);
+  if (!conferido.ok) return conferido;
+  const { foraDoPadrao, aviso } = conferido;
 
   const [ativo] = await banco
     .select({ cod: sinonimo.codigoReduzido })
@@ -292,7 +309,102 @@ export async function listarMinhasPropostas(banco: Banco, usuarioId: number): Pr
     .limit(50);
 }
 
-/** Alterar um sinônimo existente não muda direto: cria um pedido pendente de revisão. */
+export type SinonimoAtivo = {
+  id: number;
+  nomeOriginal: string;
+  chaveNormalizada: string;
+  codigo: string;
+  /** Para onde o sinônimo aponta HOJE, por extenso — é o que deixa ver que está errado. */
+  descricaoConta: string | null;
+  classificacaoConta: string | null;
+  foraDoPadrao: boolean;
+  /** Último evento deste sinônimo, para a tela detectar que alguém mexeu enquanto ela olhava. */
+  ultimoEventoId: number | null;
+};
+
+const TETO_DA_BUSCA = 60;
+
+/**
+ * Procura entre os sinônimos ATIVOS da versão vigente, para a pessoa poder ver e corrigir uma regra
+ * que já existe. Sem isto, as regras eram invisíveis: dava para ensinar uma nova, nunca para achar
+ * a que estava mandando "provisão de INSS" para a conta de INSS a pagar.
+ *
+ * O termo é procurado no nome original, na chave normalizada, no código de destino e na descrição
+ * da conta de destino — e também na forma NORMALIZADA do que foi digitado, porque é assim que a
+ * chave está guardada: quem digita "provisão de INSS" precisa achar a chave "PROVISAO INSS".
+ */
+export async function buscarSinonimos(
+  banco: Banco,
+  termo: string,
+  limite = TETO_DA_BUSCA,
+): Promise<SinonimoAtivo[]> {
+  const bruto = termo.trim();
+  if (bruto === '') return [];
+  const vid = await idVigente(banco);
+  const regras = await carregarRegras(banco);
+  const comoChave = normalizarNome(bruto, regras.normalizacao);
+  const curinga = (t: string) => `%${t.replace(/[%_\\]/g, (c) => `\\${c}`)}%`;
+
+  const achados = await banco
+    .select({
+      id: sinonimo.id,
+      nomeOriginal: sinonimo.nomeOriginal,
+      chaveNormalizada: sinonimo.chaveNormalizada,
+      codigo: sinonimo.codigoReduzido,
+      descricaoConta: planoConta.descricao,
+      classificacaoConta: planoConta.classificacao,
+      foraDoPadrao: sinonimo.foraDoPadrao,
+    })
+    .from(sinonimo)
+    .leftJoin(
+      planoConta,
+      and(
+        eq(planoConta.planoVersaoId, vid),
+        eq(planoConta.codigoReduzido, sinonimo.codigoReduzido),
+      ),
+    )
+    .where(
+      and(
+        eq(sinonimo.planoVersaoId, vid),
+        eq(sinonimo.status, 'ativo'),
+        or(
+          ilike(sinonimo.nomeOriginal, curinga(bruto)),
+          ilike(sinonimo.chaveNormalizada, curinga(bruto)),
+          ilike(sinonimo.chaveNormalizada, curinga(comoChave)),
+          eq(sinonimo.codigoReduzido, bruto),
+          ilike(planoConta.descricao, curinga(bruto)),
+        ),
+      ),
+    )
+    .orderBy(sinonimo.chaveNormalizada)
+    .limit(Math.min(limite, TETO_DA_BUSCA));
+
+  if (achados.length === 0) return [];
+  const ultimos = await banco
+    .select({ sinonimoId: sinonimoEvento.sinonimoId, id: sinonimoEvento.id })
+    .from(sinonimoEvento)
+    .where(
+      inArray(
+        sinonimoEvento.sinonimoId,
+        achados.map((a) => a.id),
+      ),
+    );
+  const ultimoPor = new Map<number, number>();
+  for (const e of ultimos) {
+    const atual = ultimoPor.get(e.sinonimoId);
+    if (atual === undefined || Number(e.id) > atual) ultimoPor.set(e.sinonimoId, Number(e.id));
+  }
+  return achados.map((a) => ({ ...a, ultimoEventoId: ultimoPor.get(a.id) ?? null }));
+}
+
+/**
+ * Alterar um sinônimo existente. Para quem NÃO é administrador, cria um pedido pendente de revisão;
+ * do administrador, vale na hora — do mesmo jeito que em `ensinarSinonimo`, e para ele não ter de
+ * aprovar o próprio pedido.
+ *
+ * O código proposto é conferido contra o plano antes de entrar: este caminho agora vem da tela, e
+ * um código inventado viraria um sinônimo que não resolve nada.
+ */
 export async function solicitarAlteracao(
   banco: Banco,
   entrada: {
@@ -302,7 +414,19 @@ export async function solicitarAlteracao(
     usuarioId: number;
     eventoConhecido?: number;
   },
-): Promise<Resultado<{ alteracaoId: number }>> {
+): Promise<Resultado<{ alteracaoId: number; aplicada: boolean; aviso?: string }>> {
+  if (entrada.motivo.trim() === '') return { ok: false, erro: 'Informe um motivo para alterar.' };
+
+  const [alvo] = await banco
+    .select({ cod: sinonimo.codigoReduzido, status: sinonimo.status })
+    .from(sinonimo)
+    .where(eq(sinonimo.id, entrada.sinonimoId))
+    .limit(1);
+  if (alvo === undefined) return { ok: false, erro: 'Sinônimo não encontrado.' };
+
+  // "Alguém mexeu enquanto você olhava" vem ANTES de reclamar do código: é o motivo mais forte para
+  // não gravar, e o que a pessoa precisa saber primeiro — o código que ela digitou pode nem fazer
+  // mais sentido para o estado novo.
   if (entrada.eventoConhecido !== undefined) {
     const [ultimo] = await banco
       .select({ id: sinonimoEvento.id })
@@ -314,6 +438,15 @@ export async function solicitarAlteracao(
       return { ok: false, erro: 'Este sinônimo foi alterado por outra pessoa; recarregue antes de salvar.' };
     }
   }
+
+  if (alvo.cod === entrada.codigoProposto) {
+    return { ok: false, erro: `Este sinônimo já aponta para ${entrada.codigoProposto}.` };
+  }
+
+  const conferido = await conferirCodigo(banco, entrada.codigoProposto);
+  if (!conferido.ok) return conferido;
+
+  const admin = await ehAdmin(banco, entrada.usuarioId);
   const [a] = await banco
     .insert(alteracaoSinonimo)
     .values({
@@ -321,9 +454,28 @@ export async function solicitarAlteracao(
       codigoProposto: entrada.codigoProposto,
       motivo: entrada.motivo,
       solicitadoPor: entrada.usuarioId,
+      status: admin ? 'aprovada' : 'pendente',
+      revisadoPor: admin ? entrada.usuarioId : null,
     })
     .returning({ id: alteracaoSinonimo.id });
-  return { ok: true, alteracaoId: a.id };
+
+  if (!admin) return { ok: true, alteracaoId: a.id, aplicada: false };
+
+  // Administrador altera na hora. O evento é o mesmo que `decidirAlteracao` grava, para o histórico
+  // e o desfazer não saberem a diferença entre os dois caminhos.
+  await banco
+    .update(sinonimo)
+    .set({ codigoReduzido: entrada.codigoProposto })
+    .where(eq(sinonimo.id, entrada.sinonimoId));
+  await banco.insert(sinonimoEvento).values({
+    sinonimoId: entrada.sinonimoId,
+    tipo: 'alterado',
+    codigoDe: alvo.cod,
+    codigoPara: entrada.codigoProposto,
+    motivo: entrada.motivo,
+    autorId: entrada.usuarioId,
+  });
+  return { ok: true, alteracaoId: a.id, aplicada: true, aviso: conferido.aviso };
 }
 
 /** Só o administrador decide uma alteração. Aprovar aplica o novo código e grava o evento. */

@@ -7,12 +7,14 @@ import { desc, eq } from 'drizzle-orm';
 import { auth } from '../../acesso/auth.js';
 import { db } from '../../dados/cliente.js';
 import {
+  buscarSinonimos,
   desfazer as desfazerNoBanco,
   ehAdmin,
   ensinarSinonimo as ensinarNoBanco,
   listarMinhasPropostas,
   solicitarAlteracao as solicitarNoBanco,
   type MinhaProposta,
+  type SinonimoAtivo,
 } from '../../dados/sinonimos.js';
 import { sinonimo, sinonimoEvento } from '../../dados/schema.js';
 
@@ -27,11 +29,31 @@ export async function ensinar(nomeOriginal: string, codigo: string, motivo: stri
   return ensinarNoBanco(db(), { nomeOriginal, codigo, motivo, usuarioId: await usuarioAtualId() });
 }
 
-export async function solicitar(sinonimoId: number, codigoProposto: string, motivo: string) {
+/**
+ * Procura regras que JÁ existem, para poder corrigi-las. Sem isto elas eram invisíveis: dava para
+ * ensinar uma nova, nunca para achar a que estava mandando a conta para o lugar errado.
+ */
+export async function buscar(termo: string): Promise<SinonimoAtivo[]> {
+  await usuarioAtualId();
+  return buscarSinonimos(db(), termo);
+}
+
+/**
+ * Muda para onde um sinônimo aponta. Do administrador vale na hora; dos demais, vira pedido para o
+ * painel do administrador. `eventoConhecido` é o último evento que a tela viu: se alguém mexeu no
+ * meio tempo, o pedido é recusado em vez de atropelar a mudança da outra pessoa.
+ */
+export async function solicitar(
+  sinonimoId: number,
+  codigoProposto: string,
+  motivo: string,
+  eventoConhecido?: number,
+) {
   return solicitarNoBanco(db(), {
     sinonimoId,
     codigoProposto,
     motivo,
+    eventoConhecido,
     usuarioId: await usuarioAtualId(),
   });
 }

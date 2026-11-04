@@ -2,10 +2,20 @@
 import * as React from 'react';
 import { useCallback, useEffect, useState } from 'react';
 import type { MinhaProposta } from '../../dados/sinonimos.js';
-import { desfazer, ensinar, listarEventos, minhasPropostas, souAdmin, type EventoRecente } from './acoes.js';
+import {
+  buscar,
+  desfazer,
+  ensinar,
+  listarEventos,
+  minhasPropostas,
+  solicitar,
+  souAdmin,
+  type EventoRecente,
+} from './acoes.js';
 import { Busca } from './_componentes/Busca.js';
 import { Historico } from './_componentes/Historico.js';
 import { MinhasPropostas } from './_componentes/MinhasPropostas.js';
+import { RegrasExistentes } from './_componentes/RegrasExistentes.js';
 
 export default function Pagina() {
   const [propostas, setPropostas] = useState<MinhaProposta[]>([]);
@@ -40,6 +50,16 @@ export default function Pagina() {
         admin={admin}
         onEnsinar={async (nome, codigo, motivo) => {
           const r = await ensinar(nome, codigo, motivo);
+          await recarregar();
+          return r;
+        }}
+      />
+
+      <RegrasExistentes
+        admin={admin}
+        onBuscar={buscar}
+        onAlterar={async (id, codigo, motivo, eventoConhecido) => {
+          const r = await solicitar(id, codigo, motivo, eventoConhecido);
           await recarregar();
           return r;
         }}

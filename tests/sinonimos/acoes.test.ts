@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { semear } from '../../scripts/semear.js';
 import { carregarRegras } from '../../src/dados/regras.js';
 import {
+  buscarSinonimos,
   carregarSinonimos,
   decidirAlteracao,
   decidirSinonimo,
@@ -201,6 +202,133 @@ describe('sinônimos: propor, aprovar, alterar, desfazer', () => {
     expect((await sinonimo(sinId)).codigoReduzido).toBe('18');
     const eventos = await banco.select().from(schema.sinonimoEvento).where(eq(schema.sinonimoEvento.sinonimoId, sinId));
     expect(eventos.some((e) => e.tipo === 'alterado')).toBe(true);
+  });
+
+  // A metade que faltava da página: achar a regra que já existe para poder corrigi-la.
+  // Estes casos usam a BASE SEMEADA, que é a real — inclusive as regras de INSS e FGTS.
+  describe('procurar e mudar regras que já existem', () => {
+    const acharRegra = async (nome: string) => {
+      const achados = await buscarSinonimos(banco, nome);
+      const exata = achados.find((a) => a.nomeOriginal === nome);
+      expect(exata, `nenhuma regra chamada ${nome}`).toBeDefined();
+      return exata!;
+    };
+
+    it('acha pelo nome original, pela chave, pelo código e pela conta de destino', async () => {
+      const tem = (achados: { nomeOriginal: string }[]) =>
+        achados.some((a) => a.nomeOriginal === 'INSS A RECOLHER');
+      expect(tem(await buscarSinonimos(banco, 'inss a recolher'))).toBe(true);
+      expect(tem(await buscarSinonimos(banco, 'INSS PAGAR'))).toBe(true);
+      expect(tem(await buscarSinonimos(banco, '227'))).toBe(true);
+      expect(tem(await buscarSinonimos(banco, 'INSS a Pagar'))).toBe(true);
+    });
+
+    // O nome guardado é 'INSS SOBRE FOLHA A RECOLHER' e a chave é 'INSS S FOLHA PAGAR': quem digita
+    // "INSS s/ folha pagar" só acha porque o termo também é normalizado antes de procurar.
+    it('procura também pela forma normalizada do que foi digitado', async () => {
+      const achados = await buscarSinonimos(banco, 'INSS s/ folha pagar');
+      expect(achados.map((a) => a.nomeOriginal)).toContain('INSS SOBRE FOLHA A RECOLHER');
+    });
+
+    it('mostra a conta de destino por extenso — é lendo o nome que se vê o erro', async () => {
+      const regra = await acharRegra('FGTS A RECOLHER');
+      expect(regra.codigo).toBe('226');
+      expect(regra.descricaoConta).toMatch(/FGTS a Pagar/i);
+      expect(regra.classificacaoConta).toBe('21302001');
+    });
+
+    it('termo vazio não devolve a base inteira', async () => {
+      expect(await buscarSinonimos(banco, '   ')).toEqual([]);
+    });
+
+    it('só traz os ativos: proposta pendente não aparece como regra', async () => {
+      const r = await ensinar('CONTA INVENTADA PARA O TESTE ZZZ', '485');
+      expect(r.ok).toBe(true);
+      expect(await buscarSinonimos(banco, 'CONTA INVENTADA PARA O TESTE ZZZ')).toEqual([]);
+    });
+
+    // O caso que motivou tudo: uma conta de provisão caindo na conta "a pagar" do INSS.
+    it('o administrador corrige na hora, sem aprovar o próprio pedido', async () => {
+      const antes = await acharRegra('INSS');
+      expect(antes.codigo).toBe('227');
+      expect(antes.descricaoConta).toMatch(/INSS a Pagar/i);
+
+      const r = await solicitarAlteracao(banco, {
+        sinonimoId: antes.id,
+        codigoProposto: '223',
+        motivo: 'aqui é provisão, não é a recolher',
+        usuarioId: adminId,
+        eventoConhecido: antes.ultimoEventoId ?? undefined,
+      });
+      expect(r.ok && r.aplicada).toBe(true);
+
+      // O motor passa a resolver para a conta certa, e a tela mostra o novo destino.
+      expect((await carregarSinonimos(banco)).get(await chave('INSS'))).toBe('223');
+      expect((await acharRegra('INSS')).descricaoConta).toMatch(/Encargos/i);
+    });
+
+    it('o pedido do administrador já nasce aprovado e registra o mesmo evento', async () => {
+      const regra = await acharRegra('FGTS');
+      await solicitarAlteracao(banco, {
+        sinonimoId: regra.id,
+        codigoProposto: '489',
+        motivo: 'x',
+        usuarioId: adminId,
+      });
+      const pedidos = await banco
+        .select()
+        .from(schema.alteracaoSinonimo)
+        .where(eq(schema.alteracaoSinonimo.sinonimoId, regra.id));
+      expect(pedidos.map((p) => p.status)).toEqual(['aprovada']);
+      const eventos = await banco
+        .select()
+        .from(schema.sinonimoEvento)
+        .where(eq(schema.sinonimoEvento.sinonimoId, regra.id));
+      const alterado = eventos.find((e) => e.tipo === 'alterado');
+      expect(alterado?.codigoDe).toBe(regra.codigo);
+      expect(alterado?.codigoPara).toBe('489');
+    });
+
+    it('usuário comum continua só pedindo: a regra não muda na hora', async () => {
+      const regra = await acharRegra('INSS RETIDO');
+      const r = await solicitarAlteracao(banco, {
+        sinonimoId: regra.id,
+        codigoProposto: '488',
+        motivo: 'x',
+        usuarioId,
+      });
+      expect(r.ok && r.aplicada).toBe(false);
+      expect((await sinonimo(regra.id)).codigoReduzido).toBe(regra.codigo);
+    });
+
+    it('alteração sem motivo, para código inexistente ou para o mesmo código é recusada', async () => {
+      const regra = await acharRegra('PARCELAMENTO INSS');
+      const pedir = (codigoProposto: string, motivo: string) =>
+        solicitarAlteracao(banco, {
+          sinonimoId: regra.id,
+          codigoProposto,
+          motivo,
+          usuarioId: adminId,
+        });
+
+      expect(await pedir('18', '  ')).toEqual({ ok: false, erro: 'Informe um motivo para alterar.' });
+      expect((await pedir('NAO-EXISTE', 'x')).ok).toBe(false);
+      expect(await pedir(regra.codigo, 'x')).toEqual({
+        ok: false,
+        erro: `Este sinônimo já aponta para ${regra.codigo}.`,
+      });
+      expect((await sinonimo(regra.id)).codigoReduzido).toBe(regra.codigo); // nada mudou
+    });
+
+    it('sinônimo inexistente não é alterado', async () => {
+      const r = await solicitarAlteracao(banco, {
+        sinonimoId: 999999,
+        codigoProposto: '18',
+        motivo: 'x',
+        usuarioId: adminId,
+      });
+      expect(r).toEqual({ ok: false, erro: 'Sinônimo não encontrado.' });
+    });
   });
 
   it('desfazer volta ao código anterior, registra evento e é só do administrador', async () => {
