@@ -12,6 +12,7 @@ vi.mock('../../src/app/implantacao/acoes.js', () => ({
   excluirImplantacao: (id: number) => excluirMock(id),
 }));
 
+import { conferirPorGrupo } from '../../src/motor/conferencia-grupo.js';
 import type { LinhaResolvida } from '../../src/motor/converter.js';
 import type { ContaBusca, ImplantacaoAberta, Lancamento } from '../../src/app/implantacao/acoes.js';
 import { AreaArquivo } from '../../src/app/implantacao/_componentes/AreaArquivo.js';
@@ -19,6 +20,7 @@ import { BuscaConta } from '../../src/app/implantacao/_componentes/BuscaConta.js
 import { DadosEmpresa } from '../../src/app/implantacao/_componentes/DadosEmpresa.js';
 import { MapeamentoColunas } from '../../src/app/implantacao/_componentes/MapeamentoColunas.js';
 import { Mesa } from '../../src/app/implantacao/_componentes/Mesa.js';
+import { ConferenciaPorGrupo } from '../../src/app/implantacao/_componentes/ConferenciaPorGrupo.js';
 import { PainelConferencia } from '../../src/app/implantacao/_componentes/PainelConferencia.js';
 import { PreviaBalancete } from '../../src/app/implantacao/_componentes/PreviaBalancete.js';
 import { ResumoBalancete } from '../../src/app/implantacao/_componentes/ResumoBalancete.js';
@@ -523,6 +525,126 @@ describe('tela de implantação', () => {
       previa([]);
       expect(screen.getByText(/Indique as contas no de-para/)).toBeInTheDocument();
       expect(document.querySelector('tr[data-classificacao]')).toBeNull();
+    });
+
+    // A coluna de status marca se o grupo bate com o balancete de origem.
+    describe('coluna "Confere?"', () => {
+      const comConferencia = (
+        lancamentos: Lancamento[],
+        origem: Partial<LinhaResolvida>[],
+      ): void => {
+        render(
+          <PreviaBalancete
+            contas={planinho}
+            lancamentos={lancamentos}
+            conferencia={conferirPorGrupo(origem.map((l) => linha(l)), planinho)}
+          />,
+        );
+      };
+
+      it('grupo que bate fica OK e sem destaque', () => {
+        comConferencia(
+          [lanc('10', 100, 'D')],
+          [{ natureza: 'ATIVO CIRCULANTE', saldoAtual: -100, codigo: '10' }],
+        );
+        expect(linhaDe('1')).toHaveAttribute('data-confere', 'ok');
+        expect(linhaDe('1')).toHaveTextContent('OK');
+        expect(linhaDe('1')).not.toHaveClass('nao-bate');
+      });
+
+      it('grupo que não bate fica PENDENTE e destacado', () => {
+        // Saldo de ativo na origem foi indicado para uma conta de passivo.
+        comConferencia(
+          [lanc('235', 100, 'C')],
+          [{ natureza: 'ATIVO CIRCULANTE', saldoAtual: -100, codigo: '235' }],
+        );
+        expect(linhaDe('2')).toHaveAttribute('data-confere', 'nao');
+        expect(linhaDe('2')).toHaveTextContent('PENDENTE');
+        expect(linhaDe('2')).toHaveClass('nao-bate');
+      });
+
+      // Abaixo do topo os dois planos não se correspondem; marcar status ali seria inventar.
+      it('só o grupo de topo recebe status', () => {
+        comConferencia(
+          [lanc('10', 100, 'D')],
+          [{ natureza: 'ATIVO CIRCULANTE', saldoAtual: -100, codigo: '10' }],
+        );
+        expect(linhaDe('1')).toHaveAttribute('data-confere');
+        for (const classe of ['11', '111', '11102', '11102001']) {
+          expect(linhaDe(classe)).not.toHaveAttribute('data-confere');
+        }
+      });
+
+      it('sem conferência, a coluna fica vazia e nada é destacado', () => {
+        previa([lanc('10', 100, 'D')]);
+        expect(linhaDe('1')).not.toHaveAttribute('data-confere');
+        expect(document.querySelector('tr.nao-bate')).toBeNull();
+      });
+    });
+  });
+
+  // Conferir grupo a grupo é o que acha a conta indicada para o grupo errado sem a pessoa ter de
+  // comparar duas tabelas de cabeça.
+  describe('conferência por grupo', () => {
+    const planoConf: ContaBusca[] = [
+      { codigoReduzido: 'g1', classificacao: '1', descricao: 'ATIVO', tipo: 'S', descricaoNormalizada: '', natureza: '' },
+      { codigoReduzido: 'g4', classificacao: '4', descricao: 'CUSTOS E DESPESAS', tipo: 'S', descricaoNormalizada: '', natureza: '' },
+      { codigoReduzido: '10', classificacao: '11102001', descricao: 'Bradesco', tipo: 'A', descricaoNormalizada: '', natureza: '' },
+      { codigoReduzido: '537', classificacao: '42105002', descricao: 'Telefone', tipo: 'A', descricaoNormalizada: '', natureza: '' },
+    ];
+
+    const conferir = (ls: Partial<LinhaResolvida>[]) =>
+      render(
+        <ConferenciaPorGrupo
+          conferencia={conferirPorGrupo(ls.map((l) => linha(l)), planoConf)}
+        />,
+      );
+
+    const grupoDe = (chave: string): HTMLElement =>
+      document.querySelector(`tr[data-grupo="${chave}"]`) as HTMLElement;
+
+    it('diz que está tudo certo quando os grupos batem', () => {
+      conferir([
+        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
+        { natureza: 'DESPESA ADMINISTRATIVA', saldoAtual: -400, codigo: '537' },
+      ]);
+      expect(screen.getByText(/Todos os grupos conferem/)).toBeInTheDocument();
+      expect(grupoDe('1')).not.toHaveClass('pendente');
+    });
+
+    it('aponta o grupo com diferença e explica o que ela significa', () => {
+      conferir([
+        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '537' }, // ativo em despesa
+      ]);
+      expect(screen.getByText(/2 grupo\(s\) com diferença/)).toBeInTheDocument();
+      expect(screen.getByText(/indicada para o grupo errado/)).toBeInTheDocument();
+      expect(grupoDe('1')).toHaveClass('pendente');
+      expect(grupoDe('4')).toHaveClass('pendente');
+      // Mesmo valor dos dois lados, em lados contrários.
+      expect(grupoDe('1')).toHaveTextContent('1.000,00D');
+      expect(grupoDe('4')).toHaveTextContent('1.000,00C');
+    });
+
+    it('pendência não vira divergência', () => {
+      conferir([
+        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
+        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -250, codigo: null },
+      ]);
+      expect(screen.getByText(/Todos os grupos conferem/)).toBeInTheDocument();
+      expect(grupoDe('1')).toHaveTextContent('250,00D'); // mostrada como pendente
+    });
+
+    it('avisa o que ficou fora da conferência', () => {
+      conferir([
+        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
+        { natureza: 'COMPENSAÇÃO', saldoAtual: -77, codigo: '10' },
+      ]);
+      expect(screen.getByText(/1 linha\(s\), somando 77,00/)).toBeInTheDocument();
+    });
+
+    it('sem nada indicado, convida a fazer o de-para', () => {
+      conferir([]);
+      expect(screen.getByText(/Indique as contas no de-para para conferir os grupos/)).toBeInTheDocument();
     });
   });
 });

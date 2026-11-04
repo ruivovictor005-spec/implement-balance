@@ -1120,3 +1120,21 @@ tr.grupo td .meta {
 table.balancete tr.grupo td:first-child {
   box-shadow: inset 2px 0 0 var(--borda-forte);
 }
+
+/* Grupo de topo cujo total NÃO bate com o balancete de origem. Vem depois de `tr.grupo` de
+   propósito: mesma especificidade, então o vermelho vence o cinza do grupo. */
+tr.nao-bate td {
+  background: var(--alerta-fundo);
+}
+
+tr.nao-bate td:first-child {
+  box-shadow: inset 2px 0 0 var(--alerta-texto);
+}
+
+/* Selo "OK" da coluna de conferência: discreto, porque o que precisa chamar atenção é o que falha. */
+.selo-ok {
+  color: var(--suave);
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+}

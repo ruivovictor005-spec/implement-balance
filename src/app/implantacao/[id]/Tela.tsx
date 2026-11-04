@@ -1,6 +1,7 @@
 'use client';
 import * as React from 'react';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { conferirPorGrupo } from '../../../motor/conferencia-grupo.js';
 import type { Celula } from '../../../leitores/ler-arquivo.js';
 import type { LinhaResolvida, Painel } from '../../../motor/converter.js';
 import {
@@ -28,6 +29,7 @@ import { Abas, type AbaId } from '../_componentes/Abas.js';
 import { AreaArquivo } from '../_componentes/AreaArquivo.js';
 import { MapeamentoColunas } from '../_componentes/MapeamentoColunas.js';
 import { PlanoDrawer } from '../_componentes/PlanoDrawer.js';
+import { ConferenciaPorGrupo } from '../_componentes/ConferenciaPorGrupo.js';
 import { PreviaBalancete } from '../_componentes/PreviaBalancete.js';
 import { TabelaDePara, Pendencias } from '../_componentes/TabelaDePara.js';
 import { DadosEmpresa } from '../_componentes/DadosEmpresa.js';
@@ -341,6 +343,10 @@ export function Tela({ id }: { id: number }) {
   const temArquivoNaSessao = ultimoArquivo.current !== null;
   const temLinhas = linhas.length > 0;
 
+  // Calculada uma vez e usada nos dois lugares (o painel de conferência e a coluna de status da
+  // prévia), para os dois nunca discordarem.
+  const conferencia = useMemo(() => conferirPorGrupo(linhas, contas), [linhas, contas]);
+
   return (
     <main>
       <header className="cab-impl">
@@ -490,7 +496,8 @@ export function Tela({ id }: { id: number }) {
       {aba === 'previa' &&
         (temLinhas ? (
           <>
-            <PreviaBalancete lancamentos={lancamentos} contas={contas} />
+            <ConferenciaPorGrupo conferencia={conferencia} />
+            <PreviaBalancete lancamentos={lancamentos} contas={contas} conferencia={conferencia} />
             <ResumoBalancete linhas={linhas} />
           </>
         ) : (
