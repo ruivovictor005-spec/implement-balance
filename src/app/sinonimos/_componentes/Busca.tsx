@@ -9,11 +9,10 @@ export function Busca({
   onEnsinar,
 }: {
   admin: boolean;
-  onEnsinar: (nome: string, codigo: string, motivo: string) => Promise<Retorno>;
+  onEnsinar: (nome: string, codigo: string) => Promise<Retorno>;
 }) {
   const [nome, setNome] = useState('');
   const [codigo, setCodigo] = useState('');
-  const [motivo, setMotivo] = useState('');
   const [msg, setMsg] = useState<{ texto: string; ok: boolean } | null>(null);
 
   return (
@@ -33,16 +32,12 @@ export function Busca({
           <label htmlFor="s-cod">Código reduzido do Domínio</label>
           <input id="s-cod" value={codigo} onChange={(e) => setCodigo(e.target.value)} />
         </div>
-        <div>
-          <label htmlFor="s-mot">Motivo</label>
-          <input id="s-mot" value={motivo} onChange={(e) => setMotivo(e.target.value)} />
-        </div>
       </div>
       <div className="linha-acoes">
         <button
           type="button"
           onClick={async () => {
-            const r = await onEnsinar(nome.trim(), codigo.trim(), motivo.trim());
+            const r = await onEnsinar(nome.trim(), codigo.trim());
             if (!r.ok) {
               setMsg({ texto: r.erro, ok: false });
               return;
@@ -53,7 +48,6 @@ export function Busca({
             setMsg({ texto: r.aviso ? `${base} ${r.aviso}` : base, ok: true });
             setNome('');
             setCodigo('');
-            setMotivo('');
           }}
         >
           {admin ? 'Ensinar para todos' : 'Enviar para aprovação'}

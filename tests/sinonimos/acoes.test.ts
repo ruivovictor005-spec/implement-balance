@@ -139,9 +139,28 @@ describe('sinônimos: propor, aprovar, alterar, desfazer', () => {
     });
   });
 
-  it('ensinar sem motivo é recusado', async () => {
-    const r = await ensinarSinonimo(banco, { nomeOriginal: 'X', codigo: '485', motivo: '   ', usuarioId });
-    expect(r.ok).toBe(false);
+  // O motivo deixou de ser pedido na tela, então também não é exigido aqui. A coluna continua
+  // existindo e o que já estava gravado continua lá; o que não vem é guardado como nulo, não como
+  // texto vazio, para o histórico não mostrar um campo em branco como se tivesse sido preenchido.
+  it('ensinar sem motivo é aceito e guarda nulo', async () => {
+    const r = await ensinarSinonimo(banco, { nomeOriginal: 'CONTA SEM MOTIVO YYY', codigo: '485', usuarioId });
+    expect(r.ok).toBe(true);
+    expect((await sinonimo(r.ok ? r.sinonimoId : 0)).motivo).toBeNull();
+  });
+
+  it('alterar sem motivo também é aceito e guarda nulo', async () => {
+    const regra = (await buscarSinonimos(banco, 'PARCELAMENTO INSS'))[0];
+    const r = await solicitarAlteracao(banco, {
+      sinonimoId: regra.id,
+      codigoProposto: '488',
+      usuarioId: adminId,
+    });
+    expect(r.ok && r.aplicada).toBe(true);
+    const [evento] = await banco
+      .select()
+      .from(schema.sinonimoEvento)
+      .where(eq(schema.sinonimoEvento.sinonimoId, regra.id));
+    expect(evento.motivo).toBeNull();
   });
 
   it('ensinar código fora do plano vigente marca fora_do_padrao e devolve aviso', async () => {
@@ -301,7 +320,7 @@ describe('sinônimos: propor, aprovar, alterar, desfazer', () => {
       expect((await sinonimo(regra.id)).codigoReduzido).toBe(regra.codigo);
     });
 
-    it('alteração sem motivo, para código inexistente ou para o mesmo código é recusada', async () => {
+    it('alteração para código inexistente ou para o mesmo código é recusada', async () => {
       const regra = await acharRegra('PARCELAMENTO INSS');
       const pedir = (codigoProposto: string, motivo: string) =>
         solicitarAlteracao(banco, {
@@ -311,7 +330,6 @@ describe('sinônimos: propor, aprovar, alterar, desfazer', () => {
           usuarioId: adminId,
         });
 
-      expect(await pedir('18', '  ')).toEqual({ ok: false, erro: 'Informe um motivo para alterar.' });
       expect((await pedir('NAO-EXISTE', 'x')).ok).toBe(false);
       expect(await pedir(regra.codigo, 'x')).toEqual({
         ok: false,

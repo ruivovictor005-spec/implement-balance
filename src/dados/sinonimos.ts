@@ -57,6 +57,16 @@ export async function ehAdmin(banco: Banco, usuarioId: number): Promise<boolean>
 
 const SO_ADMIN = { ok: false as const, erro: 'Apenas o administrador pode fazer isso.' };
 
+/**
+ * Texto livre opcional (o motivo) como vai para o banco: null quando não veio nada. A coluna é
+ * nula de propósito — guardar '' faria o histórico mostrar um campo vazio como se tivesse sido
+ * preenchido. O motivo deixou de ser pedido na tela, mas o que já está gravado continua lá.
+ */
+const texto = (v: string | undefined): string | null => {
+  const t = (v ?? '').trim();
+  return t === '' ? null : t;
+};
+
 type CodigoConferido =
   | { ok: true; foraDoPadrao: boolean; aviso?: string }
   | { ok: false; erro: string };
@@ -98,9 +108,9 @@ async function conferirCodigo(banco: Banco, codigo: string): Promise<CodigoConfe
  */
 export async function ensinarSinonimo(
   banco: Banco,
-  entrada: { nomeOriginal: string; codigo: string; motivo: string; usuarioId: number },
+  entrada: { nomeOriginal: string; codigo: string; motivo?: string; usuarioId: number },
 ): Promise<Resultado<{ sinonimoId: number; pendente: boolean; aviso?: string }>> {
-  if (entrada.motivo.trim() === '') return { ok: false, erro: 'Informe um motivo para ensinar.' };
+  const motivo = texto(entrada.motivo);
 
   const vid = await idVigente(banco);
   const regras = await carregarRegras(banco);
@@ -152,7 +162,7 @@ export async function ensinarSinonimo(
         chaveNormalizada: chave,
         codigoReduzido: entrada.codigo,
         foraDoPadrao,
-        motivo: entrada.motivo,
+        motivo,
         status: admin ? 'ativo' : 'pendente',
         propostoPor: entrada.usuarioId,
       })
@@ -410,12 +420,12 @@ export async function solicitarAlteracao(
   entrada: {
     sinonimoId: number;
     codigoProposto: string;
-    motivo: string;
+    motivo?: string;
     usuarioId: number;
     eventoConhecido?: number;
   },
 ): Promise<Resultado<{ alteracaoId: number; aplicada: boolean; aviso?: string }>> {
-  if (entrada.motivo.trim() === '') return { ok: false, erro: 'Informe um motivo para alterar.' };
+  const motivo = texto(entrada.motivo);
 
   const [alvo] = await banco
     .select({ cod: sinonimo.codigoReduzido, status: sinonimo.status })
@@ -452,7 +462,7 @@ export async function solicitarAlteracao(
     .values({
       sinonimoId: entrada.sinonimoId,
       codigoProposto: entrada.codigoProposto,
-      motivo: entrada.motivo,
+      motivo,
       solicitadoPor: entrada.usuarioId,
       status: admin ? 'aprovada' : 'pendente',
       revisadoPor: admin ? entrada.usuarioId : null,
@@ -472,7 +482,7 @@ export async function solicitarAlteracao(
     tipo: 'alterado',
     codigoDe: alvo.cod,
     codigoPara: entrada.codigoProposto,
-    motivo: entrada.motivo,
+    motivo,
     autorId: entrada.usuarioId,
   });
   return { ok: true, alteracaoId: a.id, aplicada: true, aviso: conferido.aviso };

@@ -24,7 +24,7 @@ type Retorno = { ok: true; aplicada: boolean; aviso?: string } | { ok: false; er
 
 const montar = (
   achados: SinonimoAtivo[],
-  onAlterar: (id: number, codigo: string, motivo: string, evento?: number) => Promise<Retorno> = vi
+  onAlterar: (id: number, codigo: string, evento?: number) => Promise<Retorno> = vi
     .fn()
     .mockResolvedValue({ ok: true, aplicada: true }),
   admin = true,
@@ -66,7 +66,7 @@ describe('mudar uma regra que já existe', () => {
     expect(screen.getByText(/casando pelo nome com o plano/)).toBeInTheDocument();
   });
 
-  it('manda o novo código, o motivo e a versão que estava na tela', async () => {
+  it('manda o novo código e a versão que estava na tela', async () => {
     const onAlterar = vi.fn().mockResolvedValue({ ok: true, aplicada: true });
     montar([regra()], onAlterar);
     await procurar('INSS');
@@ -74,12 +74,12 @@ describe('mudar uma regra que já existe', () => {
 
     fireEvent.click(within(linha(1)).getByRole('button', { name: 'Mudar' }));
     fireEvent.change(screen.getByLabelText(/Novo código para/), { target: { value: '223' } });
-    fireEvent.change(screen.getByLabelText(/Motivo da mudança/), {
-      target: { value: 'é provisão' },
-    });
     fireEvent.click(screen.getByRole('button', { name: 'Alterar para todos' }));
 
-    await waitFor(() => expect(onAlterar).toHaveBeenCalledWith(1, '223', 'é provisão', 42));
+    await waitFor(() => expect(onAlterar).toHaveBeenCalledWith(1, '223', 42));
+
+    // O motivo deixou de ser pedido: não há campo nenhum para ele.
+    expect(screen.queryByLabelText(/Motivo/)).not.toBeInTheDocument();
   });
 
   it('administrador altera para todos; quem não é, pede', async () => {

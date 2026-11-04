@@ -48,8 +48,8 @@ export default function Pagina() {
 
       <Busca
         admin={admin}
-        onEnsinar={async (nome, codigo, motivo) => {
-          const r = await ensinar(nome, codigo, motivo);
+        onEnsinar={async (nome, codigo) => {
+          const r = await ensinar(nome, codigo);
           await recarregar();
           return r;
         }}
@@ -58,8 +58,8 @@ export default function Pagina() {
       <RegrasExistentes
         admin={admin}
         onBuscar={buscar}
-        onAlterar={async (id, codigo, motivo, eventoConhecido) => {
-          const r = await solicitar(id, codigo, motivo, eventoConhecido);
+        onAlterar={async (id, codigo, eventoConhecido) => {
+          const r = await solicitar(id, codigo, eventoConhecido);
           await recarregar();
           return r;
         }}

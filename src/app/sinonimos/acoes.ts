@@ -25,7 +25,7 @@ async function usuarioAtualId(): Promise<number> {
   return uid;
 }
 
-export async function ensinar(nomeOriginal: string, codigo: string, motivo: string) {
+export async function ensinar(nomeOriginal: string, codigo: string, motivo = '') {
   return ensinarNoBanco(db(), { nomeOriginal, codigo, motivo, usuarioId: await usuarioAtualId() });
 }
 
@@ -46,13 +46,11 @@ export async function buscar(termo: string): Promise<SinonimoAtivo[]> {
 export async function solicitar(
   sinonimoId: number,
   codigoProposto: string,
-  motivo: string,
   eventoConhecido?: number,
 ) {
   return solicitarNoBanco(db(), {
     sinonimoId,
     codigoProposto,
-    motivo,
     eventoConhecido,
     usuarioId: await usuarioAtualId(),
   });

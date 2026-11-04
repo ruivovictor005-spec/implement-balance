@@ -6,7 +6,7 @@ import type { SinonimoAtivo } from '../../../dados/sinonimos.js';
 type Retorno = { ok: true; aplicada: boolean; aviso?: string } | { ok: false; erro: string };
 
 /** Formulário de troca aberto numa linha. Fica fora da linha para o estado não se perder. */
-type Edicao = { id: number; codigo: string; motivo: string };
+type Edicao = { id: number; codigo: string };
 
 /**
  * Procurar uma regra que JÁ existe e mudar para onde ela aponta.
@@ -26,12 +26,7 @@ export function RegrasExistentes({
 }: {
   admin: boolean;
   onBuscar: (termo: string) => Promise<SinonimoAtivo[]>;
-  onAlterar: (
-    sinonimoId: number,
-    codigo: string,
-    motivo: string,
-    eventoConhecido?: number,
-  ) => Promise<Retorno>;
+  onAlterar: (sinonimoId: number, codigo: string, eventoConhecido?: number) => Promise<Retorno>;
 }) {
   const [termo, setTermo] = useState('');
   const [achados, setAchados] = useState<SinonimoAtivo[] | null>(null);
@@ -117,12 +112,6 @@ export function RegrasExistentes({
                         value={edicao.codigo}
                         onChange={(e) => setEdicao({ ...edicao, codigo: e.target.value })}
                       />
-                      <input
-                        aria-label={`Motivo da mudança de ${s.nomeOriginal}`}
-                        placeholder="motivo"
-                        value={edicao.motivo}
-                        onChange={(e) => setEdicao({ ...edicao, motivo: e.target.value })}
-                      />
                       <div className="linha-acoes">
                         <button
                           type="button"
@@ -130,7 +119,6 @@ export function RegrasExistentes({
                             const r = await onAlterar(
                               s.id,
                               edicao.codigo.trim(),
-                              edicao.motivo.trim(),
                               s.ultimoEventoId ?? undefined,
                             );
                             if (!r.ok) {
@@ -162,7 +150,7 @@ export function RegrasExistentes({
                     <button
                       type="button"
                       className="secundario pequeno"
-                      onClick={() => setEdicao({ id: s.id, codigo: '', motivo: '' })}
+                      onClick={() => setEdicao({ id: s.id, codigo: '' })}
                     >
                       Mudar
                     </button>
