@@ -41,6 +41,8 @@ export default function Pagina() {
         {admin && (
           <>
             {' · '}
+            <a href="/regras">Regras</a>
+            {' · '}
             <a href="/admin">Painel do administrador</a>
           </>
         )}
