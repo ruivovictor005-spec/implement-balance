@@ -14,15 +14,13 @@ type Escolha = '' | PlanoIndicado;
 const escolhaValida = (v: string): Escolha => (v === 'cosif' || v === 'dominio' ? v : '');
 
 /**
- * O que o sistema entendeu do arquivo recebido: em que plano de contas a origem está e se o sinal
- * do saldo segue a convenção esperada (débito negativo).
+ * Os dois ajustes do arquivo de origem: em que plano de contas ele está e de que lado estão os
+ * saldos. São controles, não avisos — a pedido de quem usa, o sistema não opina mais sobre o sinal.
  *
- * As duas coisas, quando estão erradas, não estouram nada — produzem um resultado inteiro errado em
- * silêncio. Um balancete com o sinal trocado FECHA (débito e crédito trocados somam igual), então
- * nem a diferença do painel acusa.
- *
- * Por isso aqui tem AÇÃO, não explicação: o plano se indica no seletor e o sinal se conserta no
- * botão. Texto comprido mandando a pessoa editar o arquivo por fora era só trabalho empurrado.
+ * O que isso custa está dito em voz alta aqui porque some da tela: um balancete com o sinal trocado
+ * gera um TXT com TODOS os lançamentos do lado contrário, e ele fecha do mesmo jeito (débito e
+ * crédito trocados somam igual), então nenhuma outra conferência do sistema pega. Quem decide se o
+ * sinal está certo é quem olha o balancete — e o botão aqui é como consertar quando não está.
  */
 export function AvisoOrigem({
   origem,
@@ -43,7 +41,7 @@ export function AvisoOrigem({
 
   return (
     <section className="cartao">
-      <h2>Como o arquivo foi lido</h2>
+      <h2>Arquivo de origem</h2>
 
       {onIndicarPlano !== undefined && (
         <label className="chave">
@@ -74,27 +72,21 @@ export function AvisoOrigem({
         </p>
       )}
 
-      {origem.convencao === 'invertida' ? (
-        <div className="aviso-atencao">
-          <strong>O sinal do saldo deste arquivo está trocado:</strong> o ativo está somando crédito
-          e o passivo, débito. Assim, todo lançamento sai do lado contrário no TXT — e o balancete
-          fecha do mesmo jeito, então a diferença do painel não acusa.
-          {onInverterSinal !== undefined && (
-            <div className="linha-acoes">
-              <button type="button" onClick={onInverterSinal} disabled={!editavel}>
-                Inverter o sinal de todos os saldos
-              </button>
-            </div>
-          )}
+      {onInverterSinal !== undefined && (
+        <div className="linha-acoes">
+          <button
+            type="button"
+            className="secundario"
+            onClick={onInverterSinal}
+            disabled={!editavel}
+          >
+            Inverter o sinal de todos os saldos
+          </button>
+          <span className="meta">
+            Para arquivo que vem com débito positivo. Apertar de novo desfaz.
+          </span>
         </div>
-      ) : origem.convencao === 'ausente' ? (
-        <div className="aviso-atencao">
-          <strong>Este arquivo não diz de que lado (D/C) está cada saldo:</strong> todos os{' '}
-          {origem.conferidas} saldos conferidos têm o mesmo sinal. Exporte o balancete com o lado
-          junto do valor (&quot;5.574,25D&quot;) ou com uma coluna de D/C — sem isso não há como
-          saber o lado de nenhum lançamento.
-        </div>
-      ) : null}
+      )}
     </section>
   );
 }

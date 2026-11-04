@@ -11,7 +11,6 @@ import {
 import {
   auditarOrigem,
   detectarPlanoOrigem,
-  sinalNaoConfiavel,
   type AuditoriaOrigem,
   type PlanoIndicado,
 } from './origem.js';
@@ -146,16 +145,20 @@ export function converter(entrada: {
   );
   const diferenca = arredondar2(totalDebito - totalCredito);
 
-  // Convenção de sinal do arquivo. Um balancete inteiro com o sinal trocado FECHA do mesmo jeito
-  // (débito e crédito trocados somam igual), então `diferenca` não acusa nada: sem esta conferência
-  // o sistema diria "PRONTO PARA IMPORTAR" para um TXT com todos os lançamentos do lado contrário.
+  // Convenção de sinal do arquivo. Continua sendo calculada e devolvida, mas NÃO reprova mais o
+  // painel: a pedido de quem usa, o sistema deixou de opinar sobre o sinal. A tela usa só para não
+  // acusar conta por conta quando o arquivo inteiro está trocado, e oferece o botão de inverter.
+  //
+  // O que isso custa, escrito aqui porque sumiu da tela: um balancete com o sinal trocado FECHA do
+  // mesmo jeito (débito e crédito trocados somam igual), então `diferenca` não acusa — e agora nada
+  // mais acusa. O painel pode dizer "PRONTO PARA IMPORTAR" para um TXT com todos os lançamentos do
+  // lado contrário. Quem confere o sinal é quem olha o balancete.
   const origem = auditarOrigem(balancete, linhas, planoOrigemIndicado);
   const pronto =
     parametros.cnpj.trim() !== '' &&
     parametros.codigoEmpresa.trim() !== '' &&
     pendentes.length === 0 &&
-    diferenca === 0 &&
-    !sinalNaoConfiavel(origem.convencao);
+    diferenca === 0;
 
   const painel: Painel = {
     analiticas: linhas.length,
@@ -166,13 +169,7 @@ export function converter(entrada: {
     totalCredito,
     diferenca,
     pronto,
-    status: pronto
-      ? 'PRONTO PARA IMPORTAR'
-      : origem.convencao === 'invertida'
-        ? 'ATENÇÃO: o sinal do saldo do arquivo parece estar trocado'
-        : origem.convencao === 'ausente'
-          ? 'ATENÇÃO: o arquivo não diz de que lado (D/C) está cada saldo'
-          : 'ATENÇÃO: revisar pendências / diferença',
+    status: pronto ? 'PRONTO PARA IMPORTAR' : 'ATENÇÃO: revisar pendências / diferença',
     origem,
   };
 

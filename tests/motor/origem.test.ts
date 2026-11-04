@@ -316,11 +316,17 @@ describe('o motor inteiro sobre o balancete real', () => {
     expect(trocado.totalCredito).toBe(certo.totalDebito);
   });
 
-  it('com o sinal trocado o painel não diz "pronto" e explica o motivo', () => {
-    const { painel } = rodar('debito positivo');
-    expect(painel.origem.convencao).toBe('invertida');
-    expect(painel.pronto).toBe(false);
-    expect(painel.status).toContain('sinal');
+  // A conferência de convenção continua sendo feita e devolvida, mas NÃO reprova mais o painel:
+  // a pedido de quem usa, o sistema deixou de opinar sobre o sinal. O preço está escrito aqui — um
+  // balancete inteiro invertido passa pelo painel igual a um certo, porque fecha igual.
+  it('o sinal trocado é detectado, mas não muda mais o veredito do painel', () => {
+    const certo = rodar('debito negativo').painel;
+    const trocado = rodar('debito positivo').painel;
+    expect(trocado.origem.convencao).toBe('invertida');
+    expect(certo.origem.convencao).toBe('normal');
+    expect(trocado.pronto).toBe(certo.pronto);
+    expect(trocado.status).toBe(certo.status);
+    expect(trocado.status).not.toContain('sinal');
   });
 
   // A escolha da pessoa troca a tabela de natureza de todas as linhas, para o certo e para o errado.

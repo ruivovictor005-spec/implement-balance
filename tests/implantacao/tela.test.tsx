@@ -436,18 +436,18 @@ describe('tela de implantação', () => {
       expect(t).toContain('Indique acima');
     });
 
-    it('sinal trocado: diz o que está errado e o que isso causa, em duas frases', () => {
+    // O sistema não opina mais sobre o sinal, a pedido de quem usa: o cartão oferece o botão de
+    // inverter e cala a boca. Quem confere o sinal é quem olha o balancete.
+    it('não avisa nada sobre o sinal, nem quando ele está trocado', () => {
       const t = textoDe({ convencao: 'invertida', devedoras: 25000, credoras: -25000 });
-      expect(t).toContain('sinal do saldo deste arquivo está trocado');
-      expect(t).toContain('do lado contrário no TXT');
+      expect(t).not.toContain('trocado');
+      expect(t).not.toContain('lado contrário');
     });
 
-    // O export que perde o D/C: o lado de cada saldo simplesmente não está no arquivo, e aí não há
-    // o que inverter — só reexportar.
-    it('sem D/C no arquivo: diz que a informação não veio e como trazê-la', () => {
+    it('nem quando o arquivo não traz D/C nenhum', () => {
       const t = textoDe({ convencao: 'ausente', devedoras: 33445.75, credoras: 1875052.67 });
-      expect(t).toContain('não diz de que lado (D/C) está cada saldo');
-      expect(t).toContain('5.574,25D');
+      expect(t).not.toContain('D/C');
+      expect(t).not.toContain('5.574,25D');
     });
   });
 
@@ -477,7 +477,8 @@ describe('tela de implantação', () => {
       expect(onInverter).toHaveBeenCalledTimes(1);
     });
 
-    it('sem sinal trocado não há botão', () => {
+    // Sempre disponível, porque o sistema não julga mais o sinal: é ferramenta, não reação a aviso.
+    it('o botão existe mesmo quando a conferência acha o sinal normal', () => {
       render(
         <AvisoOrigem
           origem={{
@@ -492,7 +493,7 @@ describe('tela de implantação', () => {
           onInverterSinal={() => {}}
         />,
       );
-      expect(screen.queryByRole('button', { name: /Inverter o sinal/ })).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Inverter o sinal/ })).toBeInTheDocument();
     });
 
     it('implantação concluída não deixa inverter', () => {
