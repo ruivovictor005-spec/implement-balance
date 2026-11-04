@@ -1,21 +1,30 @@
 // Confere, grupo a grupo, o balancete de ORIGEM contra o que vai ser implantado no DOMÍNIO.
 // Função pura.
 //
-// Para que serve: achar a conta que foi mapeada para o grupo errado. Se uma conta de ATIVO foi
-// indicada para uma conta de DESPESA, o total do ativo fica faltando e o da despesa fica sobrando
-// — pelo mesmo valor, com sinais opostos. É esse par que denuncia o erro, e é por isso que a
-// conferência é por grupo: ela não depende de a pessoa comparar duas tabelas de cabeça.
+// Para que serve: chamar a atenção para um grupo cujo saldo mudou em relação ao balancete que veio
+// da empresa. Pode ser erro — uma conta indicada para o grupo errado — ou pode ser proposital, uma
+// reclassificação que a pessoa decidiu fazer. O sistema NÃO sabe a diferença, então ele sinaliza e
+// quem analisa julga. É por isso que o resultado é "atenção", e não um veredito.
 //
 // A conta de cada grupo:
 //
 //     diferença = origem − pendente − domínio
 //
 // `pendente` sai da conta porque uma linha ainda sem conta indicada está legitimamente fora do
-// Domínio; sem isso, toda pendência viraria uma falsa divergência.
+// Domínio; sem isso, toda pendência viraria falso alarme.
 //
-// Os dois lados falam vocabulários diferentes — a origem é classificada em COSIF, o destino no
-// plano do Domínio —, então ambos são traduzidos para os grupos de 1º nível do plano de DESTINO,
-// que é onde os saldos vão parar.
+// DOIS NÍVEIS:
+//
+// 1º nível (ATIVO, PASSIVO, RECEITAS, CUSTOS E DESPESAS) — sempre dá para conferir: todo saldo
+//    cai em um dos quatro, dos dois lados.
+//
+// 2º nível (Ativo Circulante, Patrimônio Líquido, Despesas Operacionais…) — só dá para conferir
+//    quando a natureza da origem aponta para UM subgrupo do Domínio. A ponte é o `gruposDominio`
+//    que o motor já resolve para cada linha e usa para validar as escolhas do de-para. Quando a
+//    natureza aceita mais de um ("ATIVO" aceita 11 e 12), não existe subgrupo esperado: a conta
+//    pode estar legitimamente em qualquer um deles, e apontar atenção ali seria alarme falso. Essas
+//    linhas ficam de fora do 2º nível — e são informadas, para a conferência não parecer completa
+//    sem ser.
 
 import { grupoDaNatureza, type GrupoId } from './resumo-balancete.js';
 
@@ -28,6 +37,8 @@ export type ContaDoPlano = {
 export type LinhaParaConferir = {
   /** Natureza da conta de ORIGEM, como o motor resolveu pela classificação COSIF. */
   natureza: string;
+  /** Subgrupos do Domínio que esta natureza aceita. Um só = dá para conferir o 2º nível. */
+  gruposDominio: string[];
   /** Conta do Domínio indicada; null quando a linha ainda está pendente. */
   codigo: string | null;
   /** Assinado: negativo é devedor. */
@@ -36,6 +47,8 @@ export type LinhaParaConferir = {
 
 export type GrupoConferido = {
   chave: string;
+  /** 0 para o grupo de topo, 1 para o subgrupo. */
+  nivel: number;
   rotulo: string;
   origem: number;
   pendente: number;
@@ -44,22 +57,27 @@ export type GrupoConferido = {
   confere: boolean;
 };
 
+export type Contagem = { quantidade: number; saldo: number };
+
 export type Conferencia = {
+  /** Grupos de topo e subgrupos, em ordem de classificação. */
   grupos: GrupoConferido[];
-  /** true quando nenhum grupo tem diferença. */
+  /** true quando nenhum grupo, de nenhum nível, pede atenção. */
   confere: boolean;
   /**
-   * Linhas que não dá para conferir — natureza de origem não reconhecida, ou conta indicada que
-   * não está no plano. Ficam DE FORA dos dois lados, para a aritmética da tabela continuar exata,
-   * e são informadas para ninguém achar que a conferência cobriu tudo.
+   * Linhas que não dá para conferir em nível nenhum — natureza de origem não reconhecida, ou conta
+   * indicada que não está no plano. Ficam DE FORA dos dois lados, para a aritmética continuar
+   * exata, e são informadas para ninguém achar que a conferência cobriu tudo.
    */
-  foraDaConferencia: { quantidade: number; saldo: number };
+  foraDaConferencia: Contagem;
+  /** Linhas conferidas no 1º nível, mas cuja natureza não determina UM subgrupo. */
+  foraDoSubgrupo: Contagem;
 };
 
 /**
  * Onde cada grupo da origem cai no plano do DOMÍNIO. O patrimônio líquido não tem grupo de topo
  * próprio no Domínio: ele mora dentro do PASSIVO (classificação 24), então é lá que ele é
- * conferido — comparar contra um grupo que não existe no destino só produziria divergência falsa.
+ * conferido — comparar contra um grupo que não existe no destino só produziria alarme falso.
  */
 const CHAVE_NO_DOMINIO: Record<GrupoId, string> = {
   ativo: '1',
@@ -75,81 +93,117 @@ function arredondar2(valor: number): number {
   return (sinal * Math.round(Math.abs(valor) * 100)) / 100;
 }
 
+type Acumulador = {
+  origem: Map<string, number>;
+  pendente: Map<string, number>;
+  dominio: Map<string, number>;
+};
+
+const novoAcumulador = (): Acumulador => ({
+  origem: new Map(),
+  pendente: new Map(),
+  dominio: new Map(),
+});
+
+const soma = (mapa: Map<string, number>, chave: string, valor: number): void => {
+  mapa.set(chave, (mapa.get(chave) ?? 0) + valor);
+};
+
 export function conferirPorGrupo(
   linhas: LinhaParaConferir[],
   plano: ContaDoPlano[],
 ): Conferencia {
   // Os grupos e seus nomes saem do próprio plano de destino.
-  const rotulos = new Map<string, string>();
+  const rotulos = new Map<string, string>(); // chave (1 ou 2 dígitos) → nome
   for (const conta of plano) {
     const c = conta.classificacao.trim();
-    if (c.length === 1) rotulos.set(c, conta.descricao);
+    if (c.length === 1 || c.length === 2) rotulos.set(c, conta.descricao);
   }
   const porCodigo = new Map(plano.map((c) => [c.codigoReduzido, c]));
+  const ehGrupo = (chave: string, digitos: number): boolean =>
+    chave.length === digitos && rotulos.has(chave);
 
-  const origem = new Map<string, number>();
-  const pendente = new Map<string, number>();
-  const dominio = new Map<string, number>();
-  const soma = (mapa: Map<string, number>, chave: string, valor: number): void => {
-    mapa.set(chave, (mapa.get(chave) ?? 0) + valor);
+  const topo = novoAcumulador();
+  const sub = novoAcumulador();
+  const fora: Contagem = { quantidade: 0, saldo: 0 };
+  const foraSub: Contagem = { quantidade: 0, saldo: 0 };
+  const contar = (c: Contagem, saldo: number): void => {
+    c.quantidade += 1;
+    c.saldo += saldo;
   };
-
-  let foraQuantidade = 0;
-  let foraSaldo = 0;
 
   for (const linha of linhas) {
     const grupo = grupoDaNatureza(linha.natureza);
-    const chaveOrigem = grupo === null ? null : CHAVE_NO_DOMINIO[grupo];
-
-    // Sem grupo de origem não há contra o que comparar.
-    if (chaveOrigem === null || !rotulos.has(chaveOrigem)) {
-      foraQuantidade += 1;
-      foraSaldo += linha.saldoAtual;
+    const chaveTopo = grupo === null ? null : CHAVE_NO_DOMINIO[grupo];
+    if (chaveTopo === null || !ehGrupo(chaveTopo, 1)) {
+      contar(fora, linha.saldoAtual);
       continue;
     }
 
-    if (linha.codigo === null) {
-      soma(origem, chaveOrigem, linha.saldoAtual);
-      soma(pendente, chaveOrigem, linha.saldoAtual);
+    const destino = linha.codigo === null ? undefined : porCodigo.get(linha.codigo);
+    if (linha.codigo !== null && destino === undefined) {
+      // Indicada para uma conta que não está no plano: não dá para dizer onde caiu.
+      contar(fora, linha.saldoAtual);
       continue;
     }
 
-    const destino = porCodigo.get(linha.codigo);
-    const chaveDestino = destino === undefined ? '' : destino.classificacao.trim().slice(0, 1);
-    if (!rotulos.has(chaveDestino)) {
-      // Indicada para uma conta que não está no plano: não dá para dizer em que grupo caiu.
-      foraQuantidade += 1;
-      foraSaldo += linha.saldoAtual;
+    const classificacaoDestino = destino === undefined ? '' : destino.classificacao.trim();
+    const topoDestino = classificacaoDestino.slice(0, 1);
+    if (destino !== undefined && !ehGrupo(topoDestino, 1)) {
+      contar(fora, linha.saldoAtual);
       continue;
     }
 
-    soma(origem, chaveOrigem, linha.saldoAtual);
-    soma(dominio, chaveDestino, linha.saldoAtual);
+    // --- 1º nível: sempre confere.
+    soma(topo.origem, chaveTopo, linha.saldoAtual);
+    if (destino === undefined) soma(topo.pendente, chaveTopo, linha.saldoAtual);
+    else soma(topo.dominio, topoDestino, linha.saldoAtual);
+
+    // --- 2º nível: só quando a natureza determina UM subgrupo.
+    const esperado = linha.gruposDominio.length === 1 ? linha.gruposDominio[0] : null;
+    const subDestino = classificacaoDestino.slice(0, 2);
+    const destinoConferivel = destino === undefined || ehGrupo(subDestino, 2);
+    if (esperado === null || !ehGrupo(esperado, 2) || !destinoConferivel) {
+      contar(foraSub, linha.saldoAtual);
+      continue;
+    }
+
+    soma(sub.origem, esperado, linha.saldoAtual);
+    if (destino === undefined) soma(sub.pendente, esperado, linha.saldoAtual);
+    else soma(sub.dominio, subDestino, linha.saldoAtual);
   }
 
-  const chaves = [...rotulos.keys()].sort();
-  const grupos: GrupoConferido[] = chaves
-    .map((chave) => {
-      const o = arredondar2(origem.get(chave) ?? 0);
-      const p = arredondar2(pendente.get(chave) ?? 0);
-      const d = arredondar2(dominio.get(chave) ?? 0);
-      const diferenca = arredondar2(o - p - d);
-      return {
-        chave,
-        rotulo: rotulos.get(chave) ?? chave,
-        origem: o,
-        pendente: p,
-        dominio: d,
-        diferenca,
-        confere: diferenca === 0,
-      };
-    })
-    // Grupo que não apareceu de nenhum dos lados não diz nada; fica de fora da tabela.
-    .filter((g) => g.origem !== 0 || g.dominio !== 0 || g.pendente !== 0);
+  const montar = (acc: Acumulador, nivel: number, digitos: number): GrupoConferido[] =>
+    [...rotulos.keys()]
+      .filter((chave) => chave.length === digitos)
+      .map((chave) => {
+        const o = arredondar2(acc.origem.get(chave) ?? 0);
+        const p = arredondar2(acc.pendente.get(chave) ?? 0);
+        const d = arredondar2(acc.dominio.get(chave) ?? 0);
+        const diferenca = arredondar2(o - p - d);
+        return {
+          chave,
+          nivel,
+          rotulo: rotulos.get(chave) ?? chave,
+          origem: o,
+          pendente: p,
+          dominio: d,
+          diferenca,
+          confere: diferenca === 0,
+        };
+      })
+      // Grupo que não apareceu de nenhum dos lados não diz nada.
+      .filter((g) => g.origem !== 0 || g.dominio !== 0 || g.pendente !== 0);
+
+  // Ordem de classificação: o subgrupo vem logo depois do grupo que o contém.
+  const grupos = [...montar(topo, 0, 1), ...montar(sub, 1, 2)].sort((a, b) =>
+    a.chave < b.chave ? -1 : a.chave > b.chave ? 1 : 0,
+  );
 
   return {
     grupos,
     confere: grupos.every((g) => g.confere),
-    foraDaConferencia: { quantidade: foraQuantidade, saldo: arredondar2(foraSaldo) },
+    foraDaConferencia: { quantidade: fora.quantidade, saldo: arredondar2(fora.saldo) },
+    foraDoSubgrupo: { quantidade: foraSub.quantidade, saldo: arredondar2(foraSub.saldo) },
   };
 }

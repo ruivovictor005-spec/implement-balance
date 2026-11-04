@@ -39,6 +39,12 @@
   --alerta-texto: #a12518;
   --alerta-borda: #eecbc5;
 
+  /* Âmbar, no mesmo registro contido: "olhe isto", e não "isto está errado". Usado só na
+     conferência por grupo, onde a diferença pode ser proposital e quem julga é quem analisa. */
+  --atencao-fundo: #fdf4e8;
+  --atencao-texto: #8a5416;
+  --atencao-borda: #f0ddc3;
+
   --sombra-1: 0 1px 2px rgba(10, 12, 16, 0.05), 0 1px 1px rgba(10, 12, 16, 0.04);
   --sombra-2: 0 6px 20px rgba(10, 12, 16, 0.08);
   --sombra-foco: 0 0 0 3px rgba(11, 13, 16, 0.14);
@@ -1121,20 +1127,40 @@ table.balancete tr.grupo td:first-child {
   box-shadow: inset 2px 0 0 var(--borda-forte);
 }
 
-/* Grupo de topo cujo total NÃO bate com o balancete de origem. Vem depois de `tr.grupo` de
-   propósito: mesma especificidade, então o vermelho vence o cinza do grupo. */
-tr.nao-bate td {
-  background: var(--alerta-fundo);
+/* Grupo cujo saldo difere do balancete de origem. Âmbar, não vermelho: a diferença pode ser uma
+   reclassificação proposital, e quem decide é quem analisa. Vem depois de `tr.grupo` de propósito:
+   mesma especificidade, então o âmbar vence o cinza do grupo. */
+tr.atencao td {
+  background: var(--atencao-fundo);
 }
 
-tr.nao-bate td:first-child {
-  box-shadow: inset 2px 0 0 var(--alerta-texto);
+tr.atencao td:first-child {
+  box-shadow: inset 2px 0 0 var(--atencao-texto);
 }
 
-/* Selo "OK" da coluna de conferência: discreto, porque o que precisa chamar atenção é o que falha. */
+.status-atencao {
+  color: var(--atencao-texto);
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+}
+
+/* Selo "OK": discreto, porque o que precisa ser visto é o que pede atenção. */
 .selo-ok {
   color: var(--suave);
   font-weight: 600;
   font-size: 11.5px;
   letter-spacing: 0.03em;
+}
+
+/* Aviso de atenção (caixa), no mesmo registro âmbar. */
+.aviso-atencao {
+  background: var(--atencao-fundo);
+  color: var(--atencao-texto);
+  border: 1px solid var(--atencao-borda);
+  border-left: 3px solid var(--atencao-texto);
+  border-radius: var(--raio-sm);
+  padding: 11px 13px;
+  margin-top: 12px;
+  font-size: 13.5px;
 }

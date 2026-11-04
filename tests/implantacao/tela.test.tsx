@@ -432,6 +432,9 @@ describe('tela de implantação', () => {
       conta('1112', '11102', 'Bancos Conta Movimento'),
       conta('10', '11102001', 'Bradesco'),
       conta('15', '11102006', 'Santander'),
+      // Outro subgrupo do ATIVO: é entre 11 e 12 que a troca passa despercebida no topo.
+      conta('1200', '12', 'Ativo Não Circulante'),
+      conta('99', '12101001', 'Empréstimos Funcionários'),
       conta('2000', '2', 'PASSIVO'),
       conta('2140', '21401', 'Impostos e Contribuições a Recolher'),
       conta('235', '21401003', 'PIS a Recolher'),
@@ -545,42 +548,65 @@ describe('tela de implantação', () => {
       it('grupo que bate fica OK e sem destaque', () => {
         comConferencia(
           [lanc('10', 100, 'D')],
-          [{ natureza: 'ATIVO CIRCULANTE', saldoAtual: -100, codigo: '10' }],
+          [{ natureza: 'ATIVO CIRCULANTE', gruposDominio: ['11'], saldoAtual: -100, codigo: '10' }],
         );
         expect(linhaDe('1')).toHaveAttribute('data-confere', 'ok');
         expect(linhaDe('1')).toHaveTextContent('OK');
-        expect(linhaDe('1')).not.toHaveClass('nao-bate');
+        expect(linhaDe('1')).not.toHaveClass('atencao');
       });
 
-      it('grupo que não bate é rotulado NÃO BATE e fica destacado', () => {
+      // "ATENÇÃO", e não veredito: a mudança de grupo pode ser proposital.
+      it('grupo que difere pede ATENÇÃO e fica destacado', () => {
         // Saldo de ativo na origem foi indicado para uma conta de passivo.
         comConferencia(
           [lanc('235', 100, 'C')],
-          [{ natureza: 'ATIVO CIRCULANTE', saldoAtual: -100, codigo: '235' }],
+          [{ natureza: 'ATIVO CIRCULANTE', gruposDominio: ['11'], saldoAtual: -100, codigo: '235' }],
         );
-        expect(linhaDe('2')).toHaveAttribute('data-confere', 'nao');
-        expect(linhaDe('2')).toHaveTextContent('NÃO BATE');
-        // "pendente" tem outro significado no app: não pode aparecer como rótulo aqui.
-        expect(linhaDe('2')).not.toHaveTextContent(/PENDENTE/i);
-        expect(linhaDe('2')).toHaveClass('nao-bate');
+        expect(linhaDe('2')).toHaveAttribute('data-confere', 'atencao');
+        expect(linhaDe('2')).toHaveTextContent('ATENÇÃO');
+        // Nem veredito nem "pendente", que aqui significa outra coisa.
+        expect(linhaDe('2')).not.toHaveTextContent(/NÃO BATE|PENDENTE/i);
+        expect(linhaDe('2')).toHaveClass('atencao');
       });
 
-      // Abaixo do topo os dois planos não se correspondem; marcar status ali seria inventar.
-      it('só o grupo de topo recebe status', () => {
+      // O subgrupo também recebe status quando a natureza aponta para um só.
+      it('subgrupo recebe status; níveis sem comparação ficam em branco', () => {
         comConferencia(
           [lanc('10', 100, 'D')],
-          [{ natureza: 'ATIVO CIRCULANTE', saldoAtual: -100, codigo: '10' }],
+          [{ natureza: 'ATIVO CIRCULANTE', gruposDominio: ['11'], saldoAtual: -100, codigo: '10' }],
         );
-        expect(linhaDe('1')).toHaveAttribute('data-confere');
-        for (const classe of ['11', '111', '11102', '11102001']) {
+        expect(linhaDe('1')).toHaveAttribute('data-confere', 'ok');
+        expect(linhaDe('11')).toHaveAttribute('data-confere', 'ok');
+        for (const classe of ['111', '11102', '11102001']) {
           expect(linhaDe(classe)).not.toHaveAttribute('data-confere');
         }
+      });
+
+      // O ganho do 2º nível: os dois subgrupos estão dentro de ATIVO, então o topo não vê nada.
+      it('troca de subgrupo dentro do mesmo grupo acende só no subgrupo', () => {
+        comConferencia(
+          [lanc('99', 100, 'D')],
+          [{ natureza: 'ATIVO CIRCULANTE', gruposDominio: ['11'], saldoAtual: -100, codigo: '99' }],
+        );
+        expect(linhaDe('1')).toHaveAttribute('data-confere', 'ok');
+        expect(linhaDe('12')).toHaveAttribute('data-confere', 'atencao');
+        expect(linhaDe('12')).toHaveClass('atencao');
+      });
+
+      it('natureza ambígua não acende subgrupo nenhum', () => {
+        comConferencia(
+          [lanc('99', 100, 'D')],
+          [{ natureza: 'ATIVO', gruposDominio: ['11', '12'], saldoAtual: -100, codigo: '99' }],
+        );
+        expect(linhaDe('1')).toHaveAttribute('data-confere', 'ok');
+        expect(linhaDe('12')).not.toHaveAttribute('data-confere');
+        expect(document.querySelector('tr.atencao')).toBeNull();
       });
 
       it('sem conferência, a coluna fica vazia e nada é destacado', () => {
         previa([lanc('10', 100, 'D')]);
         expect(linhaDe('1')).not.toHaveAttribute('data-confere');
-        expect(document.querySelector('tr.nao-bate')).toBeNull();
+        expect(document.querySelector('tr.atencao')).toBeNull();
       });
     });
   });
@@ -610,18 +636,18 @@ describe('tela de implantação', () => {
         { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
         { natureza: 'DESPESA ADMINISTRATIVA', saldoAtual: -400, codigo: '537' },
       ]);
-      expect(screen.getByText(/Todos os grupos conferem/)).toBeInTheDocument();
-      expect(grupoDe('1')).not.toHaveClass('pendente');
+      expect(screen.getByText(/Todos os grupos conferidos batem/)).toBeInTheDocument();
+      expect(grupoDe('1')).not.toHaveClass('atencao');
     });
 
     it('aponta o grupo com diferença e explica o que ela significa', () => {
       conferir([
         { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '537' }, // ativo em despesa
       ]);
-      expect(screen.getByText(/2 grupo\(s\) com diferença/)).toBeInTheDocument();
-      expect(screen.getByText(/indicada para o grupo errado/)).toBeInTheDocument();
-      expect(grupoDe('1')).toHaveClass('pendente');
-      expect(grupoDe('4')).toHaveClass('pendente');
+      expect(screen.getByText(/2 grupo\(s\) para verificar/)).toBeInTheDocument();
+      expect(screen.getByText(/não quer dizer erro/)).toBeInTheDocument();
+      expect(grupoDe('1')).toHaveClass('atencao');
+      expect(grupoDe('4')).toHaveClass('atencao');
       // Mesmo valor dos dois lados, em lados contrários.
       expect(grupoDe('1')).toHaveTextContent('1.000,00D');
       expect(grupoDe('4')).toHaveTextContent('1.000,00C');
@@ -632,7 +658,7 @@ describe('tela de implantação', () => {
         { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
         { natureza: 'ATIVO CIRCULANTE', saldoAtual: -250, codigo: null },
       ]);
-      expect(screen.getByText(/Todos os grupos conferem/)).toBeInTheDocument();
+      expect(screen.getByText(/Todos os grupos conferidos batem/)).toBeInTheDocument();
       expect(grupoDe('1')).toHaveTextContent('250,00D'); // mostrada como pendente
     });
 

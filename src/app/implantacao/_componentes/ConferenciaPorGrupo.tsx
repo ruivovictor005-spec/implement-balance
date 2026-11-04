@@ -17,11 +17,15 @@ function Valor({ valor }: { valor: number }) {
 }
 
 /**
- * Confere o balancete de ORIGEM contra o que vai ser implantado, grupo a grupo — o jeito de achar
- * a conta que foi indicada para o grupo errado sem comparar duas tabelas de cabeça.
+ * Confere o balancete de ORIGEM contra o que vai ser implantado, grupo a grupo e subgrupo a
+ * subgrupo — para a pessoa não ter de comparar duas tabelas de cabeça.
+ *
+ * O resultado é "atenção", nunca um veredito: a diferença pode ser erro de de-para ou uma
+ * reclassificação proposital, e o sistema não sabe a diferença. Quem analisa decide.
  */
 export function ConferenciaPorGrupo({ conferencia }: { conferencia: Conferencia }) {
-  const divergentes = conferencia.grupos.filter((g) => !g.confere);
+  const pedemAtencao = conferencia.grupos.filter((g) => !g.confere);
+  const { foraDaConferencia, foraDoSubgrupo } = conferencia;
 
   return (
     <section className="cartao">
@@ -35,19 +39,20 @@ export function ConferenciaPorGrupo({ conferencia }: { conferencia: Conferencia 
         <div className="vazio">Indique as contas no de-para para conferir os grupos.</div>
       ) : (
         <>
-          <div className={divergentes.length === 0 ? 'vazio-ok' : 'erro'} style={{ marginTop: 0 }}>
-            {divergentes.length === 0 ? (
+          <div className={pedemAtencao.length === 0 ? 'vazio-ok' : 'aviso-atencao'}>
+            {pedemAtencao.length === 0 ? (
               <>
-                <strong>Todos os grupos conferem.</strong> O saldo de cada grupo na origem é o mesmo
-                que vai para o Domínio.
+                <strong>Todos os grupos conferidos batem.</strong> O saldo de cada grupo na origem é
+                o mesmo que vai para o Domínio.
               </>
             ) : (
               <>
                 <strong>
-                  {divergentes.length} grupo(s) com diferença: {divergentes.map((g) => g.rotulo).join(', ')}.
+                  {pedemAtencao.length} grupo(s) para verificar: {pedemAtencao.map((g) => g.rotulo).join(', ')}.
                 </strong>{' '}
-                Uma diferença num grupo com outra igual e de sinal trocado em outro quer dizer que
-                alguma conta foi indicada para o grupo errado — procure no de-para uma conta desse
+                Isto não quer dizer erro — o saldo pode ter mudado de grupo de propósito. Confira o
+                motivo. Uma diferença num grupo com outra igual e de sinal trocado em outro costuma
+                ser uma conta indicada para o grupo vizinho: procure no de-para uma conta desse
                 valor.
               </>
             )}
@@ -68,9 +73,11 @@ export function ConferenciaPorGrupo({ conferencia }: { conferencia: Conferencia 
                 <tr
                   key={g.chave}
                   data-grupo={g.chave}
-                  className={g.confere ? undefined : 'pendente'}
+                  className={[g.nivel === 0 ? 'grupo' : '', g.confere ? '' : 'atencao']
+                    .filter((c) => c !== '')
+                    .join(' ') || undefined}
                 >
-                  <td>{g.rotulo}</td>
+                  <td style={{ paddingLeft: 10 + g.nivel * 20 }}>{g.rotulo}</td>
                   <td className="num">
                     <Valor valor={g.origem} />
                   </td>
@@ -82,9 +89,9 @@ export function ConferenciaPorGrupo({ conferencia }: { conferencia: Conferencia 
                   </td>
                   <td className="num">
                     {g.confere ? (
-                      <span className="meta">confere</span>
+                      <span className="selo-ok">OK</span>
                     ) : (
-                      <strong className="status-pend">
+                      <strong className="status-atencao">
                         <Valor valor={g.diferenca} />
                       </strong>
                     )}
@@ -94,12 +101,21 @@ export function ConferenciaPorGrupo({ conferencia }: { conferencia: Conferencia 
             </tbody>
           </table>
 
-          {conferencia.foraDaConferencia.quantidade > 0 && (
+          {foraDoSubgrupo.quantidade > 0 && (
             <p className="meta" style={{ marginTop: 10 }}>
-              {conferencia.foraDaConferencia.quantidade} linha(s), somando{' '}
-              {brl(Math.abs(conferencia.foraDaConferencia.saldo))}, ficaram fora desta conferência —
-              a natureza da conta de origem não foi reconhecida, ou a conta indicada não está no
-              plano. Os números acima não as incluem.
+              {foraDoSubgrupo.quantidade} linha(s), somando{' '}
+              {brl(Math.abs(foraDoSubgrupo.saldo))}, foram conferidas só no grupo de topo: a
+              natureza delas aceita mais de um subgrupo no Domínio, então não existe subgrupo
+              esperado para comparar.
+            </p>
+          )}
+
+          {foraDaConferencia.quantidade > 0 && (
+            <p className="meta" style={{ marginTop: 6 }}>
+              {foraDaConferencia.quantidade} linha(s), somando{' '}
+              {brl(Math.abs(foraDaConferencia.saldo))}, ficaram fora desta conferência — a natureza
+              da conta de origem não foi reconhecida, ou a conta indicada não está no plano. Os
+              números acima não as incluem.
             </p>
           )}
         </>

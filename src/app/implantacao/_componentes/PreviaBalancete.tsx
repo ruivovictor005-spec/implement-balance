@@ -50,9 +50,9 @@ export function PreviaBalancete({
   lancamentos: Lancamento[];
   contas: ContaBusca[];
   /**
-   * Conferência contra o balancete de origem. Só os grupos de TOPO recebem status: abaixo deles os
-   * dois planos têm subdivisões diferentes (o "Disponível" do Domínio não tem equivalente no COSIF
-   * da origem), então não há com o que comparar.
+   * Conferência contra o balancete de origem. Recebem status apenas os grupos que ela conseguiu
+   * conferir — os de topo, sempre, e os subgrupos cuja natureza de origem aponta para um único
+   * subgrupo do Domínio. Os demais níveis ficam em branco, porque não há com o que comparar.
    */
   conferencia?: Conferencia;
 }) {
@@ -81,8 +81,9 @@ export function PreviaBalancete({
         {conferencia !== undefined && (
           <>
             {' '}
-            A coluna <strong>Confere?</strong> compara o grupo com o balancete de origem — só nos
-            grupos de topo, que é onde os dois planos de contas se correspondem.
+            A coluna <strong>Confere?</strong> compara o grupo com o balancete de origem. Um
+            <strong> ATENÇÃO</strong> não quer dizer erro: quer dizer que o saldo daquele grupo
+            mudou e vale olhar o motivo.
           </>
         )}
       </p>
@@ -113,19 +114,21 @@ export function PreviaBalancete({
             <tbody>
               {linhas.map((l) => {
                 const origens = l.sintetica ? [] : origensPorCodigo.get(l.codigo) ?? [];
-                // Status só no grupo de topo — é o único nível comparável com a origem.
-                const status =
-                  l.sintetica && l.nivel === 0 ? statusPorGrupo.get(l.classificacao) : undefined;
-                const naoBate = status !== undefined && !status.confere;
+                // Quem decide o que é conferível é a conferência: só os grupos que ela conseguiu
+                // comparar estão no mapa. Os outros níveis ficam sem status.
+                const status = l.sintetica ? statusPorGrupo.get(l.classificacao) : undefined;
+                const pedeAtencao = status !== undefined && !status.confere;
                 return (
                   <React.Fragment key={`${l.sintetica ? 's' : 'a'}-${l.classificacao}-${l.codigo}`}>
                     <tr
-                      className={[l.sintetica ? 'grupo' : '', naoBate ? 'nao-bate' : '']
+                      className={[l.sintetica ? 'grupo' : '', pedeAtencao ? 'atencao' : '']
                         .filter((c) => c !== '')
                         .join(' ') || undefined}
                       data-classificacao={l.classificacao}
                       data-sintetica={l.sintetica ? '1' : '0'}
-                      data-confere={status === undefined ? undefined : status.confere ? 'ok' : 'nao'}
+                      data-confere={
+                        status === undefined ? undefined : status.confere ? 'ok' : 'atencao'
+                      }
                     >
                       <td className="cod">{l.codigo}</td>
                       <td className="cod">{l.classificacao || '—'}</td>
@@ -146,13 +149,13 @@ export function PreviaBalancete({
                         ) : status.confere ? (
                           <span className="selo-ok">OK</span>
                         ) : (
-                          // "NÃO BATE", e não "pendente": neste app pendência é conta sem conta do
-                          // Domínio indicada, que é justamente o que NÃO causa este status.
+                          // "ATENÇÃO", e não um veredito: a diferença pode ser uma reclassificação
+                          // proposital. O sistema sinaliza; quem analisa decide.
                           <span
-                            className="status-pend"
-                            title={`Diferença de ${brl(Math.abs(status.diferenca))} contra o balancete de origem. Alguma conta deste grupo foi indicada para outro grupo.`}
+                            className="status-atencao"
+                            title={`Diferença de ${brl(Math.abs(status.diferenca))} contra o balancete de origem. Confira se a mudança de grupo foi proposital.`}
                           >
-                            NÃO BATE
+                            ATENÇÃO
                           </span>
                         )}
                       </td>
