@@ -1,0 +1,22 @@
+[
+  { "ordem": 1001, "prefixo": "11", "grupoCosif": "Ativo Circulante", "natureza": "ATIVO CIRCULANTE", "gruposDominio": ["11"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1002, "prefixo": "12", "grupoCosif": "Ativo Não Circulante - Realizável a LP", "natureza": "ATIVO NÃO CIRCULANTE", "gruposDominio": ["12"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1003, "prefixo": "13", "grupoCosif": "Ativo Não Circulante - Invest./Imob./Intang.", "natureza": "ATIVO NÃO CIRCULANTE", "gruposDominio": ["13"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1004, "prefixo": "1", "grupoCosif": "Ativo (demais)", "natureza": "ATIVO", "gruposDominio": ["1"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1005, "prefixo": "21", "grupoCosif": "Passivo Circulante", "natureza": "PASSIVO CIRCULANTE", "gruposDominio": ["21"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1006, "prefixo": "22", "grupoCosif": "Passivo Não Circulante", "natureza": "PASSIVO NÃO CIRCULANTE", "gruposDominio": ["22"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1007, "prefixo": "23", "grupoCosif": "Resultado de Exercícios Futuros", "natureza": "PASSIVO - REF", "gruposDominio": ["23"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1008, "prefixo": "24", "grupoCosif": "Patrimônio Líquido", "natureza": "PATRIMÔNIO LÍQUIDO", "gruposDominio": ["24"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1009, "prefixo": "2", "grupoCosif": "Passivo (demais)", "natureza": "PASSIVO", "gruposDominio": ["21", "22", "23"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1010, "prefixo": "31", "grupoCosif": "Receita Bruta", "natureza": "RECEITA", "gruposDominio": ["31"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1011, "prefixo": "32", "grupoCosif": "Deduções da Receita Bruta", "natureza": "DEDUÇÃO DA RECEITA", "gruposDominio": ["32"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1012, "prefixo": "33", "grupoCosif": "Receitas Financeiras", "natureza": "RECEITA FINANCEIRA", "gruposDominio": ["33"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1013, "prefixo": "34", "grupoCosif": "Outras Receitas Operacionais", "natureza": "OUTRAS RECEITAS", "gruposDominio": ["34"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1014, "prefixo": "35", "grupoCosif": "Receitas Extraordinárias", "natureza": "RECEITA NÃO OPERACIONAL", "gruposDominio": ["35"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1015, "prefixo": "3", "grupoCosif": "Receitas (demais)", "natureza": "RECEITA", "gruposDominio": ["3"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1016, "prefixo": "41", "grupoCosif": "Custos", "natureza": "CUSTO", "gruposDominio": ["41"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1017, "prefixo": "42", "grupoCosif": "Despesas Operacionais", "natureza": "DESPESA", "gruposDominio": ["42"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1018, "prefixo": "45", "grupoCosif": "Resultados Extraordinários", "natureza": "DESPESA NÃO OPERACIONAL", "gruposDominio": ["45"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1019, "prefixo": "46", "grupoCosif": "Tributos sobre o Resultado", "natureza": "TRIBUTOS S/ LUCRO", "gruposDominio": ["46"], "naoMigrar": false, "conjunto": "dominio" },
+  { "ordem": 1020, "prefixo": "4", "grupoCosif": "Custos e Despesas (demais)", "natureza": "CUSTO / DESPESA", "gruposDominio": ["4"], "naoMigrar": false, "conjunto": "dominio" }
+]

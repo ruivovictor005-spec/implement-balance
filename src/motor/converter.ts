@@ -1,8 +1,8 @@
 // Orquestrador do motor (§5): encadeia normalização, natureza, resolução, agregação e leiaute,
 // e monta o painel de conferência (§6.8). Função pura — entra balancete, plano e regras; sai
 // linhas resolvidas, lançamentos, TXT e painel. Nenhum I/O.
-import { agregarLancamentos, type Lancamento } from './agregar.js';
-import { resolverNatureza } from './natureza.js';
+import { gerarLancamentos, type Lancamento } from './agregar.js';
+import { aplicarCustoDespesa, lerCustoDespesa, resolverNatureza } from './natureza.js';
 import { normalizarNome } from './normalizar.js';
 import { criarIndicePlano, resolverConta, type Origem } from './resolver.js';
 import { gerarTxt, type ParametrosLote } from './leiaute-dominio.js';
@@ -66,7 +66,12 @@ export function converter(entrada: {
   for (const linha of balancete) {
     if (linha.tipoCta.startsWith('S')) continue; // §6.1: sintética não vira saldo
     const nomeNormalizado = normalizarNome(linha.nomeCta, regrasNormalizacao);
-    const natureza = resolverNatureza(linha.clasCta, regrasNatureza);
+    // Natureza COSIF da origem; a coluna opcional de custo/despesa, quando preenchida, decide entre
+    // custo e despesa nas contas de resultado devedoras.
+    const natureza = aplicarCustoDespesa(
+      resolverNatureza(linha.clasCta, regrasNatureza),
+      lerCustoDespesa(linha.custoDespesa),
+    );
     const ajusteManual = ajustesManuais.get(linha.codiCta) ?? null;
     const resolvida = resolverConta({ nomeNormalizado, natureza, ajusteManual, indice, sinonimos });
     linhas.push({
@@ -82,8 +87,13 @@ export function converter(entrada: {
 
   const resolvidas = linhas
     .filter((l): l is LinhaResolvida & { codigo: string } => l.codigo !== null)
-    .map((l) => ({ codigo: l.codigo, saldoAtual: l.saldoAtual }));
-  const lancamentos = agregarLancamentos(resolvidas, indice);
+    .map((l) => ({
+      codigo: l.codigo,
+      saldoAtual: l.saldoAtual,
+      origemCodigo: l.codiCta,
+      origemNome: l.nomeCta,
+    }));
+  const lancamentos = gerarLancamentos(resolvidas, indice);
   const txt = gerarTxt(lancamentos, parametros);
 
   // O painel reproduz os contadores da planilha (§6.8). "Pendente" é a linha que ficou sem código

@@ -23,6 +23,8 @@ const lanc = (over: Partial<Lancamento> = {}): Lancamento => ({
   contaCredito: null,
   valor: 29341.66,
   complemento: ' | Citibank',
+  origemCodigo: '000025-6',
+  origemNome: 'CITI BANK',
   ...over,
 });
 

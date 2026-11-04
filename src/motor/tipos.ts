@@ -18,6 +18,13 @@ export type RegraNormalizacao = {
   para: string;
 };
 
+/**
+ * De qual tabela a regra é. `cosif` classifica a conta de ORIGEM (o balancete das empresas migradas,
+ * no plano COSIF — onde 4 é passivo e 8 é despesa). `dominio` classifica a conta de DESTINO, no
+ * plano padrão do Domínio (onde 4 é custos e despesas). Sem o campo, a regra é `cosif`.
+ */
+export type ConjuntoNatureza = 'cosif' | 'dominio';
+
 export type RegraNatureza = {
   ordem: number;
   prefixo: string;
@@ -25,6 +32,7 @@ export type RegraNatureza = {
   natureza: string;
   gruposDominio: string[];
   naoMigrar: boolean;
+  conjunto?: ConjuntoNatureza;
 };
 
 export type SinonimoFixture = {
@@ -42,6 +50,11 @@ export type LinhaBalancete = {
   totalDebito: number;
   totalCredito: number;
   saldoAtual: number;
+  /**
+   * Indicação opcional, feita pela pessoa numa coluna a mais do balancete, de que a conta de
+   * resultado é CUSTO ('C') ou DESPESA ('D'). Vazio quando a empresa não usa a coluna.
+   */
+  custoDespesa?: string;
 };
 
 // Linha do balancete acompanhada do que a planilha calculou para ela (colunas K, Q, R, M e P).

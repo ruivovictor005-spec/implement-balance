@@ -22,6 +22,8 @@ export const carregarNormalizacao = (): RegraNormalizacao[] =>
   carregar<RegraNormalizacao[]>('normalizacao.json');
 
 export const carregarNatureza = (): RegraNatureza[] => carregar<RegraNatureza[]>('natureza.json');
+export const carregarNaturezaDominio = (): RegraNatureza[] =>
+  carregar<RegraNatureza[]>('natureza-dominio.json');
 
 export const carregarBalancete = (): LinhaBalanceteGabarito[] =>
   carregar<LinhaBalanceteGabarito[]>('balancete.json');
