@@ -46,14 +46,42 @@ export function ladoEsperado(natureza: string): Lado | null {
   return REGRAS.find((r) => r.quando(n))?.lado ?? null;
 }
 
+const contrario = (lado: Lado): Lado => (lado === 'D' ? 'C' : 'D');
+
 /**
- * True quando o saldo está no lado CONTRÁRIO ao da natureza da conta — um ativo credor, um passivo
+ * Conta REDUTORA: o nome marca que ela fica, por construção, do lado contrário ao do seu grupo.
+ * "(-) Prejuízos Acumulados" é patrimônio líquido com saldo devedor; "(-) ISS s/ Faturamento" é
+ * conta de receita com saldo devedor. Nessas, o lado "invertido" é o lado CERTO, e apontar seria
+ * alarme falso em toda implantação.
+ */
+export function contaRedutora(nome: string): boolean {
+  const n = semAcento(nome).replace(/\s+/g, '');
+  return n.startsWith('(-)') || n.startsWith('(–)') || n.startsWith('-') || n.includes('REDUTORA');
+}
+
+/**
+ * True quando o saldo está no lado CONTRÁRIO ao que a conta espera — um ativo credor, um passivo
  * devedor. Costuma ser erro de lançamento na origem, e é o que a pessoa precisa ver antes de
  * importar. Saldo zero, natureza vazia ou natureza desconhecida não são apontados.
+ *
+ * `nome` é opcional e serve para reconhecer conta redutora, que espera o lado contrário. Sem ele,
+ * uma "(-) Prejuízos Acumulados" seria apontada como invertida sempre.
+ *
+ * Isto julga UMA conta. Quando o balancete inteiro vem com o sinal trocado, todas as contas ficam
+ * "invertidas" e apontar uma por uma não ajuda — quem decide isso é `motor/origem.ts`, e a tela
+ * deixa de conferir conta por conta nesse caso.
  */
-export function saldoInvertido(saldoAtual: number, natureza: string): boolean {
+export function saldoInvertido(saldoAtual: number, natureza: string, nome = ''): boolean {
   const atual = ladoDoSaldo(saldoAtual);
-  const esperado = ladoEsperado(natureza);
-  if (atual === null || esperado === null) return false;
+  const daNatureza = ladoEsperado(natureza);
+  if (atual === null || daNatureza === null) return false;
+  const esperado = contaRedutora(nome) ? contrario(daNatureza) : daNatureza;
   return atual !== esperado;
+}
+
+/** O lado que a conta espera, já considerando se ela é redutora. null quando não se sabe dizer. */
+export function ladoEsperadoDaConta(natureza: string, nome = ''): Lado | null {
+  const daNatureza = ladoEsperado(natureza);
+  if (daNatureza === null) return null;
+  return contaRedutora(nome) ? contrario(daNatureza) : daNatureza;
 }

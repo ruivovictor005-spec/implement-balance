@@ -14,8 +14,10 @@ vi.mock('../../src/app/implantacao/acoes.js', () => ({
 
 import { conferirPorGrupo } from '../../src/motor/conferencia-grupo.js';
 import type { LinhaResolvida } from '../../src/motor/converter.js';
+import type { AuditoriaOrigem } from '../../src/motor/origem.js';
 import type { ContaBusca, ImplantacaoAberta, Lancamento } from '../../src/app/implantacao/acoes.js';
 import { AreaArquivo } from '../../src/app/implantacao/_componentes/AreaArquivo.js';
+import { AvisoOrigem } from '../../src/app/implantacao/_componentes/AvisoOrigem.js';
 import { BuscaConta } from '../../src/app/implantacao/_componentes/BuscaConta.js';
 import { DadosEmpresa } from '../../src/app/implantacao/_componentes/DadosEmpresa.js';
 import { MapeamentoColunas } from '../../src/app/implantacao/_componentes/MapeamentoColunas.js';
@@ -196,6 +198,13 @@ describe('tela de implantação', () => {
           diferenca: 0,
           pronto: true,
           status: 'PRONTO PARA IMPORTAR',
+          origem: {
+            plano: 'cosif',
+            convencao: 'normal',
+            devedoras: -22003884.5,
+            credoras: 22003884.5,
+            conferidas: 27,
+          },
         }}
         justificativa=""
         onJustificativa={() => {}}
@@ -303,8 +312,8 @@ describe('tela de implantação', () => {
           onIndicar={() => {}}
         />,
       );
-      expect(within(celulaDe('VIRADO')).getByText('saldo invertido')).toBeInTheDocument();
-      expect(within(celulaDe('OK')).queryByText('saldo invertido')).not.toBeInTheDocument();
+      expect(within(celulaDe('VIRADO')).getByText('conferir o lado')).toBeInTheDocument();
+      expect(within(celulaDe('OK')).queryByText('conferir o lado')).not.toBeInTheDocument();
     });
 
     it('saldo zero e natureza desconhecida não são apontados como invertidos', () => {
@@ -319,8 +328,8 @@ describe('tela de implantação', () => {
         />,
       );
       expect(celulaDe('ZERO')).toHaveTextContent('—');
-      expect(within(celulaDe('ZERO')).queryByText('saldo invertido')).not.toBeInTheDocument();
-      expect(within(celulaDe('NOVA')).queryByText('saldo invertido')).not.toBeInTheDocument();
+      expect(within(celulaDe('ZERO')).queryByText('conferir o lado')).not.toBeInTheDocument();
+      expect(within(celulaDe('NOVA')).queryByText('conferir o lado')).not.toBeInTheDocument();
     });
 
     it('a aba de pendências mostra o lado do mesmo jeito', () => {
@@ -344,7 +353,106 @@ describe('tela de implantação', () => {
       expect(celula).toHaveTextContent('42,00');
       expect(celula).toHaveTextContent('D');
       // Receita devedora: é o caso que a pessoa precisa ver.
-      expect(within(celula).getByText('saldo invertido')).toBeInTheDocument();
+      expect(within(celula).getByText('conferir o lado')).toBeInTheDocument();
+    });
+
+    // Conta redutora fica do lado contrário ao do grupo por construção: apontar é alarme falso.
+    it('conta redutora não é apontada', () => {
+      render(
+        <TabelaDePara
+          linhas={[
+            linha({
+              codiCta: 'PREJ',
+              nomeCta: '(-) PREJUÍZOS ACUMULADOS',
+              natureza: 'PATRIMÔNIO LÍQUIDO',
+              saldoAtual: -756099.49,
+            }),
+          ]}
+          contas={[]}
+          onIndicar={() => {}}
+        />,
+      );
+      expect(within(celulaDe('PREJ')).queryByText('conferir o lado')).not.toBeInTheDocument();
+    });
+
+    // Quando o arquivo inteiro vem com o sinal trocado, TODA conta parece invertida: apontar uma
+    // por uma esconde o problema de verdade, que é o arquivo.
+    it('com conferirLado desligado, nenhuma conta é apontada', () => {
+      render(
+        <TabelaDePara
+          linhas={[
+            linha({ codiCta: 'A1', natureza: 'ATIVO CIRCULANTE', saldoAtual: 100 }),
+            linha({ codiCta: 'P1', natureza: 'PASSIVO', saldoAtual: -100 }),
+          ]}
+          contas={[]}
+          onIndicar={() => {}}
+          conferirLado={false}
+        />,
+      );
+      expect(within(celulaDe('A1')).queryByText('conferir o lado')).not.toBeInTheDocument();
+      expect(within(celulaDe('P1')).queryByText('conferir o lado')).not.toBeInTheDocument();
+      // O lado continua aparecendo: o que sai é a acusação, não a informação.
+      expect(celulaDe('A1')).toHaveTextContent('C');
+    });
+  });
+
+  // O cartão que diz o que o sistema ASSUMIU sobre o arquivo. Existe porque plano errado e sinal
+  // trocado não estouram nada — produzem um resultado inteiro errado em silêncio.
+  describe('como o arquivo foi lido', () => {
+    const origem = (over: Partial<AuditoriaOrigem> = {}): AuditoriaOrigem => ({
+      plano: 'cosif',
+      convencao: 'normal',
+      devedoras: -1000,
+      credoras: 1000,
+      conferidas: 10,
+      ...over,
+    });
+
+    /** O texto todo do cartão: as frases misturam <strong>, então se lê o conjunto. */
+    const textoDe = (over: Partial<AuditoriaOrigem> = {}): string =>
+      render(<AvisoOrigem origem={origem(over)} />).container.textContent ?? '';
+
+    it('diz em que plano a origem foi lida', () => {
+      expect(textoDe({ plano: 'dominio' })).toContain('plano do Domínio');
+      expect(textoDe({ plano: 'cosif' })).toContain('COSIF (Infobank)');
+    });
+
+    it('avisa quando não identificou o plano e diz o que foi assumido', () => {
+      const t = textoDe({ plano: 'indefinido' });
+      expect(t).toContain('não identificado');
+      expect(t).toContain('foi lido como COSIF');
+    });
+
+    it('sinal trocado: explica a consequência no TXT e mostra os dois totais', () => {
+      const t = textoDe({
+        convencao: 'invertida',
+        devedoras: 25000,
+        credoras: -25000,
+        conferidas: 14,
+      });
+      expect(t).toContain('sinal do saldo neste arquivo parece estar trocado');
+      expect(t).toContain('do lado contrário no TXT');
+      expect(t).toContain('25.000,00 C'); // devedoras somando crédito: o contrário do esperado
+      expect(t).toContain('25.000,00 D');
+      expect(t).toContain('14 contas conferidas');
+    });
+
+    it('sinal conferido: confirma sem alarme', () => {
+      const t = textoDe();
+      expect(t).toContain('Sinal do saldo conferido');
+      expect(t).not.toContain('parece estar trocado');
+    });
+
+    it('sem evidência: diz que não deu para conferir, em vez de afirmar', () => {
+      const t = textoDe({ convencao: 'indefinida', conferidas: 1 });
+      expect(t).toContain('Não houve evidência suficiente');
+    });
+
+    // O export que perde o D/C: o lado de cada saldo simplesmente não está no arquivo.
+    it('sem D/C no arquivo: diz que a informação não veio e como trazê-la', () => {
+      const t = textoDe({ convencao: 'ausente', devedoras: 33445.75, credoras: 1875052.67 });
+      expect(t).toContain('não diz de que lado (D/C) está cada saldo');
+      expect(t).toContain('5.574,25D');
     });
   });
 

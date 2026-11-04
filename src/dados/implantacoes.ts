@@ -529,6 +529,7 @@ export async function recalcular(
     sinonimos: await carregarSinonimos(banco),
     regrasNormalizacao: regras.normalizacao,
     regrasNatureza: regras.natureza,
+    regrasNaturezaDominio: regras.naturezaDominio,
     ajustesManuais,
     parametros: {
       dataSaldo: imp.dataSaldo === null ? new Date(1970, 0, 1) : dataLocal(imp.dataSaldo),
@@ -626,6 +627,7 @@ export async function lerImplantacao(
     sinonimos: await carregarSinonimos(banco),
     regrasNormalizacao: regras.normalizacao,
     regrasNatureza: regras.natureza,
+    regrasNaturezaDominio: regras.naturezaDominio,
     ajustesManuais,
     parametros: {
       dataSaldo: imp.dataSaldo === null ? new Date(1970, 0, 1) : dataLocal(imp.dataSaldo),

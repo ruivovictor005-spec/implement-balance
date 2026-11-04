@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { ladoDoSaldo, ladoEsperado, saldoInvertido } from '../../../motor/lado.js';
+import { ladoDoSaldo, ladoEsperadoDaConta, saldoInvertido } from '../../../motor/lado.js';
 
 const brl = (n: number): string => n.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 
@@ -8,10 +8,25 @@ const brl = (n: number): string => n.toLocaleString('pt-BR', { minimumFractionDi
  * Saldo como num balancete: o VALOR em módulo e, ao lado, D ou C. O sinal sozinho não dizia o lado
  * para quem lê (ativo vinha com menos, passivo sem nada); com o D/C explícito, dá para ver de
  * relance se a conta está no lado certo — e a célula avisa quando não está.
+ *
+ * `conferirLado` existe para a tela poder DESLIGAR esse aviso: quando o arquivo inteiro veio com a
+ * convenção de sinal trocada, toda conta parece invertida, e apontar uma por uma só esconde o
+ * problema de verdade, que é o arquivo. Nesse caso o aviso sai uma vez, no alto da tela.
  */
-export function SaldoCelula({ saldoAtual, natureza }: { saldoAtual: number; natureza: string }) {
+export function SaldoCelula({
+  saldoAtual,
+  natureza,
+  nome = '',
+  conferirLado = true,
+}: {
+  saldoAtual: number;
+  natureza: string;
+  /** Nome da conta na origem, para reconhecer conta redutora ("(-) Prejuízos Acumulados"). */
+  nome?: string;
+  conferirLado?: boolean;
+}) {
   const lado = ladoDoSaldo(saldoAtual);
-  const invertido = saldoInvertido(saldoAtual, natureza);
+  const invertido = conferirLado && saldoInvertido(saldoAtual, natureza, nome);
   return (
     <td className="num">
       {brl(Math.abs(saldoAtual))}{' '}
@@ -24,12 +39,12 @@ export function SaldoCelula({ saldoAtual, natureza }: { saldoAtual: number; natu
         <>
           <br />
           <span
-            className="status-pend"
+            className="status-atencao"
             title={`Conta de natureza ${natureza}, que normalmente fica em ${
-              ladoEsperado(natureza) === 'D' ? 'débito (D)' : 'crédito (C)'
-            }. Confira o lançamento na origem.`}
+              ladoEsperadoDaConta(natureza, nome) === 'D' ? 'débito (D)' : 'crédito (C)'
+            }. Confira o lançamento na origem — pode ser proposital.`}
           >
-            saldo invertido
+            conferir o lado
           </span>
         </>
       )}

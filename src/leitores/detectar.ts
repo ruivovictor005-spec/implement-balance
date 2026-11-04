@@ -19,11 +19,54 @@ const normalizar = (s: string): string =>
     .replace(/[^a-z0-9]+/g, ' ')
     .trim();
 
+/** O lado escrito na célula: 'D' (devedor) ou 'C' (credor), e o que sobra do valor. */
+type ComLado = { lado: 'D' | 'C'; resto: string };
+
+/**
+ * Separa a letra de lado que o balancete brasileiro escreve junto do valor: `5.574,25D`,
+ * `1.234,56 C`, `D 5.574,25`. Devolve null quando a célula não diz o lado. Uma célula que seja só a
+ * letra não casa — ela não tem valor, e vira erro de "valor não numérico" mais adiante.
+ */
+function separarLado(s: string): ComLado | null {
+  const fim = /^(.+?)\s*([DdCc])$/.exec(s);
+  if (fim !== null) return { lado: fim[2].toUpperCase() as 'D' | 'C', resto: fim[1].trim() };
+  const inicio = /^([DdCc])\s*(.+)$/.exec(s);
+  if (inicio !== null) return { lado: inicio[1].toUpperCase() as 'D' | 'C', resto: inicio[2].trim() };
+  return null;
+}
+
+/**
+ * O lado a partir de uma COLUNA de indicação (não da mesma célula do valor): 'D', 'C' ou '' quando
+ * a coluna não existe ou traz outra coisa. Aceita a letra, a abreviação e a palavra inteira, com ou
+ * sem acento — é como os exports escrevem "D", "Db", "Devedor", "Débito".
+ *
+ * Qualquer outro texto é ignorado de propósito: num arquivo em que a coluna "natureza" traz
+ * "ATIVO CIRCULANTE" em vez de D/C, é melhor não ter indicação do que inventar um lado.
+ */
+export function lerLado(valor: string | null | undefined): 'D' | 'C' | '' {
+  const v = (valor ?? '')
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toUpperCase()
+    .trim();
+  if (v === 'D' || v === 'DB' || v.startsWith('DEVEDOR') || v.startsWith('DEBITO')) return 'D';
+  if (v === 'C' || v === 'CR' || v.startsWith('CREDOR') || v.startsWith('CREDITO')) return 'C';
+  return '';
+}
+
+/** O saldo com o sinal que o lado manda: débito negativo, crédito positivo (ver motor/lado.ts). */
+export const comLado = (valor: number, lado: 'D' | 'C'): number =>
+  lado === 'D' ? -Math.abs(valor) : Math.abs(valor);
+
 /**
  * Número a partir de uma célula. Aceita formato brasileiro e americano, decidindo o separador
  * decimal pela última ocorrência de `,` ou `.`; sinal à direita (`1.234,56-`) e parênteses
  * (`(1.234,56)`) contam como negativo. Vazio é zero. Texto não numérico lança erro com o valor
  * original — errar aqui geraria TXT errado em silêncio.
+ *
+ * A letra D/C colada no valor (`5.574,25D`) é o próprio balancete dizendo de que lado está o saldo,
+ * então ela MANDA no sinal: débito vira negativo, crédito positivo. Antes essa letra fazia a leitura
+ * do arquivo falhar — e é o formato normal de um balancete brasileiro.
  */
 export function converterNumero(valor: Celula): number {
   if (valor === null) return 0;
@@ -31,6 +74,9 @@ export function converterNumero(valor: Celula): number {
 
   let s = valor.trim();
   if (s === '') return 0;
+
+  const lado = separarLado(s);
+  if (lado !== null) s = lado.resto;
 
   let negativo = false;
   if (/^\(.*\)$/.test(s)) {
@@ -63,6 +109,7 @@ export function converterNumero(valor: Celula): number {
     throw new Error(`Valor não numérico: "${valor}"`);
   }
   const n = Number(normalizado);
+  if (lado !== null) return comLado(n, lado.lado);
   return negativo ? -n : n;
 }
 
@@ -139,6 +186,10 @@ export function extrairLinhas(
     if (texto(linha, 'codiCta').trim() === '') continue;
     const tipoColuna = texto(linha, 'tipoCta');
     const tipoCta = tipoColuna.startsWith('S') || emNegrito(r) ? 'S' : tipoColuna || 'A';
+    // Coluna só de lado (D/C), quando o arquivo tem uma: ela decide o sinal do saldo atual, porque
+    // é a origem dizendo de que lado está o saldo. Sem ela, vale o sinal que vier no número.
+    const lado = lerLado(texto(linha, 'ladoSaldo'));
+    const saldoAtual = converterNumero(celula(linha, 'saldoAtual'));
     linhas.push({
       codiCta: texto(linha, 'codiCta'),
       nomeCta: texto(linha, 'nomeCta'),
@@ -147,7 +198,7 @@ export function extrairLinhas(
       saldoAnterior: converterNumero(celula(linha, 'saldoAnterior')),
       totalDebito: converterNumero(celula(linha, 'totalDebito')),
       totalCredito: converterNumero(celula(linha, 'totalCredito')),
-      saldoAtual: converterNumero(celula(linha, 'saldoAtual')),
+      saldoAtual: lado === '' ? saldoAtual : comLado(saldoAtual, lado),
       custoDespesa: texto(linha, 'custoDespesa').trim(),
     });
   }

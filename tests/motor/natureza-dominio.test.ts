@@ -125,6 +125,7 @@ describe('salário: custo, despesa ou passivo, conforme a indicação (exemplo r
       sinonimos: new Map(),
       regrasNormalizacao: carregarNormalizacao(),
       regrasNatureza: todas,
+      regrasNaturezaDominio: todas,
       ajustesManuais: new Map(),
       parametros: {
         dataSaldo: new Date(2026, 0, 31),

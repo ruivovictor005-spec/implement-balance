@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { ladoDoSaldo, ladoEsperado, saldoInvertido } from '../../src/motor/lado.js';
+import {
+  contaRedutora,
+  ladoDoSaldo,
+  ladoEsperado,
+  ladoEsperadoDaConta,
+  saldoInvertido,
+} from '../../src/motor/lado.js';
 
 describe('lado do saldo', () => {
   // A convenção é a de `agregar.ts`, que monta as partidas: negativo é débito.
@@ -79,5 +85,34 @@ describe('saldo invertido', () => {
     expect(saldoInvertido(-500, 'NATUREZA NOVA')).toBe(false);
     expect(saldoInvertido(500, '')).toBe(false);
     expect(saldoInvertido(0, 'ATIVO')).toBe(false);
+  });
+});
+
+// Conta redutora fica do lado contrário ao do seu grupo por construção. Sem reconhecê-la, o aviso
+// dispara em toda implantação que tenha prejuízo acumulado ou imposto sobre a receita.
+describe('conta redutora', () => {
+  it.each([
+    ['(-) PREJUÍZOS ACUMULADOS', true],
+    ['(-) ISS S/ FATURAMENTO', true],
+    ['( - ) Deduções', true],
+    ['- DESCONTOS CONCEDIDOS', true],
+    ['CONTA REDUTORA DE ATIVO', true],
+    ['BANCO INTER', false],
+    ['FORNECEDORES', false],
+    ['', false],
+  ])('%s → redutora %s', (nome, esperado) => {
+    expect(contaRedutora(nome)).toBe(esperado);
+  });
+
+  it('espera o lado contrário ao da natureza', () => {
+    expect(ladoEsperadoDaConta('PATRIMÔNIO LÍQUIDO')).toBe('C');
+    expect(ladoEsperadoDaConta('PATRIMÔNIO LÍQUIDO', '(-) PREJUÍZOS ACUMULADOS')).toBe('D');
+    expect(ladoEsperadoDaConta('NATUREZA NOVA', '(-) QUALQUER COISA')).toBeNull();
+  });
+
+  it('prejuízo acumulado devedor não é apontado; credor é', () => {
+    const nome = '(-) PREJUÍZOS ACUMULADOS';
+    expect(saldoInvertido(-756099.49, 'PATRIMÔNIO LÍQUIDO', nome)).toBe(false);
+    expect(saldoInvertido(756099.49, 'PATRIMÔNIO LÍQUIDO', nome)).toBe(true);
   });
 });

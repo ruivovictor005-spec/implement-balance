@@ -69,6 +69,7 @@ export async function reaplicarSinonimos(
     sinonimos: await carregarSinonimos(banco),
     regrasNormalizacao: regras.normalizacao,
     regrasNatureza: regras.natureza,
+    regrasNaturezaDominio: regras.naturezaDominio,
     ajustesManuais,
     parametros: {
       dataSaldo: new Date(1970, 0, 1),

@@ -12,6 +12,12 @@ export type Perfil = {
   apelidos: Record<string, string[]>;
 };
 
+/**
+ * Cabeçalhos de uma coluna que só diz o lado do saldo (D/C). "natureza" entra porque no Domínio
+ * essa coluna é devedora/credora; se vier outra coisa, o leitor ignora em vez de inventar um lado.
+ */
+const LADO_SALDO = ['d/c', 'dc', 'd c', 'lado', 'lado do saldo', 'natureza', 'natureza do saldo'];
+
 export const PERFIS: Perfil[] = [
   {
     id: 'dominio',
@@ -28,6 +34,9 @@ export const PERFIS: Perfil[] = [
       // Opcional: coluna a mais em que a pessoa marca C (custo) ou D (despesa). NÃO confundir com a
       // coluna "natureza" do Domínio, que diz devedora/credora.
       custoDespesa: ['custo_despesa', 'custo ou despesa', 'custo/despesa', 'custo despesa', 'c/d'],
+      // Opcional: coluna em que o export escreve de que LADO está o saldo atual (D/C). Quando
+      // existe, ela decide o sinal — é a origem dizendo o lado, em vez de o sistema deduzir.
+      ladoSaldo: LADO_SALDO,
     },
   },
   {
@@ -47,6 +56,7 @@ export const PERFIS: Perfil[] = [
       totalCredito: ['totcre', 'crédito', 'total crédito'],
       saldoAtual: ['saldo atual', 'saldoatu'],
       custoDespesa: ['custo_despesa', 'custo ou despesa', 'custo/despesa', 'custo despesa', 'c/d'],
+      ladoSaldo: LADO_SALDO,
     },
   },
 ];

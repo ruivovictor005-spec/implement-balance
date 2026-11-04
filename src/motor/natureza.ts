@@ -17,41 +17,83 @@ export type ResultadoNatureza = {
 const ordenadas = (regras: RegraNatureza[]): RegraNatureza[] =>
   [...regras].sort((a, b) => a.ordem - b.ordem);
 
+const soDigitos = (s: string): string => s.replace(/\D/g, '');
+
+const paraResultado = (r: RegraNatureza): ResultadoNatureza => ({
+  natureza: r.natureza,
+  gruposDominio: r.gruposDominio,
+  naoMigrar: r.naoMigrar,
+});
+
 /**
- * Natureza da conta de ORIGEM pela tabela COSIF: a primeira regra, na ordem do campo `ordem`, cujo
- * prefixo case com o início da classificação. A tabela vem do mais específico para o mais genérico
- * (`5.9.9.99` antes de `1.1`, que vem antes de `1`). Devolve `null` quando nenhuma regra casa — a
- * classificação não foi reconhecida e a linha vira pendência. Regras do conjunto `dominio` são
- * ignoradas aqui: elas descrevem o plano de destino, não o de origem.
+ * Candidatas na ordem do campo `ordem`. Prefixo vazio ou começando por `#` sai fora: o primeiro
+ * casaria com qualquer classificação, e o segundo é comentário na tabela, não regra.
+ */
+const candidatas = (regras: RegraNatureza[]): RegraNatureza[] =>
+  ordenadas(regras.filter((r) => r.prefixo !== '' && !r.prefixo.startsWith('#')));
+
+/**
+ * Primeira regra cujo prefixo case comparando SÓ OS DÍGITOS, dos dois lados.
+ *
+ * Comparar com a máscara, como era antes, dá resposta errada nos dois sentidos: a tabela do Domínio
+ * tem prefixos sem máscara (`11`, `21`, `42`) e uma classificação `1.1.10.200.001` casaria com `1`
+ * (ATIVO) antes de `11` (ATIVO CIRCULANTE); e a tabela COSIF tem prefixos com máscara (`1.1`) e uma
+ * classificação exportada sem ela (`1110200001`) escorregava para a regra genérica `1` em silêncio.
+ * Normalizando os dois lados, `1.1`, `11`, `1.1.10.200.001` e `1110200001` falam a mesma língua.
+ *
+ * A ordem do campo `ordem` continua mandando — é ela que põe o específico antes do genérico.
+ */
+function casarPorDigitos(classificacao: string, regras: RegraNatureza[]): ResultadoNatureza | null {
+  const digitos = soDigitos(classificacao);
+  if (digitos === '') return null;
+  const regra = candidatas(regras).find((c) => {
+    const p = soDigitos(c.prefixo);
+    return p !== '' && digitos.startsWith(p);
+  });
+  return regra === undefined ? null : paraResultado(regra);
+}
+
+/**
+ * Natureza da conta de ORIGEM pela tabela COSIF. A tabela vem do mais específico para o mais
+ * genérico (`5.9.9.99` antes de `1.1`, que vem antes de `1`). Devolve `null` quando nenhuma regra
+ * casa — a classificação não foi reconhecida e a linha vira pendência. Regras do conjunto `dominio`
+ * são ignoradas aqui: elas descrevem o plano de destino, não o de origem.
+ *
+ * ATENÇÃO: isto só vale para uma origem que esteja MESMO no plano COSIF. Num balancete que já vem no
+ * plano do Domínio, o grupo 4 é custo/despesa e não passivo, e esta tabela responde errado em quase
+ * tudo — ver `resolverNaturezaDominioOrigem` e `motor/origem.ts`.
  */
 export function resolverNatureza(
   classificacao: string,
   regras: RegraNatureza[],
 ): ResultadoNatureza | null {
-  const comparavel = classificacao.trim();
-  const regra = ordenadas(regras.filter((r) => r.conjunto !== 'dominio')).find((candidata) =>
-    comparavel.startsWith(candidata.prefixo),
+  return casarPorDigitos(
+    classificacao,
+    regras.filter((r) => r.conjunto !== 'dominio'),
   );
-  if (regra === undefined) return null;
-  return {
-    natureza: regra.natureza,
-    gruposDominio: regra.gruposDominio,
-    naoMigrar: regra.naoMigrar,
-  };
 }
 
 /**
- * Natureza de uma conta do PLANO DOMÍNIO (o destino): primeira regra do conjunto `dominio` cujo
- * prefixo case com a classificação. Compara só os dígitos, porque a classificação do Domínio pode
- * vir com máscara (`4.1.3.04.012`) ou sem (`41304012`). Devolve '' quando nenhuma regra casa.
+ * Natureza da conta de ORIGEM quando o balancete recebido JÁ ESTÁ no plano do Domínio — o caso de
+ * uma empresa que vem de outro escritório que também usa Domínio, com o plano de contas antigo.
+ * Usa a mesma tabela do plano de destino, que é o plano em que essa origem está.
+ */
+export function resolverNaturezaDominioOrigem(
+  classificacao: string,
+  regras: RegraNatureza[],
+): ResultadoNatureza | null {
+  return casarPorDigitos(
+    classificacao,
+    regras.filter((r) => r.conjunto === 'dominio'),
+  );
+}
+
+/**
+ * Natureza de uma conta do PLANO DOMÍNIO (o destino), para a busca de contas mostrar. Devolve ''
+ * quando nenhuma regra casa.
  */
 export function naturezaContaDominio(classificacao: string, regras: RegraNatureza[]): string {
-  const digitos = classificacao.replace(/\D/g, '');
-  if (digitos === '') return '';
-  const regra = ordenadas(
-    regras.filter((r) => r.conjunto === 'dominio' && !r.prefixo.startsWith('#')),
-  ).find((candidata) => digitos.startsWith(candidata.prefixo));
-  return regra?.natureza ?? '';
+  return resolverNaturezaDominioOrigem(classificacao, regras)?.natureza ?? '';
 }
 
 const semAcento = (texto: string): string =>

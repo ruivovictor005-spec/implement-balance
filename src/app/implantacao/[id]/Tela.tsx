@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { conferirPorGrupo } from '../../../motor/conferencia-grupo.js';
+import { sinalNaoConfiavel } from '../../../motor/origem.js';
 import type { Celula } from '../../../leitores/ler-arquivo.js';
 import type { LinhaResolvida, Painel } from '../../../motor/converter.js';
 import {
@@ -33,6 +34,7 @@ import { ConferenciaPorGrupo } from '../_componentes/ConferenciaPorGrupo.js';
 import { PreviaBalancete } from '../_componentes/PreviaBalancete.js';
 import { TabelaDePara, Pendencias } from '../_componentes/TabelaDePara.js';
 import { DadosEmpresa } from '../_componentes/DadosEmpresa.js';
+import { AvisoOrigem } from '../_componentes/AvisoOrigem.js';
 import { PainelConferencia } from '../_componentes/PainelConferencia.js';
 import { RegistrarContaCriada } from '../_componentes/RegistrarContaCriada.js';
 import { ResumoBalancete } from '../_componentes/ResumoBalancete.js';
@@ -48,6 +50,7 @@ const PAINEL_VAZIO: Painel = {
   diferenca: 0,
   pronto: false,
   status: 'Anexe o balancete para começar.',
+  origem: { plano: 'indefinido', convencao: 'indefinida', devedoras: 0, credoras: 0, conferidas: 0 },
 };
 
 const DADOS_VAZIO: DadosEmpresaForm = {
@@ -347,6 +350,10 @@ export function Tela({ id }: { id: number }) {
   // prévia), para os dois nunca discordarem.
   const conferencia = useMemo(() => conferirPorGrupo(linhas, contas), [linhas, contas]);
 
+  // Sem sinal confiável no arquivo (trocado, ou ausente), TODA conta parece invertida: o aviso
+  // por conta deixa de ajudar e o alerta sai uma vez só, no cartão "Como o arquivo foi lido".
+  const conferirLado = !sinalNaoConfiavel(painel.origem.convencao);
+
   return (
     <main>
       <header className="cab-impl">
@@ -461,6 +468,7 @@ export function Tela({ id }: { id: number }) {
           )}
           {temLinhas && (
             <>
+              <AvisoOrigem origem={painel.origem} />
               <PainelConferencia
                 painel={painel}
                 justificativa={justificativa}
@@ -488,7 +496,7 @@ export function Tela({ id }: { id: number }) {
 
       {aba === 'depara' &&
         (temLinhas ? (
-          <TabelaDePara linhas={linhas} contas={contas} onIndicar={onIndicar} editavel={editavel} />
+          <TabelaDePara linhas={linhas} contas={contas} onIndicar={onIndicar} editavel={editavel} conferirLado={conferirLado} />
         ) : (
           <div className="cartao vazio">Anexe um balancete na aba Configuração para começar o de-para.</div>
         ))}
@@ -506,7 +514,7 @@ export function Tela({ id }: { id: number }) {
 
       {aba === 'pendencias' &&
         (temLinhas ? (
-          <Pendencias linhas={linhas} contas={contas} onIndicar={onIndicar} editavel={editavel} />
+          <Pendencias linhas={linhas} contas={contas} onIndicar={onIndicar} editavel={editavel} conferirLado={conferirLado} />
         ) : (
           <div className="cartao vazio">Anexe um balancete para ver as pendências.</div>
         ))}

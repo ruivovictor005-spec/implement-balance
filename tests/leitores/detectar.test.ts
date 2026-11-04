@@ -1,7 +1,12 @@
 import { readFileSync } from 'node:fs';
 import ExcelJS from 'exceljs';
 import { describe, expect, it } from 'vitest';
-import { converterNumero, detectarPerfil, extrairLinhas } from '../../src/leitores/detectar.js';
+import {
+  converterNumero,
+  detectarPerfil,
+  extrairLinhas,
+  lerLado,
+} from '../../src/leitores/detectar.js';
 import { ErroDeArquivo, lerArquivo, lerArquivoComFormato } from '../../src/leitores/ler-arquivo.js';
 import type { Matriz } from '../../src/leitores/ler-arquivo.js';
 
@@ -83,6 +88,71 @@ describe('reconhecimento e extração', () => {
 
   it('texto não numérico lança erro citando o valor', () => {
     expect(() => converterNumero('abc')).toThrow(/abc/);
+  });
+});
+
+// O formato normal de um balancete brasileiro: o lado vem escrito junto do valor. Antes isto fazia
+// a leitura do arquivo FALHAR ("Valor não numérico: 5.574,25D"), e a mensagem é censurada em
+// produção — a pessoa via um erro sem explicação. Valores reais do balancete da ZERO MARKETS.
+describe('o lado (D/C) escrito no arquivo decide o sinal', () => {
+  it.each([
+    ['5.574,25D', -5574.25],
+    ['5.033,53C', 5033.53],
+    ['1.234,56 D', -1234.56],
+    ['1.234,56 c', 1234.56],
+    ['D 1.234,56', -1234.56],
+    ['C1.234,56', 1234.56],
+    ['756.099,49D', -756099.49],
+    ['0,00', 0],
+  ])('converte %s em %s', (entrada, esperado) => {
+    expect(converterNumero(entrada)).toBeCloseTo(esperado, 2);
+  });
+
+  it('o lado manda sobre o sinal escrito, porque é a origem dizendo o lado', () => {
+    expect(converterNumero('-1.234,56C')).toBeCloseTo(1234.56, 2);
+  });
+
+  it('uma célula que é só a letra não é número', () => {
+    expect(() => converterNumero('D')).toThrow(/"D"/);
+    expect(() => converterNumero('TOTAL C')).toThrow(/TOTAL C/);
+  });
+
+  it.each([
+    ['D', 'D'],
+    ['c', 'C'],
+    ['Devedor', 'D'],
+    ['CREDORA', 'C'],
+    ['Débito', 'D'],
+    ['crédito', 'C'],
+    ['ATIVO CIRCULANTE', ''],
+    ['', ''],
+  ])('coluna de lado: %s → %s', (entrada, esperado) => {
+    expect(lerLado(entrada)).toBe(esperado);
+  });
+
+  it('coluna separada de D/C define o sinal do saldo atual', () => {
+    const m: Matriz = [
+      ['codi_cta', 'nome_cta', 'clas_cta', 'tipo_cta', 'saldoant', 'totdeb', 'totcre', 'saldoatu', 'd/c'],
+      ['566', 'BANCO INTER', '1.1.10.200.001', 'A', '3729,58', '25668,41', '23823,74', '5574,25', 'D'],
+      ['10001', 'FORNECEDORES', '2.1.30.100.000', 'A', '0', '0', '0', '5033,53', 'C'],
+      // Sem indicação na coluna, vale o sinal que vier no número.
+      ['245', 'CAPITAL SOCIAL', '2.3.10.100.000', 'A', '0', '0', '0', '30000', ''],
+    ];
+    const d = detectarPerfil(m);
+    expect(d).not.toBeNull();
+    expect(d?.colunas.ladoSaldo).toBe(8);
+    const linhas = extrairLinhas(m, d!.linhaCabecalho, d!.colunas);
+    expect(linhas.map((l) => l.saldoAtual)).toEqual([-5574.25, 5033.53, 30000]);
+  });
+
+  it('coluna "natureza" com texto de natureza é ignorada, não vira lado', () => {
+    const m: Matriz = [
+      ['codi_cta', 'nome_cta', 'clas_cta', 'tipo_cta', 'saldoant', 'totdeb', 'totcre', 'saldoatu', 'natureza'],
+      ['566', 'BANCO INTER', '1.1.10.200.001', 'A', '0', '0', '0', '-5574,25', 'ATIVO CIRCULANTE'],
+    ];
+    const d = detectarPerfil(m);
+    const linhas = extrairLinhas(m, d!.linhaCabecalho, d!.colunas);
+    expect(linhas[0].saldoAtual).toBeCloseTo(-5574.25, 2);
   });
 });
 

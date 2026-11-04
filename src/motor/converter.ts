@@ -2,7 +2,18 @@
 // e monta o painel de conferência (§6.8). Função pura — entra balancete, plano e regras; sai
 // linhas resolvidas, lançamentos, TXT e painel. Nenhum I/O.
 import { gerarLancamentos, type Lancamento } from './agregar.js';
-import { aplicarCustoDespesa, lerCustoDespesa, resolverNatureza } from './natureza.js';
+import {
+  aplicarCustoDespesa,
+  lerCustoDespesa,
+  resolverNatureza,
+  resolverNaturezaDominioOrigem,
+} from './natureza.js';
+import {
+  auditarOrigem,
+  detectarPlanoOrigem,
+  sinalNaoConfiavel,
+  type AuditoriaOrigem,
+} from './origem.js';
 import { normalizarNome } from './normalizar.js';
 import { criarIndicePlano, resolverConta, type Origem } from './resolver.js';
 import { gerarTxt, type ParametrosLote } from './leiaute-dominio.js';
@@ -30,6 +41,8 @@ export type Painel = {
   diferenca: number;
   pronto: boolean;
   status: string;
+  /** O que o sistema sabe dizer sobre o arquivo recebido: em que plano está e se o sinal confere. */
+  origem: AuditoriaOrigem;
 };
 
 /** ROUND do Excel em 2 casas: meio centavo arredonda para longe do zero. */
@@ -45,6 +58,12 @@ export function converter(entrada: {
   sinonimos: Map<string, string>;
   regrasNormalizacao: RegraNormalizacao[];
   regrasNatureza: RegraNatureza[];
+  /**
+   * Tabela de natureza do plano do Domínio. Serve de DESTINO sempre e também de ORIGEM quando o
+   * balancete recebido já está no plano do Domínio (empresa que vem de outro escritório que também
+   * usa Domínio) — ver `motor/origem.ts`.
+   */
+  regrasNaturezaDominio: RegraNatureza[];
   ajustesManuais: Map<string, string>;
   parametros: ParametrosLote;
 }): { linhas: LinhaResolvida[]; lancamentos: Lancamento[]; txt: string[]; painel: Painel } {
@@ -55,6 +74,7 @@ export function converter(entrada: {
     sinonimos,
     regrasNormalizacao,
     regrasNatureza,
+    regrasNaturezaDominio,
     ajustesManuais,
     parametros,
   } = entrada;
@@ -62,14 +82,25 @@ export function converter(entrada: {
   // Conta criada durante a sessão entra no índice como analítica comum.
   const indice = criarIndicePlano([...plano, ...contasCriadas]);
 
+  // Em que plano está a ORIGEM. Lida pela tabela errada, a classificação responde outra natureza:
+  // num balancete do Domínio, o grupo 2 é passivo (a tabela COSIF diria "ativo não circulante"), o
+  // 4 é custo/despesa (diria "passivo") e o 3 é receita (diria "compensação / não migrar", e aí a
+  // receita toda desaparecia do TXT em silêncio). Ver `motor/origem.ts`.
+  const planoDaOrigem =
+    regrasNaturezaDominio.length === 0 ? 'cosif' : detectarPlanoOrigem(balancete);
+  const naturezaDaOrigem = (classificacao: string) =>
+    planoDaOrigem === 'dominio'
+      ? resolverNaturezaDominioOrigem(classificacao, regrasNaturezaDominio)
+      : resolverNatureza(classificacao, regrasNatureza);
+
   const linhas: LinhaResolvida[] = [];
   for (const linha of balancete) {
     if (linha.tipoCta.startsWith('S')) continue; // §6.1: sintética não vira saldo
     const nomeNormalizado = normalizarNome(linha.nomeCta, regrasNormalizacao);
-    // Natureza COSIF da origem; a coluna opcional de custo/despesa, quando preenchida, decide entre
+    // Natureza da origem; a coluna opcional de custo/despesa, quando preenchida, decide entre
     // custo e despesa nas contas de resultado devedoras.
     const natureza = aplicarCustoDespesa(
-      resolverNatureza(linha.clasCta, regrasNatureza),
+      naturezaDaOrigem(linha.clasCta),
       lerCustoDespesa(linha.custoDespesa),
     );
     const ajusteManual = ajustesManuais.get(linha.codiCta) ?? null;
@@ -106,11 +137,17 @@ export function converter(entrada: {
     lancamentos.reduce((s, l) => (l.contaCredito !== null ? s + l.valor : s), 0),
   );
   const diferenca = arredondar2(totalDebito - totalCredito);
+
+  // Convenção de sinal do arquivo. Um balancete inteiro com o sinal trocado FECHA do mesmo jeito
+  // (débito e crédito trocados somam igual), então `diferenca` não acusa nada: sem esta conferência
+  // o sistema diria "PRONTO PARA IMPORTAR" para um TXT com todos os lançamentos do lado contrário.
+  const origem = auditarOrigem(balancete, linhas);
   const pronto =
     parametros.cnpj.trim() !== '' &&
     parametros.codigoEmpresa.trim() !== '' &&
     pendentes.length === 0 &&
-    diferenca === 0;
+    diferenca === 0 &&
+    !sinalNaoConfiavel(origem.convencao);
 
   const painel: Painel = {
     analiticas: linhas.length,
@@ -121,7 +158,14 @@ export function converter(entrada: {
     totalCredito,
     diferenca,
     pronto,
-    status: pronto ? 'PRONTO PARA IMPORTAR' : 'ATENÇÃO: revisar pendências / diferença',
+    status: pronto
+      ? 'PRONTO PARA IMPORTAR'
+      : origem.convencao === 'invertida'
+        ? 'ATENÇÃO: o sinal do saldo do arquivo parece estar trocado'
+        : origem.convencao === 'ausente'
+          ? 'ATENÇÃO: o arquivo não diz de que lado (D/C) está cada saldo'
+          : 'ATENÇÃO: revisar pendências / diferença',
+    origem,
   };
 
   return { linhas, lancamentos, txt, painel };

@@ -14,6 +14,7 @@ import type { ParametrosLote } from '../src/motor/leiaute-dominio.js';
 import {
   carregarBalancete,
   carregarNatureza,
+  carregarNaturezaDominio,
   carregarNormalizacao,
   carregarPlano,
   carregarSinonimos,
@@ -49,6 +50,7 @@ const r = converter({
   sinonimos: mapaSinonimos(carregarSinonimos()),
   regrasNormalizacao: carregarNormalizacao(),
   regrasNatureza: carregarNatureza(),
+  regrasNaturezaDominio: carregarNaturezaDominio(),
   ajustesManuais,
   parametros,
 });

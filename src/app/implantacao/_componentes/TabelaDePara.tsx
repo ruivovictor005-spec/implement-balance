@@ -100,11 +100,14 @@ export function TabelaDePara({
   contas,
   onIndicar,
   editavel = true,
+  conferirLado = true,
 }: {
   linhas: LinhaResolvida[];
   contas: ContaBusca[];
   onIndicar: (codiCta: string, codigo: string) => void;
   editavel?: boolean;
+  /** false quando o arquivo inteiro veio com o sinal trocado: o aviso por conta não ajuda. */
+  conferirLado?: boolean;
 }) {
   const porCodigo = new Map(contas.map((c) => [c.codigoReduzido, c]));
   return (
@@ -129,7 +132,7 @@ export function TabelaDePara({
               className={l.origem === 'nao_encontrado' ? 'pendente' : undefined}
             >
               <td>{colunaOrigem(l)}</td>
-              <SaldoCelula saldoAtual={l.saldoAtual} natureza={l.natureza} />
+              <SaldoCelula saldoAtual={l.saldoAtual} natureza={l.natureza} nome={l.nomeCta} conferirLado={conferirLado} />
               <td className="col-dominio">
                 <CelulaDominio linha={l} contas={contas} porCodigo={porCodigo} onIndicar={onIndicar} editavel={editavel} />
               </td>
@@ -147,11 +150,14 @@ export function Pendencias({
   contas,
   onIndicar,
   editavel = true,
+  conferirLado = true,
 }: {
   linhas: LinhaResolvida[];
   contas: ContaBusca[];
   onIndicar: (codiCta: string, codigo: string) => void;
   editavel?: boolean;
+  /** false quando o arquivo inteiro veio com o sinal trocado: o aviso por conta não ajuda. */
+  conferirLado?: boolean;
 }) {
   const pendentes = linhas.filter((l) => l.origem === 'nao_encontrado');
   const porCodigo = new Map(contas.map((c) => [c.codigoReduzido, c]));
@@ -190,7 +196,7 @@ export function Pendencias({
                 <div className="meta">{l.natureza || 'sem natureza'}</div>
               </td>
               <td className="cod">{l.clasCta || '—'}</td>
-              <SaldoCelula saldoAtual={l.saldoAtual} natureza={l.natureza} />
+              <SaldoCelula saldoAtual={l.saldoAtual} natureza={l.natureza} nome={l.nomeCta} conferirLado={conferirLado} />
               <td className="col-dominio">
                 <CelulaDominio linha={l} contas={contas} porCodigo={porCodigo} onIndicar={onIndicar} editavel={editavel} />
               </td>
