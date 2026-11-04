@@ -9,6 +9,7 @@ import type { Lancamento } from '../motor/agregar.js';
 import { converter, type LinhaResolvida, type Painel } from '../motor/converter.js';
 import { lerCustoDespesa } from '../motor/natureza.js';
 import { normalizarNome } from '../motor/normalizar.js';
+import { lerPlanoIndicado, type PlanoIndicado } from '../motor/origem.js';
 import type { ContaPlano, LinhaBalancete } from '../motor/tipos.js';
 import { auditar } from '../observabilidade/auditar.js';
 import { db } from './cliente.js';
@@ -332,6 +333,30 @@ export async function definirAjusteManual(
 }
 
 /**
+ * Indica em qual plano de contas está o balancete RECEBIDO: 'cosif', 'dominio', ou null para
+ * deixar o sistema deduzir. É a escolha que decide a tabela de natureza da origem, então vale para
+ * todas as linhas — quem chama recalcula depois.
+ */
+export async function definirPlanoOrigem(
+  banco: Banco,
+  id: number,
+  usuarioId: number,
+  plano: PlanoIndicado | null,
+): Promise<ResultadoImplantacao> {
+  const meu = await conferirMinhaEmAndamento(banco, id, usuarioId);
+  if (!meu.ok) return meu;
+  await banco.update(implantacao).set({ planoOrigem: plano }).where(eq(implantacao.id, id));
+  await auditar(banco, {
+    usuarioId,
+    acao: 'definir_plano_origem',
+    entidade: 'implantacao',
+    entidadeId: String(id),
+    detalhes: { plano },
+  });
+  return { ok: true };
+}
+
+/**
  * Conta criada para esta implantação. Ela existe SÓ aqui: não entra no plano padrão, não aparece
  * para outras pessoas nem em outras implantações, e não pode virar sinônimo compartilhado.
  * Um código que já existe no plano padrão é recusado — ele substituiria a conta padrão dentro
@@ -530,6 +555,7 @@ export async function recalcular(
     regrasNormalizacao: regras.normalizacao,
     regrasNatureza: regras.natureza,
     regrasNaturezaDominio: regras.naturezaDominio,
+    planoOrigemIndicado: lerPlanoIndicado(imp.planoOrigem),
     ajustesManuais,
     parametros: {
       dataSaldo: imp.dataSaldo === null ? new Date(1970, 0, 1) : dataLocal(imp.dataSaldo),
@@ -628,6 +654,7 @@ export async function lerImplantacao(
     regrasNormalizacao: regras.normalizacao,
     regrasNatureza: regras.natureza,
     regrasNaturezaDominio: regras.naturezaDominio,
+    planoOrigemIndicado: lerPlanoIndicado(imp.planoOrigem),
     ajustesManuais,
     parametros: {
       dataSaldo: imp.dataSaldo === null ? new Date(1970, 0, 1) : dataLocal(imp.dataSaldo),

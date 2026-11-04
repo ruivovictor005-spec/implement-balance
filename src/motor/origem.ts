@@ -13,6 +13,17 @@ import { ladoEsperado } from './lado.js';
 export type PlanoOrigem = 'cosif' | 'dominio' | 'indefinido';
 
 /**
+ * O plano que a PESSOA indica. Não inclui `indefinido`: indefinido é um resultado da dedução, não
+ * uma escolha — quem indica sabe de onde o arquivo veio.
+ */
+export type PlanoIndicado = 'cosif' | 'dominio';
+
+/** Texto guardado no banco → plano indicado. Qualquer outra coisa vira "não indicado". */
+export function lerPlanoIndicado(valor: string | null | undefined): PlanoIndicado | null {
+  return valor === 'cosif' || valor === 'dominio' ? valor : null;
+}
+
+/**
  * Se o sinal do saldo atual segue a convenção do motor (débito negativo) ou a contrária.
  *  - `normal`: devedoras somam débito e credoras somam crédito, como se espera.
  *  - `invertida`: os dois lados somam ao contrário — o arquivo usa a convenção oposta.
@@ -24,7 +35,12 @@ export type PlanoOrigem = 'cosif' | 'dominio' | 'indefinido';
 export type Convencao = 'normal' | 'invertida' | 'ausente' | 'indefinida';
 
 export type AuditoriaOrigem = {
+  /** O plano EM USO: o que a pessoa indicou ou, se ela não indicou, o deduzido. */
   plano: PlanoOrigem;
+  /** O que a dedução diz, sempre — para a tela poder sugerir e mostrar quando discordam. */
+  detectado: PlanoOrigem;
+  /** true quando o plano em uso foi indicado pela pessoa, não deduzido. */
+  indicado: boolean;
   convencao: Convencao;
   /** Soma dos saldos das contas cuja natureza espera DÉBITO (ativo, despesa, custo...). */
   devedoras: number;
@@ -79,7 +95,7 @@ const MINIMO_POR_LADO = 2;
  */
 export function conferirConvencao(
   linhas: { natureza: string; saldoAtual: number }[],
-): Omit<AuditoriaOrigem, 'plano'> {
+): Omit<AuditoriaOrigem, 'plano' | 'detectado' | 'indicado'> {
   let devedoras = 0;
   let credoras = 0;
   let nD = 0;
@@ -125,10 +141,23 @@ export function conferirConvencao(
 export const sinalNaoConfiavel = (convencao: Convencao): boolean =>
   convencao === 'invertida' || convencao === 'ausente';
 
-/** Plano e convenção juntos: o que o sistema sabe dizer sobre o arquivo que recebeu. */
+/**
+ * Plano e convenção juntos: o que o sistema sabe dizer sobre o arquivo que recebeu.
+ *
+ * `indicado` é a escolha da pessoa e MANDA — a dedução continua sendo calculada, mas só para a tela
+ * poder sugerir e avisar quando as duas discordam. Deduzir é um palpite sobre os grupos presentes;
+ * quem recebeu o arquivo sabe de qual sistema ele saiu.
+ */
 export function auditarOrigem(
   balancete: { clasCta: string }[],
   analiticas: { natureza: string; saldoAtual: number }[],
+  indicado: PlanoIndicado | null = null,
 ): AuditoriaOrigem {
-  return { plano: detectarPlanoOrigem(balancete), ...conferirConvencao(analiticas) };
+  const detectado = detectarPlanoOrigem(balancete);
+  return {
+    plano: indicado ?? detectado,
+    detectado,
+    indicado: indicado !== null,
+    ...conferirConvencao(analiticas),
+  };
 }

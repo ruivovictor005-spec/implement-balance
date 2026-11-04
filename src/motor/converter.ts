@@ -13,6 +13,7 @@ import {
   detectarPlanoOrigem,
   sinalNaoConfiavel,
   type AuditoriaOrigem,
+  type PlanoIndicado,
 } from './origem.js';
 import { normalizarNome } from './normalizar.js';
 import { criarIndicePlano, resolverConta, type Origem } from './resolver.js';
@@ -64,6 +65,11 @@ export function converter(entrada: {
    * usa Domínio) — ver `motor/origem.ts`.
    */
   regrasNaturezaDominio: RegraNatureza[];
+  /**
+   * Plano do balancete recebido, INDICADO pela pessoa. Quando vem, manda. Nulo (o padrão) deixa o
+   * sistema deduzir pelos grupos presentes na classificação.
+   */
+  planoOrigemIndicado?: PlanoIndicado | null;
   ajustesManuais: Map<string, string>;
   parametros: ParametrosLote;
 }): { linhas: LinhaResolvida[]; lancamentos: Lancamento[]; txt: string[]; painel: Painel } {
@@ -75,6 +81,7 @@ export function converter(entrada: {
     regrasNormalizacao,
     regrasNatureza,
     regrasNaturezaDominio,
+    planoOrigemIndicado = null,
     ajustesManuais,
     parametros,
   } = entrada;
@@ -86,8 +93,9 @@ export function converter(entrada: {
   // num balancete do Domínio, o grupo 2 é passivo (a tabela COSIF diria "ativo não circulante"), o
   // 4 é custo/despesa (diria "passivo") e o 3 é receita (diria "compensação / não migrar", e aí a
   // receita toda desaparecia do TXT em silêncio). Ver `motor/origem.ts`.
-  const planoDaOrigem =
-    regrasNaturezaDominio.length === 0 ? 'cosif' : detectarPlanoOrigem(balancete);
+  //
+  // A indicação da pessoa manda; a dedução é só o padrão de quem não indicou nada.
+  const planoDaOrigem = planoOrigemIndicado ?? detectarPlanoOrigem(balancete);
   const naturezaDaOrigem = (classificacao: string) =>
     planoDaOrigem === 'dominio'
       ? resolverNaturezaDominioOrigem(classificacao, regrasNaturezaDominio)
@@ -141,7 +149,7 @@ export function converter(entrada: {
   // Convenção de sinal do arquivo. Um balancete inteiro com o sinal trocado FECHA do mesmo jeito
   // (débito e crédito trocados somam igual), então `diferenca` não acusa nada: sem esta conferência
   // o sistema diria "PRONTO PARA IMPORTAR" para um TXT com todos os lançamentos do lado contrário.
-  const origem = auditarOrigem(balancete, linhas);
+  const origem = auditarOrigem(balancete, linhas, planoOrigemIndicado);
   const pronto =
     parametros.cnpj.trim() !== '' &&
     parametros.codigoEmpresa.trim() !== '' &&

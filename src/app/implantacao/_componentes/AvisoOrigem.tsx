@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import type { AuditoriaOrigem } from '../../../motor/origem.js';
+import type { AuditoriaOrigem, PlanoIndicado } from '../../../motor/origem.js';
 
 const brl = (n: number): string =>
   Math.abs(n).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
@@ -25,6 +25,11 @@ const NOME_DO_PLANO: Record<AuditoriaOrigem['plano'], string> = {
   indefinido: 'não identificado',
 };
 
+/** O valor do seletor: '' é "deduzir", que é o padrão. */
+type Escolha = '' | PlanoIndicado;
+
+const escolhaValida = (v: string): Escolha => (v === 'cosif' || v === 'dominio' ? v : '');
+
 /**
  * O que o sistema entendeu do arquivo recebido, antes de qualquer de-para: em que plano de contas a
  * origem está e se o sinal do saldo segue a convenção esperada.
@@ -34,18 +39,57 @@ const NOME_DO_PLANO: Record<AuditoriaOrigem['plano'], string> = {
  * somam igual), então nem a diferença do painel acusa; e lido pela tabela de natureza do outro
  * plano, cada conta recebe a natureza de outro grupo. Melhor dizer na cara o que foi assumido.
  */
-export function AvisoOrigem({ origem }: { origem: AuditoriaOrigem }) {
+export function AvisoOrigem({
+  origem,
+  onIndicarPlano,
+  editavel = true,
+}: {
+  origem: AuditoriaOrigem;
+  /** Chamada quando a pessoa indica o plano (ou volta para "deduzir", com null). */
+  onIndicarPlano?: (plano: PlanoIndicado | null) => void;
+  editavel?: boolean;
+}) {
+  const escolha: Escolha = origem.indicado && origem.plano !== 'indefinido' ? origem.plano : '';
+  const deducaoDiscorda =
+    origem.indicado && origem.detectado !== 'indefinido' && origem.detectado !== origem.plano;
+
   return (
     <section className="cartao">
       <h2>Como o arquivo foi lido</h2>
       <p className="sub">
-        Plano de contas da origem: <strong>{NOME_DO_PLANO[origem.plano]}</strong>. É ele que decide a
-        natureza de cada conta — no COSIF o grupo 4 é passivo, no Domínio é custo e despesa.
-        {origem.plano === 'indefinido' && (
-          <> Não deu para identificar pelos grupos, então foi lido como COSIF. Confira a natureza das
-          contas no de-para antes de gerar o TXT.</>
+        Plano de contas da origem: <strong>{NOME_DO_PLANO[origem.plano]}</strong>
+        {origem.indicado ? ' — indicado por você.' : ' — deduzido pelos grupos da classificação.'} É
+        ele que decide a natureza de cada conta: no COSIF o grupo 4 é passivo, no Domínio é custo e
+        despesa, e o grupo 3 do COSIF é compensação, que não migra.
+        {!origem.indicado && origem.detectado === 'indefinido' && (
+          <> Não deu para deduzir pelos grupos presentes, então foi lido como COSIF —{' '}
+          <strong>indique o plano abaixo</strong> em vez de confiar nisso.</>
         )}
       </p>
+
+      {onIndicarPlano !== undefined && (
+        <label className="chave">
+          Plano do balancete recebido{' '}
+          <select
+            value={escolha}
+            disabled={!editavel}
+            onChange={(e) => onIndicarPlano(escolhaValida(e.target.value) || null)}
+          >
+            <option value="">
+              Deduzir pelo arquivo (hoje: {NOME_DO_PLANO[origem.detectado]})
+            </option>
+            <option value="cosif">COSIF — Infobank</option>
+            <option value="dominio">Domínio</option>
+          </select>
+        </label>
+      )}
+
+      {deducaoDiscorda && (
+        <p className="meta">
+          A dedução pelos grupos diria <strong>{NOME_DO_PLANO[origem.detectado]}</strong>. Vale a sua
+          indicação — só confira que é mesmo o plano deste arquivo.
+        </p>
+      )}
 
       {origem.convencao === 'invertida' ? (
         <div className="aviso-atencao">

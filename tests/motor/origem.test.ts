@@ -10,8 +10,10 @@ import { converter } from '../../src/motor/converter.js';
 import { contaRedutora, saldoInvertido } from '../../src/motor/lado.js';
 import { resolverNatureza, resolverNaturezaDominioOrigem } from '../../src/motor/natureza.js';
 import {
+  auditarOrigem,
   conferirConvencao,
   detectarPlanoOrigem,
+  lerPlanoIndicado,
   sinalNaoConfiavel,
 } from '../../src/motor/origem.js';
 import type { LinhaBalancete } from '../../src/motor/tipos.js';
@@ -103,6 +105,44 @@ describe('em que plano está a origem', () => {
     expect(detectarPlanoOrigem([{ clasCta: '1110200001' }, { clasCta: '3110200000' }, { clasCta: '4220400000' }])).toBe(
       'dominio',
     );
+  });
+});
+
+// A dedução é um palpite sobre os grupos presentes; quem recebeu o arquivo sabe de onde ele veio.
+describe('o plano indicado pela pessoa manda', () => {
+  const balancete = balanceteZeroMarkets('debito negativo');
+
+  it('indicar COSIF num balancete do Domínio vale, mesmo contra a dedução', () => {
+    const a = auditarOrigem(balancete, [], 'cosif');
+    expect(a.plano).toBe('cosif');
+    expect(a.detectado).toBe('dominio');
+    expect(a.indicado).toBe(true);
+  });
+
+  it('sem indicação, vale a dedução e a tela sabe que foi deduzido', () => {
+    const a = auditarOrigem(balancete, []);
+    expect(a.plano).toBe('dominio');
+    expect(a.detectado).toBe('dominio');
+    expect(a.indicado).toBe(false);
+  });
+
+  // O caso que a dedução não resolve: só contas patrimoniais, nenhum grupo de resultado.
+  it('indicar resolve o que a dedução deixa indefinido', () => {
+    const patrimonial = [{ clasCta: '1.1.10.200.001' }, { clasCta: '2.1.30.100.000' }];
+    expect(auditarOrigem(patrimonial, []).plano).toBe('indefinido');
+    expect(auditarOrigem(patrimonial, [], 'dominio').plano).toBe('dominio');
+  });
+
+  it.each([
+    ['cosif', 'cosif'],
+    ['dominio', 'dominio'],
+    ['', null],
+    ['DOMINIO', null],
+    [null, null],
+    [undefined, null],
+    ['qualquer coisa', null],
+  ])('o que está guardado como %s vira %s', (guardado, esperado) => {
+    expect(lerPlanoIndicado(guardado)).toBe(esperado);
   });
 });
 
@@ -224,8 +264,12 @@ describe('a conta BANCO INTER — o caso que começou isto', () => {
 });
 
 describe('o motor inteiro sobre o balancete real', () => {
-  const rodar = (convencao: 'debito negativo' | 'debito positivo') =>
+  const rodar = (
+    convencao: 'debito negativo' | 'debito positivo',
+    planoOrigemIndicado: 'cosif' | 'dominio' | null = null,
+  ) =>
     converter({
+      planoOrigemIndicado,
       balancete: balanceteZeroMarkets(convencao),
       plano: carregarPlano(),
       contasCriadas: [],
@@ -277,5 +321,22 @@ describe('o motor inteiro sobre o balancete real', () => {
     expect(painel.origem.convencao).toBe('invertida');
     expect(painel.pronto).toBe(false);
     expect(painel.status).toContain('sinal');
+  });
+
+  // A escolha da pessoa troca a tabela de natureza de todas as linhas, para o certo e para o errado.
+  it('indicar Domínio dá o mesmo que a dedução acertar', () => {
+    const indicado = rodar('debito negativo', 'dominio').linhas;
+    const deduzido = rodar('debito negativo').linhas;
+    expect(indicado.map((l) => l.natureza)).toEqual(deduzido.map((l) => l.natureza));
+    expect(rodar('debito negativo', 'dominio').painel.origem.indicado).toBe(true);
+  });
+
+  it('indicar COSIF por engano traz a natureza do outro plano — e o painel diz que foi indicado', () => {
+    const { linhas, painel } = rodar('debito negativo', 'cosif');
+    expect(linhas.find((l) => l.codiCta === '356')?.natureza).toBe('PASSIVO'); // TELEFONE
+    expect(linhas.find((l) => l.codiCta === '411')?.natureza).toBe('COMPENSAÇÃO'); // receita
+    expect(painel.origem.plano).toBe('cosif');
+    expect(painel.origem.detectado).toBe('dominio');
+    expect(painel.origem.indicado).toBe(true);
   });
 });

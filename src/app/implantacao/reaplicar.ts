@@ -5,6 +5,7 @@ import { and, eq, inArray } from 'drizzle-orm';
 import type { PgDatabase } from 'drizzle-orm/pg-core';
 import { converter } from '../../motor/converter.js';
 import { normalizarNome } from '../../motor/normalizar.js';
+import { lerPlanoIndicado } from '../../motor/origem.js';
 import type { ContaPlano, LinhaBalancete } from '../../motor/tipos.js';
 import { carregarPlanoVigente } from '../../dados/plano.js';
 import { carregarRegras } from '../../dados/regras.js';
@@ -70,6 +71,7 @@ export async function reaplicarSinonimos(
     regrasNormalizacao: regras.normalizacao,
     regrasNatureza: regras.natureza,
     regrasNaturezaDominio: regras.naturezaDominio,
+    planoOrigemIndicado: lerPlanoIndicado(imp.planoOrigem),
     ajustesManuais,
     parametros: {
       dataSaldo: new Date(1970, 0, 1),

@@ -200,6 +200,8 @@ describe('tela de implantação', () => {
           status: 'PRONTO PARA IMPORTAR',
           origem: {
             plano: 'cosif',
+            detectado: 'cosif',
+            indicado: false,
             convencao: 'normal',
             devedoras: -22003884.5,
             credoras: 22003884.5,
@@ -401,6 +403,8 @@ describe('tela de implantação', () => {
   describe('como o arquivo foi lido', () => {
     const origem = (over: Partial<AuditoriaOrigem> = {}): AuditoriaOrigem => ({
       plano: 'cosif',
+      detectado: 'cosif',
+      indicado: false,
       convencao: 'normal',
       devedoras: -1000,
       credoras: 1000,
@@ -418,9 +422,11 @@ describe('tela de implantação', () => {
     });
 
     it('avisa quando não identificou o plano e diz o que foi assumido', () => {
-      const t = textoDe({ plano: 'indefinido' });
+      // Sem indicação, o plano em uso É o deduzido: "indefinido" nos dois.
+      const t = textoDe({ plano: 'indefinido', detectado: 'indefinido' });
       expect(t).toContain('não identificado');
       expect(t).toContain('foi lido como COSIF');
+      expect(t).toContain('indique o plano abaixo');
     });
 
     it('sinal trocado: explica a consequência no TXT e mostra os dois totais', () => {
@@ -453,6 +459,71 @@ describe('tela de implantação', () => {
       const t = textoDe({ convencao: 'ausente', devedoras: 33445.75, credoras: 1875052.67 });
       expect(t).toContain('não diz de que lado (D/C) está cada saldo');
       expect(t).toContain('5.574,25D');
+    });
+
+    it('diz se o plano foi indicado por você ou deduzido', () => {
+      expect(textoDe({ indicado: false })).toContain('deduzido pelos grupos');
+      expect(textoDe({ plano: 'dominio', indicado: true })).toContain('indicado por você');
+    });
+  });
+
+  // A pessoa que recebeu o arquivo sabe de qual sistema ele saiu; deduzir é palpite.
+  describe('indicar o plano do balancete', () => {
+    const seletorCom = (over: Partial<AuditoriaOrigem>, onIndicar = vi.fn(), editavel = true) => {
+      render(
+        <AvisoOrigem
+          origem={{
+            plano: 'cosif',
+            detectado: 'cosif',
+            indicado: false,
+            convencao: 'normal',
+            devedoras: -1000,
+            credoras: 1000,
+            conferidas: 10,
+            ...over,
+          }}
+          onIndicarPlano={onIndicar}
+          editavel={editavel}
+        />,
+      );
+      return {
+        select: screen.getByLabelText(/Plano do balancete recebido/) as HTMLSelectElement,
+        onIndicar,
+      };
+    };
+
+    it('a opção de deduzir mostra o que a dedução diz hoje', () => {
+      seletorCom({ detectado: 'dominio' });
+      expect(screen.getByText(/Deduzir pelo arquivo \(hoje: plano do Domínio\)/)).toBeInTheDocument();
+    });
+
+    it('sem indicação, o seletor fica em "deduzir"', () => {
+      expect(seletorCom({ indicado: false, plano: 'dominio' }).select.value).toBe('');
+    });
+
+    it('com indicação, o seletor mostra o plano indicado', () => {
+      expect(seletorCom({ indicado: true, plano: 'dominio' }).select.value).toBe('dominio');
+    });
+
+    it('escolher Domínio avisa quem chamou', () => {
+      const { select, onIndicar } = seletorCom({});
+      fireEvent.change(select, { target: { value: 'dominio' } });
+      expect(onIndicar).toHaveBeenCalledWith('dominio');
+    });
+
+    it('voltar para "deduzir" manda null, não vazio', () => {
+      const { select, onIndicar } = seletorCom({ indicado: true, plano: 'dominio' });
+      fireEvent.change(select, { target: { value: '' } });
+      expect(onIndicar).toHaveBeenCalledWith(null);
+    });
+
+    it('quando a dedução discorda da indicação, diz o que ela diria', () => {
+      seletorCom({ indicado: true, plano: 'cosif', detectado: 'dominio' });
+      expect(screen.getByText(/A dedução pelos grupos diria/)).toBeInTheDocument();
+    });
+
+    it('implantação concluída não deixa trocar o plano', () => {
+      expect(seletorCom({}, vi.fn(), false).select.disabled).toBe(true);
     });
   });
 

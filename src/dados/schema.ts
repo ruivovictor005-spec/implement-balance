@@ -170,6 +170,9 @@ export const implantacao = pgTable(
     incluirCabecalho: boolean('incluir_cabecalho').notNull().default(false),
     planoVersaoId: integer('plano_versao_id').references(() => planoVersao.id),
     layoutDetectado: text('layout_detectado'),
+    // Plano de contas do balancete recebido, indicado pela pessoa: 'cosif' ou 'dominio'. Nulo =
+    // deduzir pelos grupos da classificação. Ver src/motor/origem.ts.
+    planoOrigem: text('plano_origem'),
     arquivoOrigem: text('arquivo_origem'),
     nomeArquivoTxt: text('nome_arquivo_txt'),
     status: statusImplantacao('status').notNull().default('em_andamento'),

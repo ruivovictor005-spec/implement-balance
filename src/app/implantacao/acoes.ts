@@ -9,6 +9,7 @@ import { db } from '../../dados/cliente.js';
 import {
   anexarBalancete as anexarNoBanco,
   definirAjusteManual as definirNoBanco,
+  definirPlanoOrigem as definirPlanoNoBanco,
   excluirImplantacao as excluirNoBanco,
   guardarImplantacao as guardarNoBanco,
   iniciarImplantacao as iniciarNoBanco,
@@ -35,6 +36,7 @@ import type { LinhaResolvida, Painel } from '../../motor/converter.js';
 export type { Lancamento } from '../../motor/agregar.js';
 import { codificarWindows1252 } from '../../motor/ansi.js';
 import { naturezaContaDominio } from '../../motor/natureza.js';
+import type { PlanoIndicado } from '../../motor/origem.js';
 import type { ContaPlano } from '../../motor/tipos.js';
 import { PERFIS } from '../../leitores/perfis.js';
 import { ErroDeArquivo, lerArquivoComFormato, type Celula } from '../../leitores/ler-arquivo.js';
@@ -172,6 +174,18 @@ export async function lerPrevia(arquivo: {
 
 export async function definirAjusteManual(id: number, codiCta: string, codigo: string | null) {
   return definirNoBanco(db(), id, await usuarioAtualId(), codiCta, codigo);
+}
+
+/**
+ * Indica em qual plano de contas está o balancete recebido — COSIF (Infobank) ou Domínio — ou
+ * null para o sistema voltar a deduzir. Muda a natureza de todas as linhas, então a tela recalcula
+ * depois de chamar.
+ */
+export async function definirPlanoOrigem(
+  id: number,
+  plano: PlanoIndicado | null,
+): Promise<ResultadoImplantacao> {
+  return definirPlanoNoBanco(db(), id, await usuarioAtualId(), plano);
 }
 
 export async function registrarContaCriada(id: number, conta: ContaCriadaEntrada) {

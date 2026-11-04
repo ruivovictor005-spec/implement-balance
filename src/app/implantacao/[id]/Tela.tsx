@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { conferirPorGrupo } from '../../../motor/conferencia-grupo.js';
-import { sinalNaoConfiavel } from '../../../motor/origem.js';
+import { sinalNaoConfiavel, type PlanoIndicado } from '../../../motor/origem.js';
 import type { Celula } from '../../../leitores/ler-arquivo.js';
 import type { LinhaResolvida, Painel } from '../../../motor/converter.js';
 import {
@@ -10,6 +10,7 @@ import {
   carregarContas,
   concluir,
   definirAjusteManual,
+  definirPlanoOrigem,
   estadoImplantacao,
   excluirImplantacao,
   gerarTxt,
@@ -50,7 +51,15 @@ const PAINEL_VAZIO: Painel = {
   diferenca: 0,
   pronto: false,
   status: 'Anexe o balancete para começar.',
-  origem: { plano: 'indefinido', convencao: 'indefinida', devedoras: 0, credoras: 0, conferidas: 0 },
+  origem: {
+    plano: 'indefinido',
+    detectado: 'indefinido',
+    indicado: false,
+    convencao: 'indefinida',
+    devedoras: 0,
+    credoras: 0,
+    conferidas: 0,
+  },
 };
 
 const DADOS_VAZIO: DadosEmpresaForm = {
@@ -225,6 +234,21 @@ export function Tela({ id }: { id: number }) {
       await definirAjusteManual(id, codiCta, codigo);
       const r = await recalcular(id);
       aplicarResultado(r);
+    },
+    [id, aplicarResultado],
+  );
+
+  // Indicar o plano troca a tabela de natureza da ORIGEM, então muda a natureza de todas as
+  // linhas: grava e recalcula tudo.
+  const onIndicarPlano = useCallback(
+    async (plano: PlanoIndicado | null) => {
+      setAviso(null);
+      const r = await definirPlanoOrigem(id, plano);
+      if (!r.ok) {
+        setAviso(r.erro);
+        return;
+      }
+      aplicarResultado(await recalcular(id));
     },
     [id, aplicarResultado],
   );
@@ -468,7 +492,11 @@ export function Tela({ id }: { id: number }) {
           )}
           {temLinhas && (
             <>
-              <AvisoOrigem origem={painel.origem} />
+              <AvisoOrigem
+                origem={painel.origem}
+                onIndicarPlano={onIndicarPlano}
+                editavel={editavel}
+              />
               <PainelConferencia
                 painel={painel}
                 justificativa={justificativa}
