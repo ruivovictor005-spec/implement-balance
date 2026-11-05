@@ -26,6 +26,8 @@ const PLANO = [
   conta('4', '11101003', 'NOME REPETIDO'),
   conta('5', '11101004', 'NOME REPETIDO'),
   conta('6', '11101005', 'OUTRA CONTA'),
+  conta('7', '24101001', 'CAPITAL SOCIAL'),
+  conta('8', '12101001', 'EMPRESTIMO SOCIOS'),
   conta('9', '111', 'DISPONIVEL', 'S'),
 ];
 
@@ -37,6 +39,13 @@ const ATIVO: ResultadoNatureza = {
   naoMigrar: false,
 };
 const PASSIVO: ResultadoNatureza = { natureza: 'PASSIVO', gruposDominio: ['21', '22'], naoMigrar: false };
+// Classificação 2.3 no plano de origem: a tabela do Domínio chama de "resultado de exercícios
+// futuros", mas em plano antigo é onde mora o patrimônio líquido.
+const PASSIVO_REF: ResultadoNatureza = {
+  natureza: 'PASSIVO - REF',
+  gruposDominio: ['23'],
+  naoMigrar: false,
+};
 const NAO_MIGRAR: ResultadoNatureza = {
   natureza: 'TOTALIZADOR P.L.A.',
   gruposDominio: [],
@@ -74,7 +83,7 @@ describe('criarIndicePlano', () => {
     ]));
 
   it('lista as analíticas na ordem do plano', () =>
-    expect(indice.analiticas.map((c) => c.codigoReduzido)).toEqual(['1', '2', '3', '4', '5', '6']));
+    expect(indice.analiticas.map((c) => c.codigoReduzido)).toEqual(['1', '2', '3', '4', '5', '6', '7', '8']));
 });
 
 describe('resolverConta — os 12 textos de status', () => {
@@ -179,6 +188,35 @@ describe('resolverConta — a cascata', () => {
     // Avisa e não bloqueia: o código fica, para a pessoa conferir ou corrigir.
     expect(r.codigo).toBe('2');
     expect(r.status).toBe('Código da coluna L é de outra natureza - conferir');
+  });
+
+  // O patrimônio líquido fica DENTRO do passivo: indicar "Capital Social" (24) para uma conta de
+  // natureza "PASSIVO - REF" (23) não é erro, e acusar era alarme falso em toda implantação com
+  // plano antigo.
+  it('manual em outro subgrupo do MESMO bloco não é acusado', () => {
+    const r = resolver({ natureza: PASSIVO_REF, ajusteManual: '7' });
+    expect(r.codigo).toBe('7');
+    expect(r.status).toBe('Manual (coluna L)');
+  });
+
+  // A contrapartida, dita de propósito: custo (41) e despesa (42) também são o mesmo bloco, então
+  // indicar um pelo outro à mão passa sem aviso. É escolha da pessoa; o que o aviso guarda é a
+  // troca de BLOCO, que é a que vira lançamento no lugar errado do balancete.
+  it('manual em bloco diferente continua sendo acusado', () => {
+    const r = resolver({ natureza: ATIVO, ajusteManual: '2' });
+    expect(r.status).toBe('Código da coluna L é de outra natureza - conferir');
+  });
+
+  // A folga vale SÓ para o manual: na escolha automática ninguém decidiu nada.
+  it('sinônimo para outro subgrupo do mesmo bloco continua descartado', () => {
+    const r = resolver({
+      nomeNormalizado: 'SOCIOS',
+      sinonimos: new Map([['SOCIOS', '8']]),
+    });
+    expect(r.codigo).toBeNull();
+    expect(r.status).toBe(
+      'NÃO ENCONTRADO - sinônimo aponta p/ conta de outra natureza; digite na coluna L',
+    );
   });
 
   it('ajuste manual em branco não conta como preenchido', () => {

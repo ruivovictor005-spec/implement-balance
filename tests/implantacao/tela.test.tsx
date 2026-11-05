@@ -12,7 +12,6 @@ vi.mock('../../src/app/implantacao/acoes.js', () => ({
   excluirImplantacao: (id: number) => excluirMock(id),
 }));
 
-import { conferirPorGrupo } from '../../src/motor/conferencia-grupo.js';
 import type { LinhaResolvida } from '../../src/motor/converter.js';
 import type { AuditoriaOrigem } from '../../src/motor/origem.js';
 import type { ContaBusca, ImplantacaoAberta, Lancamento } from '../../src/app/implantacao/acoes.js';
@@ -22,7 +21,6 @@ import { BuscaConta } from '../../src/app/implantacao/_componentes/BuscaConta.js
 import { DadosEmpresa } from '../../src/app/implantacao/_componentes/DadosEmpresa.js';
 import { MapeamentoColunas } from '../../src/app/implantacao/_componentes/MapeamentoColunas.js';
 import { Mesa } from '../../src/app/implantacao/_componentes/Mesa.js';
-import { ConferenciaPorGrupo } from '../../src/app/implantacao/_componentes/ConferenciaPorGrupo.js';
 import { PainelConferencia } from '../../src/app/implantacao/_componentes/PainelConferencia.js';
 import { PreviaBalancete } from '../../src/app/implantacao/_componentes/PreviaBalancete.js';
 import { ResumoBalancete } from '../../src/app/implantacao/_componentes/ResumoBalancete.js';
@@ -745,152 +743,5 @@ describe('tela de implantação', () => {
     });
 
     // A coluna de status marca se o grupo bate com o balancete de origem.
-    describe('coluna "Confere?"', () => {
-      const comConferencia = (
-        lancamentos: Lancamento[],
-        origem: Partial<LinhaResolvida>[],
-      ): void => {
-        render(
-          <PreviaBalancete
-            contas={planinho}
-            lancamentos={lancamentos}
-            conferencia={conferirPorGrupo(origem.map((l) => linha(l)), planinho)}
-          />,
-        );
-      };
-
-      it('grupo que bate fica OK e sem destaque', () => {
-        comConferencia(
-          [lanc('10', 100, 'D')],
-          [{ natureza: 'ATIVO CIRCULANTE', gruposDominio: ['11'], saldoAtual: -100, codigo: '10' }],
-        );
-        expect(linhaDe('1')).toHaveAttribute('data-confere', 'ok');
-        expect(linhaDe('1')).toHaveTextContent('OK');
-        expect(linhaDe('1')).not.toHaveClass('atencao');
-      });
-
-      // "ATENÇÃO", e não veredito: a mudança de grupo pode ser proposital.
-      it('grupo que difere pede ATENÇÃO e fica destacado', () => {
-        // Saldo de ativo na origem foi indicado para uma conta de passivo.
-        comConferencia(
-          [lanc('235', 100, 'C')],
-          [{ natureza: 'ATIVO CIRCULANTE', gruposDominio: ['11'], saldoAtual: -100, codigo: '235' }],
-        );
-        expect(linhaDe('2')).toHaveAttribute('data-confere', 'atencao');
-        expect(linhaDe('2')).toHaveTextContent('ATENÇÃO');
-        // Nem veredito nem "pendente", que aqui significa outra coisa.
-        expect(linhaDe('2')).not.toHaveTextContent(/NÃO BATE|PENDENTE/i);
-        expect(linhaDe('2')).toHaveClass('atencao');
-      });
-
-      // O subgrupo também recebe status quando a natureza aponta para um só.
-      it('subgrupo recebe status; níveis sem comparação ficam em branco', () => {
-        comConferencia(
-          [lanc('10', 100, 'D')],
-          [{ natureza: 'ATIVO CIRCULANTE', gruposDominio: ['11'], saldoAtual: -100, codigo: '10' }],
-        );
-        expect(linhaDe('1')).toHaveAttribute('data-confere', 'ok');
-        expect(linhaDe('11')).toHaveAttribute('data-confere', 'ok');
-        for (const classe of ['111', '11102', '11102001']) {
-          expect(linhaDe(classe)).not.toHaveAttribute('data-confere');
-        }
-      });
-
-      // O ganho do 2º nível: os dois subgrupos estão dentro de ATIVO, então o topo não vê nada.
-      it('troca de subgrupo dentro do mesmo grupo acende só no subgrupo', () => {
-        comConferencia(
-          [lanc('99', 100, 'D')],
-          [{ natureza: 'ATIVO CIRCULANTE', gruposDominio: ['11'], saldoAtual: -100, codigo: '99' }],
-        );
-        expect(linhaDe('1')).toHaveAttribute('data-confere', 'ok');
-        expect(linhaDe('12')).toHaveAttribute('data-confere', 'atencao');
-        expect(linhaDe('12')).toHaveClass('atencao');
-      });
-
-      it('natureza ambígua não acende subgrupo nenhum', () => {
-        comConferencia(
-          [lanc('99', 100, 'D')],
-          [{ natureza: 'ATIVO', gruposDominio: ['11', '12'], saldoAtual: -100, codigo: '99' }],
-        );
-        expect(linhaDe('1')).toHaveAttribute('data-confere', 'ok');
-        expect(linhaDe('12')).not.toHaveAttribute('data-confere');
-        expect(document.querySelector('tr.atencao')).toBeNull();
-      });
-
-      it('sem conferência, a coluna fica vazia e nada é destacado', () => {
-        previa([lanc('10', 100, 'D')]);
-        expect(linhaDe('1')).not.toHaveAttribute('data-confere');
-        expect(document.querySelector('tr.atencao')).toBeNull();
-      });
-    });
-  });
-
-  // Conferir grupo a grupo é o que acha a conta indicada para o grupo errado sem a pessoa ter de
-  // comparar duas tabelas de cabeça.
-  describe('conferência por grupo', () => {
-    const planoConf: ContaBusca[] = [
-      { codigoReduzido: 'g1', classificacao: '1', descricao: 'ATIVO', tipo: 'S', descricaoNormalizada: '', natureza: '' },
-      { codigoReduzido: 'g4', classificacao: '4', descricao: 'CUSTOS E DESPESAS', tipo: 'S', descricaoNormalizada: '', natureza: '' },
-      { codigoReduzido: '10', classificacao: '11102001', descricao: 'Bradesco', tipo: 'A', descricaoNormalizada: '', natureza: '' },
-      { codigoReduzido: '537', classificacao: '42105002', descricao: 'Telefone', tipo: 'A', descricaoNormalizada: '', natureza: '' },
-    ];
-
-    const conferir = (ls: Partial<LinhaResolvida>[]) =>
-      render(
-        <ConferenciaPorGrupo
-          conferencia={conferirPorGrupo(ls.map((l) => linha(l)), planoConf)}
-        />,
-      );
-
-    const grupoDe = (chave: string): HTMLElement =>
-      document.querySelector(`tr[data-grupo="${chave}"]`) as HTMLElement;
-
-    // Tudo batendo vira UMA linha: a tabela só dizendo OK ocupava a tela sem contar nada.
-    it('quando os grupos batem, sai uma linha e nenhuma tabela', () => {
-      conferir([
-        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
-        { natureza: 'DESPESA ADMINISTRATIVA', saldoAtual: -400, codigo: '537' },
-      ]);
-      expect(screen.getByText(/grupos conferidos batem com o balancete de origem/)).toBeInTheDocument();
-      expect(grupoDe('1')).toBeNull();
-      expect(document.querySelector('table')).toBeNull();
-    });
-
-    it('aponta o grupo com diferença e explica o que ela significa', () => {
-      conferir([
-        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '537' }, // ativo em despesa
-      ]);
-      expect(screen.getByText(/2 grupo\(s\) para verificar/)).toBeInTheDocument();
-      expect(screen.getByText(/não quer dizer erro/)).toBeInTheDocument();
-      expect(grupoDe('1')).toHaveClass('atencao');
-      expect(grupoDe('4')).toHaveClass('atencao');
-      // Mesmo valor dos dois lados, em lados contrários.
-      expect(grupoDe('1')).toHaveTextContent('1.000,00D');
-      expect(grupoDe('4')).toHaveTextContent('1.000,00C');
-    });
-
-    it('pendência não vira divergência', () => {
-      conferir([
-        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
-        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -250, codigo: null },
-      ]);
-      expect(screen.getByText(/grupos conferidos batem com o balancete de origem/)).toBeInTheDocument();
-    });
-
-    // Um "bate" que não cobre tudo tem de dizer o que não cobriu, mesmo na linha curta.
-    it('a ressalva do que ficou fora sai junto com a linha curta', () => {
-      conferir([
-        { natureza: 'ATIVO CIRCULANTE', saldoAtual: -1000, codigo: '10' },
-        { natureza: 'COMPENSAÇÃO', saldoAtual: -77, codigo: '10' },
-      ]);
-      expect(screen.getByText(/1 linha\(s\), somando 77,00/)).toBeInTheDocument();
-    });
-
-    // Sem nada indicado não há o que conferir: some em vez de ocupar espaço com um convite que a
-    // prévia logo abaixo já faz.
-    it('sem nada indicado, não desenha nada', () => {
-      const { container } = conferir([]);
-      expect(container).toBeEmptyDOMElement();
-    });
   });
 });

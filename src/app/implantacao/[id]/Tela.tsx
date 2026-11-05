@@ -1,7 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { conferirPorGrupo } from '../../../motor/conferencia-grupo.js';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { sinalNaoConfiavel, type PlanoIndicado } from '../../../motor/origem.js';
 import type { Celula } from '../../../leitores/ler-arquivo.js';
 import type { LinhaResolvida, Painel } from '../../../motor/converter.js';
@@ -32,7 +31,6 @@ import { Abas, type AbaId } from '../_componentes/Abas.js';
 import { AreaArquivo } from '../_componentes/AreaArquivo.js';
 import { MapeamentoColunas } from '../_componentes/MapeamentoColunas.js';
 import { PlanoDrawer } from '../_componentes/PlanoDrawer.js';
-import { ConferenciaPorGrupo } from '../_componentes/ConferenciaPorGrupo.js';
 import { PreviaBalancete } from '../_componentes/PreviaBalancete.js';
 import { TabelaDePara, Pendencias } from '../_componentes/TabelaDePara.js';
 import { DadosEmpresa } from '../_componentes/DadosEmpresa.js';
@@ -383,10 +381,6 @@ export function Tela({ id }: { id: number }) {
   const temArquivoNaSessao = ultimoArquivo.current !== null;
   const temLinhas = linhas.length > 0;
 
-  // Calculada uma vez e usada nos dois lugares (o painel de conferência e a coluna de status da
-  // prévia), para os dois nunca discordarem.
-  const conferencia = useMemo(() => conferirPorGrupo(linhas, contas), [linhas, contas]);
-
   // Sem sinal confiável no arquivo (trocado, ou ausente), TODA conta parece invertida: o aviso
   // por conta deixa de ajudar e o alerta sai uma vez só, no cartão "Como o arquivo foi lido".
   const conferirLado = !sinalNaoConfiavel(painel.origem.convencao);
@@ -546,8 +540,7 @@ export function Tela({ id }: { id: number }) {
       {aba === 'previa' &&
         (temLinhas ? (
           <>
-            <ConferenciaPorGrupo conferencia={conferencia} />
-            <PreviaBalancete lancamentos={lancamentos} contas={contas} conferencia={conferencia} />
+            <PreviaBalancete lancamentos={lancamentos} contas={contas} />
             <ResumoBalancete linhas={linhas} />
           </>
         ) : (

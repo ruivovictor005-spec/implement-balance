@@ -2,7 +2,6 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { montarBalancete, type SaldoDaConta } from '../../../motor/arvore-balancete.js';
-import type { Conferencia, GrupoConferido } from '../../../motor/conferencia-grupo.js';
 import type { ContaBusca, Lancamento } from '../acoes.js';
 
 const brl = (n: number): string => n.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
@@ -45,21 +44,11 @@ const Saldo = ({ debito, credito }: { debito: number; credito: number }) => {
 export function PreviaBalancete({
   lancamentos,
   contas,
-  conferencia,
 }: {
   lancamentos: Lancamento[];
   contas: ContaBusca[];
-  /**
-   * Conferência contra o balancete de origem. Recebem status apenas os grupos que ela conseguiu
-   * conferir — os de topo, sempre, e os subgrupos cuja natureza de origem aponta para um único
-   * subgrupo do Domínio. Os demais níveis ficam em branco, porque não há com o que comparar.
-   */
-  conferencia?: Conferencia;
 }) {
   const [verOrigens, setVerOrigens] = useState(true);
-  const statusPorGrupo = new Map<string, GrupoConferido>(
-    (conferencia?.grupos ?? []).map((g) => [g.chave, g]),
-  );
   const porConta = agregarPorConta(lancamentos);
   const origensPorCodigo = new Map(porConta.map((c) => [c.codigo, c.origens]));
   const linhas = montarBalancete(porConta, contas);
@@ -95,27 +84,17 @@ export function PreviaBalancete({
                 <th style={{ textAlign: 'right' }}>Débito</th>
                 <th style={{ textAlign: 'right' }}>Crédito</th>
                 <th style={{ textAlign: 'right' }}>Saldo</th>
-                <th>Confere?</th>
               </tr>
             </thead>
             <tbody>
               {linhas.map((l) => {
                 const origens = l.sintetica ? [] : origensPorCodigo.get(l.codigo) ?? [];
-                // Quem decide o que é conferível é a conferência: só os grupos que ela conseguiu
-                // comparar estão no mapa. Os outros níveis ficam sem status.
-                const status = l.sintetica ? statusPorGrupo.get(l.classificacao) : undefined;
-                const pedeAtencao = status !== undefined && !status.confere;
                 return (
                   <React.Fragment key={`${l.sintetica ? 's' : 'a'}-${l.classificacao}-${l.codigo}`}>
                     <tr
-                      className={[l.sintetica ? 'grupo' : '', pedeAtencao ? 'atencao' : '']
-                        .filter((c) => c !== '')
-                        .join(' ') || undefined}
+                      className={l.sintetica ? 'grupo' : undefined}
                       data-classificacao={l.classificacao}
                       data-sintetica={l.sintetica ? '1' : '0'}
-                      data-confere={
-                        status === undefined ? undefined : status.confere ? 'ok' : 'atencao'
-                      }
                     >
                       <td className="cod">{l.codigo}</td>
                       <td className="cod">{l.classificacao || '—'}</td>
@@ -130,22 +109,6 @@ export function PreviaBalancete({
                       <td className="num">
                         <Saldo debito={l.debito} credito={l.credito} />
                       </td>
-                      <td>
-                        {status === undefined ? (
-                          ''
-                        ) : status.confere ? (
-                          <span className="selo-ok">OK</span>
-                        ) : (
-                          // "ATENÇÃO", e não um veredito: a diferença pode ser uma reclassificação
-                          // proposital. O sistema sinaliza; quem analisa decide.
-                          <span
-                            className="status-atencao"
-                            title={`Diferença de ${brl(Math.abs(status.diferenca))} contra o balancete de origem. Confira se a mudança de grupo foi proposital.`}
-                          >
-                            ATENÇÃO
-                          </span>
-                        )}
-                      </td>
                     </tr>
                     {verOrigens &&
                       origens.map((o, i) => (
@@ -156,7 +119,6 @@ export function PreviaBalancete({
                           </td>
                           <td className="num">{o.debito ? brl(o.debito) : ''}</td>
                           <td className="num">{o.credito ? brl(o.credito) : ''}</td>
-                          <td />
                           <td />
                         </tr>
                       ))}

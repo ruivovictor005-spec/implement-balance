@@ -1111,12 +1111,6 @@ label.chave {
   cursor: pointer;
 }
 
-/* Conferência por grupo quando tudo bate: uma linha, não um cartão. A tabela inteira dizendo OK em
-   todas as linhas não conta nada que a linha não conte, e ocupava a tela toda. */
-p.conferencia-ok {
-  margin: 0 0 14px;
-}
-
 /* Seletor dentro de um rótulo curto (o plano de contas da origem): controle do tamanho do seu
    conteúdo, ao lado do texto — não um campo de largura total como os do formulário da empresa. */
 label.chave select {
@@ -1142,28 +1136,9 @@ table.balancete tr.grupo td:first-child {
   box-shadow: inset 2px 0 0 var(--borda-forte);
 }
 
-/* Grupo cujo saldo difere do balancete de origem. Âmbar, não vermelho: a diferença pode ser uma
-   reclassificação proposital, e quem decide é quem analisa. Vem depois de `tr.grupo` de propósito:
-   mesma especificidade, então o âmbar vence o cinza do grupo. */
-tr.atencao td {
-  background: var(--atencao-fundo);
-}
-
-tr.atencao td:first-child {
-  box-shadow: inset 2px 0 0 var(--atencao-texto);
-}
-
 .status-atencao {
   color: var(--atencao-texto);
   font-weight: 700;
-  font-size: 11.5px;
-  letter-spacing: 0.03em;
-}
-
-/* Selo "OK": discreto, porque o que precisa ser visto é o que pede atenção. */
-.selo-ok {
-  color: var(--suave);
-  font-weight: 600;
   font-size: 11.5px;
   letter-spacing: 0.03em;
 }

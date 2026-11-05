@@ -65,6 +65,24 @@ function valida(conta: ContaPlano, natureza: ResultadoNatureza): boolean {
 }
 
 /**
+ * A conta indicada está no mesmo BLOCO do balancete que a natureza espera — mesmo 1º dígito, ainda
+ * que em outro subgrupo. Patrimônio líquido (24) dentro de passivo (2x) é o caso típico: o PL fica
+ * no passivo, e indicar "Capital Social" para uma conta de natureza "PASSIVO - REF" não é erro.
+ *
+ * Vale SÓ para o ajuste manual, onde a pessoa escolheu a conta de propósito. Na escolha automática
+ * (sinônimo, nome igual, nome cortado) o critério continua estrito: ali ninguém decidiu nada, e
+ * afrouxar faria uma despesa (42) casar com uma conta de custo (41) por estarem no mesmo bloco.
+ *
+ * O que NÃO afrouxa é ser analítica: lançamento em conta sintética não existe, e o TXT sairia
+ * inválido. Isso continua sendo aviso mesmo escolhido à mão.
+ */
+function mesmoBloco(conta: ContaPlano, natureza: ResultadoNatureza): boolean {
+  if (conta.tipo !== 'A') return false;
+  const bloco = conta.classificacao.slice(0, 1);
+  return bloco !== '' && natureza.gruposDominio.some((g) => g.slice(0, 1) === bloco);
+}
+
+/**
  * Código do Domínio para uma linha do balancete, pela cascata da §6.4: ajuste manual, sinônimo,
  * nome idêntico, nome cortado e, por fim, pendência.
  *
@@ -97,8 +115,12 @@ export function resolverConta(entrada: {
       return { codigo: null, origem: 'nao_encontrado', status: STATUS.manualInexistente };
     }
     // Ajuste manual vence sinônimo, nome igual e nome cortado. De natureza errada, avisa e não
-    // bloqueia: o código fica, para a pessoa conferir.
-    const status = valida(conta, natureza) ? STATUS.manual : STATUS.manualOutraNatureza;
+    // bloqueia: o código fica, para a pessoa conferir. Só que "outro subgrupo do mesmo bloco" não
+    // é natureza errada — ver `mesmoBloco`.
+    const status =
+      valida(conta, natureza) || mesmoBloco(conta, natureza)
+        ? STATUS.manual
+        : STATUS.manualOutraNatureza;
     return { codigo: conta.codigoReduzido, origem: 'manual', status };
   }
 
